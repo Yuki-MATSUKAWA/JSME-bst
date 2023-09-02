@@ -1,0 +1,63 @@
+\documentclass[a4paper,fleqn,12pt,uplatex]{jsarticle}
+
+%%% テキストエリア指定
+\setlength{\hoffset}{-5.4truemm}
+\setlength{\voffset}{-10.4truemm}
+\setlength{\oddsidemargin}{0truemm}
+\setlength{\evensidemargin}{0truemm}
+\setlength{\topmargin}{0truemm}
+\setlength{\footskip}{10truemm}
+\setlength{\textheight}{250truemm}
+\setlength{\textwidth}{170truemm}
+\setlength{\headsep}{5truept}
+\setlength{\headheight}{20truept}
+\setlength{\marginparsep}{0truemm}
+\setlength{\marginparwidth}{0truemm}
+
+
+%%% 図の挿入
+\usepackage{graphicx}
+%%% hyperref
+\usepackage[dvipdfmx,bookmarks=false,setpagesize=false,colorlinks,allcolors=blue]{hyperref}
+\usepackage{pxjahyper}
+%%% ロゴ関連
+\usepackage{bxtexlogo}
+%%% 数式等
+\usepackage{physics}
+\usepackage{amsmath,amssymb}
+%%% otf
+\usepackage{otf}
+%%% natbib
+\usepackage{natbib}
+
+
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\fancypagestyle{cover}
+{%
+	\fancyhf{}
+	\cfoot{\thepage/\pageref{LastPage}}
+	\renewcommand{\headrulewidth}{0.0pt}
+}
+\pagestyle{fancy}
+	\lhead{【非公式】日本機械学会\BibTeX スタイルファイルの使い方}
+	\chead{}
+	\rhead{東京理科大学　松川裕樹}
+	\lfoot{}
+	\cfoot{\thepage/\pageref{LastPage}}
+	\rfoot{}
+
+\title{【非公式】日本機械学会\BibTeX スタイルファイル \\ Ver.~1.0.0}
+\author{松川裕樹\thanks{東京理科大学大学院，Email: \texttt{7523701 ＿＠＿ ed.tus.ac.jp}}}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{cover}
+
+これは日本機械学会の非公式\BibTeX スタイルファイルテンプレートです．
+
+
+\end{document}
