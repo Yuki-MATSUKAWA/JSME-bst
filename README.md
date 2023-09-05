@@ -17,27 +17,27 @@
 
 ### @booklet
 
-### conference
+### @conference
 
-### inbook
+### @inbook
 
-### incollection
+### @incollection
 
-### inproceedings
+### @inproceedings
 
-### manual
+### @manual
 
-### masterthesis
+### @masterthesis
 
-### misc
+### @misc
 
-### phdthesis
+### @phdthesis
 
-### proceedings
+### @proceedings
 
-### techreport
+### @techreport
 
-### unpublished
+### @unpublished
 
 
 ## 日本語文献
@@ -51,30 +51,30 @@
 
 ### @booklet
 
-### conference
+### @conference
 
 ### @inbook
 * `title`に『』がついている．
 * `pages`が頁になっている．
 * `year`の位置が違う．
 
-### incollection
+### @incollection
 
-### inproceedings
+### @inproceedings
 
-### manual
+### @manual
 
-### masterthesis
+### @masterthesis
 
-### misc
+### @misc
 
-### phdthesis
+### @phdthesis
 
-### proceedings
+### @proceedings
 
-### techreport
+### @techreport
 
-### unpublished
+### @unpublished
 
 
 # 参考資料
