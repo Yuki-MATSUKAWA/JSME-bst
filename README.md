@@ -7,20 +7,40 @@
 ## 全体
 
 ## 英語文献
-### @book
-* `title`がイタリック体になっている．
-* `year`の位置が違う．
-
 ### @article
 * `journal`がイタリック体になっている．
 * `year`の位置が違う．
 
-## 日本語文献
-### @inbook
-* `title`に『』がついている．
-* `pages`が頁になっている．
+### @book
+* `title`がイタリック体になっている．
 * `year`の位置が違う．
 
+### @booklet
+
+### conference
+
+### inbook
+
+### incollection
+
+### inproceedings
+
+### manual
+
+### masterthesis
+
+### misc
+
+### phdthesis
+
+### proceedings
+
+### techreport
+
+### unpublished
+
+
+## 日本語文献
 ### @article
 * `title`に「」がついている．
 * `journal`に『』がついている．
@@ -28,6 +48,34 @@
 * `volume`が第n巻になっている．
 * `number`が第n号になっている．
 * `pages`が頁になっている．
+
+### @booklet
+
+### conference
+
+### @inbook
+* `title`に『』がついている．
+* `pages`が頁になっている．
+* `year`の位置が違う．
+
+### incollection
+
+### inproceedings
+
+### manual
+
+### masterthesis
+
+### misc
+
+### phdthesis
+
+### proceedings
+
+### techreport
+
+### unpublished
+
 
 # 参考資料
 jsme.bstは武田史郎氏作のjecon-bstを基に作成しています．
