@@ -7,41 +7,41 @@
 ## 全体
 
 ## 英語文献
-### @article
+### article
 * `journal`がイタリック体になっている．
 * `year`の位置が違う．
 
-### @book
+### book
 * `title`がイタリック体になっている．
 * `year`の位置が違う．
 
-### @booklet
+### booklet
 
-### @conference
+### conference
 
-### @inbook
+### inbook
 
-### @incollection
+### incollection
 
-### @inproceedings
+### inproceedings
 
-### @manual
+### manual
 
-### @masterthesis
+### masterthesis
 
-### @misc
+### misc
 
-### @phdthesis
+### phdthesis
 
-### @proceedings
+### proceedings
 
-### @techreport
+### techreport
 
-### @unpublished
+### unpublished
 
 
 ## 日本語文献
-### @article
+### article
 * `title`に「」がついている．
 * `journal`に『』がついている．
 * `year`の位置が違う．
@@ -49,32 +49,32 @@
 * `number`が第n号になっている．
 * `pages`が頁になっている．
 
-### @booklet
+### booklet
 
-### @conference
+### conference
 
-### @inbook
+### inbook
 * `title`に『』がついている．
 * `pages`が頁になっている．
 * `year`の位置が違う．
 
-### @incollection
+### incollection
 
-### @inproceedings
+### inproceedings
 
-### @manual
+### manual
 
-### @masterthesis
+### masterthesis
 
-### @misc
+### misc
 
-### @phdthesis
+### phdthesis
 
-### @proceedings
+### proceedings
 
-### @techreport
+### techreport
 
-### @unpublished
+### unpublished
 
 
 # 参考資料
