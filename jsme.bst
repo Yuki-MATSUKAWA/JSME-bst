@@ -66,8 +66,8 @@ ENTRY
 % \bysame とは、参考文献部分同じ著者名が連続するときに --- で省略するもの。
 %
 FUNCTION {bst.use.bysame}
-% { #0 }    % Not use \bysame
-{ #1 }	  % -> Use \bysame (default)
+{ #0 }    % Not use \bysame
+% { #1 }	  % -> Use \bysame (default)
 % { #2 }    % -> Use \bysame of alternative style.
 
 % \bysame の定義。\bysame を使ったときの横棒の形式を変えるには以下の定義を修正
@@ -88,8 +88,8 @@ FUNCTION {bst.bysame.definition.jp}
 % Editor にも適用。日本語文献は関係なし。#0 か #1 か #2 を選択可。
 %
 FUNCTION {bst.author.name}
-{ #0 }	  % (default)
-% { #1 }
+% { #0 }	  % (default)
+{ #1 }
 % { #2 }
 
 % [#0 のケース] これ普通の経済学風。
@@ -127,8 +127,8 @@ FUNCTION {bst.sei.mei.order}
 % Author (editor) 名の first name を頭文字だけに略す。
 %
 FUNCTION {bst.first.name.initial}
-{ #0 }	  % #0 -> 略さない。 (default)
-% { #1 }    % #0 以外 -> first name を頭文字に略す。
+% { #0 }	  % #0 -> 略さない。 (default)
+{ #1 }    % #0 以外 -> first name を頭文字に略す。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -163,8 +163,8 @@ FUNCTION {bst.mixed.order}
 % 0 を指定。隠す場合でも month フィールドの値は並べ替えのキーとしては利用され
 % る。これも普通は変更しない．
 FUNCTION {bst.hide.month}
-{ #0 }	  % #0 -> 表示する．普通はこちら． (default)
-% { #1 }    % #0 以外 -> 隠す (表示しない)
+% { #0 }	  % #0 -> 表示する．普通はこちら． (default)
+{ #1 }    % #0 以外 -> 隠す (表示しない)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
