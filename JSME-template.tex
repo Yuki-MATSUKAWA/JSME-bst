@@ -47,6 +47,9 @@
 	\cfoot{\thepage/\pageref{LastPage}}
 	\rfoot{}
 
+\renewcommand{\figurename}{Fig.~}       % 図番号
+\renewcommand{\tablename}{Table~}       % 表番号
+
 \title{【非公式】日本機械学会\BibTeX スタイルファイル \\ Ver.~1.0.0}
 \author{松川裕樹\thanks{東京理科大学大学院，Email: \texttt{7523701 ＿＠＿ ed.tus.ac.jp}}}
 
@@ -58,7 +61,20 @@
 \thispagestyle{cover}
 
 これは日本機械学会の非公式\BibTeX スタイルファイルテンプレートです．
-\cite{Keer:JApplMech1984}
+
+
+\begin{table}[t]
+    \centering
+    \caption{Commands and output results.}
+    \label{tab:my_label}
+    \begin{tabular}{cc}
+        コマンド &出力結果 \\
+        \verb|\cite{Keer:JApplMech1984}|    &\cite{Keer:JApplMech1984} \\
+        \verb|\citep{Keer:JApplMech1984}|   &\citep{Keer:JApplMech1984} \\
+        \verb|\citealp{Keer:JApplMech1984}| &\citealp{Keer:JApplMech1984}
+    \end{tabular}
+\end{table}
+
 
 未完成なのでまだ使わないでください．
 
