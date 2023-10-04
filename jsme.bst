@@ -270,10 +270,10 @@ FUNCTION {bst.tatebo.definition}
 % #3 -> year は volume の後に表示されます。
 %
 FUNCTION {bst.year.position}
-{ #0 }	  % autho のすぐ後 (default).
+% { #0 }	  % autho のすぐ後 (default).
 % { #1 }    % 最後（note の前）
 % { #2 }    % journal name の後（article entryのみ）
-% { #3 }    % volume の後（article entryのみ）
+{ #3 }    % volume の後（article entryのみ）
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -364,7 +364,7 @@ FUNCTION {bst.ands}
 % "A氏 _ B氏 _ C氏" の "_" の部分に入る文字列
 %
 FUNCTION {bst.and.jp}
-{ "・" }    % (default)
+{ "，" }    % (default)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%	「引用部分」での author 名の間に入る文字列
@@ -388,7 +388,7 @@ FUNCTION {bst.cite.ands}
 % 引用部分の "A氏 _ B氏 _ C氏" の "_" の部分に入る文字列
 %
 FUNCTION {bst.cite.and.jp}
-{ "・" }    % (default)
+{ "，" }    % (default)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -436,7 +436,7 @@ FUNCTION {bst.author.pre}
 % author の後に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.author.post}
-{ "" }	  % (default)
+{ ", " }	  % (default)
 
 % author の前に付ける文字列 (日本語文献用)
 %
