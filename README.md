@@ -50,6 +50,8 @@
 * `number`が第n号になっている．
 * `pages`が頁になっている．
 
+### book
+
 ### booklet
 
 ### conference
