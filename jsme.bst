@@ -502,12 +502,12 @@ FUNCTION {bst.title.post}
 % title の前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.title.pre.jp}
-{ "「" }    % (default)
+{ "，" }    % (default)
 
 % title の後に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.title.post.jp}
-{ "」，" }    % (default)
+{ "，" }    % (default)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	book 用 title
@@ -525,12 +525,12 @@ FUNCTION {bst.book.post}
 % book の title 前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.book.pre.jp}
-{ "『" }    % (default)
+{ "，" }    % (default)
 
 % book の title 後に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.book.post.jp}
-{ "』" }    % (default)
+{ "" }    % (default)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	booktitle
@@ -651,7 +651,7 @@ FUNCTION {bst.edition.post.jp}
 % volume の前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.volume.pre}
-{ ", Vol. " }	 % (default)
+{ ", Vol.~" }	 % (default)
 
 % volume の後に付ける文字列 (英語文献用)
 %
@@ -661,12 +661,12 @@ FUNCTION {bst.volume.post}
 % volume の前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.volume.pre.jp}
-{ "，第" }    % (default)
+{ "，Vol.~" }    % (default)
 
 % volume の後に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.volume.post.jp}
-{ "巻" }    % (default)
+{ "" }    % (default)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	number
@@ -674,7 +674,7 @@ FUNCTION {bst.volume.post.jp}
 % number の前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.number.pre}
-{ ", No. " }	% (default)
+{ ", No.~" }	% (default)
 
 % number の後に付ける文字列 (英語文献用)
 %
@@ -684,12 +684,12 @@ FUNCTION {bst.number.post}
 % number の前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.number.pre.jp}
-{ "，第" }    % (default)
+{ "，No.~" }    % (default)
 
 % number の後に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.number.post.jp}
-{ "号" }    % (default)
+{ "" }    % (default)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	in 
@@ -722,15 +722,20 @@ FUNCTION {bst.pages.post}
 FUNCTION {bst.page.post}
 { "" }	  % (default)
 
+% page の前に付ける文字列 (複数ページ) (日本語文献用)
+%
+FUNCTION {bst.pages.pre.jp}
+{ "，pp." }    % (default)
+
 % page の前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.page.pre.jp}
-{ "，" }    % (default)
+{ "，p." }    % (default)
 
 % page の後に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.page.post.jp}
-{ "頁" }    % (default)
+{ "" }    % (default)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	chapter
