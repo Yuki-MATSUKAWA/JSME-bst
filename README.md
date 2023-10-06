@@ -29,6 +29,8 @@
 ### manual
 
 ### masterthesis
+* `title`に"がついている．
+* `school`を表示したい．
 
 ### misc
 
@@ -69,12 +71,12 @@
 ### manual
 
 ### masterthesis
+* `school`を表示したい．
 
 ### misc
 
 ### phdthesis
-氏名，題目，school博士論文 (年)．
-にしたい．
+* `author`，`title`，`school`博士論文 (`year`)．にしたい．
 
 ### proceedings
 
