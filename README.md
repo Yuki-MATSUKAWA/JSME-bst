@@ -73,6 +73,8 @@
 ### misc
 
 ### phdthesis
+氏名，題目，school博士論文 (年)．
+にしたい．
 
 ### proceedings
 
