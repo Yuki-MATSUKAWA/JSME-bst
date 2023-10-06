@@ -17,13 +17,15 @@
 
 ### book
 * `title`がイタリック体になっている．
-* `year`の位置が違う．
+* `pages`の前にコロンがついている．
 
 ### booklet
 
 ### conference
 
 ### inbook
+* `pages`が複数ページでもppにならない．
+* `pages`の位置が違う．前にコロンがついている．
 
 ### incollection
 
@@ -70,8 +72,8 @@
 
 ### inbook
 * `title`に『』がついている．
-* `pages`が頁になっている．
-* `year`の位置が違う．
+* `pages`が複数ページでもppにならない．
+* `pages`の位置が違う．
 
 ### incollection
 
