@@ -5,8 +5,11 @@
 
 # 修正が必要な箇所（自分用）
 ## 全体
+* 日本機械学会の文献一覧ではイタリック体は使用しない．
+* 論文webページからBibTeXファイルをダウンロードした際に`pages`にページ番号ではなく論文番号？が入っていることがある．この場合は`note`にした方がよいかと．
 
 ## 英語文献
+* `author`が3人以上の場合の最後の区切りを`, and`にするか`and`にするか悩み中．
 
 ### article
 * `journal`がイタリック体になっている．
@@ -25,6 +28,7 @@
 ### incollection
 
 ### inproceedings
+* `booktitle`がイタリック体になっている．
 
 ### manual
 
@@ -37,6 +41,7 @@
 ### phdthesis
 
 ### proceedings
+* `year`しか表示されない．
 
 ### techreport
 
@@ -44,6 +49,10 @@
 
 
 ## 日本語文献
+* 区切りを全角カンマにするか半角カンマにするか悩み中．
+* 文献末尾を全角ピリオドにするか半角ピリオドにするか悩み中．
+* `year`の囲みは半角括弧にしようかな．
+
 ### article
 * `title`に「」がついている．
 * `author`の区切りが・になっている．
@@ -67,6 +76,7 @@
 ### incollection
 
 ### inproceedings
+* `title`に『』がついている．
 
 ### manual
 
@@ -76,9 +86,10 @@
 ### misc
 
 ### phdthesis
-* `author`，`title`，`school`博士論文 (`year`)．にしたい．
+* 理想形：`author`，`title`，`school`博士論文 (`year`)．
 
 ### proceedings
+* `year`しか表示されない．
 
 ### techreport
 
@@ -86,7 +97,7 @@
 
 
 # 参考資料
-jsme.bstは武田史郎氏作のjecon-bstを基に作成しています．
+jsme.bstは武田史郎氏作のjecon-bst（経済学用スタイルファイル）を基に作成しています．
 感謝申し上げます．
 
 1. [jecon-bst](https://github.com/ShiroTakeda/jecon-bst)
