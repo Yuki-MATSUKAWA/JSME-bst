@@ -22,6 +22,7 @@
 ### booklet
 
 ### conference
+* `conference`は`inproceedings`と同一となるように作成．
 
 ### inbook
 * `pages`が複数ページでもppにならない．
@@ -69,6 +70,7 @@
 ### booklet
 
 ### conference
+* `conference`は`inproceedings`と同一となるように作成．
 
 ### inbook
 * `title`に『』がついている．
