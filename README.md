@@ -14,10 +14,12 @@
 * `author`が3人以上の場合の最後の区切りを`, and`にするか`and`にするか悩み中．
 
 ### article
+* 理想形：`author 1`, `author 2` and `author 3`, `title`, `journal` (`year`), Vol.~`volume`, No.~`number`, pp.~`pages`, `note`.
 * `journal`がイタリック体になっている．
 * `year`の位置が違う．
 
 ### book
+* 理想形：`author 1`, `author 2` and `author 3`, `title`, `publisher` (`year`), `note`.
 * `title`がイタリック体になっている．
 * `pages`の前にコロンがついている．
 
@@ -27,23 +29,27 @@
 * `conference`は`inproceedings`と同一となるように作成．
 
 ### inbook
+* 理想形：`author 1`, `author 2` and `author 3`, `title`, `publisher` (`year`), pp.~`pages`, `note`.
 * `pages`が複数ページでもppにならない．
 * `pages`の位置が違う．前にコロンがついている．
 
 ### incollection
 
 ### inproceedings
+* 理想形：`author 1`, `author 2` and `author 3`, `title`, in Proceedings of `booktitle` (`year`), pp.~`pages`, `note`.
 * `booktitle`がイタリック体になっている．
 
 ### manual
 
 ### masterthesis
+* 理想形：`author`, `title`, Master's thesis, `school` (`year`), `note`.
 * `title`に"がついている．
 * `school`を表示したい．
 
 ### misc
 
 ### phdthesis
+* 理想形：`author`, `title`, Ph.D. dissertation, `school` (`year`), `note`.
 
 ### proceedings
 * `year`しか表示されない．
