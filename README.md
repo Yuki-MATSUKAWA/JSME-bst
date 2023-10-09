@@ -65,6 +65,7 @@
 * `year`の囲みは半角括弧にしようかな．
 
 ### article
+* 理想形：`author 1`，`author 2` and `author 3`，`title`，`journal` (`year`)，Vol.`volume`，No.`number`，pp.`pages`，`note`．
 * `title`に「」がついている．
 * `author`の区切りが・になっている．
 * `journal`に『』がついている．
@@ -74,6 +75,7 @@
 * `pages`が頁になっている．
 
 ### book
+* 理想形：`author 1`，`author 2` and `author 3`，`title`，`publisher` (`year`)，`note`．
 
 ### booklet
 
@@ -81,6 +83,7 @@
 * `conference`は`inproceedings`と同一となるように作成．
 
 ### inbook
+* 理想形：`author 1`，`author 2` and `author 3`，`title`，`publisher` (`year`)，pp.`pages`，`note`．
 * `title`に『』がついている．
 * `pages`が複数ページでもppにならない．
 * `pages`の位置が違う．
@@ -88,11 +91,13 @@
 ### incollection
 
 ### inproceedings
+* 理想形：`author 1`，`author 2` and `author 3`，`title`，in Proceedings of `booktitle` (`year`)，pp.`pages`，`note`．
 * `title`に『』がついている．
 
 ### manual
 
 ### masterthesis
+* 理想形：`author`，`title`，`school`修士論文 (`year`)，`note`．
 * `school`を表示したい．
 
 ### misc
@@ -111,7 +116,7 @@
 
 # 参考資料
 jsme.bstは武田史郎氏作のjecon-bst（経済学用スタイルファイル）を基に作成しています．
-感謝申し上げます．
+深く感謝申し上げます．
 
 1. [jecon-bst](https://github.com/ShiroTakeda/jecon-bst)
 1. [日本機械学会 原稿テンプレート](https://www.jsme.or.jp/publish/transact/for-authors.html)
