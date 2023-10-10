@@ -55,6 +55,7 @@
 * `year`しか表示されない．
 
 ### techreport
+* 理想形：`author 1`, `author 2` and `author 3`, `title`, `institution` (`year`), Vol.`volume`, No.`number`, pp.`pages`, `note`.
 
 ### unpublished
 
@@ -65,7 +66,7 @@
 * `year`の囲みは半角括弧にしようかな．
 
 ### article
-* 理想形：`author 1`，`author 2` and `author 3`，`title`，`journal` (`year`)，Vol.`volume`，No.`number`，pp.`pages`，`note`．
+* 理想形：`author 1`，`author 2`，`author 3`，`title`，`journal` (`year`)，Vol.`volume`，No.`number`，pp.`pages`，`note`．
 * `title`に「」がついている．
 * `author`の区切りが・になっている．
 * `journal`に『』がついている．
@@ -75,7 +76,7 @@
 * `pages`が頁になっている．
 
 ### book
-* 理想形：`author 1`，`author 2` and `author 3`，`title`，`publisher` (`year`)，`note`．
+* 理想形：`author 1`，`author 2`，`author 3`，`title`，`publisher` (`year`)，`note`．
 
 ### booklet
 
@@ -83,7 +84,7 @@
 * `conference`は`inproceedings`と同一となるように作成．
 
 ### inbook
-* 理想形：`author 1`，`author 2` and `author 3`，`title`，`publisher` (`year`)，pp.`pages`，`note`．
+* 理想形：`author 1`，`author 2`， `author 3`，`title`，`publisher` (`year`)，pp.`pages`，`note`．
 * `title`に『』がついている．
 * `pages`が複数ページでもppにならない．
 * `pages`の位置が違う．
@@ -91,7 +92,7 @@
 ### incollection
 
 ### inproceedings
-* 理想形：`author 1`，`author 2` and `author 3`，`title`，in Proceedings of `booktitle` (`year`)，pp.`pages`，`note`．
+* 理想形：`author 1`，`author 2`，`author 3`，`title`，in Proceedings of `booktitle` (`year`)，pp.`pages`，`note`．
 * `title`に『』がついている．
 
 ### manual
@@ -110,6 +111,7 @@
 * `year`しか表示されない．
 
 ### techreport
+* 理想形：`author 1`，`author 2`，`author 3`，`title`，`institution` (`year`)，Vol.`volume`，No.`number`，pp.`pages`，`note`．
 
 ### unpublished
 
