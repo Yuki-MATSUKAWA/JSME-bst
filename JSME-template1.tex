@@ -32,7 +32,7 @@
 %%% natbib
 \usepackage{natbib}
 
-
+%%% ヘッダー・フッター
 \usepackage{fancyhdr}
 \usepackage{lastpage}
 \fancypagestyle{cover}
@@ -52,7 +52,7 @@
 \renewcommand{\figurename}{Fig.~}       % 図番号
 \renewcommand{\tablename}{Table~}       % 表番号
 
-\title{【非公式】日本機械学会\BibTeX{}スタイルファイル \\ \texttt{jsme.bst} Ver.~1.0.0}
+\title{【非公式】日本機械学会\BibTeX{}スタイルファイル \\ \texttt{JSME-bst} Ver.~1.0.0}
 \author{松川 裕樹\thanks{東京理科大学大学院 創域理工学研究科 機械航空宇宙工学専攻，Email: \texttt{7523701 ＿＠＿ ed.tus.ac.jp}}}
 
 \date{最終更新：\today}
@@ -75,16 +75,22 @@
 そのため\verb|mybib_en.bib|，\verb|mybib_jp.bib|では可能な限り著者数が1名，2名，3名以上の計3パターンを用意しています．
 ただ，原則として実在の文献を集めて載せているので学位論文（\verb|phdthesis|, \verb|masterthesis|）のように原則著者が一人のものや\verb|manual|，\verb|unpublished|など一部のエントリでは全てのパターンを網羅できていない場合もあるのでご了承ください（ただ，参考にするうえで困ることのないくらいにはパターンを網羅しているつもりです）．
 
+
+
 \section{日本機械学会の原稿執筆要領における注意点}
 \label{sec:caution}
 この節では日本機械学会の原稿テンプレートに記載されている執筆要領の中でも，特に文献の記載に関する注意点をまとめておきます．
-日本機械学会の規定に合わせて論文執筆する際は是非参考にしてください\footnote{\texttt{JSME-bst}自体はもともと，JSMEの規定に沿って卒業論文執筆を行うことが決められている東京理科大学創域理工学部機械航空宇宙工学科の卒研生向けに作成したものです．}．
+日本機械学会の規定に合わせて論文執筆する際は是非参考にしてください\footnote{\texttt{JSME-bst}自体はもともと，JSMEの規定に沿って卒業論文執筆を行うことが決められている東京理科大学創域理工学部機械航空宇宙工学科の卒研生向けに作成したものです．もちろんGitHub上で公開しているので世界中の誰が使っても構いません．}．
 
 
 \section{引用のコマンドと本文中での表示}
 \label{sec:cite}
 Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\cite|等の，本文中で文献を引用する際のコマンドとその出力結果の一覧を示しています．
 \verb|\cite|と\verb|\citet|は出力結果が同じなのでどちらを使っても構いませんが，他のコマンドは細かい箇所（カンマや括弧の有無）に違いがあるので自分の出力したい内容に合わせて使うようにしてください．
+
+\subsection*{\texttt{\textbackslash{}cite}, \texttt{\textbackslash{}citet}}
+\verb|\cite|と\verb|\citet|は文章中で著者名と発行年を \verb|author| (\verb|year|) の形で引用する際に使用するコマンドです．
+
 
 \begin{table}[t]
     \centering
