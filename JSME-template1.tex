@@ -27,6 +27,8 @@
 \usepackage{amsmath,amssymb}
 %%% otf
 \usepackage{otf}
+%%% フォントをTimesに変更
+\usepackage{newtxtext,newtxmath}
 %%% natbib
 \usepackage{natbib}
 
@@ -64,7 +66,7 @@
 
 \section{はじめに}
 \label{sec:introduction}
-\verb|JSME-bst|リポジトリは日本機械学会\footnote{一般社団法人 日本機械学会（The Japan Society of Mechanical Engineers），\url{https://www.jsme.or.jp/}}の原稿テンプレート\footnote{日本機械学会 原稿テンプレート，\url{https://www.jsme.or.jp/publish/transact/for-authors.html}}に基づいた参考文献の出力を実現するために作成した，非公式\BibTeX{}スタイルファイルテンプレートです．
+\verb|JSME-bst|リポジトリは日本機械学会\footnote{一般社団法人 日本機械学会（The Japan Society of Mechanical Engineers, JSME），\url{https://www.jsme.or.jp/}}の原稿テンプレート\footnote{日本機械学会 原稿テンプレート，\url{https://www.jsme.or.jp/publish/transact/for-authors.html}}に基づいた参考文献の出力を実現するために作成した，非公式\BibTeX{}スタイルファイルテンプレートです．
 このファイル（\LaTeX{}ソース：\verb|JSME-template1.tex|，出力結果：\verb|JSME-template1.pdf|）は\BibTeX{}で用意されている全てのエントリの出力結果を表示しています．
 参考文献の一覧は\verb|pdf|末尾にある\hyperref[bibliography]{参考文献}の節で，出力している文献の\verb|bib|ファイルは英語文献\verb|mybib_en.bib|と日本語文献\verb|mybib_jp.bib|の二つです．
 \verb|JSME-bst|の作成者である松川が流体力学，特に乱流遷移の研究をしているため，引用している文献は乱流遷移の周辺のものが多くなっています（全てではありません）．
@@ -72,6 +74,11 @@
 また，第~\ref{sec:cite}節でも述べますが，著者数が1名，2名，3名以上のそれぞれで引用時の出力結果が異なります．
 そのため\verb|mybib_en.bib|，\verb|mybib_jp.bib|では可能な限り著者数が1名，2名，3名以上の計3パターンを用意しています．
 ただ，原則として実在の文献を集めて載せているので学位論文（\verb|phdthesis|, \verb|masterthesis|）のように原則著者が一人のものや\verb|manual|，\verb|unpublished|など一部のエントリでは全てのパターンを網羅できていない場合もあるのでご了承ください（ただ，参考にするうえで困ることのないくらいにはパターンを網羅しているつもりです）．
+
+\section{日本機械学会の原稿執筆要領における注意点}
+\label{sec:caution}
+この節では日本機械学会の原稿テンプレートに記載されている執筆要領の中でも，特に文献の記載に関する注意点をまとめておきます．
+日本機械学会の規定に合わせて論文執筆する際は是非参考にしてください\footnote{\texttt{JSME-bst}自体はもともと，JSMEの規定に沿って卒業論文執筆を行うことが決められている東京理科大学創域理工学部機械航空宇宙工学科の卒研生向けに作成したものです．}．
 
 
 \section{引用のコマンドと本文中での表示}
