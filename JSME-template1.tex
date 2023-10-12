@@ -40,7 +40,7 @@
 	\renewcommand{\headrulewidth}{0.0pt}
 }
 \pagestyle{fancy}
-	\lhead{【非公式】日本機械学会\BibTeX スタイルファイルの使い方}
+	\lhead{【非公式】日本機械学会\BibTeX{}スタイルファイルの使い方}
 	\chead{}
 	\rhead{東京理科大学 松川裕樹}
 	\lfoot{}
@@ -50,8 +50,8 @@
 \renewcommand{\figurename}{Fig.~}       % 図番号
 \renewcommand{\tablename}{Table~}       % 表番号
 
-\title{【非公式】日本機械学会\BibTeX スタイルファイル \\ Ver.~1.0.0}
-\author{松川裕樹\thanks{東京理科大学大学院 創域理工学研究科 機械航空宇宙工学専攻，Email: \texttt{7523701 ＿＠＿ ed.tus.ac.jp}}}
+\title{【非公式】日本機械学会\BibTeX{}スタイルファイル \\ \texttt{jsme.bst} Ver.~1.0.0}
+\author{松川 裕樹\thanks{東京理科大学大学院 創域理工学研究科 機械航空宇宙工学専攻，Email: \texttt{7523701 ＿＠＿ ed.tus.ac.jp}}}
 
 \date{最終更新：\today}
 
@@ -60,8 +60,24 @@
 \maketitle
 \thispagestyle{cover}
 
-これは日本機械学会の非公式\BibTeX スタイルファイルテンプレートです．
+{\huge 未完成なのでまだ使わないでください．}
 
+\section{はじめに}
+\label{sec:introduction}
+\verb|JSME-bst|リポジトリは日本機械学会\footnote{一般社団法人 日本機械学会（The Japan Society of Mechanical Engineers），\url{https://www.jsme.or.jp/}}の原稿テンプレート\footnote{日本機械学会 原稿テンプレート，\url{https://www.jsme.or.jp/publish/transact/for-authors.html}}に基づいた参考文献の出力を実現するために作成した，非公式\BibTeX{}スタイルファイルテンプレートです．
+このファイル（\LaTeX{}ソース：\verb|JSME-template1.tex|，出力結果：\verb|JSME-template1.pdf|）は\BibTeX{}で用意されている全てのエントリの出力結果を表示しています．
+参考文献の一覧は\verb|pdf|末尾にある\hyperref[bibliography]{参考文献}の節で，出力している文献のbibファイルは英語文献\verb|mybib_en.bib|と日本語文献\verb|mybib_jp.bib|の二つです．
+\verb|JSME-bst|の作成者である松川が流体力学，特に乱流遷移の研究をしているため，引用している文献は乱流遷移の周辺のものが多くなっています（全てではありません）．
+ただ，材料力学など他分野の方でも基本的な使い方は同じです．
+また，第~\ref{sec:cite}節でも述べますが，著者数が1名，2名，3名以上のそれぞれで引用時の出力結果が異なります．
+そのため\verb|mybib_en.bib|，\verb|mybib_jp.bib|では可能な限り著者数が1名，2名，3名以上の計3パターンを用意しています．
+ただ，原則として実在の文献を集めて載せているので学位論文（\verb|phdthesis|, \verb|masterthesis|）のように原則著者が一人のものや\verb|manual|，\verb|unpublished|など一部のエントリでは全てのパターンを網羅できていない場合もあるのでご了承ください（ただ，参考にするうえで困ることのないくらいにはパターンを網羅しているつもりです）．
+
+
+\section{引用のコマンドと本文中での表示}
+\label{sec:cite}
+Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\cite|等の，本文中で文献を引用する際のコマンドとその出力結果の一覧を示しています．
+\verb|\cite|と\verb|\citet|は出力結果が同じなのでどちらを使っても構いませんが，他のコマンドは細かい箇所（カンマや括弧の有無）に違いがあるので自分の出力したい内容に合わせて使うようにしてください．
 
 \begin{table}[t]
     \centering
@@ -135,7 +151,9 @@
     \end{tabular}
 \end{table}
 
-未完成なのでまだ使わないでください．
+\clearpage
+\section{書誌情報ファイル（\texttt{bib}ファイル）の作り方}
+\label{sec:bib}
 
 \clearpage
 \nocite{*}
@@ -144,6 +162,7 @@
 mybib_en.bib,
 mybib_jp.bib
 }
+\label{bibliography}
 
 % \bibliography{
 % jsmebib.bib
