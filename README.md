@@ -24,6 +24,8 @@
 * `pages`の前にコロンがついている．
 
 ### booklet
+* 理想形：`author 1`, `author 2` and `author 3`, `title`, `howpublished` (`year`), `note`.
+* `year`の位置が違う．
 
 ### conference
 * `conference`は`inproceedings`と同一となるように作成．
@@ -45,6 +47,8 @@
 * `booktitle`がイタリック体になっている．
 
 ### manual
+* 理想形：`author 1`, `author 2` and `author 3`, `title` (`year`), `note`.
+* `title`がイタリック体になっている．
 
 ### masterthesis
 * 理想形：`author`, `title`, Master's thesis, `school` (`year`), `note`.
@@ -59,12 +63,15 @@
 * 理想形：`author`, `title`, Ph.D. dissertation, `school` (`year`), `note`.
 
 ### proceedings
+* 理想形：Proceedings of `title` (`year`), `note`.
 * `year`しか表示されない．
 
 ### techreport
 * 理想形：`author 1`, `author 2` and `author 3`, `title`, `institution` (`year`), Vol.`volume`, No.`number`, pp.`pages`, `note`.
 
 ### unpublished
+* 理想形：`author 1`, `author 2` and `author 3`, `title` (`year`), `note`.
+* `title`に""がついている．
 
 
 ## 日本語文献
@@ -86,6 +93,8 @@
 * 理想形：`author 1`，`author 2`，`author 3`，`title`，`publisher` (`year`)，`note`．
 
 ### booklet
+* 理想形：`author 1`，`author 2`，`author 3`，`title`，`howpublished` (`year`)，`note`．
+* `year`の位置が違う．
 
 ### conference
 * `conference`は`inproceedings`と同一となるように作成．
@@ -104,6 +113,7 @@
 * `title`に『』がついている．
 
 ### manual
+* 理想形：`author 1`，`author 2`，`author 3`，`title` (`year`)，`note`．
 
 ### masterthesis
 * 理想形：`author`，`title`，`school`修士論文 (`year`)，`note`．
@@ -117,12 +127,14 @@
 * 理想形：`author`，`title`，`school`博士論文 (`year`)．
 
 ### proceedings
+* 理想形：`title`講演論文集 (`year`), `note`.
 * `year`しか表示されない．
 
 ### techreport
 * 理想形：`author 1`，`author 2`，`author 3`，`title`，`institution` (`year`)，Vol.`volume`，No.`number`，pp.`pages`，`note`．
 
 ### unpublished
+* 理想形：`author 1`，`author 2`，`author 3`，`title` (`year`)，`note`．
 
 
 # 参考資料
