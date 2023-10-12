@@ -66,7 +66,7 @@
 \label{sec:introduction}
 \verb|JSME-bst|リポジトリは日本機械学会\footnote{一般社団法人 日本機械学会（The Japan Society of Mechanical Engineers），\url{https://www.jsme.or.jp/}}の原稿テンプレート\footnote{日本機械学会 原稿テンプレート，\url{https://www.jsme.or.jp/publish/transact/for-authors.html}}に基づいた参考文献の出力を実現するために作成した，非公式\BibTeX{}スタイルファイルテンプレートです．
 このファイル（\LaTeX{}ソース：\verb|JSME-template1.tex|，出力結果：\verb|JSME-template1.pdf|）は\BibTeX{}で用意されている全てのエントリの出力結果を表示しています．
-参考文献の一覧は\verb|pdf|末尾にある\hyperref[bibliography]{参考文献}の節で，出力している文献のbibファイルは英語文献\verb|mybib_en.bib|と日本語文献\verb|mybib_jp.bib|の二つです．
+参考文献の一覧は\verb|pdf|末尾にある\hyperref[bibliography]{参考文献}の節で，出力している文献の\verb|bib|ファイルは英語文献\verb|mybib_en.bib|と日本語文献\verb|mybib_jp.bib|の二つです．
 \verb|JSME-bst|の作成者である松川が流体力学，特に乱流遷移の研究をしているため，引用している文献は乱流遷移の周辺のものが多くなっています（全てではありません）．
 ただ，材料力学など他分野の方でも基本的な使い方は同じです．
 また，第~\ref{sec:cite}節でも述べますが，著者数が1名，2名，3名以上のそれぞれで引用時の出力結果が異なります．
@@ -154,6 +154,15 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\cite|等の，本文中で�
 \clearpage
 \section{書誌情報ファイル（\texttt{bib}ファイル）の作り方}
 \label{sec:bib}
+ここでは書誌情報ファイル（\texttt{bib}ファイル）の作り方，使い方を説明します．
+
+
+\subsection*{article}
+\label{ssec:article}
+
+\subsection*{book}
+\label{ssec:book}
+
 
 \clearpage
 \nocite{*}
