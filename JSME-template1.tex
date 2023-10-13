@@ -18,7 +18,7 @@
 %%% 図の挿入
 \usepackage{graphicx}
 %%% hyperref
-\usepackage[dvipdfmx,bookmarks=false,setpagesize=false,colorlinks,allcolors=blue]{hyperref}
+\usepackage[dvipdfmx,bookmarks=true,setpagesize=false,colorlinks,allcolors=blue]{hyperref}
 \usepackage{pxjahyper}
 %%% ロゴ関連
 \usepackage{bxtexlogo}
@@ -66,21 +66,31 @@
 
 \section{はじめに}
 \label{sec:introduction}
-\verb|JSME-bst|リポジトリは日本機械学会\footnote{一般社団法人 日本機械学会（The Japan Society of Mechanical Engineers, JSME），\url{https://www.jsme.or.jp/}}の原稿テンプレート\footnote{日本機械学会 原稿テンプレート，\url{https://www.jsme.or.jp/publish/transact/for-authors.html}}に基づいた参考文献の出力を実現するために作成した，非公式\BibTeX{}スタイルファイルテンプレートです．
+\verb|jsme.bst|は日本機械学会\footnote{一般社団法人 日本機械学会（The Japan Society of Mechanical Engineers, JSME），\url{https://www.jsme.or.jp/}}の原稿テンプレート\footnote{日本機械学会 原稿テンプレート，\url{https://www.jsme.or.jp/publish/transact/for-authors.html}}に基づいた参考文献の出力を実現するために作成した，非公式\BibTeX{}スタイルファイルテンプレートです．
 このファイル（\LaTeX{}ソース：\verb|JSME-template1.tex|，出力結果：\verb|JSME-template1.pdf|）は\BibTeX{}で用意されている全てのエントリの出力結果を表示しています．
-参考文献の一覧は\verb|pdf|末尾にある\hyperref[bibliography]{参考文献}の節で，出力している文献の\verb|bib|ファイルは英語文献\verb|mybib_en.bib|と日本語文献\verb|mybib_jp.bib|の二つです．
+参考文献の一覧はこの\verb|pdf|の末尾で，出力している文献の\verb|bib|ファイルは英語文献\verb|mybib_en.bib|と日本語文献\verb|mybib_jp.bib|の二つです．
 \verb|JSME-bst|の作成者である松川が流体力学，特に乱流遷移の研究をしているため，引用している文献は乱流遷移の周辺のものが多くなっています（全てではありません）．
 ただ，材料力学など他分野の方でも基本的な使い方は同じです．
 また，第~\ref{sec:cite}節でも述べますが，著者数が1名，2名，3名以上のそれぞれで引用時の出力結果が異なります．
 そのため\verb|mybib_en.bib|，\verb|mybib_jp.bib|では可能な限り著者数が1名，2名，3名以上の計3パターンを用意しています．
-ただ，原則として実在の文献を集めて載せているので学位論文（\verb|phdthesis|, \verb|masterthesis|）のように原則著者が一人のものや\verb|manual|，\verb|unpublished|など一部のエントリでは全てのパターンを網羅できていない場合もあるのでご了承ください（ただ，参考にするうえで困ることのないくらいにはパターンを網羅しているつもりです）．
+ただ，基本的に実在の文献を集めて載せているので学位論文（\verb|phdthesis|, \verb|masterthesis|）のように原則著者が一人のものや\verb|manual|，\verb|unpublished|など一部のエントリでは全てのパターンを網羅できていない場合もあるのでご了承ください（ただ，参考にするうえで困ることのないくらいにはパターンを網羅しているつもりです）．
 
+また，この文書では可能な限り\BibTeX{}初心者でも使いやすいよう，\BibTeX{}そのものの使い方や\verb|bib|ファイルの作成方法といった内容も説明します．
+それでもわからなければさまざまな書籍やwebサイトがあるので参考にしてみてください．
 
 
 \section{日本機械学会の原稿執筆要領における注意点}
 \label{sec:caution}
 この節では日本機械学会の原稿テンプレートに記載されている執筆要領の中でも，特に文献の記載に関する注意点をまとめておきます．
 日本機械学会の規定に合わせて論文執筆する際は是非参考にしてください\footnote{\texttt{JSME-bst}自体はもともと，JSMEの規定に沿って卒業論文執筆を行うことが決められている東京理科大学創域理工学部機械航空宇宙工学科の卒研生向けに作成したものです．もちろんGitHub上で公開しているので世界中の誰が使っても構いません．}．
+
+\subsection{使用するフォントについて}
+日本機械学会では本文に使用するフォントを和文は明朝体，欧文はSerif体のアルファベットと規定されています．
+Serif体のフォントとしてはTimes New RomanやCentury，Computer Modernなどが挙げられる．
+知らない人が結構多いが，\LaTeX{}標準のフォントはComputer Modernであって，Times New Romanではないので注意．
+
+\subsection{文献を並べる順序}
+アルファベット順
 
 
 \section{引用のコマンドと本文中での表示}
@@ -89,7 +99,7 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\cite|等の，本文中で�
 \verb|\cite|と\verb|\citet|は出力結果が同じなのでどちらを使っても構いませんが，他のコマンドは細かい箇所（カンマや括弧の有無）に違いがあるので自分の出力したい内容に合わせて使うようにしてください．
 
 \subsection*{\texttt{\textbackslash{}cite}, \texttt{\textbackslash{}citet}}
-\verb|\cite|と\verb|\citet|は文章中で著者名と発行年を \verb|author| (\verb|year|) の形で引用する際に使用するコマンドです．
+\verb|\cite|と\verb|\citet|は文章中で著者名と発行年を \verb|author (year)| の形で引用する際に使用するコマンドです．
 
 
 \begin{table}[t]
@@ -177,6 +187,9 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\cite|等の，本文中で�
 \label{ssec:book}
 
 
+\section{\texttt{jsme.bst}の使い方}
+それでは実際に\verb|jsme.bst|を使ってみましょう．
+
 \clearpage
 \nocite{*}
 \bibliographystyle{jsme}
@@ -184,7 +197,7 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\cite|等の，本文中で�
 mybib_en.bib,
 mybib_jp.bib
 }
-\label{bibliography}
+\addcontentsline{toc}{section}{\bibname}
 
 % \bibliography{
 % jsmebib.bib
