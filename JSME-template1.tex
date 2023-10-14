@@ -89,13 +89,30 @@
 Serif体のフォントとしてはTimes New RomanやCentury，Computer Modernなどが挙げられる．
 知らない人が結構多いが，\LaTeX{}標準のフォントはComputer Modernであって，Times New Romanではないので注意．
 
-\subsection{文献を並べる順序}
-アルファベット順
+\subsection{文献の並べ方}
+文献を並べる順序は以下の通り．
+\begin{enumerate}
+    \item （Family, Givenの順で並べた際の）筆頭著者の氏名のアルファベット順．並べる際，日本人の氏名は漢字と仮名を用いた日本語表記で構わないが順序はアルファベット順とする．
+    \item 筆頭著者が同一人物の場合，第二著者以降のアルファベット順で並べる．これを最後の著者まで繰り返す．
+    \item 著者が全員同じ文献があった場合は発行が早い順で並べる．
+    \item 確認できる範囲で発行年月日が同じだった場合，タイトルのアルファベット順で並べる．
+\end{enumerate}
+
+並べる際の表記は以下の通り．
+\begin{itemize}
+    \item 著者の氏名はFamily nameのみ略記せず，Middle nameやGiven nameはイニシャルで記載する（例：Matsukawa Yuki $\to$ Matsukawa, Y.）．
+    \item 誌名・書名は省略せずに記載する．
+    \item 巻・号は日本語・英語文献問わずVol.~xx，No.~xxとする．
+    \item 発行年は西暦で表記し，括弧で括る．
+    \item ページ数は単ページの場合はp.~xxとし，複数ページに亘る場合はpp.~xx--yyとする．このとき，xxとyyを結ぶ横棒はハイフン（-）ではなくenダッシュとする（--）．ただし，\verb|jsme.bst|を使用すれば\verb|pages|内でハイフンとしていても自動でenダッシュに変換してくれるので安心．
+\end{itemize}
 
 
 \section{引用のコマンドと本文中での表示}
 \label{sec:cite}
-Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\cite|等の，本文中で文献を引用する際のコマンドとその出力結果の一覧を示しています．
+Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等の，本文中で文献を引用する際のコマンドとその出力結果の一覧を示しています．
+これらのコマンドを使用するには\verb|natbib.sty|というスタイルファイルを読み込む必要があります．
+このテンプレートではプリアンブルに\verb|\usepackage{natbib}|と書くことで\verb|natbib.sty|を読み込んでいます．
 \verb|\cite|と\verb|\citet|は出力結果が同じなのでどちらを使っても構いませんが，他のコマンドは細かい箇所（カンマや括弧の有無）に違いがあるので自分の出力したい内容に合わせて使うようにしてください．
 
 \subsection*{\texttt{\textbackslash{}cite}, \texttt{\textbackslash{}citet}}
