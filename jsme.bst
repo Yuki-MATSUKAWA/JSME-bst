@@ -561,22 +561,22 @@ FUNCTION {bst.btitle.post.jp}
 % journal name の前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.journal.pre}
-{ " \textit{ " }    % (default)
+{ "" }    % (default)
 
 % journal name の後に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.journal.post}
-{ "}" }	   % (default)
+{ "" }	   % (default)
 
 % journal name の前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.journal.pre.jp}
-{ "『" }    % (default)
+{ "" }    % (default)
 
 % journal name の後に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.journal.post.jp}
-{ "』" }    % (default)
+{ "" }    % (default)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	editor 記号
