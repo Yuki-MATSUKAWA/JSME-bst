@@ -2852,7 +2852,7 @@ FUNCTION {format.pages}
     { "" }
     { is.kanji.entry
 	{ pages multi.page.check
-	  { bst.page.pre.jp pages n.dashify convert.num.pages * bst.page.post.jp * }
+	  { bst.pages.pre.jp pages n.dashify convert.num.pages * bst.page.post.jp * }
 	  { bst.page.pre.jp pages convert.num.pages * bst.page.post.jp * }
 	 if$
 	}
@@ -3517,7 +3517,6 @@ FUNCTION {inbook}
   format.edition output.nocomma
 
   format.bvolume output.nocomma
-  format.chapter.pages "chapter and pages" output.check.nocomma
   format.number.series output.nocomma
   output.publisher.address
 
@@ -3525,6 +3524,8 @@ FUNCTION {inbook}
     { format.year "year" output.check.nocomma }
     'skip$
   if$
+
+  format.chapter.pages "chapter and pages" output.check.nocomma
 
   format.url.doi output.nocomma
 
