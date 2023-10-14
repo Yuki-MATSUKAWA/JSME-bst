@@ -18,7 +18,7 @@
 ### article
 * 理想形：`author 1`, `author 2` and `author 3`, `title`, `journal` (`year`), Vol.`volume`, No.`number`, pp.`pages`, `note`.
 * ~~`journal`がイタリック体になっている．~~
-* `year`の位置が違う．
+* ~~`year`の位置が違う．~~
 
 ### book
 * 理想形：`author 1`, `author 2` and `author 3`, `title`, `publisher` (`year`), `note`.
@@ -87,7 +87,7 @@
 * ~~`title`に「」がついている．~~
 * ~~`author`の区切りが・になっている．~~
 * ~~`journal`に『』がついている．~~
-* `year`の位置が違う．
+* ~~`year`の位置が違う．~~
 * ~~`volume`が第n巻になっている．~~
 * ~~`number`が第n号になっている．~~
 * ~~`pages`が頁になっている．~~

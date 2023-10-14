@@ -270,10 +270,10 @@ FUNCTION {bst.tatebo.definition}
 % #3 -> year は volume の後に表示されます。
 %
 FUNCTION {bst.year.position}
-% { #0 }	  % autho のすぐ後 (default).
+% { #0 }	  % author のすぐ後 (default).
 % { #1 }    % 最後（note の前）
 % { #2 }    % journal name の後（article entryのみ）
-{ #3 }    % volume の後（article entryのみ）
+{ #3 }    % number の後（article entryのみ，numberが無い場合はvolumeの後）
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -2876,6 +2876,10 @@ FUNCTION {format.number}
 	{ bst.number.pre.jp number convert.num * bst.number.post.jp * }
 	{ bst.number.pre number * bst.number.post * }
       if$
+      bst.year.position #3 =
+	{ format.year * }
+	'skip$
+      if$
     }
   if$
 }
@@ -2889,7 +2893,11 @@ FUNCTION {format.volume}
 	{ bst.volume.pre volume * bst.volume.post * }
       if$
       bst.year.position #3 =
-	{ format.year * }
+      { number empty$
+    	{ format.year * }
+    	'skip$
+        if$
+      }
 	'skip$
       if$
     }
