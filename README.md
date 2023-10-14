@@ -9,6 +9,7 @@
 * 論文webページからBibTeXファイルをダウンロードした際に`pages`にページ番号ではなく論文番号？が入っていることがある．この場合は`note`にした方がよいかと．
 * ハイパーリンクをジャーナル名（に相当するもの）に埋め込みたい．
 * その際，ハイパーリンクを使用しないバージョンとハイパーリンクを使用するバージョンをそれぞれ作成した方がいいと思う．
+* `title`の冒頭以外は小文字に変換するか否か．
 
 ## 英語文献
 * `author`が3人以上の場合の最後の区切りを`, and`にするか`and`にするか悩み中．
@@ -20,7 +21,7 @@
 
 ### book
 * 理想形：`author 1`, `author 2` and `author 3`, `title`, `publisher` (`year`), `note`.
-* `title`がイタリック体になっている．
+* ~~`title`がイタリック体になっている．~~
 * `pages`の前にコロンがついている．
 
 ### booklet
@@ -32,27 +33,27 @@
 
 ### inbook
 * 理想形：`author 1`, `author 2` and `author 3`, `title`, `publisher` (`year`), pp.`pages`, `note`.
-* `pages`が複数ページでもppにならない．
+* ~~`pages`が複数ページでもppにならない．~~
 * `pages`の位置が違う．前にコロンがついている．
 
 ### incollection
 * 理想形：`author 1`, `author 2` and `author 3`, `title`, `booktitle`, `publisher` (`year`), Vol.`volume`, No.`number`, pp.`pages`, `note`.
-* `title`に""がついている．
-* `booktitle`がイタリック体になっている．
+* ~~`title`に""がついている．~~
+* ~~`booktitle`がイタリック体になっている．~~
 * `publisher`の前にコロンがついている．
 * `pages`の場所が違う．
 
 ### inproceedings
 * 理想形：`author 1`, `author 2` and `author 3`, `title`, in Proceedings of `booktitle` (`year`), pp.`pages`, `note`.
-* `booktitle`がイタリック体になっている．
+* ~~`booktitle`がイタリック体になっている．~~
 
 ### manual
 * 理想形：`author 1`, `author 2` and `author 3`, `title` (`year`), `note`.
-* `title`がイタリック体になっている．
+* ~~`title`がイタリック体になっている．~~
 
 ### masterthesis
 * 理想形：`author`, `title`, Master's thesis, `school` (`year`), `note`.
-* `title`に"がついている．
+* ~~`title`に"がついている．~~
 * `school`を表示したい．
 
 ### misc
@@ -71,7 +72,7 @@
 
 ### unpublished
 * 理想形：`author 1`, `author 2` and `author 3`, `title` (`year`), `note`.
-* `title`に""がついている．
+* ~~`title`に""がついている．~~
 
 
 ## 日本語文献
@@ -101,8 +102,8 @@
 
 ### inbook
 * 理想形：`author 1`，`author 2`， `author 3`，`title`，`publisher` (`year`)，pp.`pages`，`note`．
-* `title`に『』がついている．
-* `pages`が複数ページでもppにならない．
+* ~~`title`に『』がついている．~~
+* ~~`pages`が複数ページでもppにならない．~~
 * `pages`の位置が違う．
 
 ### incollection
@@ -110,7 +111,7 @@
 
 ### inproceedings
 * 理想形：`author 1`，`author 2`，`author 3`，`title`，in Proceedings of `booktitle` (`year`)，pp.`pages`，`note`．
-* `title`に『』がついている．
+* ~~`title`に『』がついている．~~
 
 ### manual
 * 理想形：`author 1`，`author 2`，`author 3`，`title` (`year`)，`note`．

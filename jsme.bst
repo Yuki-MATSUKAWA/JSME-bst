@@ -492,12 +492,12 @@ FUNCTION {bst.year.post.jp}
 % title の前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.title.pre}
-{ "``" }    % (default)
+{ "" }    % (default)
 
 % title の後に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.title.post}
-{ ",''" }    % (default)
+{ "," }    % (default)
 
 % title の前に付ける文字列 (日本語文献用)
 %
@@ -515,12 +515,12 @@ FUNCTION {bst.title.post.jp}
 % book の title 前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.book.pre}
-{ " \textit{ " }    % (default)
+{ "" }    % (default)
 
 % book の title 後に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.book.post}
-{ "}" }	   % (default)
+{ "" }	   % (default)
 
 % book の title 前に付ける文字列 (日本語文献用)
 %
@@ -538,22 +538,22 @@ FUNCTION {bst.book.post.jp}
 % booktitle の前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.btitle.pre}
-{ " \textit{ " }    % (default)
+{ "" }    % (default)
 
 % booktitle の後に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.btitle.post}
-{ "}" }	   % (default)
+{ "" }	   % (default)
 
 % booktitle の前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.btitle.pre.jp}
-{ "『" }    % (default)
+{ "" }    % (default)
 
 % booktitle の後に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.btitle.post.jp}
-{ "』" }    % (default)
+{ "" }    % (default)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	journal name
