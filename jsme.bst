@@ -497,7 +497,7 @@ FUNCTION {bst.title.pre}
 % title の後に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.title.post}
-{ "," }    % (default)
+{ ", " }    % (default)
 
 % title の前に付ける文字列 (日本語文献用)
 %
@@ -3547,13 +3547,14 @@ FUNCTION {incollection}
   format.in.ed.booktitle "booktitle" output.check.nocomma
   format.bvolume output.nocomma
   format.edition output.nocomma
-  format.chapter.pages output.nocomma
   output.address.organization.publisher
 
   bst.year.position #0 = not
     { format.year "year" output.check.nocomma }
     'skip$
   if$
+  
+  format.chapter.pages output.nocomma
 
   format.url.doi output.nocomma
 

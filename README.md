@@ -40,8 +40,8 @@
 * 理想形：`author 1`, `author 2` and `author 3`, `title`, `booktitle`, `publisher` (`year`), Vol.`volume`, No.`number`, pp.`pages`, `note`.
 * ~~`title`に""がついている．~~
 * ~~`booktitle`がイタリック体になっている．~~
-* `publisher`の前にコロンがついている．
-* `pages`の場所が違う．
+* ~~`publisher`の前にコロンがついている．~~
+* ~~`pages`の場所が違う．~~
 
 ### inproceedings
 * 理想形：`author 1`, `author 2` and `author 3`, `title`, in Proceedings of `booktitle` (`year`), pp.`pages`, `note`.
@@ -108,6 +108,7 @@
 
 ### incollection
 * 理想形：`author 1`，`author 2`，`author 3`，`title`，`booktitle`，`publisher` (`year`)，Vol.`volume`，No.`number`，pp.`pages`，`note`．
+* ~~`pages`の位置が違う．~~
 
 ### inproceedings
 * 理想形：`author 1`，`author 2`，`author 3`，`title`，in Proceedings of `booktitle` (`year`)，pp.`pages`，`note`．
