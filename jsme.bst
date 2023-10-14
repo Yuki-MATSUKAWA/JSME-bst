@@ -3488,10 +3488,10 @@ FUNCTION {book}
 FUNCTION {booklet}
 { output.bibitem
   format.authors output.nocomma
-  format.year output.nocomma
   format.misc.title "title" output.check.nocomma
   format.howpublished output.nocomma
   format.address output.nocomma
+  format.year output.nocomma
 
   format.url.doi output.nocomma
 
@@ -3784,12 +3784,13 @@ FUNCTION {techreport}
   format.tr.number output.nonnull.nocomma
   format.institution "institution" output.check.nocomma
   format.address output.nocomma
-  format.chapter.pages output.nocomma %%% added
 
   bst.year.position #0 = not
     { format.year "year" output.check.nocomma }
     'skip$
   if$
+
+  format.chapter.pages output.nocomma %%% added
 
   format.url.doi output.nocomma
 

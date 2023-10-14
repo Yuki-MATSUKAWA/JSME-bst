@@ -10,6 +10,7 @@
 * ハイパーリンクをジャーナル名（に相当するもの）に埋め込みたい．
 * その際，ハイパーリンクを使用しないバージョンとハイパーリンクを使用するバージョンをそれぞれ作成した方がいいと思う．
 * `title`の冒頭以外は小文字に変換するか否か．
+* pp.の後ろにチルダを入れたい．
 
 ## 英語文献
 * `author`が3人以上の場合の最後の区切りを`, and`にするか`and`にするか悩み中．
@@ -69,6 +70,7 @@
 
 ### techreport
 * 理想形：`author 1`, `author 2` and `author 3`, `title`, `institution` (`year`), Vol.`volume`, No.`number`, pp.`pages`, `note`.
+* ~~`pages`の位置がおかしい．~~
 
 ### unpublished
 * 理想形：`author 1`, `author 2` and `author 3`, `title` (`year`), `note`.
@@ -134,6 +136,7 @@
 
 ### techreport
 * 理想形：`author 1`，`author 2`，`author 3`，`title`，`institution` (`year`)，Vol.`volume`，No.`number`，pp.`pages`，`note`．
+* ~~`pages`の位置がおかしい．~~
 
 ### unpublished
 * 理想形：`author 1`，`author 2`，`author 3`，`title` (`year`)，`note`．
