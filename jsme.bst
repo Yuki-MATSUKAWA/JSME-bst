@@ -2517,7 +2517,7 @@ FUNCTION {format.book.pages}
 
 %%% 2文字以下なら前に tie を付ける．
 FUNCTION {tie.or.space.connect}
-{ duplicate$ text.length$ #3 <
+{ duplicate$ text.length$ #6 <
     { "~" }
     { " " }
   if$
@@ -2852,8 +2852,8 @@ FUNCTION {format.pages}
     { "" }
     { is.kanji.entry
 	{ pages multi.page.check
-	  { bst.pages.pre.jp pages n.dashify convert.num.pages * bst.page.post.jp * }
-	  { bst.page.pre.jp pages convert.num.pages * bst.page.post.jp * }
+	  { bst.pages.pre.jp pages n.dashify convert.num.pages tie.or.space.connect * bst.page.post.jp * }
+	  { bst.page.pre.jp pages convert.num.pages tie.or.space.connect * bst.page.post.jp * }
 	 if$
 	}
 	{ pages multi.page.check
