@@ -811,7 +811,7 @@ FUNCTION {bst.address.post.jp}
 % publisher の前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.publisher.pre}
-{ ": " }    % (default)
+{ ", " }    % (default)
 
 % publisher の後に付ける文字列 (英語文献用)
 %
