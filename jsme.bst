@@ -132,12 +132,15 @@ FUNCTION {bst.first.name.initial}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Title の先頭文字以外を小文字に変換する (book の tile は除く。元々小文
-% 字ならなにも変わらない)。
+% Title の先頭文字以外を小文字に変換する (元々小文字ならなにも変わらない)。
 %
 FUNCTION {bst.title.lower.case}
-{ #0 }	  % #0 なら小文字に変換しない (そのまま)  (default)
-% { #1 }    % #0 以外なら、小文字に変換する。
+% { #0 }	  % #0 なら小文字に変換しない (そのまま)  (default)
+{ #1 }    % #0 以外なら、小文字に変換する。
+
+FUNCTION {bst.book.lower.case}
+% { #0 }	  % #0 なら小文字に変換しない (そのまま)  (default)
+{ #1 }    % #0 以外なら、小文字に変換する。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1925,13 +1928,21 @@ FUNCTION {format.journal}
 }
 
 %%% book の title の整形。
+FUNCTION {format.book.sub}
+{ bst.book.lower.case #0 =
+     { bst.book.pre title * bst.book.post * }
+     { bst.book.pre title "t" change.case$ * bst.book.post * }
+  if$
+}
+
 FUNCTION {format.book}
 { title empty$
+  bst.hide.title #0 = not or
     { "" }
     { is.kanji.entry
-	{ bst.book.pre.jp title * bst.book.post.jp * }
-	{ bst.book.pre title * bst.book.post * }
-      if$
+      { bst.book.pre.jp title * bst.book.post.jp * }
+      { format.book.sub remove.irrelevant.period.comma }
+     if$
     }
   if$
 }
@@ -3801,7 +3812,7 @@ FUNCTION {book}
 FUNCTION {booklet}
 { output.bibitem
   format.authors output.nocomma
-  format.misc.title "title" output.check.nocomma
+  format.title "title" output.check.nocomma
   format.howpublished output.nocomma
   format.address output.nocomma
   format.year output.nocomma
@@ -3986,7 +3997,7 @@ FUNCTION {misc}
     { format.year "year" output.check.nocomma }
     'skip$
   if$
-  format.misc.title output.nocomma
+  format.title output.nocomma
   format.howpublished output.nocomma
   format.archivePrefix output.nocomma
 
@@ -4013,7 +4024,7 @@ FUNCTION {online}
     { format.year "year" output.check.nocomma }
     'skip$
   if$
-  format.misc.title output.nocomma
+  format.title output.nocomma
   format.howpublished output.nocomma
 
   remove.irrelevant.kutoten
