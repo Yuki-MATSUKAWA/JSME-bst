@@ -3861,9 +3861,10 @@ FUNCTION {techreport}
     'skip$
   if$
   format.title "title" output.check.nocomma
-  format.tr.number output.nonnull.nocomma
   format.institution "institution" output.check.nocomma
   format.address output.nocomma
+  format.bvolume output.nocomma
+  format.number.series output.nocomma
 
   bst.year.position #0 = not
     { format.year "year" output.check.nocomma }

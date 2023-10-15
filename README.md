@@ -15,8 +15,20 @@
 * `title`の後にすぐ`year`が来る場合，カンマを消せていない．
 * `JSME-template1.tex`はハイパーリンク入りの文献テンプレート，`JSME-template2.tex`はハイパーリンク無しの文献テンプレート，`JSME-template3.tex`はJSMEオリジナルの文献リストを表示といった感じにしたい．
 * ハイパーリンク有効の場合は基本的にDOIやURLを末尾に表示したくない．
-* `access`があるときのみ`url`を有効にしたい．
 * `journal`，`booktitle`があるときはDOIやURLをハイパーリンクで埋め込み．
+* これは見た目を気にしているだけだが，データ項目の順序を決めたい．
+1. `author`
+2. `yomi`
+3. `title`
+4. `journal`, `booktitle`, `publisher`, `howpublished`
+5. `volume`
+6. `number`
+7. `pages`
+8. `year`
+9. `doi`
+10. `url`
+11. `access`
+12. `note`
 
 ## 英語文献
 * `author`が3人以上の場合の最後の区切りを`, and`にするか`and`にするか悩み中．
@@ -78,6 +90,7 @@
 ### online
 * Webページ等は`online`に分類．~~ただし，JSMEの書き方に注意．~~
 * jecon.bst独自の仕様？
+* 参照日は`access`に書く．
 
 ### phdthesis
 * 博士学位論文．
@@ -151,6 +164,7 @@
 ### online
 * Webページ等は`online`に分類．~~ただし，JSMEの書き方に注意．~~
 * jecon.bst独自の仕様？
+* 参照日は`access`に書く．
 
 ### phdthesis
 * 理想形：`author`，`title`，`school`博士論文 (`year`)．
