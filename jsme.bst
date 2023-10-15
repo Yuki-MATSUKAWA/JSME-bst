@@ -446,7 +446,7 @@ FUNCTION {bst.author.pre.jp}
 % author の後に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.author.post.jp}
-{ "" }	  % (default)
+{ "，" }	  % (default)
 
 %%% 日本語文献の author, editor の姓・名の間に入れる文字列 
 % (姓名のどちらか一方が一文字のケース)
@@ -502,7 +502,7 @@ FUNCTION {bst.title.post}
 % title の前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.title.pre.jp}
-{ "，" }    % (default)
+{ "" }    % (default)
 
 % title の後に付ける文字列 (日本語文献用)
 %
@@ -3771,7 +3771,8 @@ FUNCTION {proceedings}
     { format.year "year" output.check.nocomma }
     'skip$
   if$
-  format.btitle remove.pre.comma.period "title" output.check.nocomma
+  format.btitle remove.pre.comma.period
+  format.title "title" output.check.nocomma
   format.bvolume output.nocomma
   format.number.series output.nocomma
   output.address.organization.publisher
