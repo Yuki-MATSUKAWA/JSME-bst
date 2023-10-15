@@ -267,13 +267,13 @@ FUNCTION {bst.tatebo.definition}
 % 
 % #1 -> year は最後に表示されます。
 % #2 -> year は journal name の後に表示されます。
-% #3 -> year は volume の後に表示されます。
+% #3 -> year は number の後に表示されます。
 %
 FUNCTION {bst.year.position}
 % { #0 }	  % author のすぐ後 (default).
 % { #1 }    % 最後（note の前）
 % { #2 }    % journal name の後（article entryのみ）
-{ #3 }    % number の後（article entryのみ，numberが無い場合はvolumeの後）
+{ #3 }    % number の後（article entryのみ。numberが無い場合はvolumeの後）
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -474,7 +474,7 @@ FUNCTION {bst.year.pre}
 % year の後に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.year.post}
-{ ") " }    % (default)
+{ ")" }    % (default)
 
 % year の前に付ける文字列 (日本語文献用)
 %
@@ -484,7 +484,7 @@ FUNCTION {bst.year.pre.jp}
 % year の後に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.year.post.jp}
-{ ") " }    % (default)
+{ ")" }    % (default)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	title (book 以外)

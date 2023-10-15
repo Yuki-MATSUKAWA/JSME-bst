@@ -31,6 +31,8 @@
 \usepackage{newtxtext,newtxmath}
 %%% natbib
 \usepackage{natbib}
+%%% 参考文献リストの見出しを「参考文献」から「文献」に変更．
+\renewcommand{\refname}{文献}
 
 %%% ヘッダー・フッター
 \usepackage{fancyhdr}
@@ -226,7 +228,7 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
 mybib_en.bib,
 mybib_jp.bib
 }
-\addcontentsline{toc}{section}{\bibname}
+\addcontentsline{toc}{section}{\refname}
 
 
 
