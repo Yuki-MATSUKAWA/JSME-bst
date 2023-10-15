@@ -1045,22 +1045,54 @@ FUNCTION {bst.institution.post.jp}
 % howpublished の前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.howpublished.pre}
-{ " " }	   % (default)
+{ doi empty$
+    { url empty$
+        { ", " }                        % DOIもURLも無かったらカンマのみ出力
+        { ", \href{" url * "}{" * }     % DOIは無いけどURLがある場合はリンクを出版形態に埋め込み
+      if$
+    }
+    { ", \href{https://doi.org/" doi * "}{" * } % DOIはあるけどURLが無い場合はDOIからリンクを生成して出版形態に埋め込み
+  if$
+}
 
 % howpublished の後に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.howpublished.post}
-{ "" }	  % (default)
+{ doi empty$
+    { url empty$
+        { "" }
+        { "}" }
+      if$
+    }
+    { "}" }
+  if$
+}
 
 % howpublished の前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.howpublished.pre.jp}
-{ "，" }    % (default)
+{ doi empty$
+    { url empty$
+        { "，" }                        % DOIもURLも無かったらカンマのみ出力
+        { "，\href{" url * "}{" * }     % DOIは無いけどURLがある場合はリンクを出版形態に埋め込み
+      if$
+    }
+    { "，\href{https://doi.org/" doi * "}{" * } % DOIはあるけどURLが無い場合はDOIからリンクを生成して出版形態に埋め込み
+  if$
+}
 
 % howpublished の後に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.howpublished.post.jp}
-{ "" }	  % (default)
+{ doi empty$
+    { url empty$
+        { "" }
+        { "}" }
+      if$
+    }
+    { "}" }
+  if$
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	Access
