@@ -68,7 +68,7 @@
 
 ### proceedings
 * 理想形：Proceedings of `title` (`year`), `note`.
-* `year`しか表示されない．
+* ~~`year`しか表示されない．~~
 
 ### techreport
 * 理想形：`author 1`, `author 2` and `author 3`, `title`, `institution` (`year`), Vol.`volume`, No.`number`, pp.`pages`, `note`.
@@ -135,7 +135,7 @@
 
 ### proceedings
 * 理想形：`title`講演論文集 (`year`), `note`.
-* `year`しか表示されない．
+* ~~`year`しか表示されない．~~
 
 ### techreport
 * 理想形：`author 1`，`author 2`，`author 3`，`title`，`institution` (`year`)，Vol.`volume`，No.`number`，pp.`pages`，`note`．
