@@ -909,12 +909,36 @@ FUNCTION {bst.publisher.post}
 % publisher の前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.publisher.pre.jp}
-{ "，" }    % (default)
+{ booktitle empty$
+    { doi empty$
+        { url empty$
+            { "，" }                        % DOIもURLも無かったらカンマのみ出力
+            { "，\href{" url * "}{" * }     % DOIは無いけどURLがある場合はリンクを出版社名に埋め込み
+          if$
+        }
+        { "，\href{https://doi.org/" doi * "}{" * } % DOIはあるけどURLが無い場合はDOIからリンクを生成して出版社名に埋め込み
+      if$
+    }
+    { "，" }
+  if$
+}
 
 % publisher の後に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.publisher.post.jp}
-{ "" }	  % (default)
+{ booktitle empty$
+    { doi empty$
+        { url empty$
+            { "" }
+            { "}" }
+          if$
+        }
+        { "}" }
+      if$
+    }
+    { "" }
+  if$
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	series
