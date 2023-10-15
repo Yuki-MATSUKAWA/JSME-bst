@@ -131,7 +131,7 @@
 
 ### phdthesis
 * 理想形：`author`，`title`，`school`博士論文 (`year`)．
-* 博士論文，`school`になっている．
+* ~~博士論文，`school`になっている．~~
 
 ### proceedings
 * 理想形：`title`講演論文集 (`year`), `note`.
