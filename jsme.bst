@@ -279,7 +279,7 @@ FUNCTION {bst.year.position}
 
 % 0 以外を指定すると新しい年の文献を前にもってくる。
 %
-% 0 なら普通の並び順。通常は 0 のままでいいでしょう．
+% 0 なら普通の並び順。通常は 0 のままでいいでしょう。
 %
 FUNCTION {bst.reverse.year}
 { #0 }	  % 普通の並び順 (古い文献ほど上) (default)
@@ -538,22 +538,54 @@ FUNCTION {bst.book.post.jp}
 % booktitle の前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.btitle.pre}
-{ "" }    % (default)
+{ doi empty$
+    { url empty$
+        { "" }                        % DOIもURLも無かったらカンマのみ出力
+        { "\href{" url * "}{" * }     % DOIは無いけどURLがある場合はリンクをジャーナル名に埋め込み
+      if$
+    }
+    { "\href{https://doi.org/" doi * "}{" * } % DOIはあるけどURLが無い場合はDOIからリンクを生成してジャーナル名に埋め込み
+  if$
+}
 
 % booktitle の後に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.btitle.post}
-{ "" }	   % (default)
+{ doi empty$
+    { url empty$
+        { "" }
+        { "}" }
+      if$
+    }
+    { "}" }
+  if$
+}
 
 % booktitle の前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.btitle.pre.jp}
-{ "" }    % (default)
+{ doi empty$
+    { url empty$
+        { "，" }                        % DOIもURLも無かったらカンマのみ出力
+        { "，\href{" url * "}{" * }     % DOIは無いけどURLがある場合はリンクをジャーナル名に埋め込み
+      if$
+    }
+    { "，\href{https://doi.org/" doi * "}{" * } % DOIはあるけどURLが無い場合はDOIからリンクを生成してジャーナル名に埋め込み
+  if$
+}
 
 % booktitle の後に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.btitle.post.jp}
-{ "" }    % (default)
+{ doi empty$
+    { url empty$
+        { "" }
+        { "}" }
+      if$
+    }
+    { "}" }
+  if$
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	journal name
@@ -561,22 +593,54 @@ FUNCTION {bst.btitle.post.jp}
 % journal name の前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.journal.pre}
-{ "" }    % (default)
+{ doi empty$
+    { url empty$
+        { ", " }                        % DOIもURLも無かったらカンマのみ出力
+        { ", \href{" url * "}{" * }     % DOIは無いけどURLがある場合はリンクをジャーナル名に埋め込み
+      if$
+    }
+    { ", \href{https://doi.org/" doi * "}{" * } % DOIはあるけどURLが無い場合はDOIからリンクを生成してジャーナル名に埋め込み
+  if$
+}
 
 % journal name の後に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.journal.post}
-{ "" }	   % (default)
+{ doi empty$
+    { url empty$
+        { "" }
+        { "}" }
+      if$
+    }
+    { "}" }
+  if$
+}
 
 % journal name の前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.journal.pre.jp}
-{ "" }    % (default)
+{ doi empty$
+    { url empty$
+        { "，" }                        % DOIもURLも無かったらカンマのみ出力
+        { "，\href{" url * "}{" * }     % DOIは無いけどURLがある場合はリンクをジャーナル名に埋め込み
+      if$
+    }
+    { "，\href{https://doi.org/" doi * "}{" * } % DOIはあるけどURLが無い場合はDOIからリンクを生成してジャーナル名に埋め込み
+  if$
+}
 
 % journal name の後に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.journal.post.jp}
-{ "" }    % (default)
+{ doi empty$
+    { url empty$
+        { "" }
+        { "}" }
+      if$
+    }
+    { "}" }
+  if$
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	editor 記号
@@ -953,22 +1017,22 @@ FUNCTION {bst.show.url}
 % URLの前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.url.pre}
-{ ", URL: \url{" }	% (default)
+{ ", \textless\url{" }	% (default)
 
 % URLの後に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.url.post}
-{ "}" }	   % (default)
+{ "}\textgreater" }	   % (default)
 
 % URLの前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.url.pre.jp}
-{ "，URL：\url{" }	% (default)
+{ "，\textless\url{" }	% (default)
 
 % URLの後に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.url.post.jp}
-{ "}" }	   % (default)
+{ "}\textgreater" }	   % (default)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -980,17 +1044,17 @@ FUNCTION {bst.url.post.jp}
 % accessの前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.access.pre}
-{ ", accessed on " } % (default)
+{ ", (accessed on " } % (default)
 
 % accessの後に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.access.post}
-{ "" }	  % (default)
+{ ")" }	  % (default)
 
 % accessの前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.access.pre.jp}
-{ "（アクセス日: " } % (default)
+{ "，（参照日 " } % (default)
 
 % accessの後に付ける文字列 (日本語文献用)
 %
@@ -1004,8 +1068,8 @@ FUNCTION {bst.access.post.jp}
 
 % 非ゼロならDOIを表示．ゼロなら非表示．
 FUNCTION {bst.show.doi}
-{ #1 }	  % non-#0 -> Show DOI field (default)
-% { #0 }    % #0 -> Not show DOI field.
+% { #1 }	  % non-#0 -> Show DOI field (default)
+{ #0 }    % #0 -> Not show DOI field.
 
 % DOIの前に付ける文字列 (英語文献用)
 %

@@ -61,7 +61,7 @@
 
 ### misc
 * arXiv上の文献は`misc`に分類．arXivであることは明記したい．
-* Webページ等は`misc`に分類．ただし，JSMEの書き方に注意．
+* Webページ等は`misc`に分類．~~ただし，JSMEの書き方に注意．~~
 
 ### phdthesis
 * 理想形：`author`, `title`, Ph.D. dissertation, `school` (`year`), `note`.
@@ -127,7 +127,7 @@
 
 ### misc
 * 学部の卒業論文は`misc`でいいと思います．その際，`school`ではなく，`howpublished`を使用．
-* Webページ等は`misc`に分類．ただし，JSMEの書き方に注意．
+* Webページ等は`misc`に分類．~~ただし，JSMEの書き方に注意．~~
 
 ### phdthesis
 * 理想形：`author`，`title`，`school`博士論文 (`year`)．
