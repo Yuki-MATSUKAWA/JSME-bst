@@ -3215,9 +3215,13 @@ FUNCTION {format.phd}
 %%% mastersthesis の整形
 FUNCTION {format.mthesis}
 { is.kanji.entry
-    { bst.mthesis.jp }
-    { bst.mthesis }
-   if$
+    { format.school "school" output.check.nocomma
+      bst.mthesis.jp 
+      format.thesis.type output.nonnull.nocomma }
+    { bst.mthesis 
+      format.thesis.type output.nonnull.nocomma
+      format.school "school" output.check.nocomma }
+    if$
 }
 
 %%% institution の整形
@@ -3659,9 +3663,11 @@ FUNCTION {mastersthesis}
     'skip$
   if$
   format.title "title" output.check.nocomma
-  format.mthesis format.thesis.type output.nonnull.nocomma
-  format.school "school" output.check.nocomma
-  format.address output.nocomma
+  format.mthesis
+  address empty$
+    'skip$
+    { format.address output.nocomma }
+  if$
 
   bst.year.position #0 = not
     { format.year "year" output.check.nocomma }

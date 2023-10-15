@@ -54,10 +54,10 @@
 * 理想形：`author 1`, `author 2` and `author 3`, `title` (`year`), `note`.
 * ~~`title`がイタリック体になっている．~~
 
-### masterthesis
+### mastersthesis
 * 理想形：`author`, `title`, Master's thesis, `school` (`year`), `note`.
 * ~~`title`に"がついている．~~
-* `school`を表示したい．
+* ~~`school`を表示したい．~~
 
 ### misc
 * arXiv上の文献は`misc`に分類．arXivであることは明記したい．
@@ -121,9 +121,9 @@
 ### manual
 * 理想形：`author 1`，`author 2`，`author 3`，`title` (`year`)，`note`．
 
-### masterthesis
+### mastersthesis
 * 理想形：`author`，`title`，`school`修士論文 (`year`)，`note`．
-* `school`を表示したい．
+* ~~`school`を表示したい．~~
 
 ### misc
 * 学部の卒業論文は`misc`でいいと思います．その際，`school`ではなく，`howpublished`を使用．
