@@ -357,14 +357,14 @@ FUNCTION {bst.and}
 % "Mr.A, Mr.B _ Mr.C" の "_" の部分に入る文字列
 %
 FUNCTION {bst.ands}
-{ ", and " }	% (default)
+{ " and " }	% (default)
 
 % 複数の authors, editors の間の文字列 (日本語文献用)
 %
 % "A氏 _ B氏 _ C氏" の "_" の部分に入る文字列
 %
 FUNCTION {bst.and.jp}
-{ "，" }    % (default)
+{ ", " }    % (default)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%	「引用部分」での author 名の間に入る文字列
@@ -388,7 +388,7 @@ FUNCTION {bst.cite.ands}
 % 引用部分の "A氏 _ B氏 _ C氏" の "_" の部分に入る文字列
 %
 FUNCTION {bst.cite.and.jp}
-{ "，" }    % (default)
+{ ", " }    % (default)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -446,7 +446,7 @@ FUNCTION {bst.author.pre.jp}
 % author の後に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.author.post.jp}
-{ "，" }	  % (default)
+{ ", " }	  % (default)
 
 %%% 日本語文献の author, editor の姓・名の間に入れる文字列 
 % (姓名のどちらか一方が一文字のケース)
@@ -507,7 +507,7 @@ FUNCTION {bst.title.pre.jp}
 % title の後に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.title.post.jp}
-{ "，" }    % (default)
+{ ", " }    % (default)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	book 用 title
@@ -525,7 +525,7 @@ FUNCTION {bst.book.post}
 % book の title 前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.book.pre.jp}
-{ "，" }    % (default)
+{ ", " }    % (default)
 
 % book の title 後に付ける文字列 (日本語文献用)
 %
@@ -566,11 +566,11 @@ FUNCTION {bst.btitle.post}
 FUNCTION {bst.btitle.pre.jp}
 { doi empty$
     { url empty$
-        { "，" }                        % DOIもURLも無かったらカンマのみ出力
-        { "，\href{" url * "}{" * }     % DOIは無いけどURLがある場合はリンクを書籍名に埋め込み
+        { ", " }                        % DOIもURLも無かったらカンマのみ出力
+        { ", \href{" url * "}{" * }     % DOIは無いけどURLがある場合はリンクを書籍名に埋め込み
       if$
     }
-    { "，\href{https://doi.org/" doi * "}{" * } % DOIはあるけどURLが無い場合はDOIからリンクを生成して書籍名に埋め込み
+    { ", \href{https://doi.org/" doi * "}{" * } % DOIはあるけどURLが無い場合はDOIからリンクを生成して書籍名に埋め込み
   if$
 }
 
@@ -621,11 +621,11 @@ FUNCTION {bst.journal.post}
 FUNCTION {bst.journal.pre.jp}
 { doi empty$
     { url empty$
-        { "，" }                        % DOIもURLも無かったらカンマのみ出力
-        { "，\href{" url * "}{" * }     % DOIは無いけどURLがある場合はリンクをジャーナル名に埋め込み
+        { ", " }                        % DOIもURLも無かったらカンマのみ出力
+        { ", \href{" url * "}{" * }     % DOIは無いけどURLがある場合はリンクをジャーナル名に埋め込み
       if$
     }
-    { "，\href{https://doi.org/" doi * "}{" * } % DOIはあるけどURLが無い場合はDOIからリンクを生成してジャーナル名に埋め込み
+    { ", \href{https://doi.org/" doi * "}{" * } % DOIはあるけどURLが無い場合はDOIからリンクを生成してジャーナル名に埋め込み
   if$
 }
 
@@ -666,7 +666,7 @@ FUNCTION {bst.editor.jp}
 % kanyaku の前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.kanyaku.pre.jp}
-{ "，" }    % (default)
+{ ", " }    % (default)
 
 % kanyaku の後に付ける文字列 (日本語文献用)
 %
@@ -679,7 +679,7 @@ FUNCTION {bst.kanyaku.post.jp}
 % translator の前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.translator.pre.jp}
-{ "，" }    % (default)
+{ ", " }    % (default)
 
 % translator の後に付ける文字列 (日本語文献用)
 %
@@ -702,7 +702,7 @@ FUNCTION {bst.edition.post}
 % edition の前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.edition.pre.jp}
-{ "，第" }    % (default)
+{ ", 第" }    % (default)
 
 % edition の前に付ける文字列 (日本語文献用)
 %
@@ -725,7 +725,7 @@ FUNCTION {bst.volume.post}
 % volume の前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.volume.pre.jp}
-{ "，Vol.~" }    % (default)
+{ ", Vol.~" }    % (default)
 
 % volume の後に付ける文字列 (日本語文献用)
 %
@@ -748,7 +748,7 @@ FUNCTION {bst.number.post}
 % number の前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.number.pre.jp}
-{ "，No.~" }    % (default)
+{ ", No.~" }    % (default)
 
 % number の後に付ける文字列 (日本語文献用)
 %
@@ -789,12 +789,12 @@ FUNCTION {bst.page.post}
 % page の前に付ける文字列 (複数ページ) (日本語文献用)
 %
 FUNCTION {bst.pages.pre.jp}
-{ "，pp." }    % (default)
+{ ", pp." }    % (default)
 
 % page の前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.page.pre.jp}
-{ "，p." }    % (default)
+{ ", p." }    % (default)
 
 % page の後に付ける文字列 (日本語文献用)
 %
@@ -817,7 +817,7 @@ FUNCTION {bst.chapter.post}
 % chapter の前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.chapter.pre.jp}
-{ "，第" }    % (default)
+{ ", 第" }    % (default)
 
 % chapter の後に付ける文字列 (日本語文献用)
 %
@@ -840,7 +840,7 @@ FUNCTION {bst.month.post}
 % month の前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.month.pre.jp}
-{ "，" }    % (default)
+{ ", " }    % (default)
 
 % month の後に付ける文字列 (日本語文献用)
 %
@@ -862,7 +862,7 @@ FUNCTION {bst.address.post}
 % address の前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.address.pre.jp}
-{ "，" }    % (default)
+{ ", " }    % (default)
 
 % address の後に付ける文字列 (日本語文献用)
 %
@@ -912,14 +912,14 @@ FUNCTION {bst.publisher.pre.jp}
 { booktitle empty$
     { doi empty$
         { url empty$
-            { "，" }                        % DOIもURLも無かったらカンマのみ出力
-            { "，\href{" url * "}{" * }     % DOIは無いけどURLがある場合はリンクを出版社名に埋め込み
+            { ", " }                        % DOIもURLも無かったらカンマのみ出力
+            { ", \href{" url * "}{" * }     % DOIは無いけどURLがある場合はリンクを出版社名に埋め込み
           if$
         }
-        { "，\href{https://doi.org/" doi * "}{" * } % DOIはあるけどURLが無い場合はDOIからリンクを生成して出版社名に埋め込み
+        { ", \href{https://doi.org/" doi * "}{" * } % DOIはあるけどURLが無い場合はDOIからリンクを生成して出版社名に埋め込み
       if$
     }
-    { "，" }
+    { ", " }
   if$
 }
 
@@ -956,7 +956,7 @@ FUNCTION {bst.series.post}
 % series の前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.series.pre.jp}
-{ "，" }    % (default)
+{ ", " }    % (default)
 
 % series の後に付ける文字列 (日本語文献用)
 %
@@ -978,7 +978,7 @@ FUNCTION {bst.organization.post}
 % organization の前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.organization.pre.jp}
-{ "，" }    % (default)
+{ ", " }    % (default)
 
 % organization の後に付ける文字列 (日本語文献用)
 %
@@ -1019,11 +1019,11 @@ FUNCTION {bst.school.post}
 FUNCTION {bst.school.pre.jp}
 { doi empty$
     { url empty$
-        { "，" }                        % DOIもURLも無かったらカンマのみ出力
-        { "，\href{" url * "}{" * }     % DOIは無いけどURLがある場合はリンクを大学名に埋め込み
+        { ", " }                        % DOIもURLも無かったらカンマのみ出力
+        { ", \href{" url * "}{" * }     % DOIは無いけどURLがある場合はリンクを大学名に埋め込み
       if$
     }
-    { "，\href{https://doi.org/" doi * "}{" * } % DOIはあるけどURLが無い場合はDOIからリンクを生成して大学名に埋め込み
+    { ", \href{https://doi.org/" doi * "}{" * } % DOIはあるけどURLが無い場合はDOIからリンクを生成して大学名に埋め込み
   if$
 }
 
@@ -1074,11 +1074,11 @@ FUNCTION {bst.institution.post}
 FUNCTION {bst.institution.pre.jp}
 { doi empty$
     { url empty$
-        { "，" }                        % DOIもURLも無かったらカンマのみ出力
-        { "，\href{" url * "}{" * }     % DOIは無いけどURLがある場合はリンクを機関名に埋め込み
+        { ", " }                        % DOIもURLも無かったらカンマのみ出力
+        { ", \href{" url * "}{" * }     % DOIは無いけどURLがある場合はリンクを機関名に埋め込み
       if$
     }
-    { "，\href{https://doi.org/" doi * "}{" * } % DOIはあるけどURLが無い場合はDOIからリンクを生成して機関名に埋め込み
+    { ", \href{https://doi.org/" doi * "}{" * } % DOIはあるけどURLが無い場合はDOIからリンクを生成して機関名に埋め込み
   if$
 }
 
@@ -1129,11 +1129,11 @@ FUNCTION {bst.howpublished.post}
 FUNCTION {bst.howpublished.pre.jp}
 { doi empty$
     { url empty$
-        { "，" }                        % DOIもURLも無かったらカンマのみ出力
-        { "，\href{" url * "}{" * }     % DOIは無いけどURLがある場合はリンクを出版形態に埋め込み
+        { ", " }                        % DOIもURLも無かったらカンマのみ出力
+        { ", \href{" url * "}{" * }     % DOIは無いけどURLがある場合はリンクを出版形態に埋め込み
       if$
     }
-    { "，\href{https://doi.org/" doi * "}{" * } % DOIはあるけどURLが無い場合はDOIからリンクを生成して出版形態に埋め込み
+    { ", \href{https://doi.org/" doi * "}{" * } % DOIはあるけどURLが無い場合はDOIからリンクを生成して出版形態に埋め込み
   if$
 }
 
@@ -1196,14 +1196,14 @@ FUNCTION {bst.archivePrefix.pre.jp}
 { eprint empty$
     { doi empty$
         { url empty$
-            { "，" }                        % eprintもDOIもURLも無かったらカンマのみ出力
-            { "，\href{" url * "}{" * }     % eprintもDOIも無いけどURLがある場合はリンクを埋め込み
+            { ", " }                        % eprintもDOIもURLも無かったらカンマのみ出力
+            { ", \href{" url * "}{" * }     % eprintもDOIも無いけどURLがある場合はリンクを埋め込み
           if$
         }
-        { "，\href{https://doi.org/" doi * "}{" * }     % eprintは無いけどDOIがある場合はDOIからリンクを生成して埋め込み
+        { ", \href{https://doi.org/" doi * "}{" * }     % eprintは無いけどDOIがある場合はDOIからリンクを生成して埋め込み
       if$
     }
-    { "，\href{https://doi.org/10.48550/arXiv." eprint * "}{" * } % eprintがある場合はeprintからリンクを生成して埋め込み
+    { ", \href{https://doi.org/10.48550/arXiv." eprint * "}{" * } % eprintがある場合はeprintからリンクを生成して埋め込み
   if$
 }
 
@@ -1243,7 +1243,7 @@ FUNCTION {bst.access.post}
 % accessの前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.access.pre.jp}
-{ "，（参照日 " } % (default)
+{ ", （参照日 " } % (default)
 
 % accessの後に付ける文字列 (日本語文献用)
 %
@@ -1271,7 +1271,7 @@ FUNCTION {bst.url.post}
 % URLの前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.url.pre.jp}
-{ "，\textless\url{" }	% (default)
+{ ", \textless\url{" }	% (default)
 
 % URLの後に付ける文字列 (日本語文献用)
 %
@@ -1301,7 +1301,7 @@ FUNCTION {bst.doi.post}
 % DOIの前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.doi.pre.jp}
-{ "，DOI: \href{http://dx.doi.org/" doi * "}{\urlstyle{rm} \nolinkurl{" * } % (default)
+{ ", DOI: \href{http://dx.doi.org/" doi * "}{\urlstyle{rm} \nolinkurl{" * } % (default)
 
 % DOIの後に付ける文字列 (日本語文献用)
 %
@@ -1334,11 +1334,11 @@ FUNCTION {bst.hoyakusho.post.jp}
 %
 % 句点の指定．
 FUNCTION {bst.kuten.jp}
-{ "．" }    % (default)
+{ "." }    % (default)
 
 % 読点の指定．
 FUNCTION {bst.touten.jp}
-{ "，" }    % (default)
+{ ", " }    % (default)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	
@@ -1390,7 +1390,7 @@ FUNCTION {bst.note.post}
 % noteの前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.note.pre.jp}
-{ "，" }    % (default)
+{ ", " }    % (default)
 
 % noteの後に付ける文字列 (日本語文献用)
 %
