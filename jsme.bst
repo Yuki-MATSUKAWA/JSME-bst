@@ -541,10 +541,10 @@ FUNCTION {bst.btitle.pre}
 { doi empty$
     { url empty$
         { "" }                        % DOIもURLも無かったらカンマのみ出力
-        { "\href{" url * "}{" * }     % DOIは無いけどURLがある場合はリンクをジャーナル名に埋め込み
+        { "\href{" url * "}{" * }     % DOIは無いけどURLがある場合はリンクを書籍名に埋め込み
       if$
     }
-    { "\href{https://doi.org/" doi * "}{" * } % DOIはあるけどURLが無い場合はDOIからリンクを生成してジャーナル名に埋め込み
+    { "\href{https://doi.org/" doi * "}{" * } % DOIはあるけどURLが無い場合はDOIからリンクを生成して書籍名に埋め込み
   if$
 }
 
@@ -567,10 +567,10 @@ FUNCTION {bst.btitle.pre.jp}
 { doi empty$
     { url empty$
         { "，" }                        % DOIもURLも無かったらカンマのみ出力
-        { "，\href{" url * "}{" * }     % DOIは無いけどURLがある場合はリンクをジャーナル名に埋め込み
+        { "，\href{" url * "}{" * }     % DOIは無いけどURLがある場合はリンクを書籍名に埋め込み
       if$
     }
-    { "，\href{https://doi.org/" doi * "}{" * } % DOIはあるけどURLが無い場合はDOIからリンクを生成してジャーナル名に埋め込み
+    { "，\href{https://doi.org/" doi * "}{" * } % DOIはあるけどURLが無い場合はDOIからリンクを生成して書籍名に埋め込み
   if$
 }
 
@@ -875,12 +875,36 @@ FUNCTION {bst.address.post.jp}
 % publisher の前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.publisher.pre}
-{ ", " }    % (default)
+{ booktitle empty$
+    { doi empty$
+        { url empty$
+            { ", " }                        % DOIもURLも無かったらカンマのみ出力
+            { ", \href{" url * "}{" * }     % DOIは無いけどURLがある場合はリンクを出版社名に埋め込み
+          if$
+        }
+        { ", \href{https://doi.org/" doi * "}{" * } % DOIはあるけどURLが無い場合はDOIからリンクを生成して出版社名に埋め込み
+      if$
+    }
+    { ", " }
+  if$
+}
 
 % publisher の後に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.publisher.post}
-{ "" }	  % (default)
+{ booktitle empty$
+    { doi empty$
+        { url empty$
+            { "" }
+            { "}" }
+          if$
+        }
+        { "}" }
+      if$
+    }
+    { "" }
+  if$
+}
 
 % publisher の前に付ける文字列 (日本語文献用)
 %
@@ -943,22 +967,54 @@ FUNCTION {bst.organization.post.jp}
 % school の前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.school.pre}
-{ ", " }    % (default)
+{ doi empty$
+    { url empty$
+        { ", " }                        % DOIもURLも無かったらカンマのみ出力
+        { ", \href{" url * "}{" * }     % DOIは無いけどURLがある場合はリンクを大学名に埋め込み
+      if$
+    }
+    { ", \href{https://doi.org/" doi * "}{" * } % DOIはあるけどURLが無い場合はDOIからリンクを生成して大学名に埋め込み
+  if$
+}
 
 % school の後に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.school.post}
-{ "" }	  % (default)
+{ doi empty$
+    { url empty$
+        { "" }
+        { "}" }
+      if$
+    }
+    { "}" }
+  if$
+}
 
 % school の前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.school.pre.jp}
-{ "，" }    % (default)
+{ doi empty$
+    { url empty$
+        { "，" }                        % DOIもURLも無かったらカンマのみ出力
+        { "，\href{" url * "}{" * }     % DOIは無いけどURLがある場合はリンクを大学名に埋め込み
+      if$
+    }
+    { "，\href{https://doi.org/" doi * "}{" * } % DOIはあるけどURLが無い場合はDOIからリンクを生成して大学名に埋め込み
+  if$
+}
 
 % school の後に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.school.post.jp}
-{ "" }	  % (default)
+{ doi empty$
+    { url empty$
+        { "" }
+        { "}" }
+      if$
+    }
+    { "}" }
+  if$
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	institution
