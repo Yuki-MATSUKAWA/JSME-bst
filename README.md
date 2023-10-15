@@ -20,7 +20,7 @@
 1. `author`
 2. `yomi`
 3. `title`
-4. `journal`, `booktitle`, `publisher`, `howpublished`, `school`
+4. `journal`, `booktitle`, `publisher`, `howpublished`, `school`, `institution`
 5. `volume`
 6. `number`
 7. `pages`
