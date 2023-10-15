@@ -11,6 +11,7 @@
 * その際，ハイパーリンクを使用しないバージョンとハイパーリンクを使用するバージョンをそれぞれ作成した方がいいと思う．
 * `title`の冒頭以外は小文字に変換するか否か．
 * ~~pp.の後ろにチルダを入れたい．~~
+* 本来であれば「文献」の後ろに「References」を入れなければいけないが，一旦は「文献」のみにする．複数の文献リストを入れるのは割とめんどくさい．
 
 ## 英語文献
 * `author`が3人以上の場合の最後の区切りを`, and`にするか`and`にするか悩み中．
@@ -23,11 +24,11 @@
 ### book
 * 理想形：`author 1`, `author 2` and `author 3`, `title`, `publisher` (`year`), `note`.
 * ~~`title`がイタリック体になっている．~~
-* `pages`の前にコロンがついている．
+* ~~`pages`の前にコロンがついている．~~
 
 ### booklet
 * 理想形：`author 1`, `author 2` and `author 3`, `title`, `howpublished` (`year`), `note`.
-* `year`の位置が違う．
+* ~~`year`の位置が違う．~~
 
 ### conference
 * `conference`は`inproceedings`と同一となるように作成．
@@ -35,7 +36,7 @@
 ### inbook
 * 理想形：`author 1`, `author 2` and `author 3`, `title`, `publisher` (`year`), pp.`pages`, `note`.
 * ~~`pages`が複数ページでもppにならない．~~
-* `pages`の位置が違う．前にコロンがついている．
+* ~~`pages`の位置が違う．前にコロンがついている．~~
 
 ### incollection
 * 理想形：`author 1`, `author 2` and `author 3`, `title`, `booktitle`, `publisher` (`year`), Vol.`volume`, No.`number`, pp.`pages`, `note`.
@@ -58,7 +59,7 @@
 * `school`を表示したい．
 
 ### misc
-* arXiv上の文献は`misc`に分類．
+* arXiv上の文献は`misc`に分類．arXivであることは明記したい．
 * Webページ等は`misc`に分類．ただし，JSMEの書き方に注意．
 
 ### phdthesis
@@ -97,7 +98,7 @@
 
 ### booklet
 * 理想形：`author 1`，`author 2`，`author 3`，`title`，`howpublished` (`year`)，`note`．
-* `year`の位置が違う．
+* ~~`year`の位置が違う．~~
 
 ### conference
 * `conference`は`inproceedings`と同一となるように作成．
@@ -106,7 +107,7 @@
 * 理想形：`author 1`，`author 2`， `author 3`，`title`，`publisher` (`year`)，pp.`pages`，`note`．
 * ~~`title`に『』がついている．~~
 * ~~`pages`が複数ページでもppにならない．~~
-* `pages`の位置が違う．
+* ~~`pages`の位置が違う．~~
 
 ### incollection
 * 理想形：`author 1`，`author 2`，`author 3`，`title`，`booktitle`，`publisher` (`year`)，Vol.`volume`，No.`number`，pp.`pages`，`note`．
@@ -129,6 +130,7 @@
 
 ### phdthesis
 * 理想形：`author`，`title`，`school`博士論文 (`year`)．
+* 博士論文，`school`になっている．
 
 ### proceedings
 * 理想形：`title`講演論文集 (`year`), `note`.

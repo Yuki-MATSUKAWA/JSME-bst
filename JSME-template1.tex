@@ -84,10 +84,12 @@
 この節では日本機械学会の原稿テンプレートに記載されている執筆要領の中でも，特に文献の記載に関する注意点をまとめておきます．
 日本機械学会の規定に合わせて論文執筆する際は是非参考にしてください\footnote{\texttt{JSME-bst}自体はもともと，JSMEの規定に沿って卒業論文執筆を行うことが決められている東京理科大学創域理工学部機械航空宇宙工学科の卒研生向けに作成したものです．もちろんGitHub上で公開しているので世界中の誰が使っても構いません．}．
 
-\subsection{使用するフォントについて}
-日本機械学会では本文に使用するフォントを和文は明朝体，欧文はSerif体のアルファベットと規定されています．
-Serif体のフォントとしてはTimes New RomanやCentury，Computer Modernなどが挙げられる．
-知らない人が結構多いが，\LaTeX{}標準のフォントはComputer Modernであって，Times New Romanではないので注意．
+\subsection{使用する書体・フォントについて}
+日本機械学会では本文に使用する書体を和文は明朝体，欧文はSerif体と規定されています．
+Serif体のフォントとしてはTimes New RomanやCentury，Computer Modernなどが挙げられます．
+知らない人が結構多いのですが，\LaTeX{}標準のフォントはComputer Modernであって，Times New Romanではないので注意．
+フォントを変える際はプリアンブルで指定します．
+
 
 \subsection{文献の並べ方}
 文献を並べる順序は以下の通り．
@@ -106,7 +108,6 @@ Serif体のフォントとしてはTimes New RomanやCentury，Computer Modern�
     \item 発行年は西暦で表記し，括弧で括る．
     \item ページ数は単ページの場合はp.~xxとし，複数ページに亘る場合はpp.~xx--yyとする．このとき，xxとyyを結ぶ横棒はハイフン（-）ではなくenダッシュとする（--）．ただし，\verb|jsme.bst|を使用すれば\verb|pages|内でハイフンとしていても自動でenダッシュに変換してくれるので安心．
 \end{itemize}
-
 
 \section{引用のコマンドと本文中での表示}
 \label{sec:cite}
@@ -203,6 +204,17 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
 \subsection*{book}
 \label{ssec:book}
 
+\subsection*{booklet}
+\label{ssec:booklet}
+
+\subsection*{conference}
+\label{ssec:conference}
+
+\subsection*{inbook}
+\label{ssec:inbook}
+
+\subsection*{incollection}
+\label{ssec:incollection}
 
 \section{\texttt{jsme.bst}の使い方}
 それでは実際に\verb|jsme.bst|を使ってみましょう．
@@ -216,9 +228,7 @@ mybib_jp.bib
 }
 \addcontentsline{toc}{section}{\bibname}
 
-% \bibliography{
-% jsmebib.bib
-% }
+
 
 
 \end{document}

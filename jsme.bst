@@ -2517,7 +2517,7 @@ FUNCTION {format.book.pages}
 
 %%% 2文字以下なら前に tie を付ける．
 FUNCTION {tie.or.space.connect}
-{ duplicate$ text.length$ #6 <
+{ duplicate$ text.length$ #11 <
     { "~" }
     { " " }
   if$
