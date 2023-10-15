@@ -4123,7 +4123,7 @@ FUNCTION {unpublished}
     { format.year "year" output.check.nocomma }
     'skip$
   if$
-  format.title "title" output.check.nocomma
+  format.book "title" output.check.nocomma
 
   bst.year.position #0 = not
     { format.date remove.pre.comma.period output.nocomma }
