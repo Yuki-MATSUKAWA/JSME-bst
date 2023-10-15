@@ -36,8 +36,8 @@ FUNCTION {jecon.debug}
 
 ENTRY
   %%% 文献フィールドの宣言
-  { access address author booktitle chapter doi edition editor howpublished
-    institution journal key month note number organization pages publisher
+  { access address archivePrefix author booktitle chapter doi edition editor eprint
+    howpublished institution journal key month note number organization pages publisher
     school series title type url volume year yomi language langid
 
     % 以下は普通の bst ファイルでは利用されないフィールド
@@ -1143,6 +1143,80 @@ FUNCTION {bst.howpublished.post.jp}
 { doi empty$
     { url empty$
         { "" }
+        { "}" }
+      if$
+    }
+    { "}" }
+  if$
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	archivePrefix
+
+% archivePrefixフィールド．
+% arXivからBibTeX Citationをexportすると出てくる．
+
+% archivePrefixの前に付ける文字列 (英語文献用)
+%
+FUNCTION {bst.archivePrefix.pre}
+{ eprint empty$
+    { doi empty$
+        { url empty$
+            { " " }                        % eprintもDOIもURLも無かったらカンマのみ出力
+            { ", \href{" url * "}{" * }     % eprintもDOIも無いけどURLがある場合はリンクを埋め込み
+          if$
+        }
+        { ", \href{https://doi.org/" doi * "}{" * }     % eprintは無いけどDOIがある場合はDOIからリンクを生成して埋め込み
+      if$
+    }
+    { ", \href{https://doi.org/10.48550/arXiv." eprint * "}{" * } % eprintがある場合はeprintからリンクを生成して埋め込み
+  if$
+}
+
+% archivePrefixの後に付ける文字列 (英語文献用)
+%
+FUNCTION {bst.archivePrefix.post}
+{ eprint empty$
+    { doi empty$
+        { url empty$
+            { "" }
+            { "}" }
+          if$
+        }
+        { "}" }
+      if$
+    }
+    { "}" }
+  if$
+}
+
+% archivePrefixの前に付ける文字列 (日本語文献用)
+%
+FUNCTION {bst.archivePrefix.pre.jp}
+{ eprint empty$
+    { doi empty$
+        { url empty$
+            { "，" }                        % eprintもDOIもURLも無かったらカンマのみ出力
+            { "，\href{" url * "}{" * }     % eprintもDOIも無いけどURLがある場合はリンクを埋め込み
+          if$
+        }
+        { "，\href{https://doi.org/" doi * "}{" * }     % eprintは無いけどDOIがある場合はDOIからリンクを生成して埋め込み
+      if$
+    }
+    { "，\href{https://doi.org/10.48550/arXiv." eprint * "}{" * } % eprintがある場合はeprintからリンクを生成して埋め込み
+  if$
+}
+
+% archivePrefixの後に付ける文字列 (日本語文献用)
+%
+FUNCTION {bst.archivePrefix.post.jp}
+{ eprint empty$
+    { doi empty$
+        { url empty$
+            { "" }
+            { "}" }
+          if$
+        }
         { "}" }
       if$
     }
@@ -3293,6 +3367,22 @@ FUNCTION {format.organization}
   if$
 }
 
+%%% archivePrefix の整形。
+FUNCTION {format.archivePrefix}
+{ archivePrefix empty$
+    { "" }
+    { eprint empty$ 
+        { "" }
+        { is.kanji.entry
+        	{ bst.archivePrefix.pre.jp archivePrefix * ": " * eprint * bst.archivePrefix.post.jp * }
+        	{ bst.archivePrefix.pre archivePrefix * ": " * eprint * bst.archivePrefix.post * }
+          if$
+        }
+      if$
+    }
+  if$
+}
+
 %% publisher と address を出力する関数
 FUNCTION {output.publisher.address}
 { address empty$
@@ -3898,6 +3988,7 @@ FUNCTION {misc}
   if$
   format.misc.title output.nocomma
   format.howpublished output.nocomma
+  format.archivePrefix output.nocomma
 
   remove.irrelevant.kutoten
 

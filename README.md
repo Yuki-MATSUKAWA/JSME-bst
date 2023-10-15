@@ -76,6 +76,7 @@
 * マニュアル．技術文書．
 * 理想形：`author 1`, `author 2` and `author 3`, `title` (`year`), `note`.
 * ~~`title`がイタリック体になっている．~~
+* `title`にハイパーリンクを埋め込もうと思ったが失敗．
 
 ### mastersthesis
 * 修士学位論文．
@@ -110,6 +111,7 @@
 * 著者とタイトルがある文書であるが，公式に刊行されていないもの．
 * 理想形：`author 1`, `author 2` and `author 3`, `title` (`year`), `note`.
 * ~~`title`に""がついている．~~
+* `title`にハイパーリンクを埋め込もうと思ったが失敗．
 
 
 ## 日本語文献
@@ -153,6 +155,7 @@
 
 ### manual
 * 理想形：`author 1`，`author 2`，`author 3`，`title` (`year`)，`note`．
+* `title`にハイパーリンクを埋め込もうと思ったが失敗．
 
 ### mastersthesis
 * 理想形：`author`，`title`，`school`修士論文 (`year`)，`note`．
@@ -180,6 +183,7 @@
 
 ### unpublished
 * 理想形：`author 1`，`author 2`，`author 3`，`title` (`year`)，`note`．
+* `title`にハイパーリンクを埋め込もうと思ったが失敗．
 
 
 # 参考資料
