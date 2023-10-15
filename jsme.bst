@@ -1046,22 +1046,54 @@ FUNCTION {bst.school.post.jp}
 % institution の前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.institution.pre}
-{ ", " }    % (default)
+{ doi empty$
+    { url empty$
+        { ", " }                        % DOIもURLも無かったらカンマのみ出力
+        { ", \href{" url * "}{" * }     % DOIは無いけどURLがある場合はリンクを機関名に埋め込み
+      if$
+    }
+    { ", \href{https://doi.org/" doi * "}{" * } % DOIはあるけどURLが無い場合はDOIからリンクを生成して機関名に埋め込み
+  if$
+}
 
 % institution の後に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.institution.post}
-{ "" }	  % (default)
+{ doi empty$
+    { url empty$
+        { "" }
+        { "}" }
+      if$
+    }
+    { "}" }
+  if$
+}
 
 % institution の前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.institution.pre.jp}
-{ "，" }    % (default)
+{ doi empty$
+    { url empty$
+        { "，" }                        % DOIもURLも無かったらカンマのみ出力
+        { "，\href{" url * "}{" * }     % DOIは無いけどURLがある場合はリンクを機関名に埋め込み
+      if$
+    }
+    { "，\href{https://doi.org/" doi * "}{" * } % DOIはあるけどURLが無い場合はDOIからリンクを生成して機関名に埋め込み
+  if$
+}
 
 % institution の後に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.institution.post.jp}
-{ "" }	  % (default)
+{ doi empty$
+    { url empty$
+        { "" }
+        { "}" }
+      if$
+    }
+    { "}" }
+  if$
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	howpublished
