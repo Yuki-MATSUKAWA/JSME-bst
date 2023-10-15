@@ -13,6 +13,9 @@
 * ~~pp.の後ろにチルダを入れたい．~~
 * 本来であれば「文献」の後ろに「References」を入れなければいけないが，一旦は「文献」のみにする．複数の文献リストを入れるのは割とめんどくさい．
 * `JSME-template1.tex`はハイパーリンク入りの文献テンプレート，`JSME-template2.tex`はハイパーリンク無しの文献テンプレート，`JSME-template3.tex`はJSMEオリジナルの文献リストを表示といった感じにしたい．
+* ハイパーリンク有効の場合は基本的にDOIやURLを末尾に表示したくない．
+* `access`があるときのみ`url`を有効にしたい．
+* `journal`，`booktitle`があるときはDOIやURLをハイパーリンクで埋め込み．
 
 ## 英語文献
 * `author`が3人以上の場合の最後の区切りを`, and`にするか`and`にするか悩み中．
@@ -151,3 +154,5 @@ jsme.bstは武田史郎氏作のjecon-bst（経済学用スタイルファイル
 
 1. [jecon-bst](https://github.com/ShiroTakeda/jecon-bst)
 1. [日本機械学会 原稿テンプレート](https://www.jsme.or.jp/publish/transact/for-authors.html)
+1. [奥村晴彦，黒木裕介，［改訂第8版］LaTeX2e美文書作成入門，技術評論社 (2020)，pp.184--198．](https://gihyo.jp/book/2020/978-4-297-11712-2)
+1. [吉永徹美，LaTeX2e辞典 増補改訂版，翔泳社 (2018)，pp.502--508．](https://www.shoeisha.co.jp/book/detail/9784798157078)

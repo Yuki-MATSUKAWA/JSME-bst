@@ -1011,8 +1011,8 @@ FUNCTION {bst.howpublished.post.jp}
 
 % URLフィールド．非ゼロを指定するとURLが表示される．ゼロのときは非表示．
 FUNCTION {bst.show.url}
-{ #1 }	  % non-#0 -> URLを表示 (default)
-% { #0 }    % #0 -> URLを非表示
+% { #1 }	  % non-#0 -> URLを表示 (default)
+{ #0 }    % #0 -> URLを非表示
 
 % URLの前に付ける文字列 (英語文献用)
 %

@@ -27,7 +27,7 @@
 \usepackage{amsmath,amssymb}
 %%% otf
 \usepackage{otf}
-%%% フォントをTimesに変更
+%%% フォントを Times に変更
 \usepackage{newtxtext,newtxmath}
 %%% natbib
 \usepackage{natbib}
@@ -222,8 +222,13 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
 それでは実際に\verb|jsme.bst|を使ってみましょう．
 
 \clearpage
+%%% 参考文献内の URL 表示をタイプライター調にしない．
+\renewcommand\UrlFont{\rmfamily}
+%%% \nocite{*}が有効のとき，引用していない文献も含めて全て表示．
 \nocite{*}
+%%% 使用する bst ファイル
 \bibliographystyle{jsme}
+%%% 読み込む bib ファイル
 \bibliography{
 mybib_en.bib,
 mybib_jp.bib
