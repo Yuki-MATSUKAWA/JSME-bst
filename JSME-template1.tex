@@ -54,7 +54,7 @@
 \renewcommand{\figurename}{Fig.~}       % 図番号
 \renewcommand{\tablename}{Table~}       % 表番号
 
-\title{【非公式】日本機械学会\BibTeX{}スタイルファイル \\ \texttt{JSME-bst} Ver.~1.0.0}
+\title{【非公式】日本機械学会\BibTeX{}スタイルファイル \\ \texttt{JSME-bst} テンプレートその1（標準）}
 \author{松川 裕樹\thanks{東京理科大学大学院 創域理工学研究科 機械航空宇宙工学専攻，Email: \texttt{7523701 ＿＠＿ ed.tus.ac.jp}}}
 
 \date{最終更新：\today}
@@ -66,17 +66,19 @@
 
 \section{はじめに}
 \label{sec:introduction}
-\verb|jsme.bst|は日本機械学会\footnote{一般社団法人 日本機械学会（The Japan Society of Mechanical Engineers, JSME），\url{https://www.jsme.or.jp/}}の原稿テンプレート\footnote{日本機械学会 原稿テンプレート，\url{https://www.jsme.or.jp/publish/transact/for-authors.html}}に基づいた参考文献の出力を実現するために作成した，非公式\BibTeX{}スタイルファイルテンプレートです．
-このファイル（\LaTeX{}ソース：\verb|JSME-template1.tex|，出力結果：\verb|JSME-template1.pdf|）は\BibTeX{}で用意されている全てのエントリの出力結果を表示しています．
-参考文献の一覧はこの\verb|pdf|の末尾で，出力している文献の\verb|bib|ファイルは英語文献\verb|mybib_en.bib|と日本語文献\verb|mybib_jp.bib|の二つです．
+\verb|jsme.bst|は日本機械学会\footnote{一般社団法人 日本機械学会（The Japan Society of Mechanical Engineers, JSME），\textless\url{https://www.jsme.or.jp/}\textgreater}の原稿テンプレート\footnote{日本機械学会 原稿テンプレート，\textless\url{https://www.jsme.or.jp/publish/transact/for-authors.html}\textgreater}に基づいた参考文献の出力を実現するために作成した，非公式\BibTeX{}スタイルファイルテンプレートです．
+必要なファイル一式はGitHubの\verb|JSME-bst|\footnote{\texttt{JSME-bst}, \textless\url{https://github.com/Yuki-MATSUKAWA/JSME-bst}\textgreater}から入手可能なので，用途に応じて自由に改変してください．
+今読んでいるこのファイル（\LaTeX{}ソース：\verb|JSME-template1.tex|，出力結果：\verb|JSME-template1.pdf|）では\BibTeX{}で用意されている全てのエントリの出力結果を表示しています．
+参考文献のリストはこの\verb|pdf|の末尾で，出力している文献の\verb|bib|ファイルは英語文献\verb|mybib_en.bib|と日本語文献\verb|mybib_jp.bib|の二つです．
 \verb|JSME-bst|の作成者である松川が流体力学，特に乱流遷移の研究をしているため，引用している文献は乱流遷移の周辺のものが多くなっています（全てではありません）．
 ただ，材料力学など他分野の方でも基本的な使い方は同じです．
 また，第~\ref{sec:cite}節でも述べますが，著者数が1名，2名，3名以上のそれぞれで引用時の出力結果が異なります．
 そのため\verb|mybib_en.bib|，\verb|mybib_jp.bib|では可能な限り著者数が1名，2名，3名以上の計3パターンを用意しています．
 ただ，基本的に実在の文献を集めて載せているので学位論文（\verb|phdthesis|, \verb|masterthesis|）のように原則著者が一人のものや\verb|manual|，\verb|unpublished|など一部のエントリでは全てのパターンを網羅できていない場合もあるのでご了承ください（ただ，参考にするうえで困ることのないくらいにはパターンを網羅しているつもりです）．
 
-また，この文書では可能な限り\BibTeX{}初心者でも使いやすいよう，\BibTeX{}そのものの使い方や\verb|bib|ファイルの作成方法といった内容も説明します．
+この文書では\BibTeX{}初心者でも使いやすいよう，\BibTeX{}そのものの使い方や\verb|bib|ファイルの作成方法といった内容も可能な限り説明します．
 それでもわからなければさまざまな書籍やwebサイトがあるので参考にしてみてください．
+また，その都度説明しますが，日本機械学会の原稿テンプレートに沿ったリストを作成するために\verb|bib|ファイルの作成方法が一部通常と異なる場合があるのでご了承ください．
 
 
 \section{日本機械学会の原稿執筆要領における注意点}
@@ -89,25 +91,61 @@
 Serif体のフォントとしてはTimes New RomanやCentury，Computer Modernなどが挙げられます．
 知らない人が結構多いのですが，\LaTeX{}標準のフォントはComputer Modernであって，Times New Romanではないので注意．
 フォントを変える際はプリアンブルで指定します．
-
+この文書の場合はプリアンブルの\verb|\usepackage{newtxtext,newtxmath}|でフォントをTimes New Romanに変更しています．
 
 \subsection{文献の並べ方}
+この節では文献リストのフィールド（\BibTeX{}における\verb|author|や\verb|title|）の並べ方について説明します．
+\verb|jsme.bst|のユーザーは気にせず使用することができますが，改めて整理しておくので\verb|jsme.bst|を使わないときにも役に立つと思います．
+原則，日本機械学会の規定に合わせていますが，原稿テンプレートからは判断が難しい事項は一部独自の解釈を加えているものがあります．
+
 文献を並べる順序は以下の通り．
 \begin{enumerate}
     \item （Family, Givenの順で並べた際の）筆頭著者の氏名のアルファベット順．並べる際，日本人の氏名は漢字と仮名を用いた日本語表記で構わないが順序はアルファベット順とする．
     \item 筆頭著者が同一人物の場合，第二著者以降のアルファベット順で並べる．著者数が異なる場合は著者数が少ない方が先．これを最後の著者まで繰り返す．
-    \item 著者が全員同じ文献があった場合は発行が早い順で並べる．
+    \item 著者が全員一致する文献があった場合は発行が早い順で並べる．
     \item 確認できる範囲で発行年月日が同じだった場合，タイトルのアルファベット順で並べる．
 \end{enumerate}
-
-並べる際の表記は以下の通り．
+文献を並べる際の表記に関する注意事項は以下の通り．
 \begin{itemize}
-    \item 著者の氏名はFamily nameのみ略記せず，Middle nameやGiven nameはイニシャルで記載する（例：Matsukawa Yuki $\to$ Matsukawa, Y.）．
+    \item 並び順は原則として \\
+        著者$\to$タイトル$\to$誌名・書名$\to$出版社・大学名・機関名$\to$巻$\to$号$\to$発行年$\to$ページ$\to$論文番号・講演番号 \\
+        とする．
+        ただし，存在しないフィールドがある場合は抜かす．
+        また，webページ等の引用は極力避けるべきだが，引用する場合には必ず末尾にURLと参照日を明記する（第~\ref{sec:bib}章を参照）．
+    \item 文献自体が日本語で書かれている場合は外国人が書いていても日本語文献とする．
+    \item 文献自体が英語で書かれている場合は日本人が書いていても英語文献とする．
+    \item 日本語文献の著者の氏名は「姓」「名」の順で書き，間にスペース等は入れない．\\（例：松川裕樹）
+    \item 英語文献の著者の氏名はFamily nameのみ略記せず，Middle nameやGiven nameはイニシャルで記載する（例：Matsukawa Yuki $\to$ Matsukawa, Y.）．
+    \item 著者は全員記載する．
+    \item 日本語文献の著者数が二人以上の場合は
+        \begin{quote}
+            松川裕樹, 塚原隆裕        
+        \end{quote}
+        のように半角カンマと半角スペースを間に入れて繋ぐ．全角カンマではないので注意．
+    \item 英語文献の著者数が二人の場合は
+        \begin{quote}
+            Matsukawa, Y. and Tsukahara, T.        
+        \end{quote}
+        のようにandで繋ぎ，著者数が三人以上の場合は
+        \begin{quote}
+            Araki, R., Bos, W. J. T. and Goto, S.            
+        \end{quote}
+        のように最後だけandで繋ぐ．最後のandの前にカンマは入れない．
+    \item フィールドとフィールドの間は日本語文献・英語文献問わず半角カンマと半角スペースで繋ぐ．
+    \item 英語文献のタイトルは最初の単語の頭文字のみ大文字（固有名詞等は除く）．
     \item 誌名・書名は省略せずに記載する．
     \item 巻・号は日本語・英語文献問わずVol.~xx，No.~xxとする．
-    \item 発行年は西暦で表記し，括弧で括る．
+    \item 発行年は西暦で表記し，括弧で括る．ただし，発行年の前のみ半角カンマは不要．
+    \item 著者が全員一致し，且つ発行年が一致する文献がある場合はより発行の日付が早い方から西暦の後に小文字でアルファベットを順に振る．
+    詳細な発行日が不明の場合はタイトルのアルファベット順で西暦の後に小文字でアルファベットを順に振る．
+        \begin{quote}
+            Matsukawa, Y. and Tsukahara, T., Parameter dependence of switching between supercritical and subcritical turbulent transitions in inner-cylinder rotating Taylor--Couette--Poiseuille flow, in Proceedings of 10th International Symposium on Turbulence, Heat and Mass Transfer (2023a). \\
+            松川裕樹, 塚原隆裕, Taylor渦流を基にしたTaylor--Couette--Poiseuille流の流動状態遷移過程, 日本流体力学会年会2023講演論文集 (2023b).
+        \end{quote}
     \item ページ数は単ページの場合はp.~xxとし，複数ページに亘る場合はpp.~xx--yyとする．このとき，xxとyyを結ぶ横棒はハイフン（-）ではなくenダッシュとする（--）．ただし，\verb|jsme.bst|を使用すれば\verb|pages|内でハイフンとしていても自動でenダッシュに変換してくれるので安心．
 \end{itemize}
+
+
 
 \section{引用のコマンドと本文中での表示}
 \label{sec:cite}
@@ -215,6 +253,34 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
 
 \subsection*{incollection}
 \label{ssec:incollection}
+
+\subsection*{inproceedings}
+\label{ssec:inproceedings}
+
+\subsection*{manual}
+\label{ssec:manual}
+
+\subsection*{mastersthesis}
+\label{ssec:mastersthesis}
+
+\subsection*{misc}
+\label{ssec:misc}
+
+\subsection*{phdthesis}
+\label{ssec:phdthesis}
+
+\subsection*{proceedings}
+\label{ssec:proceedings}
+
+\subsection*{techreport}
+\label{ssec:techreport}
+
+\subsection*{unpublished}
+\label{ssec:unpublished}
+
+
+
+
 
 \section{\texttt{jsme.bst}の使い方}
 それでは実際に\verb|jsme.bst|を使ってみましょう．
