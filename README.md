@@ -12,6 +12,7 @@
 * `title`の冒頭以外は小文字に変換するか否か．
 * ~~pp.の後ろにチルダを入れたい．~~
 * 本来であれば「文献」の後ろに「References」を入れなければいけないが，一旦は「文献」のみにする．複数の文献リストを入れるのは割とめんどくさい．
+* `title`の後にすぐ`year`が来る場合，カンマを消せていない．
 * `JSME-template1.tex`はハイパーリンク入りの文献テンプレート，`JSME-template2.tex`はハイパーリンク無しの文献テンプレート，`JSME-template3.tex`はJSMEオリジナルの文献リストを表示といった感じにしたい．
 * ハイパーリンク有効の場合は基本的にDOIやURLを末尾に表示したくない．
 * `access`があるときのみ`url`を有効にしたい．
@@ -21,16 +22,19 @@
 * `author`が3人以上の場合の最後の区切りを`, and`にするか`and`にするか悩み中．
 
 ### article
+* 雑誌に掲載された論文．
 * 理想形：`author 1`, `author 2` and `author 3`, `title`, `journal` (`year`), Vol.`volume`, No.`number`, pp.`pages`, `note`.
 * ~~`journal`がイタリック体になっている．~~
 * ~~`year`の位置が違う．~~
 
 ### book
+* 出版社が刊行した書籍．
 * 理想形：`author 1`, `author 2` and `author 3`, `title`, `publisher` (`year`), `note`.
 * ~~`title`がイタリック体になっている．~~
 * ~~`pages`の前にコロンがついている．~~
 
 ### booklet
+* 出版社や機関名が明示されていない印刷物や製本済の作品．
 * 理想形：`author 1`, `author 2` and `author 3`, `title`, `howpublished` (`year`), `note`.
 * ~~`year`の位置が違う．~~
 
@@ -38,11 +42,13 @@
 * `conference`は`inproceedings`と同一となるように作成．
 
 ### inbook
+* 書籍中の一部．
 * 理想形：`author 1`, `author 2` and `author 3`, `title`, `publisher` (`year`), pp.`pages`, `note`.
 * ~~`pages`が複数ページでもppにならない．~~
 * ~~`pages`の位置が違う．前にコロンがついている．~~
 
 ### incollection
+* それ自体がタイトルを持っている書籍中の一部．
 * 理想形：`author 1`, `author 2` and `author 3`, `title`, `booktitle`, `publisher` (`year`), Vol.`volume`, No.`number`, pp.`pages`, `note`.
 * ~~`title`に""がついている．~~
 * ~~`booktitle`がイタリック体になっている．~~
@@ -50,34 +56,45 @@
 * ~~`pages`の場所が違う．~~
 
 ### inproceedings
+* 会議論文集中の一論文．
 * 理想形：`author 1`, `author 2` and `author 3`, `title`, in Proceedings of `booktitle` (`year`), pp.`pages`, `note`.
 * ~~`booktitle`がイタリック体になっている．~~
 
 ### manual
+* マニュアル．技術文書．
 * 理想形：`author 1`, `author 2` and `author 3`, `title` (`year`), `note`.
 * ~~`title`がイタリック体になっている．~~
 
 ### mastersthesis
+* 修士学位論文．
 * 理想形：`author`, `title`, Master's thesis, `school` (`year`), `note`.
 * ~~`title`に"がついている．~~
 * ~~`school`を表示したい．~~
 
 ### misc
+* その他該当種別が無いもの．
 * arXiv上の文献は`misc`に分類．arXivであることは明記したい．
-* Webページ等は`misc`に分類．~~ただし，JSMEの書き方に注意．~~
+
+### online
+* Webページ等は`online`に分類．~~ただし，JSMEの書き方に注意．~~
+* jecon.bst独自の仕様？
 
 ### phdthesis
+* 博士学位論文．
 * 理想形：`author`, `title`, Ph.D. dissertation, `school` (`year`), `note`.
 
 ### proceedings
+* 会議論文集
 * 理想形：Proceedings of `title` (`year`), `note`.
 * ~~`year`しか表示されない．~~
 
 ### techreport
+* 大学，研究機関などから出版された報告書．
 * 理想形：`author 1`, `author 2` and `author 3`, `title`, `institution` (`year`), Vol.`volume`, No.`number`, pp.`pages`, `note`.
 * ~~`pages`の位置がおかしい．~~
 
 ### unpublished
+* 著者とタイトルがある文書であるが，公式に刊行されていないもの．
 * 理想形：`author 1`, `author 2` and `author 3`, `title` (`year`), `note`.
 * ~~`title`に""がついている．~~
 
@@ -130,7 +147,10 @@
 
 ### misc
 * 学部の卒業論文は`misc`でいいと思います．その際，`school`ではなく，`howpublished`を使用．
-* Webページ等は`misc`に分類．~~ただし，JSMEの書き方に注意．~~
+
+### online
+* Webページ等は`online`に分類．~~ただし，JSMEの書き方に注意．~~
+* jecon.bst独自の仕様？
 
 ### phdthesis
 * 理想形：`author`，`title`，`school`博士論文 (`year`)．

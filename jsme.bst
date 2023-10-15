@@ -1007,35 +1007,6 @@ FUNCTION {bst.howpublished.post.jp}
 { "" }	  % (default)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%	url
-
-% URLフィールド．非ゼロを指定するとURLが表示される．ゼロのときは非表示．
-FUNCTION {bst.show.url}
-% { #1 }	  % non-#0 -> URLを表示 (default)
-{ #0 }    % #0 -> URLを非表示
-
-% URLの前に付ける文字列 (英語文献用)
-%
-FUNCTION {bst.url.pre}
-{ ", \textless\url{" }	% (default)
-
-% URLの後に付ける文字列 (英語文献用)
-%
-FUNCTION {bst.url.post}
-{ "}\textgreater" }	   % (default)
-
-% URLの前に付ける文字列 (日本語文献用)
-%
-FUNCTION {bst.url.pre.jp}
-{ "，\textless\url{" }	% (default)
-
-% URLの後に付ける文字列 (日本語文献用)
-%
-FUNCTION {bst.url.post.jp}
-{ "}\textgreater" }	   % (default)
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	Access
 
 % Accessフィールド．accessフィールドはURLにアクセスした日付けを指定しておく．こ
@@ -1060,6 +1031,34 @@ FUNCTION {bst.access.pre.jp}
 %
 FUNCTION {bst.access.post.jp}
 { "）" }    % (default)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	url
+
+% URLフィールド．非ゼロを指定するとURLが表示される．ゼロのときは非表示．
+FUNCTION {bst.show.url}
+% { #1 }	  % non-#0 -> URLを表示 (default)
+{ #0 }    % #0 -> URLを非表示
+
+% URLの前に付ける文字列 (英語文献用)
+%
+FUNCTION {bst.url.pre}
+{ ", available from \textless\url{" }	% (default)
+
+% URLの後に付ける文字列 (英語文献用)
+%
+FUNCTION {bst.url.post}
+{ "}\textgreater" }	   % (default)
+
+% URLの前に付ける文字列 (日本語文献用)
+%
+FUNCTION {bst.url.pre.jp}
+{ "，\textless\url{" }	% (default)
+
+% URLの後に付ける文字列 (日本語文献用)
+%
+FUNCTION {bst.url.post.jp}
+{ "}\textgreater" }	   % (default)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	DOI (digital object identifier)
