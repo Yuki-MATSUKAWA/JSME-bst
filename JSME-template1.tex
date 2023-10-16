@@ -25,6 +25,9 @@
 %%% 数式等
 \usepackage{physics}
 \usepackage{amsmath,amssymb}
+%%% 枠
+\usepackage{ascmac}
+\usepackage{fancybox}
 %%% otf
 \usepackage{otf}
 %%% フォントを Times に変更
@@ -98,7 +101,7 @@ Serif体のフォントとしてはTimes New RomanやCentury，Computer Modern�
 \verb|jsme.bst|のユーザーは気にせず使用することができますが，改めて整理しておくので\verb|jsme.bst|を使わないときにも役に立つと思います．
 原則，日本機械学会の規定に合わせていますが，原稿テンプレートからは判断が難しい事項は一部独自の解釈を加えているものがあります．
 
-文献を並べる順序は以下の通り．
+文献を並べる順序の規則は以下の通り．
 \begin{enumerate}
     \item （Family, Givenの順で並べた際の）筆頭著者の氏名のアルファベット順．並べる際，日本人の氏名は漢字と仮名を用いた日本語表記で構わないが順序はアルファベット順とする．
     \item 筆頭著者が同一人物の場合，第二著者以降のアルファベット順で並べる．著者数が異なる場合は著者数が少ない方が先．これを最後の著者まで繰り返す．
@@ -142,8 +145,9 @@ Serif体のフォントとしてはTimes New RomanやCentury，Computer Modern�
             Matsukawa, Y. and Tsukahara, T., Parameter dependence of switching between supercritical and subcritical turbulent transitions in inner-cylinder rotating Taylor--Couette--Poiseuille flow, in Proceedings of 10th International Symposium on Turbulence, Heat and Mass Transfer (2023a). \\
             松川裕樹, 塚原隆裕, Taylor渦流を基にしたTaylor--Couette--Poiseuille流の流動状態遷移過程, 日本流体力学会年会2023講演論文集 (2023b).
         \end{quote}
-    \item ページ数は単ページの場合はp.~xxとし，複数ページに亘る場合はpp.~xx--yyとする．このとき，xxとyyを結ぶ横棒はハイフン（-）ではなくenダッシュとする（--）．ただし，\verb|jsme.bst|を使用すれば\verb|pages|内でハイフンとしていても自動でenダッシュに変換してくれるので安心．
+    \item ページ数は単ページの場合はp.~xxとし，複数ページに亘る場合はpp.~xx--yyとする．このとき，xxとyyを結ぶ横棒はハイフン（\verb|-|）ではなくenダッシュとする（\verb|--|）．ただし，\verb|jsme.bst|を使用すれば\verb|pages|内でハイフンとしていても自動でenダッシュに変換してくれるので安心．
 \end{itemize}
+以上の内容が満たされていれば他の情報は入れなくてよいと思われる．
 
 
 
@@ -235,47 +239,108 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
 \label{sec:bib}
 ここでは書誌情報ファイル（\texttt{bib}ファイル）の作り方，使い方を説明します．
 
+固有名詞
 
-\subsection*{article}
+
+\citet{流力年会2023}
+
+\cite{THMT2023}
+
+\cite{Matsukawa:PoF2022,松川:東北大SENAC2022}
+
+\subsection{\texttt{article}}
 \label{ssec:article}
+\texttt{article}は雑誌に掲載された論文です．
+流体力学分野では英文雑誌だとJournal of Fluid MechanicsやPhysics of Fluidsなどが挙げられます．
+国内雑誌だと日本機械学会誌や日本流体力学会誌などが該当します．
 
-\subsection*{book}
+\subsection{\texttt{book}}
 \label{ssec:book}
 
-\subsection*{booklet}
+\subsection{\texttt{booklet}}
 \label{ssec:booklet}
 
-\subsection*{conference}
+\subsection{\texttt{conference}}
 \label{ssec:conference}
 
-\subsection*{inbook}
+\subsection{\texttt{inbook}}
 \label{ssec:inbook}
 
-\subsection*{incollection}
+\subsection{\texttt{incollection}}
 \label{ssec:incollection}
 
-\subsection*{inproceedings}
+\subsection{\texttt{inproceedings}}
 \label{ssec:inproceedings}
 
-\subsection*{manual}
+\subsection{\texttt{manual}}
 \label{ssec:manual}
 
-\subsection*{mastersthesis}
+\subsection{\texttt{mastersthesis}}
 \label{ssec:mastersthesis}
+修士論文は\verb|mastersthesis|に分類します．
+\verb|masterthesis|ではなく\verb|mastersthesis|です．
+\verb|s|を忘れないでください．
+また，\verb|year|は修了「年度」ではなく修了「年」を西暦で書いてください．
+例えば，2023年3月に修了した人は2022年度修了生ですが\verb|year = {2023}|です．
+\begin{verbatim}
+@mastersthesis{松川:修論2023,
+    author  = {松川, 裕樹},
+    yomi    = {Matsukawa, Yuki},
+    title   = {直接数値解析を用いた高円筒比Taylor--Couette--Poiseuille流の流動状態遷移過程の分類},
+    school  = {東京理科大学大学院理工学研究科機械工学専攻},
+    year    = {2023}
+}
+\end{verbatim}
 
-\subsection*{misc}
+\subsection{\texttt{misc}}
 \label{ssec:misc}
+その他該当種別が無いものは\verb|misc|とします．
+学部の卒業論文は\verb|misc|でいいと思います．
+ただし，\verb|mastersthesis|や\verb|phdthesis|と異なり，\verb|school|のフィールドを使用できないので\verb|howpublished|で代用します．
+\begin{verbatim}
+@misc{松川:卒論2020,
+    author = {松川, 裕樹},
+    yomi = {Matsukawa, Yuki},
+    title = {亜臨界遷移域におけるTaylor-Couette-Poiseuille流の直接数値解析},
+    howpublished = {東京理科大学理工学部機械工学科卒業論文},
+    year = {2020}
+}
+\end{verbatim}
+また，arXivと呼ばれるプレプリントサーバーから引用した文献は\verb|misc|に分類します．
+arXiv上のExport BibTeX Citationと書いてあるところから文献情報を見ると\verb|misc|に分類されていることがわかると思います．
+この文献情報では以下のように書かれていることが多いです．
+\begin{verbatim}
+@misc{araki2023spacelocal,
+      title={Space-local Navier--Stokes turbulence}, 
+      author={Ryo Araki and Wouter J. T. Bos and Susumu Goto},
+      year={2023},
+      eprint={2308.07255},
+      archivePrefix={arXiv},
+      primaryClass={physics.flu-dyn}
+}
+\end{verbatim}
+\verb|jsme.bst|では\verb|archivePrefix|フィールドがあるとこの文献がarXiv上の文献だと認識してくれて\verb|eprint|の情報と合わせて
+\begin{quote}
+    Araki, R., Bos, W. J. T. and Goto, S., Space-local Navier--Stokes turbulence, \href{https://doi.org/10.48550/arXiv.2308.07255}{arXiv: 2308.07255} (2023).
+\end{quote}
+のように自動で書いてくれます．
+arXiv: 2308.07255と書かれている（青字の）箇所をクリックしたらarXivのページにジャンプできます．
 
-\subsection*{phdthesis}
+
+\subsection{\texttt{online}}
+\label{ssec:online}
+\texttt{online}は\verb|jsme.bst|独自のエントリなので他の\BibTeX{}スタイルファイルを用いるときには注意してください（\verb|jecon.bst|では使用できます）．
+
+\subsection{\texttt{phdthesis}}
 \label{ssec:phdthesis}
 
-\subsection*{proceedings}
+\subsection{\texttt{proceedings}}
 \label{ssec:proceedings}
 
-\subsection*{techreport}
+\subsection{\texttt{techreport}}
 \label{ssec:techreport}
 
-\subsection*{unpublished}
+\subsection{\texttt{unpublished}}
 \label{ssec:unpublished}
 
 

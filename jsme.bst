@@ -764,7 +764,7 @@ FUNCTION {bst.number.post.jp}
 % In (英語文献用)
 %
 FUNCTION {bst.in}
-{ " in " }    % (default)
+{ "" }    % (default)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	page
