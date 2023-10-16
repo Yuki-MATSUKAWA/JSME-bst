@@ -1,4 +1,4 @@
-\documentclass[a4paper,fleqn,12pt,uplatex]{jsarticle}
+\documentclass[a4paper,fleqn,uplatex]{jsarticle}
 
 %%% テキストエリア指定
 \setlength{\hoffset}{-5.4truemm}
@@ -102,51 +102,66 @@ Serif体のフォントとしてはTimes New RomanやCentury，Computer Modern�
 原則，日本機械学会の規定に合わせていますが，原稿テンプレートからは判断が難しい事項は一部独自の解釈を加えているものがあります．
 
 文献を並べる順序の規則は以下の通り．
-\begin{enumerate}
-    \item （Family, Givenの順で並べた際の）筆頭著者の氏名のアルファベット順．並べる際，日本人の氏名は漢字と仮名を用いた日本語表記で構わないが順序はアルファベット順とする．
-    \item 筆頭著者が同一人物の場合，第二著者以降のアルファベット順で並べる．著者数が異なる場合は著者数が少ない方が先．これを最後の著者まで繰り返す．
-    \item 著者が全員一致する文献があった場合は発行が早い順で並べる．
-    \item 確認できる範囲で発行年月日が同じだった場合，タイトルのアルファベット順で並べる．
-\end{enumerate}
+\begin{itembox}[l]{文献ソート規則}
+    \begin{enumerate}
+        \item （Family, Givenの順で並べた際の）筆頭著者の氏名のアルファベット順．並べる際，日本人の氏名は漢字と仮名を用いた日本語表記で構わないが順序はアルファベット順とする．
+        \item 筆頭著者が同一人物の場合，第二著者以降のアルファベット順で並べる．著者数が異なる場合は著者数が少ない方が先．これを最後の著者まで繰り返す．
+        \item 著者が全員一致する文献があった場合は発行が早い順で並べる．
+        \item 確認できる範囲で発行年月日が同じだった場合，タイトルのアルファベット順で並べ，西暦の後に小文字でアルファベットを順に振る．
+        \begin{quote}
+            Matsukawa, Y. and Tsukahara, T., Laminarization in subcritical Taylor--Couette--Poiseuille flow with increasing pressure gradient, Proceedings of Nineteenth International Conference on Flow Dynamics (2022a). \\
+            Matsukawa, Y. and Tsukahara, T., Subcritical transition of Taylor--Couette--Poiseuille flow at high radius ratio, \href{https://doi.org/10.1063/5.0096676}{Physics of Fluids}, Vol.~34, No.~7 (2022b), 074109.
+        \end{quote}
+    \end{enumerate}
+\end{itembox}
 文献を並べる際の表記に関する注意事項は以下の通り．
-\begin{itemize}
-    \item 並び順は原則として \\
-        著者$\to$タイトル$\to$誌名・書名$\to$出版社・大学名・機関名$\to$巻$\to$号$\to$発行年$\to$ページ$\to$論文番号・講演番号 \\
-        とする．
-        ただし，存在しないフィールドがある場合は抜かす．
-        また，webページ等の引用は極力避けるべきだが，引用する場合には必ず末尾にURLと参照日を明記する（第~\ref{sec:bib}章を参照）．
-    \item 文献自体が日本語で書かれている場合は外国人が書いていても日本語文献とする．
-    \item 文献自体が英語で書かれている場合は日本人が書いていても英語文献とする．
-    \item 日本語文献の著者の氏名は「姓」「名」の順で書き，間にスペース等は入れない．\\（例：松川裕樹）
-    \item 英語文献の著者の氏名はFamily nameのみ略記せず，Middle nameやGiven nameはイニシャルで記載する（例：Matsukawa Yuki $\to$ Matsukawa, Y.）．
-    \item 著者は全員記載する．
-    \item 日本語文献の著者数が二人以上の場合は
-        \begin{quote}
-            松川裕樹, 塚原隆裕        
-        \end{quote}
-        のように半角カンマと半角スペースを間に入れて繋ぐ．全角カンマではないので注意．
-    \item 英語文献の著者数が二人の場合は
-        \begin{quote}
-            Matsukawa, Y. and Tsukahara, T.        
-        \end{quote}
-        のようにandで繋ぎ，著者数が三人以上の場合は
-        \begin{quote}
-            Araki, R., Bos, W. J. T. and Goto, S.            
-        \end{quote}
-        のように最後だけandで繋ぐ．最後のandの前にカンマは入れない．
-    \item フィールドとフィールドの間は日本語文献・英語文献問わず半角カンマと半角スペースで繋ぐ．
-    \item 英語文献のタイトルは最初の単語の頭文字のみ大文字（固有名詞等は除く）．
-    \item 誌名・書名は省略せずに記載する．
-    \item 巻・号は日本語・英語文献問わずVol.~xx，No.~xxとする．
-    \item 発行年は西暦で表記し，括弧で括る．ただし，発行年の前のみ半角カンマは不要．
-    \item 著者が全員一致し，且つ発行年が一致する文献がある場合はより発行の日付が早い方から西暦の後に小文字でアルファベットを順に振る．
-    詳細な発行日が不明の場合はタイトルのアルファベット順で西暦の後に小文字でアルファベットを順に振る．
-        \begin{quote}
-            Matsukawa, Y. and Tsukahara, T., Parameter dependence of switching between supercritical and subcritical turbulent transitions in inner-cylinder rotating Taylor--Couette--Poiseuille flow, in Proceedings of 10th International Symposium on Turbulence, Heat and Mass Transfer (2023a). \\
-            松川裕樹, 塚原隆裕, Taylor渦流を基にしたTaylor--Couette--Poiseuille流の流動状態遷移過程, 日本流体力学会年会2023講演論文集 (2023b).
-        \end{quote}
-    \item ページ数は単ページの場合はp.~xxとし，複数ページに亘る場合はpp.~xx--yyとする．このとき，xxとyyを結ぶ横棒はハイフン（\verb|-|）ではなくenダッシュとする（\verb|--|）．ただし，\verb|jsme.bst|を使用すれば\verb|pages|内でハイフンとしていても自動でenダッシュに変換してくれるので安心．
-\end{itemize}
+\renewcommand\UrlFont{\rmfamily}
+\begin{itembox}[l]{文献リスト作成の注意事項（全体）}
+    \begin{itemize}
+        \item 並び順は原則として \\
+            著者（\verb|author|）$\to$タイトル（\verb|title|）$\to$誌名（\verb|journal|）・書名（\verb|booktitle|）$\to$出版社（\verb|publisher|）・大学名（\verb|school|）・機関名（\verb|institution|）$\to$巻（\verb|volume|）$\to$号（\verb|number|）$\to$発行年（\verb|year|）$\to$ページ（\verb|pages|）$\to$論文番号・講演番号（\verb|note|） \\
+            とする．
+            ただし，存在しないフィールドがある場合は抜かす．
+            また，webページ等の引用は極力避けるべきだが，引用する場合には必ず末尾にURLと参照日を明記する（第~\ref{ssec:online}節を参照）．
+            \begin{quote}
+                Kawamura Laboratory, DNS database of wall turbulence and heat transfer: Text database of Poiseuille flow for $\mathit{Re}_\tau = 64$, available from \textless\url{https://www.rs.tus.ac.jp/~t2lab/db/index.html}\textgreater, (accessed on 10 October, 2023).
+            \end{quote}
+        \item 文献自体が日本語で書かれている場合は外国人が書いていても日本語文献とする．
+        \item 文献自体が英語で書かれている場合は日本人が書いていても英語文献とする．
+        \item フィールドとフィールドの間は日本語文献・英語文献問わず半角カンマと半角スペースで繋ぐ．
+    \end{itemize}
+\end{itembox}
+\renewcommand\UrlFont{\ttfamily}
+\begin{itembox}[l]{文献リスト作成の注意事項（著者名）}
+    \begin{itemize}
+        \item 日本語文献の著者の氏名は「姓」「名」の順で書き，間にスペース等は入れない（例：松川裕樹）．
+        \item 英語文献の著者の氏名はFamily nameのみ略記せず，Middle nameやGiven nameはイニシャルで記載する（例：Matsukawa Yuki $\to$ Matsukawa, Y.）．
+        \item 著者は全員記載する．
+        \item 日本語文献の著者数が二人以上の場合は
+            \begin{quote}
+                松川裕樹, 塚原隆裕        
+            \end{quote}
+            のように半角カンマと半角スペースを間に入れて繋ぐ．全角カンマではないので注意．
+        \item 英語文献の著者数が二人の場合は
+            \begin{quote}
+                Matsukawa, Y. and Tsukahara, T.        
+            \end{quote}
+            のようにandで繋ぎ，著者数が三人以上の場合は
+            \begin{quote}
+                Araki, R., Bos, W. J. T. and Goto, S.            
+            \end{quote}
+            のように最後だけandで繋ぐ．最後のandの前にカンマは入れない．
+    \end{itemize}
+\end{itembox}
+\begin{itembox}[l]{文献リスト作成の注意事項（その他）}
+    \begin{itemize}
+        \item 英語文献のタイトルは最初の単語の頭文字のみ大文字（固有名詞等は除く）．
+        \item 誌名・書名は省略せずに記載する．
+        \item 巻・号は日本語・英語文献問わずVol.~xx，No.~xxとする．
+        \item 発行年は西暦で表記し，括弧で括る．ただし，発行年の前のみ半角カンマは不要．
+        \item ページ数は単ページの場合はp.~xxとし，複数ページに亘る場合はpp.~xx--yyとする．このとき，xxとyyを結ぶ横棒はハイフン（\verb|-|）ではなくenダッシュとする（\verb|--|）．ただし，\verb|jsme.bst|を使用すれば\verb|pages|内でハイフンとしていても自動でenダッシュに変換してくれるので安心．
+    \end{itemize}
+\end{itembox}
 以上の内容が満たされていれば他の情報は入れなくてよいと思われる．
 
 
@@ -198,6 +213,7 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
     \end{tabular}
 \end{table}
 
+
 \begin{table}[t]
     \centering
     \caption{Commands and output results for Japanese bibliography.}
@@ -234,6 +250,35 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
     \end{tabular}
 \end{table}
 
+
+\begin{table}[t]
+    \centering
+    \caption{Commands and output results for English bibliography.}
+    \label{tab:English2}
+    \begin{tabular}{ll}
+        コマンド &出力結果 \\
+        \multicolumn{2}{c}{------英語文献と英語文献------} \\
+        \verb|\cite{Matsukawa:ICFD2022,Matsukawa:PoF2022}|            &\cite{Matsukawa:ICFD2022,Matsukawa:PoF2022} \\
+        \verb|\citet{Matsukawa:ICFD2022,Matsukawa:PoF2022}|           &\citet{Matsukawa:ICFD2022,Matsukawa:PoF2022} \\
+        \verb|\citep{Matsukawa:ICFD2022,Matsukawa:PoF2022}|           &\citep{Matsukawa:ICFD2022,Matsukawa:PoF2022} \\
+        \verb|\citealt{Matsukawa:ICFD2022,Matsukawa:PoF2022}|         &\citealt{Matsukawa:ICFD2022,Matsukawa:PoF2022} \\
+        \verb|\citealp{Matsukawa:ICFD2022,Matsukawa:PoF2022}|         &\citealp{Matsukawa:ICFD2022,Matsukawa:PoF2022} \\
+        \verb|\citeauthor{Matsukawa:ICFD2022,Matsukawa:PoF2022}|      &\citeauthor{Matsukawa:ICFD2022,Matsukawa:PoF2022} \\
+        \verb|\citeyear{Matsukawa:ICFD2022,Matsukawa:PoF2022}|        &\citeyear{Matsukawa:ICFD2022,Matsukawa:PoF2022} \\
+        \verb|\citeyearpar{Matsukawa:ICFD2022,Matsukawa:PoF2022}|     &\citeyearpar{Matsukawa:ICFD2022,Matsukawa:PoF2022} \\
+        \multicolumn{2}{c}{------英語文献と日本語文献------} \\
+        \verb|\cite{Matsukawa:ICFD2022,松川:流力年会2022}|            &\cite{Matsukawa:ICFD2022,松川:流力年会2022} \\
+        \verb|\citet{Matsukawa:ICFD2022,松川:流力年会2022}|           &\citet{Matsukawa:ICFD2022,松川:流力年会2022} \\
+        \verb|\citep{Matsukawa:ICFD2022,松川:流力年会2022}|           &\citep{Matsukawa:ICFD2022,松川:流力年会2022} \\
+        \verb|\citealt{Matsukawa:ICFD2022,松川:流力年会2022}|         &\citealt{Matsukawa:ICFD2022,松川:流力年会2022} \\
+        \verb|\citealp{Matsukawa:ICFD2022,松川:流力年会2022}|         &\citealp{Matsukawa:ICFD2022,松川:流力年会2022} \\
+        \verb|\citeauthor{Matsukawa:ICFD2022,松川:流力年会2022}|      &\citeauthor{Matsukawa:ICFD2022,松川:流力年会2022} \\
+        \verb|\citeyear{Matsukawa:ICFD2022,松川:流力年会2022}|        &\citeyear{Matsukawa:ICFD2022,松川:流力年会2022} \\
+        \verb|\citeyearpar{Matsukawa:ICFD2022,松川:流力年会2022}|     &\citeyearpar{Matsukawa:ICFD2022,松川:流力年会2022}
+    \end{tabular}
+\end{table}
+
+
 \clearpage
 \section{書誌情報ファイル（\texttt{bib}ファイル）の作り方}
 \label{sec:bib}
@@ -246,13 +291,30 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
 
 \cite{THMT2023}
 
-\cite{Matsukawa:PoF2022,松川:東北大SENAC2022}
+
+
+
 
 \subsection{\texttt{article}}
 \label{ssec:article}
 \texttt{article}は雑誌に掲載された論文です．
 流体力学分野では英文雑誌だとJournal of Fluid MechanicsやPhysics of Fluidsなどが挙げられます．
 国内雑誌だと日本機械学会誌や日本流体力学会誌などが該当します．
+
+\begin{verbatim}
+@article{Matsukawa:PoF2022,
+    author  = {Matsukawa, Yuki and Tsukahara, Takahiro},
+    title   = {Subcritical transition of {Taylor--Couette--Poiseuille} flow at high radius ratio},
+    journal = {Physics of Fluids},
+    volume  = {34},
+    number  = {7},
+    year    = {2022},
+    doi     = {10.1063/5.0096676},
+    url     = {https://doi.org/10.1063/5.0096676},
+    eprint  = {https://doi.org/10.1063/5.0096676},
+    note    = {074109}
+}
+\end{verbatim}
 
 \subsection{\texttt{book}}
 \label{ssec:book}
