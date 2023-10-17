@@ -80,12 +80,14 @@
 ただ，材料力学など他分野の方でも基本的な使い方は同じです．
 また，第~\ref{sec:cite}節でも述べますが，著者数が1名，2名，3名以上のそれぞれで引用時の出力結果が異なります．
 そのため\verb|mybib_en.bib|，\verb|mybib_jp.bib|では可能な限り著者数が1名，2名，3名以上の計3パターンを用意しています．
-ただ，基本的に実在の文献を集めて載せているので学位論文（\verb|phdthesis|, \verb|masterthesis|）のように原則著者が一人のものや\verb|manual|，\verb|unpublished|など一部のエントリでは全てのパターンを網羅できていない場合もあるのでご了承ください（ただ，参考にするうえで困ることのないくらいにはパターンを網羅しているつもりです）．
+ただ，基本的に実在の文献を集めて載せているので学位論文（\verb|phdthesis|, \verb|mastersthesis|）のように原則著者が一人のものや\verb|manual|，\verb|unpublished|など一部のエントリでは全てのパターンを網羅できていない場合もあるのでご了承ください（ただ，参考にするうえで困ることのないくらいにはパターンを網羅しているつもりです）．
 
 この文書では\BibTeX{}初心者でも使いやすいよう，\BibTeX{}そのものの使い方や\verb|bib|ファイルの作成方法といった内容も可能な限り説明します．
 それでもわからなければさまざまな書籍やwebサイトがあるので参考にしてみてください．
-また，その都度説明しますが，日本機械学会の原稿テンプレートに沿ったリストを作成するために\verb|bib|ファイルの作成方法が一部通常と異なる場合があるのでご了承ください．
+また，その都度説明しますが，日本機械学会の原稿テンプレートに沿ったリストを作成するために\verb|bib|ファイルの作成方法が一部通常の\BibTeX{}と異なる場合があるのでご了承ください．
 
+\verb|jsme.bst|作成にあたり念のため動作チェックはしていますが，もし何か問題が発生した場合はGitHubにコメントしていただくかメールをいただけると幸いです．
+可能な限り対応します．
 
 \section{日本機械学会の原稿執筆要領における注意点}
 \label{sec:caution}
@@ -133,6 +135,7 @@ Serif体のフォントとしてはTimes New RomanやCentury，Computer Modern�
         \item 文献自体が英語で書かれている場合は日本人が書いていても英語文献とする．
         \item フィールドとフィールドの間は日本語文献・英語文献問わず半角カンマと半角スペースで繋ぐ．
         \item 他学会の文献テンプレートでは誌名を\textit{Italic}で書いたり巻数を\textbf{Bold}にしたりすることがあるが，日本機械学会では全てローマン体で統一する．
+        \item 以上の内容が満たされていて，文献にアクセスするうえで十分な情報が書かれていれば月（\verb|month|）や章（\verb|chapter|）等は不要．
     \end{itemize}
 \end{itembox}
 \renewcommand\UrlFont{\ttfamily}
@@ -166,7 +169,6 @@ Serif体のフォントとしてはTimes New RomanやCentury，Computer Modern�
         \item ページ数は単ページの場合はp.~xxとし，複数ページに亘る場合はpp.~xx--yyとする．このとき，xxとyyを結ぶ横棒はハイフン（\verb|-|）ではなくenダッシュとする（\verb|--|）．ただし，\verb|jsme.bst|を使用すれば\verb|pages|内でハイフンとしていても自動でenダッシュに変換してくれるので安心．
     \end{itemize}
 \end{itembox}
-以上の内容が満たされていれば他の情報は入れなくてよいと思われる．
 
 
 
@@ -288,7 +290,7 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
 \label{sec:bib}
 ここでは書誌情報ファイル（\texttt{bib}ファイル）の作り方，使い方を説明します．
 この\verb|pdf|の末尾の参考文献リストは同じディレクトリにある\verb|mybib_en.bib|と\verb|mybib_jp.bib|から作成しているので参考にしてください．
-\verb|jsme.bst|でサポートされているエントリは\hyperref[ssec:article]{\texttt{@article}}, \hyperref[ssec:book]{\texttt{@book}}, \hyperref[ssec:booklet]{\texttt{@booklet}}, \hyperref[ssec:conference]{\texttt{@conference}}, \hyperref[ssec:inbook]{\texttt{@inbook}}, \hyperref[ssec:incollection]{\texttt{@incollection}}, \hyperref[ssec:inproceedings]{\texttt{@inproceedings}}, \hyperref[ssec:manual]{\texttt{@manual}}, \hyperref[ssec:mastersthesis]{\texttt{@mastersthesis}}, \hyperref[ssec:misc]{\texttt{@misc}}, \hyperref[ssec:online]{\texttt{@online}}, \hyperref[ssec:phdthesis]{\texttt{@phdthesis}}, \hyperref[ssec:proceedings]{\texttt{@proceedings}}, \hyperref[ssec:techreport]{\texttt{@techreport}}, \hyperref[ssec:unpublished]{\texttt{@unpublished}}の15種類です．
+\verb|jsme.bst|でサポートされているエントリは\hyperref[ssec:article]{\texttt{@article}}, \hyperref[ssec:book]{\texttt{@book}}, \hyperref[ssec:booklet]{\texttt{@booklet}}, \hyperref[ssec:comment]{\texttt{@comment}}, \hyperref[ssec:conference]{\texttt{@conference}}, \hyperref[ssec:inbook]{\texttt{@inbook}}, \hyperref[ssec:incollection]{\texttt{@incollection}}, \hyperref[ssec:inproceedings]{\texttt{@inproceedings}}, \hyperref[ssec:manual]{\texttt{@manual}}, \hyperref[ssec:mastersthesis]{\texttt{@mastersthesis}}, \hyperref[ssec:misc]{\texttt{@misc}}, \hyperref[ssec:online]{\texttt{@online}}, \hyperref[ssec:phdthesis]{\texttt{@phdthesis}}, \hyperref[ssec:proceedings]{\texttt{@proceedings}}, \hyperref[ssec:techreport]{\texttt{@techreport}}, \hyperref[ssec:unpublished]{\texttt{@unpublished}}の16種類です．
 それぞれのエントリで必須となる項目（フィールド）が異なり，文献一覧への出力の方法も異なるので面倒くさがらずに分類しましょう．
 ただ，全ての文献を正確に分類することは難しく，判断が人により異なることもあります．
 \verb|JSME-bst|における分類の仕方も見る人によっては違和感を覚えるものがあるかもしれません．
@@ -391,6 +393,31 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
 \verb|@booklet|は使う機会が少ないため分類が難しいエントリですが，出版社が明記されていないような（薄い）冊子媒体が該当します．
 \verb|JSME-bst|では例として東京理科大学理工学部機械工学科（現・創域理工学部機械航空宇宙工学科）が毎年出しているMEニュースレター\footnote{MEニュースレター, \textless\url{https://www.rs.tus.ac.jp/me/newsletter.html}\textgreater}という広報の冊子を引用しました．
 
+\subsection{\texttt{@comment}}
+\label{ssec:comment}
+\begin{screen}
+    \begin{itemize}
+        \item 必須項目 \\
+        無し
+        \item オプション項目 \\
+        無し
+        \item 出力理想形 \\
+        出力されない
+        \item \verb|bib|ファイル作成例 \vspace{-3mm}
+\begin{verbatim}
+@comment{
+%%%%%%%%%%%%%%%%%%%
+%%%%% 英語文献 %%%%%
+%%%%%%%%%%%%%%%%%%%
+}
+\end{verbatim}
+    \end{itemize}
+\end{screen}
+
+\verb|bib|ファイル内でコメントを書く場合に用います．
+通常の\verb|tex|ファイルや\verb|sty|ファイル内では\verb|%|を書くことでその行はコメントアウトされますが，\verb|bib|ファイル内では使えません．
+
+
 \subsection{\texttt{@conference}}
 \label{ssec:conference}
 \hyperref[ssec:inproceedings]{\texttt{@inproceedings}}と同様なので省略．
@@ -451,6 +478,9 @@ Scribeというシステムとの互換性のために残されているらし�
 
 \subsection{\texttt{@inproceedings}}
 \label{ssec:inproceedings}
+\hyperref[ssec:conference]{\texttt{@conference}}と同様です．
+
+
 
 \subsection{\texttt{@manual}}
 \label{ssec:manual}
