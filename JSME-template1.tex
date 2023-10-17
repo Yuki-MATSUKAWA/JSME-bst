@@ -123,13 +123,14 @@ Serif体のフォントとしてはTimes New RomanやCentury，Computer Modern�
             著者（\verb|author|）$\to$タイトル（\verb|title|）$\to$誌名（\verb|journal|）・書名（\verb|booktitle|）$\to$出版社（\verb|publisher|）・大学名（\verb|school|）・機関名（\verb|institution|）$\to$巻（\verb|volume|）$\to$号（\verb|number|）$\to$発行年（\verb|year|）$\to$ページ（\verb|pages|）$\to$論文番号・講演番号（\verb|note|） \\
             とする．
             ただし，存在しないフィールドがある場合は抜かす．
-            また，webページ等の引用は極力避けるべきだが，引用する場合には必ず末尾にURLと参照日を明記する（第~\ref{ssec:online}節を参照）．
+            また，webページ等の引用は極力避けるべきだが，引用する場合には必ず末尾にURLと参照日を明記する（第~\ref{ssec:online}節\verb|@online|を参照）．
             \begin{quote}
                 Kawamura Laboratory, DNS database of wall turbulence and heat transfer: Text database of Poiseuille flow for $\mathit{Re}_\tau = 64$, available from \textless\url{https://www.rs.tus.ac.jp/~t2lab/db/index.html}\textgreater, (accessed on 10 October, 2023).
             \end{quote}
         \item 文献自体が日本語で書かれている場合は外国人が書いていても日本語文献とする．
         \item 文献自体が英語で書かれている場合は日本人が書いていても英語文献とする．
         \item フィールドとフィールドの間は日本語文献・英語文献問わず半角カンマと半角スペースで繋ぐ．
+        \item 他学会の文献テンプレートでは誌名を\textit{Italic}で書いたり巻数を\textbf{Bold}にしたりすることがあるが，日本機械学会では全てローマン体で統一する．
     \end{itemize}
 \end{itembox}
 \renewcommand\UrlFont{\ttfamily}
@@ -284,8 +285,10 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
 \section{書誌情報ファイル（\texttt{bib}ファイル）の作り方}
 \label{sec:bib}
 ここでは書誌情報ファイル（\texttt{bib}ファイル）の作り方，使い方を説明します．
-\verb|jsme.bst|でサポートされているエントリは\hyperref[ssec:article]{\texttt{article}}, \hyperref[ssec:book]{\texttt{book}}, \hyperref[ssec:booklet]{\texttt{booklet}}, \hyperref[ssec:conference]{\texttt{conference}}, \hyperref[ssec:inbook]{\texttt{inbook}}, \hyperref[ssec:incollection]{\texttt{incollection}}, \hyperref[ssec:inproceedings]{\texttt{inproceedings}}, \hyperref[ssec:manual]{\texttt{manual}}, \hyperref[ssec:mastersthesis]{\texttt{mastersthesis}}, \hyperref[ssec:misc]{\texttt{misc}}, \hyperref[ssec:online]{\texttt{online}}, \hyperref[ssec:phdthesis]{\texttt{phdthesis}}, \hyperref[ssec:proceedings]{\texttt{proceedings}}, \hyperref[ssec:techreport]{\texttt{techreport}}, \hyperref[ssec:unpublished]{\texttt{unpublished}}の15種類です．
-
+\verb|jsme.bst|でサポートされているエントリは\hyperref[ssec:article]{\texttt{@article}}, \hyperref[ssec:book]{\texttt{@book}}, \hyperref[ssec:booklet]{\texttt{@booklet}}, \hyperref[ssec:conference]{\texttt{@conference}}, \hyperref[ssec:inbook]{\texttt{@inbook}}, \hyperref[ssec:incollection]{\texttt{@incollection}}, \hyperref[ssec:inproceedings]{\texttt{@inproceedings}}, \hyperref[ssec:manual]{\texttt{@manual}}, \hyperref[ssec:mastersthesis]{\texttt{@mastersthesis}}, \hyperref[ssec:misc]{\texttt{@misc}}, \hyperref[ssec:online]{\texttt{@online}}, \hyperref[ssec:phdthesis]{\texttt{@phdthesis}}, \hyperref[ssec:proceedings]{\texttt{@proceedings}}, \hyperref[ssec:techreport]{\texttt{@techreport}}, \hyperref[ssec:unpublished]{\texttt{@unpublished}}の15種類です．
+それぞれのエントリで必須となる項目（フィールド）が異なり，文献一覧への出力の方法も異なるので面倒くさがらずに分類しましょう．
+ただ，全ての文献を正確に分類することは難しく，判断が人により異なることもあります．
+\verb|JSME-bst|における分類の仕方も見る人によっては違和感を覚えるものがあるかもしれません．
 
 固有名詞
 
@@ -298,7 +301,7 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
 
 
 
-\subsection{\texttt{article}}
+\subsection{\texttt{@article}}
 \label{ssec:article}
 \begin{screen}
     \begin{itemize}
@@ -306,59 +309,107 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
         \verb|author|, \verb|title|, \verb|journal|, \verb|year|
         \item オプション項目 \\
         \verb|volume|, \verb|number|, \verb|pages|, \verb|month|, \verb|note|, \verb|key|
-        \item 理想形 \\
+        \item 出力理想形 \\
             \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{journal}} (\colorbox[gray]{0.8}{\texttt{year}}), Vol.~\colorbox[gray]{0.8}{\texttt{volume}}, No.~\colorbox[gray]{0.8}{\texttt{number}}, pp.~\colorbox[gray]{0.8}{\texttt{pages}}, \colorbox[gray]{0.8}{\texttt{note}}.
-    \end{itemize}
-\end{screen}
-
-\texttt{article}は雑誌に掲載された論文です．
-流体力学分野では英文雑誌だとJournal of Fluid Mechanics\footnote{Journal of Fluid Mechanics, \textless\url{https://www.cambridge.org/core/journals/journal-of-fluid-mechanics}\textgreater}やPhysics of Fluids\footnote{Physics of Fluids, \textless\url{https://pubs.aip.org/aip/pof}\textgreater}などが挙げられます．
-国内雑誌だと日本機械学会誌や日本流体力学会誌などが該当します．
-
+        \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
 @article{Matsukawa:PoF2022,
     author  = {Matsukawa, Yuki and Tsukahara, Takahiro},
-    title   = {Subcritical transition of {Taylor--Couette--Poiseuille} flow at high radius ratio},
+    title   = {Subcritical transition of {Taylor--Couette--Poiseuille} flow 
+                at high radius ratio},
     journal = {Physics of Fluids},
     volume  = {34},
     number  = {7},
     year    = {2022},
     doi     = {10.1063/5.0096676},
     url     = {https://doi.org/10.1063/5.0096676},
-    eprint  = {https://doi.org/10.1063/5.0096676},
     note    = {074109}
 }
 \end{verbatim}
+    \end{itemize}
+\end{screen}
 
-\subsection{\texttt{book}}
+\texttt{@article}は雑誌に掲載された論文です．
+流体力学分野では英文雑誌だとJournal of Fluid Mechanics\footnote{Journal of Fluid Mechanics, \textless\url{https://www.cambridge.org/core/journals/journal-of-fluid-mechanics}\textgreater}やPhysics of Fluids\footnote{Physics of Fluids, \textless\url{https://pubs.aip.org/aip/pof}\textgreater}などが挙げられます．
+国内雑誌だと日本機械学会誌\footnote{日本機械学会誌, \textless\url{https://www.jsme.or.jp/publication/kaisi/}\textgreater}や日本流体力学会誌『ながれ』\footnote{日本流体力学会誌『ながれ』, \textless\url{https://www.nagare.or.jp/publication/nagare.html}\textgreater}などが該当します．
+
+
+\subsection{\texttt{@book}}
 \label{ssec:book}
-出版社が刊行した書籍を引用する際は\verb|book|を使います．
-似たエントリとして\verb|inbook|（第~\ref{ssec:book}節参照）がありますが，特定のページを参照したのではなく，書籍全体を参照した場合は\verb|book|を使いましょう．
+\begin{screen}
+    \begin{itemize}
+        \item 必須項目 \\
+        \verb|author| / \verb|editor|, \verb|title|, \verb|publisher|, \verb|year|
+        \item オプション項目 \\
+        \verb|volume|, \verb|number|, \verb|series|, \verb|address|, \verb|edition|, \verb|month|, \verb|note|, \verb|key|
+        \item 出力理想形 \\
+            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{publisher}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+        \item \verb|bib|ファイル作成例 \vspace{-3mm}
+\begin{verbatim}
+@book{Schmid:Springer2001,
+    author      = {Peter J. Schmid and Dan S. Henningson},
+    title       = {Stability and Transition in Shear Flows},
+    publisher   = {Springer New York},
+    year        = {2001},
+    doi         = {10.1007/978-1-4613-0185-1}
+}
+\end{verbatim}
+    \end{itemize}
+\end{screen}
 
-\subsection{\texttt{booklet}}
+出版社が刊行した書籍を引用する際は\verb|@book|を使います．
+似たエントリとして\hyperref[ssec:inbook]{\texttt{@inbook}}がありますが，特定のページを参照したのではなく，書籍全体を参照した場合は\verb|@book|を使いましょう．
+
+\subsection{\texttt{@booklet}}
 \label{ssec:booklet}
-\verb|booklet|は使う機会が少ないため分類が難しいエントリですが，出版社が明記されていないような（薄い）冊子媒体が該当します．
+\begin{screen}
+    \begin{itemize}
+        \item 必須項目 \\
+        \verb|title|
+        \item オプション項目 \\
+        \verb|author|, \verb|howpublished|, \verb|address|, \verb|month|, \verb|year|, \verb|note|, \verb|key|
+        \item 出力理想形 \\
+            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{howpublished}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+        \item \verb|bib|ファイル作成例 \vspace{-3mm}
+\begin{verbatim}
+@booklet{Wang:MEnews2014,
+    author          = {Wang, Lin},
+    title           = {Exchange student from 
+                        {Northwestern Polytechnical University (China)}},
+    howpublished    = {ME Newsletter, Department of Mechanical Engineering, 
+                        Tokyo University of Science},
+    year            = {2014},
+    url             = {https://www.rs.tus.ac.jp/me/pdf/newsletter/ME_NL_No15.pdf}
+}
+\end{verbatim}
+    \end{itemize}
+\end{screen}
+
+\verb|@booklet|は使う機会が少ないため分類が難しいエントリですが，出版社が明記されていないような（薄い）冊子媒体が該当します．
 \verb|JSME-bst|では例として東京理科大学理工学部機械工学科（現・創域理工学部機械航空宇宙工学科）が毎年出しているMEニュースレター\footnote{MEニュースレター, \textless\url{https://www.rs.tus.ac.jp/me/newsletter.html}\textgreater}という広報の冊子を引用しました．
 
-\subsection{\texttt{conference}}
+\subsection{\texttt{@conference}}
 \label{ssec:conference}
+\hyperref[ssec:inproceedings]{\texttt{@inproceedings}}と同様なので省略．
+Scribeというシステムとの互換性のために残されているらしい．
 
-\subsection{\texttt{inbook}}
+
+\subsection{\texttt{@inbook}}
 \label{ssec:inbook}
 
-\subsection{\texttt{incollection}}
+\subsection{\texttt{@incollection}}
 \label{ssec:incollection}
 
-\subsection{\texttt{inproceedings}}
+\subsection{\texttt{@inproceedings}}
 \label{ssec:inproceedings}
 
-\subsection{\texttt{manual}}
+\subsection{\texttt{@manual}}
 \label{ssec:manual}
 
-\subsection{\texttt{mastersthesis}}
+\subsection{\texttt{@mastersthesis}}
 \label{ssec:mastersthesis}
-修士論文は\verb|mastersthesis|に分類します．
-\verb|masterthesis|ではなく\verb|mastersthesis|です．
+修士論文は\verb|@mastersthesis|に分類します．
+\verb|@masterthesis|ではなく\verb|@mastersthesis|です．
 \verb|s|を忘れないでください．
 また，\verb|year|は修了「年度」ではなく修了「年」を西暦で書いてください．
 例えば，2023年3月に修了した人は2022年度修了生ですが\verb|year = {2023}|です．
@@ -372,24 +423,19 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
 }
 \end{verbatim}
 
-\subsection{\texttt{misc}}
+\subsection{\texttt{@misc}}
 \label{ssec:misc}
 \begin{screen}
     \begin{itemize}
         \item 必須項目 \\
         無し
         \item オプション項目 \\
-        \verb|author|, \verb|title|, \verb|howpublished|, \verb|month|, \verb|year|, \verb|archivePrefix|, \verb|eprint|, \verb|note|, \verb|key|
-        \item 理想形（通常） \\
+        \verb|author|, \verb|title|, \verb|howpublished|, \verb|archivePrefix|, \verb|eprint|, \verb|month|, \verb|year|, \verb|note|, \verb|key|
+        \item 出力理想形（通常） \\
             \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{howpublished}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
-        \item 理想形（arXivの場合） \\
+        \item 出力理想形（arXivの場合） \\
             \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, arXiv: \colorbox[gray]{0.8}{\texttt{eprint}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
-    \end{itemize}
-\end{screen}
-
-その他該当種別が無いものは\verb|misc|とします．
-学部の卒業論文は\verb|misc|でいいと思います．
-ただし，\verb|mastersthesis|や\verb|phdthesis|と異なり，\verb|school|のフィールドを使用できないので\verb|howpublished|で代用します．
+        \item \verb|bib|ファイル作成例（通常） \vspace{-3mm}
 \begin{verbatim}
 @misc{松川:卒論2020,
     author = {松川, 裕樹},
@@ -399,19 +445,26 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
     year = {2020}
 }
 \end{verbatim}
-また，arXiv\footnote{arXiv, \textless\url{https://arxiv.org/}\textgreater}と呼ばれるプレプリントサーバーから引用した文献は\verb|misc|に分類します．
-arXiv上のExport BibTeX Citationと書いてあるところから文献情報を見ると\verb|misc|に分類されていることがわかると思います．
-この文献情報では以下のように書かれていることが多いです．
+        \item \verb|bib|ファイル作成例（arXivの場合） \vspace{-3mm}
 \begin{verbatim}
-@misc{araki2023spacelocal,
-      title={Space-local Navier--Stokes turbulence}, 
-      author={Ryo Araki and Wouter J. T. Bos and Susumu Goto},
-      year={2023},
-      eprint={2308.07255},
-      archivePrefix={arXiv},
-      primaryClass={physics.flu-dyn}
+@misc{Araki:arXiv2023,
+    author          = {Araki, Ryo and Bos, Wouter J. T. and Goto, Susumu},
+    title           = {Space-local {Navier--Stokes} turbulence}, 
+    year            = {2023},
+    eprint          = {2308.07255},
+    archivePrefix   = {arXiv},
+    primaryClass    = {physics.flu-dyn}
 }
 \end{verbatim}
+    \end{itemize}
+\end{screen}
+
+その他該当種別が無いものは\verb|@misc|とします．
+学部の卒業論文は\verb|misc|でいいと思います．
+ただし，\verb|@mastersthesis|や\verb|@phdthesis|と異なり，\verb|school|のフィールドを使用できないので\verb|howpublished|で代用します．
+また，arXiv\footnote{arXiv, \textless\url{https://arxiv.org/}\textgreater}と呼ばれるプレプリントサーバーから引用した文献は\verb|@misc|に分類します．
+arXiv上のExport BibTeX Citationと書いてあるところから文献情報を見ると\verb|@misc|に分類されていることがわかると思います．
+この文献情報では上記のように\verb|eprint = {2308.07255}|, \verb|archivePrefix = {arXiv}|などと書かれていることが多いです．
 \verb|jsme.bst|では\verb|archivePrefix|フィールドがあるとこの文献がarXiv上の文献だと認識してくれて\verb|eprint|の情報と合わせて
 \begin{quote}
     Araki, R., Bos, W. J. T. and Goto, S., Space-local Navier--Stokes turbulence, \href{https://doi.org/10.48550/arXiv.2308.07255}{arXiv: 2308.07255} (2023).
@@ -420,32 +473,61 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 \verb|eprint|の情報からURLを自動生成するので，\href{https://doi.org/10.48550/arXiv.2308.07255}{arXiv: 2308.07255}と書かれている（青字の）箇所をクリックしたらarXivの該当ページにジャンプできます．
 
 
-\subsection{\texttt{online}}
+\subsection{\texttt{@online}}
 \label{ssec:online}
-\texttt{online}は\verb|jsme.bst|独自のエントリなので他の\BibTeX{}スタイルファイルを用いるときには注意してください（\verb|jecon.bst|では使用できます）．
-英語のwebページの場合は末尾に
+\begin{screen}
+    \begin{itemize}
+        \item 必須項目 \\
+        後で確認．
+        \item オプション項目 \\
+        後で確認．
+        \item 出力理想形（英語文献） \\
+            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, available from \textless\colorbox[gray]{0.8}{\texttt{url}}\textgreater, (accessed on \colorbox[gray]{0.8}{access}).
+        \item 出力理想形（日本語文献） \\
+            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, available from \textless\colorbox[gray]{0.8}{\texttt{url}}\textgreater, （参照日 \colorbox[gray]{0.8}{access}）.
+        \item \verb|bib|ファイル作成例 \vspace{-3mm}
+\begin{verbatim}
+@article{Matsukawa:PoF2022,
+    author  = {Matsukawa, Yuki and Tsukahara, Takahiro},
+    title   = {Subcritical transition of {Taylor--Couette--Poiseuille} flow 
+                at high radius ratio},
+    journal = {Physics of Fluids},
+    volume  = {34},
+    number  = {7},
+    year    = {2022},
+    doi     = {10.1063/5.0096676},
+    url     = {https://doi.org/10.1063/5.0096676},
+    note    = {074109}
+}
+\end{verbatim}
+    \end{itemize}
+\end{screen}
+
+\verb|@online|は\verb|jsme.bst|独自のエントリなので他の\BibTeX{}スタイルファイルを用いるときには注意してください（\verb|jsme.bst|の元となった\verb|jecon.bst|では使用できます）．
+本来，webページ等の引用はあまり推奨されるものではありませんが，データベース等を研究室のwebページ等で公開していることがあるので使う機会がゼロとは言えないでしょう．
+英語のwebページの場合は
 \begin{quote}
-    , available from \textless URL \textgreater, (accessed on 参照日).
+    Kawamura Laboratory, DNS database of wall turbulence and heat transfer: Text database of Poiseuille flow for $\mathit{Re}_\tau = 64$, available from \textless\url{https://www.rs.tus.ac.jp/~t2lab/db/index.html}\textgreater, (accessed on 10 October, 2023).
 \end{quote}
-を入れることが日本機械学会の原稿テンプレートに記載されています．
-ただ，日本語のwebページの場合の書き方が不明なので\verb|jsme.bst|では
+のように，末尾にwebページのURLと参照日を入れることが日本機械学会の原稿テンプレートに記載されています．
+日本語のwebページの場合は
 \renewcommand\UrlFont{\rmfamily}
 \begin{quote}
     立川裕二, 博士論文執筆の際にお願いしたいこと, \textless\url{https://member.ipmu.jp/yuji.tachikawa/misc/dron.html}\textgreater, （参照日 2023年10月10日）.
 \end{quote}
 \renewcommand\UrlFont{\ttfamily}
-のように出力しています．
+のように出力します．
 
-\subsection{\texttt{phdthesis}}
+\subsection{\texttt{@phdthesis}}
 \label{ssec:phdthesis}
 
-\subsection{\texttt{proceedings}}
+\subsection{\texttt{@proceedings}}
 \label{ssec:proceedings}
 
-\subsection{\texttt{techreport}}
+\subsection{\texttt{@techreport}}
 \label{ssec:techreport}
 
-\subsection{\texttt{unpublished}}
+\subsection{\texttt{@unpublished}}
 \label{ssec:unpublished}
 
 
