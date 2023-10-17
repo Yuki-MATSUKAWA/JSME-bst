@@ -59,7 +59,7 @@
 \renewcommand{\tablename}{Table~}       % 表番号
 
 \title{【非公式】日本機械学会\BibTeX{}スタイルファイル \\ \texttt{JSME-bst} テンプレートその1（標準）}
-\author{松川 裕樹\thanks{東京理科大学大学院 創域理工学研究科 機械航空宇宙工学専攻，Email: \texttt{7523701 ＿＠＿ ed.tus.ac.jp}}}
+\author{松川 裕樹\thanks{東京理科大学大学院 創域理工学研究科 機械航空宇宙工学専攻 博士後期課程，Email: \texttt{7523701 ＿＠＿ ed.tus.ac.jp}}}
 
 \date{最終更新：\today}
 
@@ -396,9 +396,55 @@ Scribeというシステムとの互換性のために残されているらし�
 
 \subsection{\texttt{@inbook}}
 \label{ssec:inbook}
+\begin{screen}
+    \begin{itemize}
+        \item 必須項目 \\
+        \verb|author| / \verb|editor|, \verb|title|, \verb|chapter| / \verb|pages|, \verb|publisher|, \verb|year|
+        \item オプション項目 \\
+        \verb|volume|, \verb|series|, \verb|address|, \verb|edition|, \verb|month|, \verb|note|, \verb|key|
+        \item 出力理想形 \\
+            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{publisher}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{pages}}, \colorbox[gray]{0.8}{\texttt{note}}.
+        \item \verb|bib|ファイル作成例 \vspace{-3mm}
+\begin{verbatim}
+@inbook{Davidson:Oxford2015,
+    author      = {Peter A. Davidson},
+    title       = {Turbulence: 
+                    An Introduction for Scientists and Engineers, Second Edition},
+    publisher   = {Oxford University Press},
+    year        = {2015},
+    pages       = {61--104}
+}
+\end{verbatim}
+    \end{itemize}
+\end{screen}
+
 
 \subsection{\texttt{@incollection}}
 \label{ssec:incollection}
+\begin{screen}
+    \begin{itemize}
+        \item 必須項目 \\
+        \verb|author|, \verb|title|, \verb|booktitle|, \verb|year|
+        \item オプション項目 \\
+        \verb|editor|, \verb|pages|, \verb|organization|, \verb|publisher|, \verb|address|, \verb|month|, \verb|note|, \verb|key|
+        \item 出力理想形 \\
+            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{booktitle}}, \colorbox[gray]{0.8}{\texttt{publisher}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{pages}}, \colorbox[gray]{0.8}{\texttt{note}}.
+        \item \verb|bib|ファイル作成例 \vspace{-3mm}
+\begin{verbatim}
+@incollection{Lueptow:Springer2000,
+    author      = {Lueptow, Richard M.},
+    title       = {Stability and experimental velocity field 
+                    in {Taylor--Couette} flow with axial and radial flow},
+    booktitle   = {Physics of Rotating Fluids},
+    publisher   = {Springer-Verlag Berlin Heidelberg New York},
+    pages       = {137--155},
+    year        = {2000},
+    doi         = {10.1007/3-540-45549-3}
+}
+\end{verbatim}
+    \end{itemize}
+\end{screen}
+
 
 \subsection{\texttt{@inproceedings}}
 \label{ssec:inproceedings}
@@ -408,20 +454,35 @@ Scribeというシステムとの互換性のために残されているらし�
 
 \subsection{\texttt{@mastersthesis}}
 \label{ssec:mastersthesis}
+\begin{screen}
+    \begin{itemize}
+        \item 必須項目 \\
+        \verb|author|, \verb|title|, \verb|school|, \verb|year|
+        \item オプション項目 \\
+        \verb|address|, \verb|month|, \verb|note|, \verb|key|
+        \item 出力理想形（英語文献） \\
+            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, Master's thesis, \colorbox[gray]{0.8}{\texttt{school}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+        \item 出力理想形（日本語文献） \\
+            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{school}}修士論文 (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+        \item \verb|bib|ファイル作成例 \vspace{-3mm}
+\begin{verbatim}
+@mastersthesis{松川:修論2023,
+    author  = {松川, 裕樹},
+    yomi    = {Matsukawa, Yuki},
+    title   = {直接数値解析を用いた高円筒比
+                Taylor--Couette--Poiseuille流の流動状態遷移過程の分類},
+    school  = {東京理科大学大学院理工学研究科機械工学専攻},
+    year    = {2023}
+}
+\end{verbatim}
+    \end{itemize}
+\end{screen}
+
 修士論文は\verb|@mastersthesis|に分類します．
 \verb|@masterthesis|ではなく\verb|@mastersthesis|です．
 \verb|s|を忘れないでください．
 また，\verb|year|は修了「年度」ではなく修了「年」を西暦で書いてください．
 例えば，2023年3月に修了した人は2022年度修了生ですが\verb|year = {2023}|です．
-\begin{verbatim}
-@mastersthesis{松川:修論2023,
-    author  = {松川, 裕樹},
-    yomi    = {Matsukawa, Yuki},
-    title   = {直接数値解析を用いた高円筒比Taylor--Couette--Poiseuille流の流動状態遷移過程の分類},
-    school  = {東京理科大学大学院理工学研究科機械工学専攻},
-    year    = {2023}
-}
-\end{verbatim}
 
 \subsection{\texttt{@misc}}
 \label{ssec:misc}
@@ -437,12 +498,13 @@ Scribeというシステムとの互換性のために残されているらし�
             \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, arXiv: \colorbox[gray]{0.8}{\texttt{eprint}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
         \item \verb|bib|ファイル作成例（通常） \vspace{-3mm}
 \begin{verbatim}
-@misc{松川:卒論2020,
-    author = {松川, 裕樹},
-    yomi = {Matsukawa, Yuki},
-    title = {亜臨界遷移域におけるTaylor-Couette-Poiseuille流の直接数値解析},
-    howpublished = {東京理科大学理工学部機械工学科卒業論文},
-    year = {2020}
+@misc{湯村:卒論2006,
+    author          = {湯村, 翼},
+    yomi            = {Yumura, Tsubasa},
+    title           = {レイリーテイラー不安定による赤道電離圏プラズマバブルの発生},
+    howpublished    = {北海道大学理学部地球科学科卒業論文},
+    year            = {2006},
+    url             = {https://researchmap.jp/yumu/published_papers/1902404}
 }
 \end{verbatim}
         \item \verb|bib|ファイル作成例（arXivの場合） \vspace{-3mm}
@@ -506,12 +568,12 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 \verb|@online|は\verb|jsme.bst|独自のエントリなので他の\BibTeX{}スタイルファイルを用いるときには注意してください（\verb|jsme.bst|の元となった\verb|jecon.bst|では使用できます）．
 本来，webページ等の引用はあまり推奨されるものではありませんが，データベース等を研究室のwebページ等で公開していることがあるので使う機会がゼロとは言えないでしょう．
 英語のwebページの場合は
+\renewcommand\UrlFont{\rmfamily}
 \begin{quote}
     Kawamura Laboratory, DNS database of wall turbulence and heat transfer: Text database of Poiseuille flow for $\mathit{Re}_\tau = 64$, available from \textless\url{https://www.rs.tus.ac.jp/~t2lab/db/index.html}\textgreater, (accessed on 10 October, 2023).
 \end{quote}
 のように，末尾にwebページのURLと参照日を入れることが日本機械学会の原稿テンプレートに記載されています．
 日本語のwebページの場合は
-\renewcommand\UrlFont{\rmfamily}
 \begin{quote}
     立川裕二, 博士論文執筆の際にお願いしたいこと, \textless\url{https://member.ipmu.jp/yuji.tachikawa/misc/dron.html}\textgreater, （参照日 2023年10月10日）.
 \end{quote}
@@ -520,6 +582,28 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 
 \subsection{\texttt{@phdthesis}}
 \label{ssec:phdthesis}
+\begin{screen}
+    \begin{itemize}
+        \item 必須項目 \\
+        \verb|author|, \verb|title|, \verb|school|, \verb|year|
+        \item オプション項目 \\
+        \verb|address|, \verb|month|, \verb|note|, \verb|key|
+        \item 出力理想形 \\
+            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{booktitle}}, \colorbox[gray]{0.8}{\texttt{publisher}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{pages}}, \colorbox[gray]{0.8}{\texttt{note}}.
+        \item \verb|bib|ファイル作成例 \vspace{-3mm}
+\begin{verbatim}
+@mastersthesis{松川:修論2023,
+    author  = {松川, 裕樹},
+    yomi    = {Matsukawa, Yuki},
+    title   = {直接数値解析を用いた高円筒比
+                Taylor--Couette--Poiseuille流の流動状態遷移過程の分類},
+    school  = {東京理科大学大学院理工学研究科機械工学専攻},
+    year    = {2023}
+}
+\end{verbatim}
+    \end{itemize}
+\end{screen}
+
 
 \subsection{\texttt{@proceedings}}
 \label{ssec:proceedings}
