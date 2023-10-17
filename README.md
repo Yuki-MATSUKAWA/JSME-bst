@@ -192,5 +192,5 @@ jsme.bstは武田史郎氏作のjecon-bst（経済学用スタイルファイル
 
 1. [jecon-bst](https://github.com/ShiroTakeda/jecon-bst)
 1. [日本機械学会 原稿テンプレート](https://www.jsme.or.jp/publish/transact/for-authors.html)
-1. [奥村晴彦，黒木裕介，［改訂第8版］LaTeX2e美文書作成入門，技術評論社 (2020)，pp.184--198．](https://gihyo.jp/book/2020/978-4-297-11712-2)
-1. [吉永徹美，LaTeX2e辞典 増補改訂版，翔泳社 (2018)，pp.502--508．](https://www.shoeisha.co.jp/book/detail/9784798157078)
+1. [奥村晴彦, 黒木裕介, ［改訂第8版］LaTeX2e美文書作成入門, 技術評論社 (2020), pp.184--198.](https://gihyo.jp/book/2020/978-4-297-11712-2)
+1. [吉永徹美, LaTeX2e辞典 増補改訂版, 翔泳社 (2018), pp.502--508.](https://www.shoeisha.co.jp/book/detail/9784798157078)
