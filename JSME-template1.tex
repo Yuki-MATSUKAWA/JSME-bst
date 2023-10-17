@@ -512,7 +512,7 @@ Scribeというシステムとの互換性のために残されているらし�
 \end{screen}
 
 修士論文は\verb|@mastersthesis|に分類します．
-\verb|@masterthesis|ではなく\verb|@mastersthesis|です．
+\verb|@masterthesis|ではなく\texttt{@master\textcolor{red}{s}thesis}です．
 \verb|s|を忘れないでください．
 また，\verb|year|は修了「年度」ではなく修了「年」を西暦で書いてください．
 例えば，2023年3月に修了した人は2022年度修了生ですが\verb|year = {2023}|です．
@@ -583,30 +583,26 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
             \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, available from \textless\colorbox[gray]{0.8}{\texttt{url}}\textgreater, （参照日 \colorbox[gray]{0.8}{access}）.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
-@article{Matsukawa:PoF2022,
-    author  = {Matsukawa, Yuki and Tsukahara, Takahiro},
-    title   = {Subcritical transition of {Taylor--Couette--Poiseuille} flow 
-                at high radius ratio},
-    journal = {Physics of Fluids},
-    volume  = {34},
-    number  = {7},
-    year    = {2022},
-    doi     = {10.1063/5.0096676},
-    url     = {https://doi.org/10.1063/5.0096676},
-    note    = {074109}
+@online{Kawamura_Ret64,
+    author  = "{Kawamura Laboratory}",
+    title   = {{DNS} Database of Wall Turbulence and Heat Transfer: 
+                Text database of {Poiseuille} flow for $\mathit{Re}_\tau = 64$},
+    url     = {https://www.rs.tus.ac.jp/~t2lab/db/index.html},
+    access  = {10 October, 2023}
 }
 \end{verbatim}
     \end{itemize}
 \end{screen}
 
 \verb|@online|は\verb|jsme.bst|独自のエントリなので他の\BibTeX{}スタイルファイルを用いるときには注意してください（\verb|jsme.bst|の元となった\verb|jecon.bst|では使用できます）．
-本来，webページ等の引用はあまり推奨されるものではありませんが，データベース等を研究室のwebページ等で公開していることがあるので使う機会がゼロとは言えないでしょう．
+本来，webページ等の引用はあまり推奨されるものではありませんが，データベースを研究室のwebページ等で公開していることがある\footnote{乱流の分野におけるデータベースとしては，東京理科大学河村研究室（現在は塚原研究室が管理） \textless\url{https://www.rs.tus.ac.jp/~t2lab/db/index.html}\textgreater や東京大学笠木研究室（現在は複数の大学によって管理） \textless\url{https://thtlab.jp}\textgreater などが挙げられます．}ので使う機会がゼロとは言えないでしょう．
 英語のwebページの場合は
 \renewcommand\UrlFont{\rmfamily}
 \begin{quote}
     Kawamura Laboratory, DNS database of wall turbulence and heat transfer: Text database of Poiseuille flow for $\mathit{Re}_\tau = 64$, available from \textless\url{https://www.rs.tus.ac.jp/~t2lab/db/index.html}\textgreater, (accessed on 10 October, 2023).
 \end{quote}
 のように，末尾にwebページのURLと参照日を入れることが日本機械学会の原稿テンプレートに記載されています．
+英語での参照日の書き方は\verb|access  = {10 October, 2023}|のように日，月（アルファベット），年の順です．
 日本語のwebページの場合は
 \begin{quote}
     立川裕二, 博士論文執筆の際にお願いしたいこと, \textless\url{https://member.ipmu.jp/yuji.tachikawa/misc/dron.html}\textgreater, （参照日 2023年10月10日）.
@@ -626,13 +622,13 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
             \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{booktitle}}, \colorbox[gray]{0.8}{\texttt{publisher}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{pages}}, \colorbox[gray]{0.8}{\texttt{note}}.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
-@mastersthesis{松川:修論2023,
-    author  = {松川, 裕樹},
-    yomi    = {Matsukawa, Yuki},
-    title   = {直接数値解析を用いた高円筒比
-                Taylor--Couette--Poiseuille流の流動状態遷移過程の分類},
+@phdthesis{塚原:博論2007,
+    author  = {塚原, 隆裕},
+    yomi    = {Tsukahara, Takahiro},
+    title   = {大規模直接数値シミュレーションによる低レイノルズ数平行平板間乱流の研究},
     school  = {東京理科大学大学院理工学研究科機械工学専攻},
-    year    = {2023}
+    year    = {2007},
+    url     = {https://iss.ndl.go.jp/books/R100000002-I000009177724-00}
 }
 \end{verbatim}
     \end{itemize}
