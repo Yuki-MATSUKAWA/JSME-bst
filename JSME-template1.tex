@@ -68,6 +68,8 @@
 \maketitle
 \thispagestyle{cover}
 
+\tableofcontents
+
 \section{はじめに}
 \label{sec:introduction}
 \verb|jsme.bst|は日本機械学会\footnote{一般社団法人 日本機械学会（The Japan Society of Mechanical Engineers, JSME），\textless\url{https://www.jsme.or.jp/}\textgreater}の原稿テンプレート\footnote{日本機械学会 原稿テンプレート，\textless\url{https://www.jsme.or.jp/publish/transact/for-authors.html}\textgreater}に基づいた参考文献の出力を実現するために作成した，非公式\BibTeX{}スタイルファイルテンプレートです．
@@ -136,7 +138,7 @@ Serif体のフォントとしてはTimes New RomanやCentury，Computer Modern�
 \renewcommand\UrlFont{\ttfamily}
 \begin{itembox}[l]{文献リスト作成の注意事項（著者名）}
     \begin{itemize}
-        \item 日本語文献の著者の氏名は「姓」「名」の順で書き，間にスペース等は入れない（例：松川裕樹）．
+        \item 著者の氏名は「姓」「名」の順で書き，間にスペース等は入れない（例：松川裕樹）．
         \item 英語文献の著者の氏名はFamily nameのみ略記せず，Middle nameやGiven nameはイニシャルで記載する（例：Matsukawa Yuki $\to$ Matsukawa, Y.）．
         \item 著者は全員記載する．
         \item 日本語文献の著者数が二人以上の場合は
@@ -285,6 +287,7 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
 \section{書誌情報ファイル（\texttt{bib}ファイル）の作り方}
 \label{sec:bib}
 ここでは書誌情報ファイル（\texttt{bib}ファイル）の作り方，使い方を説明します．
+この\verb|pdf|の末尾の参考文献リストは同じディレクトリにある\verb|mybib_en.bib|と\verb|mybib_jp.bib|から作成しているので参考にしてください．
 \verb|jsme.bst|でサポートされているエントリは\hyperref[ssec:article]{\texttt{@article}}, \hyperref[ssec:book]{\texttt{@book}}, \hyperref[ssec:booklet]{\texttt{@booklet}}, \hyperref[ssec:conference]{\texttt{@conference}}, \hyperref[ssec:inbook]{\texttt{@inbook}}, \hyperref[ssec:incollection]{\texttt{@incollection}}, \hyperref[ssec:inproceedings]{\texttt{@inproceedings}}, \hyperref[ssec:manual]{\texttt{@manual}}, \hyperref[ssec:mastersthesis]{\texttt{@mastersthesis}}, \hyperref[ssec:misc]{\texttt{@misc}}, \hyperref[ssec:online]{\texttt{@online}}, \hyperref[ssec:phdthesis]{\texttt{@phdthesis}}, \hyperref[ssec:proceedings]{\texttt{@proceedings}}, \hyperref[ssec:techreport]{\texttt{@techreport}}, \hyperref[ssec:unpublished]{\texttt{@unpublished}}の15種類です．
 それぞれのエントリで必須となる項目（フィールド）が異なり，文献一覧への出力の方法も異なるので面倒くさがらずに分類しましょう．
 ただ，全ての文献を正確に分類することは難しく，判断が人により異なることもあります．
@@ -524,6 +527,7 @@ Scribeというシステムとの互換性のために残されているらし�
 その他該当種別が無いものは\verb|@misc|とします．
 学部の卒業論文は\verb|misc|でいいと思います．
 ただし，\verb|@mastersthesis|や\verb|@phdthesis|と異なり，\verb|school|のフィールドを使用できないので\verb|howpublished|で代用します．
+したがって，\verb|@mastersthesis|や\verb|@phdthesis|では\verb|school|に所属名だけ（例：\verb|school = {東京理科大学大学院理工学研究科機械工学専攻}|）書けばよかったものが\verb|@misc|で卒論を出力する際には\verb|howpublished = {北海道大学理学部地球科学科卒業論文}|のように「\verb|卒業論文|」の文字まで書く必要があります．
 また，arXiv\footnote{arXiv, \textless\url{https://arxiv.org/}\textgreater}と呼ばれるプレプリントサーバーから引用した文献は\verb|@misc|に分類します．
 arXiv上のExport BibTeX Citationと書いてあるところから文献情報を見ると\verb|@misc|に分類されていることがわかると思います．
 この文献情報では上記のように\verb|eprint = {2308.07255}|, \verb|archivePrefix = {arXiv}|などと書かれていることが多いです．
@@ -617,9 +621,14 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 
 
 
-
 \section{\texttt{jsme.bst}の使い方}
 それでは実際に\verb|jsme.bst|を使ってみましょう．
+
+\section*{謝辞}
+\addcontentsline{toc}{section}{謝辞}
+\verb|jsme.bst|は武田史郎氏作の経済学用\BibTeX{}スタイルファイル\verb|jecon.bst|\footnote{\texttt{jecon-bst}, \textless\url{https://github.com/ShiroTakeda/jecon-bst}\textgreater}を改変して作成したものです．
+\verb|jecon.bst|内に残されていた武田氏の懇切丁寧なコメントおよび説明用の\verb|jecon-example.pdf|は\verb|jsme.bst|を作成するにあたり大変参考になり，これらが無ければ実現しませんでした．
+ここに，深く感謝の意を表します．
 
 \clearpage
 %%% 参考文献内の URL 表示をタイプライター調にしない．
