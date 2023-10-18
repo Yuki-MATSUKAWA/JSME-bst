@@ -491,26 +491,22 @@ Scribeというシステムとの互換性のために残されているらし�
 \begin{screen}
     \begin{itemize}
         \item 必須項目 \\
-        \verb|author|, \verb|title|, \verb|journal|, \verb|year|
+        \verb|author|, \verb|title|, \verb|booktitle|, \verb|year|
         \item オプション項目 \\
-        \verb|volume|, \verb|number|, \verb|pages|, \verb|month|, \verb|note|, \verb|key|
+        \verb|editor|, \verb|pages|, \verb|organization|, \verb|publisher|, \verb|address|, \verb|month|, \verb|note|, \verb|key|
         \item 出力（英語文献） \\
-            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{journal}} (\colorbox[gray]{0.8}{\texttt{year}}), Vol.~\colorbox[gray]{0.8}{\texttt{volume}}, No.~\colorbox[gray]{0.8}{\texttt{number}}, pp.~\colorbox[gray]{0.8}{\texttt{pages}}, \colorbox[gray]{0.8}{\texttt{note}}.
+            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{booktitle}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
         \item 出力（日本語文献） \\
-            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}}, \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{journal}} (\colorbox[gray]{0.8}{\texttt{year}}), Vol.~\colorbox[gray]{0.8}{\texttt{volume}}, No.~\colorbox[gray]{0.8}{\texttt{number}}, pp.~\colorbox[gray]{0.8}{\texttt{pages}}, \colorbox[gray]{0.8}{\texttt{note}}.
+            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}}, \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{booktitle}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
-@article{Matsukawa:PoF2022,
-    author  = {Matsukawa, Yuki and Tsukahara, Takahiro},
-    title   = {Subcritical transition of {Taylor--Couette--Poiseuille} flow 
-                at high radius ratio},
-    journal = {Physics of Fluids},
-    volume  = {34},
-    number  = {7},
-    year    = {2022},
-    doi     = {10.1063/5.0096676},
-    url     = {https://doi.org/10.1063/5.0096676},
-    note    = {074109}
+@inproceedings{Matsukawa:ICFD2022,
+    author      = {Matsukawa, Yuki and Tsukahara, Takahiro},
+    title       = {Laminarization in Subcritical {Taylor--Couette--Poiseuille} Flow 
+                    with Increasing Pressure Gradient},
+    booktitle   = {Proceedings of 19th International Conference on Flow Dynamics},
+    year        = {2022},
+    note        = {OS15-10}
 }
 \end{verbatim}
     \end{itemize}
@@ -522,6 +518,29 @@ Scribeというシステムとの互換性のために残されているらし�
 
 \subsection{\texttt{@manual}}
 \label{ssec:manual}
+\begin{screen}
+    \begin{itemize}
+        \item 必須項目 \\
+        \verb|title|
+        \item オプション項目 \\
+        \verb|author|, \verb|organization|, \verb|address|, \verb|edition|, \verb|month|, \verb|year|, \verb|note|, \verb|key|
+        \item 出力（英語文献） \\
+            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+        \item 出力（日本語文献） \\
+            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}}, \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+        \item \verb|bib|ファイル作成例 \vspace{-3mm}
+\begin{verbatim}
+@manual{Tecplot2023,
+    author  = "{Tecplot, Inc.}",
+    title   = {Tecplot 360 Getting Started Manual},
+    year    = {2023},
+    url    
+     = {https://tecplot.azureedge.net/products/360/current/360_getting_started.pdf}
+}
+\end{verbatim}
+    \end{itemize}
+\end{screen}
+
 
 \subsection{\texttt{@mastersthesis}}
 \label{ssec:mastersthesis}
@@ -679,12 +698,83 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 
 \subsection{\texttt{@proceedings}}
 \label{ssec:proceedings}
+\begin{screen}
+    \begin{itemize}
+        \item 必須項目 \\
+        \verb|title|, \verb|year|
+        \item オプション項目 \\
+        \verb|editor|, \verb|organization|, \verb|publisher|, \verb|address|, \verb|month|, \verb|note|, \verb|key|
+        \item 出力 \\
+            \colorbox[gray]{0.8}{\texttt{title}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+        \item \verb|bib|ファイル作成例 \vspace{-3mm}
+\begin{verbatim}
+@proceedings{THMT2023,
+    title   = "{Proceedings of 10th International Symposium 
+                on Turbulence, Heat and Mass Transfer}",
+    yomi    = {Proceedings},
+    year    = {2023}
+}
+\end{verbatim}
+    \end{itemize}
+\end{screen}
+
+
 
 \subsection{\texttt{@techreport}}
 \label{ssec:techreport}
+\begin{screen}
+    \begin{itemize}
+        \item 必須項目 \\
+        \verb|author|, \verb|title|, \verb|institution|, \verb|year|
+        \item オプション項目 \\
+        \verb|type|, \verb|number|, \verb|address|, \verb|month|, \verb|note|, \verb|key|
+        \item 出力（英語文献） \\
+            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{institution}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+        \item 出力（日本語文献） \\
+            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}}, \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{institution}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+        \item \verb|bib|ファイル作成例 \vspace{-3mm}
+\begin{verbatim}
+@techreport{Neuhart:NASAreport2004,
+    author      = {Neuhart, Dan H. and McGinley, Catherine B.},
+    title       = {Free-Stream Turbulence Intensity in the {Langley} 
+                    14- by 22-Foot Subsonic Tunnel},
+    institution = {NASA Technical Publication},
+    year        = {2004},
+    url         = {https://ntrs.nasa.gov/citations/20040120956},
+    note        = {TP-2004-213247}
+}
+\end{verbatim}
+    \end{itemize}
+\end{screen}
+
+
 
 \subsection{\texttt{@unpublished}}
 \label{ssec:unpublished}
+\begin{screen}
+    \begin{itemize}
+        \item 必須項目 \\
+        \verb|author|, \verb|title|, \verb|note|
+        \item オプション項目 \\
+        \verb|month|, \verb|year|, \verb|key|
+        \item 出力（英語文献） \\
+            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+        \item 出力（日本語文献） \\
+            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}}, \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+        \item \verb|bib|ファイル作成例 \vspace{-3mm}
+\begin{verbatim}
+@unpublished{Dunkel:MITOCW2015,
+    author  = {Dunkel, J\:{o}rn},
+    title   = {Nonlinear Dynamics {II}: Continuum Systems, 
+        Linear Stability Analysis and Pattern Formation, {MIT Open Course Ware}},
+    year    = {2015},
+    url     = {https://ocw.mit.edu/courses/
+        18-354j-nonlinear-dynamics-ii-continuum-systems-spring-2015/
+        resources/mit18_354js15_ch7/}
+}
+\end{verbatim}
+    \end{itemize}
+\end{screen}
 
 
 
