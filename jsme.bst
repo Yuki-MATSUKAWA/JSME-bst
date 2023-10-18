@@ -1246,12 +1246,12 @@ FUNCTION {bst.access.post}
 % accessの前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.access.pre.jp}
-{ ", （参照日 " } % (default)
+{ ", (参照日 " } % (default)
 
 % accessの後に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.access.post.jp}
-{ "）" }    % (default)
+{ ")" }    % (default)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	url
