@@ -488,6 +488,34 @@ Scribeというシステムとの互換性のために残されているらし�
 
 \subsection{\texttt{@inproceedings}}
 \label{ssec:inproceedings}
+\begin{screen}
+    \begin{itemize}
+        \item 必須項目 \\
+        \verb|author|, \verb|title|, \verb|journal|, \verb|year|
+        \item オプション項目 \\
+        \verb|volume|, \verb|number|, \verb|pages|, \verb|month|, \verb|note|, \verb|key|
+        \item 出力（英語文献） \\
+            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{journal}} (\colorbox[gray]{0.8}{\texttt{year}}), Vol.~\colorbox[gray]{0.8}{\texttt{volume}}, No.~\colorbox[gray]{0.8}{\texttt{number}}, pp.~\colorbox[gray]{0.8}{\texttt{pages}}, \colorbox[gray]{0.8}{\texttt{note}}.
+        \item 出力（日本語文献） \\
+            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}}, \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{journal}} (\colorbox[gray]{0.8}{\texttt{year}}), Vol.~\colorbox[gray]{0.8}{\texttt{volume}}, No.~\colorbox[gray]{0.8}{\texttt{number}}, pp.~\colorbox[gray]{0.8}{\texttt{pages}}, \colorbox[gray]{0.8}{\texttt{note}}.
+        \item \verb|bib|ファイル作成例 \vspace{-3mm}
+\begin{verbatim}
+@article{Matsukawa:PoF2022,
+    author  = {Matsukawa, Yuki and Tsukahara, Takahiro},
+    title   = {Subcritical transition of {Taylor--Couette--Poiseuille} flow 
+                at high radius ratio},
+    journal = {Physics of Fluids},
+    volume  = {34},
+    number  = {7},
+    year    = {2022},
+    doi     = {10.1063/5.0096676},
+    url     = {https://doi.org/10.1063/5.0096676},
+    note    = {074109}
+}
+\end{verbatim}
+    \end{itemize}
+\end{screen}
+
 \hyperref[ssec:conference]{\texttt{@conference}}と同様です．
 
 
