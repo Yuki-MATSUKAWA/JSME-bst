@@ -133,8 +133,8 @@ Serif体のフォントとしてはTimes New RomanやCentury，Computer Modern�
             \end{quote}
         \item 文献自体が日本語で書かれている場合は外国人が書いていても日本語文献とする．
         \item 文献自体が英語で書かれている場合は日本人が書いていても英語文献とする．
-        \item フィールドとフィールドの間は日本語文献・英語文献問わず半角カンマと半角スペースで繋ぐ．
-        \item 他学会の文献テンプレートでは誌名を\textit{Italic}で書いたり巻数を\textbf{Bold}にしたりすることがあるが，日本機械学会では全てローマン体で統一する．
+        \item フィールドとフィールドの間は日本語文献・英語文献問わず半角カンマと半角スペース（, ）で繋ぐ．全角カンマ（，）ではないので注意．
+        \item 他学会の文献テンプレートでは誌名を\textit{Italic}にしたり巻数を\textbf{Bold}にしたりすることがあるが，日本機械学会では全てローマン体で統一する．
         \item 以上の内容が満たされていて，文献にアクセスするうえで十分な情報が書かれていれば月（\verb|month|）や章（\verb|chapter|）等は不要．
     \end{itemize}
 \end{itembox}
@@ -148,7 +148,7 @@ Serif体のフォントとしてはTimes New RomanやCentury，Computer Modern�
             \begin{quote}
                 松川裕樹, 塚原隆裕        
             \end{quote}
-            のように半角カンマと半角スペースを間に入れて繋ぐ．全角カンマではないので注意．
+            のように半角カンマと半角スペースを間に入れて繋ぐ．
         \item 英語文献の著者数が二人の場合は
             \begin{quote}
                 Matsukawa, Y. and Tsukahara, T.        
@@ -314,8 +314,10 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
         \verb|author|, \verb|title|, \verb|journal|, \verb|year|
         \item オプション項目 \\
         \verb|volume|, \verb|number|, \verb|pages|, \verb|month|, \verb|note|, \verb|key|
-        \item 出力理想形 \\
+        \item 出力（英語文献） \\
             \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{journal}} (\colorbox[gray]{0.8}{\texttt{year}}), Vol.~\colorbox[gray]{0.8}{\texttt{volume}}, No.~\colorbox[gray]{0.8}{\texttt{number}}, pp.~\colorbox[gray]{0.8}{\texttt{pages}}, \colorbox[gray]{0.8}{\texttt{note}}.
+        \item 出力（日本語文献） \\
+            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}}, \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{journal}} (\colorbox[gray]{0.8}{\texttt{year}}), Vol.~\colorbox[gray]{0.8}{\texttt{volume}}, No.~\colorbox[gray]{0.8}{\texttt{number}}, pp.~\colorbox[gray]{0.8}{\texttt{pages}}, \colorbox[gray]{0.8}{\texttt{note}}.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
 @article{Matsukawa:PoF2022,
@@ -347,8 +349,10 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
         \verb|author| / \verb|editor|, \verb|title|, \verb|publisher|, \verb|year|
         \item オプション項目 \\
         \verb|volume|, \verb|number|, \verb|series|, \verb|address|, \verb|edition|, \verb|month|, \verb|note|, \verb|key|
-        \item 出力理想形 \\
+        \item 出力（英語文献） \\
             \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{publisher}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+        \item 出力（日本語文献） \\
+            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}}, \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{publisher}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
 @book{Schmid:Springer2001,
@@ -373,8 +377,10 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
         \verb|title|
         \item オプション項目 \\
         \verb|author|, \verb|howpublished|, \verb|address|, \verb|month|, \verb|year|, \verb|note|, \verb|key|
-        \item 出力理想形 \\
+        \item 出力（英語文献） \\
             \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{howpublished}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+        \item 出力（日本語文献） \\
+            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}}, \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{howpublished}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
 @booklet{Wang:MEnews2014,
@@ -401,7 +407,7 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
         無し
         \item オプション項目 \\
         無し
-        \item 出力理想形 \\
+        \item 出力 \\
         出力されない
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
@@ -432,8 +438,10 @@ Scribeというシステムとの互換性のために残されているらし�
         \verb|author| / \verb|editor|, \verb|title|, \verb|chapter| / \verb|pages|, \verb|publisher|, \verb|year|
         \item オプション項目 \\
         \verb|volume|, \verb|series|, \verb|address|, \verb|edition|, \verb|month|, \verb|note|, \verb|key|
-        \item 出力理想形 \\
+        \item 出力（英語文献） \\
             \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{publisher}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{pages}}, \colorbox[gray]{0.8}{\texttt{note}}.
+        \item 出力（日本語文献） \\
+            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}}, \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{publisher}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{pages}}, \colorbox[gray]{0.8}{\texttt{note}}.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
 @inbook{Davidson:Oxford2015,
@@ -457,8 +465,10 @@ Scribeというシステムとの互換性のために残されているらし�
         \verb|author|, \verb|title|, \verb|booktitle|, \verb|year|
         \item オプション項目 \\
         \verb|editor|, \verb|pages|, \verb|organization|, \verb|publisher|, \verb|address|, \verb|month|, \verb|note|, \verb|key|
-        \item 出力理想形 \\
+        \item 出力（英語文献） \\
             \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{booktitle}}, \colorbox[gray]{0.8}{\texttt{publisher}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{pages}}, \colorbox[gray]{0.8}{\texttt{note}}.
+        \item 出力（日本語文献） \\
+            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}}, \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{booktitle}}, \colorbox[gray]{0.8}{\texttt{publisher}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{pages}}, \colorbox[gray]{0.8}{\texttt{note}}.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
 @incollection{Lueptow:Springer2000,
@@ -493,10 +503,10 @@ Scribeというシステムとの互換性のために残されているらし�
         \verb|author|, \verb|title|, \verb|school|, \verb|year|
         \item オプション項目 \\
         \verb|address|, \verb|month|, \verb|note|, \verb|key|
-        \item 出力理想形（英語文献） \\
+        \item 出力（英語文献） \\
             \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, Master's thesis, \colorbox[gray]{0.8}{\texttt{school}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
-        \item 出力理想形（日本語文献） \\
-            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{school}}修士論文 (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+        \item 出力（日本語文献） \\
+            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}}, \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{school}}修士論文 (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
 @mastersthesis{松川:修論2023,
@@ -515,7 +525,7 @@ Scribeというシステムとの互換性のために残されているらし�
 \verb|@masterthesis|ではなく\texttt{@master\textcolor{red}{s}thesis}です．
 \verb|s|を忘れないでください．
 また，\verb|year|は修了「年度」ではなく修了「年」を西暦で書いてください．
-例えば，2023年3月に修了した人は2022年度修了生ですが\verb|year = {2023}|です．
+例えば，日本の大学を2023年3月に修了した人は2022年度修了生ですが\verb|year = {2023}|です．
 
 \subsection{\texttt{@misc}}
 \label{ssec:misc}
@@ -525,9 +535,11 @@ Scribeというシステムとの互換性のために残されているらし�
         無し
         \item オプション項目 \\
         \verb|author|, \verb|title|, \verb|howpublished|, \verb|archivePrefix|, \verb|eprint|, \verb|month|, \verb|year|, \verb|note|, \verb|key|
-        \item 出力理想形（通常） \\
+        \item 出力（通常，英語文献） \\
             \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{howpublished}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
-        \item 出力理想形（arXivの場合） \\
+        \item 出力（通常，日本語文献） \\
+            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}}, \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{howpublished}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+        \item 出力（arXivの場合） \\
             \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, arXiv: \colorbox[gray]{0.8}{\texttt{eprint}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
         \item \verb|bib|ファイル作成例（通常） \vspace{-3mm}
 \begin{verbatim}
@@ -558,7 +570,7 @@ Scribeというシステムとの互換性のために残されているらし�
 学部の卒業論文は\verb|misc|でいいと思います．
 ただし，\verb|@mastersthesis|や\verb|@phdthesis|と異なり，\verb|school|のフィールドを使用できないので\verb|howpublished|で代用します．
 したがって，\verb|@mastersthesis|や\verb|@phdthesis|では\verb|school|に所属名だけ（例：\verb|school = {東京理科大学大学院理工学研究科機械工学専攻}|）書けばよかったものが\verb|@misc|で卒論を出力する際には\verb|howpublished = {北海道大学理学部地球科学科卒業論文}|のように「\verb|卒業論文|」の文字まで書く必要があります．
-また，arXiv\footnote{arXiv, \textless\url{https://arxiv.org/}\textgreater}と呼ばれるプレプリントサーバーから引用した文献は\verb|@misc|に分類します．
+また，arXiv\footnote{arXiv（「アーカイブ」と読みます）, \textless\url{https://arxiv.org/}\textgreater}と呼ばれるプレプリントサーバーから引用した文献は\verb|@misc|に分類します．
 arXiv上のExport BibTeX Citationと書いてあるところから文献情報を見ると\verb|@misc|に分類されていることがわかると思います．
 この文献情報では上記のように\verb|eprint = {2308.07255}|, \verb|archivePrefix = {arXiv}|などと書かれていることが多いです．
 \verb|jsme.bst|では\verb|archivePrefix|フィールドがあるとこの文献がarXiv上の文献だと認識してくれて\verb|eprint|の情報と合わせて
@@ -577,9 +589,9 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
         後で確認．
         \item オプション項目 \\
         後で確認．
-        \item 出力理想形（英語文献） \\
+        \item 出力（英語文献） \\
             \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, available from \textless\colorbox[gray]{0.8}{\texttt{url}}\textgreater, (accessed on \colorbox[gray]{0.8}{access}).
-        \item 出力理想形（日本語文献） \\
+        \item 出力（日本語文献） \\
             \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, available from \textless\colorbox[gray]{0.8}{\texttt{url}}\textgreater, （参照日 \colorbox[gray]{0.8}{access}）.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
@@ -618,8 +630,10 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
         \verb|author|, \verb|title|, \verb|school|, \verb|year|
         \item オプション項目 \\
         \verb|address|, \verb|month|, \verb|note|, \verb|key|
-        \item 出力理想形 \\
-            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{booktitle}}, \colorbox[gray]{0.8}{\texttt{publisher}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{pages}}, \colorbox[gray]{0.8}{\texttt{note}}.
+        \item 出力（英語文献） \\
+            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, Ph.D. dissertation, \colorbox[gray]{0.8}{\texttt{school}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+        \item 出力（日本語文献） \\
+            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}}, \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{school}}博士論文 (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
 @phdthesis{塚原:博論2007,
