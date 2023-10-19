@@ -102,7 +102,7 @@ Serif体のフォントとしてはTimes New RomanやCentury，Computer Modern�
 フォントを変える際はプリアンブルで指定します．
 この文書の場合はプリアンブルの\verb|\usepackage{newtxtext,newtxmath}|でフォントをTimes New Romanに変更しています．
 
-\subsection{文献の並べ方}
+\subsection{文献の並べ方・引用の仕方}
 この節では文献リストのフィールド（\BibTeX{}における\verb|author|や\verb|title|）の並べ方について説明します．
 \verb|jsme.bst|のユーザーは気にせず使用することができますが，改めて整理しておくので\verb|jsme.bst|を使わないときにも役に立つと思います．
 原則，日本機械学会の規定に合わせていますが，原稿テンプレートからは判断が難しい事項は一部独自の解釈を加えているものがあります．
@@ -169,6 +169,11 @@ Serif体のフォントとしてはTimes New RomanやCentury，Computer Modern�
         \item 発行年は西暦で表記し，括弧で括る．ただし，発行年の前のみ半角カンマは不要．
         \item ページ数は単ページの場合はp.~xxとし，複数ページに亘る場合はpp.~xx--yyとする．
     \end{itemize}
+\end{itembox}
+\begin{itembox}[l]{本文中での引用の仕方}
+    \begin{itemize}
+        \item 
+\end{itemize}
 \end{itembox}
 
 
@@ -339,7 +344,7 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
 
 エントリーは雑誌論文や学位論文といった，その文献の該当する種別を表します．
 \verb|jsme.bst|でサポートされているエントリーは\hyperref[ssec:article]{\texttt{@article}}, \hyperref[ssec:book]{\texttt{@book}}, \hyperref[ssec:booklet]{\texttt{@booklet}}, \hyperref[ssec:comment]{\texttt{@comment}}, \hyperref[ssec:conference]{\texttt{@conference}}, \hyperref[ssec:inbook]{\texttt{@inbook}}, \hyperref[ssec:incollection]{\texttt{@incollection}}, \hyperref[ssec:inproceedings]{\texttt{@inproceedings}}, \hyperref[ssec:manual]{\texttt{@manual}}, \hyperref[ssec:mastersthesis]{\texttt{@mastersthesis}}, \hyperref[ssec:misc]{\texttt{@misc}}, \hyperref[ssec:online]{\texttt{@online}}, \hyperref[ssec:phdthesis]{\texttt{@phdthesis}}, \hyperref[ssec:proceedings]{\texttt{@proceedings}}, \hyperref[ssec:techreport]{\texttt{@techreport}}, \hyperref[ssec:unpublished]{\texttt{@unpublished}}の16種類です．
-それぞれのエントリーで必須となる項目（フィールド）が異なり，文献一覧への出力の方法も異なるので面倒くさがらずに分類しましょう．
+それぞれのエントリーで必須となるフィールドが異なり，文献一覧への出力の方法も異なるので面倒くさがらずに分類しましょう．
 ただ，全ての文献を正確に分類することは難しく，判断が人により異なることもあります．
 \verb|JSME-bst|における分類の仕方も見る人によっては違和感を覚えるものがあるかもしれません．
 それぞれのエントリーに関する詳細を\pageref{ssec:article}ページ以降で説明しているので参考にしてください．
@@ -434,7 +439,7 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
         出版社の名前を入力します．
     \item \verb|school| \\
         学校名を入力します．
-        \hyperref[ssec:mastersthesis]{\texttt{@mastersthesis}}と\hyperref[ssec:phdthesis]{\texttt{phdthesis}}でのみ有効なフィールドです．
+        \hyperref[ssec:mastersthesis]{\texttt{@mastersthesis}}と\hyperref[ssec:phdthesis]{\texttt{@phdthesis}}でのみ有効なフィールドです．
         学部の卒業論文の場合は\hyperref[ssec:misc]{\texttt{@misc}}に分類し，\verb|school|フィールドの代わりに\verb|howpublished|を使用してください．
     \item \verb|series| \\
         書籍のシリーズを入力します．
