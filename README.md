@@ -5,7 +5,6 @@
 
 # 修正が必要な箇所（自分用）
 ## 全体
-* 日本機械学会の文献一覧ではイタリック体は使用しない．
 * 論文webページからBibTeXファイルをダウンロードした際に`pages`にページ番号ではなく論文番号？が入っていることがある．この場合は`note`にした方がよいかと．
 * ハイパーリンクをジャーナル名（に相当するもの）に埋め込みたい．
 * その際，ハイパーリンクを使用しないバージョンとハイパーリンクを使用するバージョンをそれぞれ作成した方がいいと思う．
@@ -29,62 +28,20 @@
 
 ## 英語文献
 
-### article
-* 雑誌に掲載された論文．
-* 理想形：`author 1`, `author 2` and `author 3`, `title`, `journal` (`year`), Vol.`volume`, No.`number`, pp.`pages`, `note`.
-
-### book
-* 出版社が刊行した書籍．
-* 理想形：`author 1`, `author 2` and `author 3`, `title`, `publisher` (`year`), `note`.
-
-### booklet
-* 出版社や機関名が明示されていない印刷物や製本済の作品．
-* 理想形：`author 1`, `author 2` and `author 3`, `title`, `howpublished` (`year`), `note`.
-
-### conference
-* `conference`は`inproceedings`と同一となるように作成．
-
-### inbook
-* 書籍中の一部．
-* 理想形：`author 1`, `author 2` and `author 3`, `title`, `publisher` (`year`), pp.`pages`, `note`.
-
-### incollection
-* それ自体がタイトルを持っている書籍中の一部．
-* 理想形：`author 1`, `author 2` and `author 3`, `title`, `booktitle`, `publisher` (`year`), Vol.`volume`, No.`number`, pp.`pages`, `note`.
-
-### inproceedings
-* 会議論文集中の一論文．
-* 理想形：`author 1`, `author 2` and `author 3`, `title`, in Proceedings of `booktitle` (`year`), pp.`pages`, `note`.
-
 ### manual
 * マニュアル．技術文書．
 * 理想形：`author 1`, `author 2` and `author 3`, `title` (`year`), `note`.
 * `title`にハイパーリンクを埋め込もうと思ったが失敗．
 
-### mastersthesis
-* 修士学位論文．
-* 理想形：`author`, `title`, Master's thesis, `school` (`year`), `note`.
-
-### misc
-* その他該当種別が無いもの．
-* arXiv上の文献は`misc`に分類．arXivであることは明記したい．
-
-### online
-* Webページ等は`online`に分類．
-* jecon.bst独自の仕様？
-* 参照日は`access`に書く．
-
-### phdthesis
-* 博士学位論文．
-* 理想形：`author`, `title`, Ph.D. dissertation, `school` (`year`), `note`.
-
 ### proceedings
 * 会議論文集
 * 理想形：Proceedings of `title` (`year`), `note`.
+* `author`が無いので本文中での引用表示がおかしくなる．
 
 ### techreport
 * 大学，研究機関などから出版された報告書．
 * 理想形：`author 1`, `author 2` and `author 3`, `title`, `institution` (`year`), Vol.`volume`, No.`number`, pp.`pages`, `note`.
+* `type`フィールドの取り扱いをどうするか．
 
 ### unpublished
 * 著者とタイトルがある文書であるが，公式に刊行されていないもの．
@@ -94,50 +51,17 @@
 
 ## 日本語文献
 
-### article
-* 理想形：`author 1`，`author 2`，`author 3`，`title`，`journal` (`year`)，Vol.`volume`，No.`number`，pp.`pages`，`note`．
-
-### book
-* 理想形：`author 1`，`author 2`，`author 3`，`title`，`publisher` (`year`)，`note`．
-
-### booklet
-* 理想形：`author 1`，`author 2`，`author 3`，`title`，`howpublished` (`year`)，`note`．
-
-### conference
-* `conference`は`inproceedings`と同一となるように作成．
-
-### inbook
-* 理想形：`author 1`，`author 2`， `author 3`，`title`，`publisher` (`year`)，pp.`pages`，`note`．
-
-### incollection
-* 理想形：`author 1`，`author 2`，`author 3`，`title`，`booktitle`，`publisher` (`year`)，Vol.`volume`，No.`number`，pp.`pages`，`note`．
-
-### inproceedings
-* 理想形：`author 1`，`author 2`，`author 3`，`title`，in Proceedings of `booktitle` (`year`)，pp.`pages`，`note`．
-
 ### manual
 * 理想形：`author 1`，`author 2`，`author 3`，`title` (`year`)，`note`．
 * `title`にハイパーリンクを埋め込もうと思ったが失敗．
 
-### mastersthesis
-* 理想形：`author`，`title`，`school`修士論文 (`year`)，`note`．
-
-### misc
-* 学部の卒業論文は`misc`でいいと思います．その際，`school`ではなく，`howpublished`を使用．
-
-### online
-* Webページ等は`online`に分類．
-* jecon.bst独自の仕様？
-* 参照日は`access`に書く．
-
-### phdthesis
-* 理想形：`author`，`title`，`school`博士論文 (`year`)．
-
 ### proceedings
 * 理想形：`title`講演論文集 (`year`), `note`.
+* `author`が無いので本文中での引用表示がおかしくなる．
 
 ### techreport
 * 理想形：`author 1`，`author 2`，`author 3`，`title`，`institution` (`year`)，Vol.`volume`，No.`number`，pp.`pages`，`note`．
+* `type`フィールドの取り扱いをどうするか．
 
 ### unpublished
 * 理想形：`author 1`，`author 2`，`author 3`，`title` (`year`)，`note`．
