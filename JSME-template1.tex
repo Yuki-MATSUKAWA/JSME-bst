@@ -74,13 +74,13 @@
 \label{sec:introduction}
 \verb|jsme.bst|は日本機械学会\footnote{一般社団法人 日本機械学会（The Japan Society of Mechanical Engineers, JSME），\textless\url{https://www.jsme.or.jp/}\textgreater}の原稿テンプレート\footnote{日本機械学会 原稿テンプレート，\textless\url{https://www.jsme.or.jp/publish/transact/for-authors.html}\textgreater}に基づいた参考文献の出力を実現するために作成した，非公式\BibTeX{}スタイルファイルテンプレートです．
 必要なファイル一式はGitHubの\verb|JSME-bst|\footnote{\texttt{JSME-bst}, \textless\url{https://github.com/Yuki-MATSUKAWA/JSME-bst}\textgreater}から入手可能なので，用途に応じて自由に改変してください．
-今読んでいるこのファイル（\LaTeX{}ソース：\verb|JSME-template1.tex|，出力結果：\verb|JSME-template1.pdf|）では\BibTeX{}で用意されている全てのエントリの出力結果を表示しています．
+今読んでいるこのファイル（\LaTeX{}ソース：\verb|JSME-template1.tex|，出力結果：\verb|JSME-template1.pdf|）では\BibTeX{}で用意されている全てのエントリーの出力結果を表示しています．
 参考文献のリストはこの\verb|pdf|の末尾で，出力している文献の\verb|bib|ファイルは英語文献\verb|mybib_en.bib|と日本語文献\verb|mybib_jp.bib|の二つです．
 \verb|JSME-bst|の作成者である松川が流体力学，特に乱流遷移の研究をしているため，引用している文献は乱流遷移の周辺のものが多くなっています（全てではありません）．
 ただ，材料力学など他分野の方でも基本的な使い方は同じです．
 また，第~\ref{sec:cite}節でも述べますが，著者数が1名，2名，3名以上のそれぞれで引用時の出力結果が異なります．
 そのため\verb|mybib_en.bib|，\verb|mybib_jp.bib|では可能な限り著者数が1名，2名，3名以上の計3パターンを用意しています．
-ただ，基本的に実在の文献を集めて載せているので学位論文（\verb|phdthesis|, \verb|mastersthesis|）のように原則著者が一人のものや\verb|manual|，\verb|unpublished|など一部のエントリでは全てのパターンを網羅できていない場合もあるのでご了承ください（ただ，参考にするうえで困ることのないくらいにはパターンを網羅しているつもりです）．
+ただ，基本的に実在の文献を集めて載せているので学位論文（\verb|phdthesis|, \verb|mastersthesis|）のように原則著者が一人のものや\verb|manual|，\verb|unpublished|など一部のエントリーでは全てのパターンを網羅できていない場合もあるのでご了承ください（ただ，参考にするうえで困ることのないくらいにはパターンを網羅しているつもりです）．
 
 この文書では\BibTeX{}初心者でも使いやすいよう，\BibTeX{}そのものの使い方や\verb|bib|ファイルの作成方法といった内容も可能な限り説明します．
 それでもわからなければさまざまな書籍やwebサイトがあるので参考にしてみてください．
@@ -179,9 +179,37 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
 このテンプレートではプリアンブルに\verb|\usepackage{natbib}|と書くことで\verb|natbib.sty|を読み込んでいます．
 \verb|\cite|と\verb|\citet|は出力結果が同じなのでどちらを使っても構いませんが，他のコマンドは細かい箇所（カンマや括弧の有無）に違いがあるので自分の出力したい内容に合わせて使うようにしてください．
 
+
 \subsection*{\texttt{\textbackslash{}cite}, \texttt{\textbackslash{}citet}}
 \verb|\cite|と\verb|\citet|は文章中で著者名と発行年を \verb|author (year)| の形で引用する際に使用するコマンドです．
+\begin{quote}
+\begin{verbatim}
+\citet{Reynolds:PhilTransRoySoc1883}の実験では水の入った円管に染料を流すことにより，整った流れ（層流）と乱れた流れ（乱流）の切り替わりについて観察した．
+\end{verbatim}
+    \citet{Reynolds:PhilTransRoySoc1883}の実験では水の入った円管に染料を流すことにより，整った流れ（層流）と乱れた流れ（乱流）の切り替わりについて観察した．
+\end{quote}
 
+\subsection*{\texttt{\textbackslash{}citep}}
+
+\subsection*{\texttt{\textbackslash{}citealt}}
+
+\subsection*{\texttt{\textbackslash{}citealp}}
+
+\begin{quote}
+入力：
+\begin{verbatim}
+流体流れは層流と乱流に大別することができ，流速が遅い場合には整った流れ（層流）となり，速い場合には乱れた流れ（乱流）となる（\citealp{Reynolds:PhilTransRoySoc1883}）．
+\end{verbatim}
+出力：\\
+    流体流れは層流と乱流に大別することができ，流速が遅い場合には整った流れ（層流）となり，速い場合には乱れた流れ（乱流）となる（\citealp{Reynolds:PhilTransRoySoc1883}）．
+\end{quote}
+
+
+\subsection*{\texttt{\textbackslash{}citeauthor}}
+
+\subsection*{\texttt{\textbackslash{}citeyear}}
+
+\subsection*{\texttt{\textbackslash{}citeyearpar}}
 
 \begin{table}[t]
     \centering
@@ -290,10 +318,124 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
 \label{sec:bib}
 ここでは書誌情報ファイル（\texttt{bib}ファイル）の作り方，使い方を説明します．
 この\verb|pdf|の末尾の参考文献リストは同じディレクトリにある\verb|mybib_en.bib|と\verb|mybib_jp.bib|から作成しているので参考にしてください．
-\verb|jsme.bst|でサポートされているエントリは\hyperref[ssec:article]{\texttt{@article}}, \hyperref[ssec:book]{\texttt{@book}}, \hyperref[ssec:booklet]{\texttt{@booklet}}, \hyperref[ssec:comment]{\texttt{@comment}}, \hyperref[ssec:conference]{\texttt{@conference}}, \hyperref[ssec:inbook]{\texttt{@inbook}}, \hyperref[ssec:incollection]{\texttt{@incollection}}, \hyperref[ssec:inproceedings]{\texttt{@inproceedings}}, \hyperref[ssec:manual]{\texttt{@manual}}, \hyperref[ssec:mastersthesis]{\texttt{@mastersthesis}}, \hyperref[ssec:misc]{\texttt{@misc}}, \hyperref[ssec:online]{\texttt{@online}}, \hyperref[ssec:phdthesis]{\texttt{@phdthesis}}, \hyperref[ssec:proceedings]{\texttt{@proceedings}}, \hyperref[ssec:techreport]{\texttt{@techreport}}, \hyperref[ssec:unpublished]{\texttt{@unpublished}}の16種類です．
-それぞれのエントリで必須となる項目（フィールド）が異なり，文献一覧への出力の方法も異なるので面倒くさがらずに分類しましょう．
+\verb|bib|ファイルに入力する書誌情報は次のような構造になっています．
+\begin{verbatim}
+@エントリー名{参照キー,
+    フィールド1 = {},
+    フィールド2 = {},
+    フィールド3 = {},
+    フィールド4 = {}
+}
+\end{verbatim}
+だいたいの雑誌論文のwebサイトでは\BibTeX{}形式で書誌情報を出力できる機能があるのでそこから\verb|bib|ファイルをダウンロードします．
+もちろん，ダウンロードした\verb|bib|ファイルを自分で書き換えることもできますし，自分で一から\verb|bib|ファイルを作成することも可能です．
+
+第~\ref{sec:cite}節で述べたように，文献を本文中で引用する際は\verb|\citet{Matsukawa:PoF2022}|のように書きます．
+このときの\verb|Matsukawa:PoF2022|が参照キーです．
+参照キーの書き方に特に規則は無く，半角カンマ以外の半角記号も使用可能です．
+ただ，自分の中でマイルールを設けておくと引用する際に楽です．
+私の場合は原則として\texttt{\colorbox[gray]{0.8}{著者}:\colorbox[gray]{0.8}{誌名}\colorbox[gray]{0.8}{年}}としています．
+また，エントリー名とフィールド名は大文字と小文字を区別しませんが，参照キーは区別するので気をつけてください．
+
+エントリーは雑誌論文や学位論文といった，その文献の該当する種別を表します．
+\verb|jsme.bst|でサポートされているエントリーは\hyperref[ssec:article]{\texttt{@article}}, \hyperref[ssec:book]{\texttt{@book}}, \hyperref[ssec:booklet]{\texttt{@booklet}}, \hyperref[ssec:comment]{\texttt{@comment}}, \hyperref[ssec:conference]{\texttt{@conference}}, \hyperref[ssec:inbook]{\texttt{@inbook}}, \hyperref[ssec:incollection]{\texttt{@incollection}}, \hyperref[ssec:inproceedings]{\texttt{@inproceedings}}, \hyperref[ssec:manual]{\texttt{@manual}}, \hyperref[ssec:mastersthesis]{\texttt{@mastersthesis}}, \hyperref[ssec:misc]{\texttt{@misc}}, \hyperref[ssec:online]{\texttt{@online}}, \hyperref[ssec:phdthesis]{\texttt{@phdthesis}}, \hyperref[ssec:proceedings]{\texttt{@proceedings}}, \hyperref[ssec:techreport]{\texttt{@techreport}}, \hyperref[ssec:unpublished]{\texttt{@unpublished}}の16種類です．
+それぞれのエントリーで必須となる項目（フィールド）が異なり，文献一覧への出力の方法も異なるので面倒くさがらずに分類しましょう．
 ただ，全ての文献を正確に分類することは難しく，判断が人により異なることもあります．
 \verb|JSME-bst|における分類の仕方も見る人によっては違和感を覚えるものがあるかもしれません．
+それぞれのエントリーに関する詳細を\pageref{ssec:article}ページ以降で説明しているので参考にしてください．
+
+フィールドはその文献の著者情報や誌名情報を入力するデータ項目です．
+\verb|jsme.bst|では\verb|access|, \verb|address|, \verb|archivePrefix|, \verb|author|, \verb|booktitle|, \verb|chapter|, \verb|doi|, \verb|edition|, \verb|editor|, \verb|eprint|, \verb|howpublished|, \verb|institution|, \verb|journal|, \verb|key|, \verb|month|, \verb|note|, \verb|number|, \verb|organization|, \verb|pages|, \verb|publisher|, \verb|school|, \verb|series|, \verb|title|, \verb|type|, \verb|url|, \verb|volume|, \verb|year|, \verb|yomi|, \verb|language|, \verb|langid|がサポートされています．
+フィールドの値は
+\begin{verbatim}
+    author = {Matsukawa, Yuki and Tsukahara, Takahiro}
+    author = "Matsukawa, Yuki and Tsukahara, Takahiro"
+\end{verbatim}
+のように\verb|{ }|または\verb|" "|で囲います．
+フィールドの詳細は以下の通りです．
+\begin{itemize}
+    \item \verb|access| \\
+        Webページを閲覧した日付（参照日）を記入します．
+        \verb|@online|でのみ有効です．
+        書き方の詳細は第~\ref{ssec:online}節（\verb|@online|）を参照．
+    \item \verb|address| \\
+        出版社（\verb|publisher|）の住所．
+        日本機械学会の原稿テンプレートでは住所を書かないので必要ありません．
+    \item \verb|archivePrefix| \\
+        arXiv上の文献を引用する際に自動で出力されます．
+        \verb|jsme.bst|では\verb|archivePrefix|があるとarXivの文献として判断します．
+    \item \verb|author| \\
+        文献の著者情報を入力します．
+        他の\BibTeX{}スタイルファイルと仕様が異なる場合があるので注意が必要です．
+        日本語文献でも英語文献でも
+        \begin{verbatim}
+        author = {Family, Given and Family, Given and Family, Given}
+        author = {Given Family and Given Family and Given Family}
+        \end{verbatim}
+        の形式で書いてください．
+        例えば\citet{Tsukahara:TSFP2005}と\citet{堀本:可視化情報2020}の場合だと
+        \begin{verbatim}
+        author = {Tsukahara, Takahiro and Seki, Yohji and 
+                    Kawamura, Hiroshi and Tochio, Daisuke}
+        author = {堀本, 康文 and 川口, 靖夫 and 塚原, 隆裕}
+        \end{verbatim}
+        のようになります．
+        \verb|Family, Given|で書く場合は日本語文献でも半角カンマと半角スペースで姓と名を区切ります．
+        また，著者が複数いる場合は\verb| and |で著者を区切ります．
+        日本語文献の場合は後述の\verb|yomi|フィールドで読み方を指定してください．
+    \item \verb|booktitle| \\
+        書籍の名前ですが，\hyperref[ssec:conference]{\texttt{@conference}}, \hyperref[ssec:incollection]{\texttt{@incollection}}, \hyperref[ssec:inproceedings]{\texttt{@inproceedings}}で使われることからわかるように，引用する文献が書籍のうちの一部である場合の書籍そのものの題名を書きます．
+        例えば，\citet{Lueptow:Springer2000}はそれ単独でStability and experimental velocity field in Taylor--Couette flow with axial and radial flowという題目（\verb|title|）を持っていますが，これはPhysics of Rotating Fluidsという書籍（\verb|booktitle|）の一部です．
+    \item \verb|chapter| \\
+        書籍の一部の章を引用するときに使用します．
+        日本機械学会では章番号ではなくページ数で引用するので使う必要はありません．
+    \item \verb|doi| \\
+        文献のデジタルオブジェクト識別子（Digital Object Identifier, DOI）を入力します．
+        学術論文だけでなくSpringer等の書籍などにもDOIが割り当てられています．
+        \verb|jsme.bst|では\verb|doi|フィールドの値を読み込んで誌名（に相当する箇所）にハイパーリンクを埋め込むようにしています．
+    \item \verb|edition|
+        （第3版などの）版を入力します．
+        \citet{奥村:技評2020}のように\verb|title = {［改訂第8版］\LaTeXe{}美文書作成入門}|と\verb|title|の中に書いてしまってもいいと思います．
+    \item \verb|eprint| \\
+        論文のeprintを入力します．
+        arXivから\BibTeX{}形式で書誌情報を出力するとデフォルトで入ってくるフィールドです．
+        \verb|jsme.bst|では\verb|archivePrefix|フィールドがあった場合に\verb|eprint|の情報からarXivの該当論文へのハイパーリンクを生成します（詳細は第~\ref{ssec:misc}節\verb|@misc|を参照）．
+    \item \verb|howpublished| \\
+        特殊な出版形態をとる場合の説明を入力します．
+        また，第~\ref{ssec:misc}節では学部の卒業論文を\verb|@misc|に分類する際に\verb|howpublished|に「xx大学xx学部xx学科卒業論文」と書くことにしています．
+    \item \verb|institution| \\
+        技術報告書（\hyperref[ssec:techreport]{\texttt{@techreport}}）でのみ使用されるフィールドです．
+        報告書が出された機関名を入力します．
+    \item \verb|journal| \\
+        学術雑誌論文が出された誌名を入力します．
+        \hyperref[ssec:article]{\texttt{@article}}でのみ有効なフィールドです．
+    \item \verb|key| \\
+        著者名に相当するものが無い場合，ソートに利用します．
+        \verb|jsme.bst|では動作が完璧ではないのであまり使わないでほしいです．
+    \item \verb|month| \\
+        出版された月を入力します．
+        日本機械学会では年（\verb|year|）だけ書けばいいので\verb|month|は不要．
+    \item \verb|note| \\
+        注記．
+        \verb|jsme.bst|では講演番号や論文番号をここに書いてください．
+    \item \verb|number| \\
+        雑誌等の号数を入力します．
+    \item \verb|organization|
+    \item \verb|pages|
+    \item \verb|publisher|
+    \item \verb|school|
+    \item \verb|series|
+    \item \verb|title|
+    \item \verb|type|
+    \item \verb|url|
+    \item \verb|volume|
+    \item \verb|year|
+    \item \verb|yomi|
+    \item \verb|language|
+    \item \verb|langid|
+\end{itemize}
+
+
 
 固有名詞
 
@@ -339,6 +481,15 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
 \texttt{@article}は雑誌に掲載された論文です．
 流体力学分野では英文雑誌だとJournal of Fluid Mechanics\footnote{Journal of Fluid Mechanics, \textless\url{https://www.cambridge.org/core/journals/journal-of-fluid-mechanics}\textgreater}やPhysics of Fluids\footnote{Physics of Fluids, \textless\url{https://pubs.aip.org/aip/pof}\textgreater}などが挙げられます．
 国内雑誌だと日本機械学会誌\footnote{日本機械学会誌, \textless\url{https://www.jsme.or.jp/publication/kaisi/}\textgreater}や日本流体力学会誌『ながれ』\footnote{日本流体力学会誌『ながれ』, \textless\url{https://www.nagare.or.jp/publication/nagare.html}\textgreater}などが該当します．
+\verb|doi|と\verb|url|のフィールドは\verb|jsme.bst|ではどちらも\verb|journal|にハイパーリンクを埋め込む操作を行うのでどちらを使っても同様の結果を得られます．
+\verb|doi|も\verb|url|も無い場合は\verb|journal|にハイパーリンクを埋め込みません．
+また，ジャーナルによっては書誌情報を\BibTeX{}形式で出力した際に論文番号が\verb|pages|となっています．
+上記のPhysics of Fluidsの場合（\citealp{Matsukawa:PoF2022}）だとデフォルトで\verb|pages = {074109}|となっているため，このままだと
+\begin{quote}
+    Matsukawa, Y. and Tsukahara, T., Subcritical transition of Taylor--Couette--Poiseuille flow at high radius ratio, \href{https://doi.org/10.1063/5.0096676}{Physics of Fluids}, Vol.~34, No.~7 (2022b), \textcolor{red}{p.~074109}.
+\end{quote}
+と出力され，違和感があります．
+そのため，論文番号や講演番号は\verb|note|に入れるようにしましょう．
 
 
 \subsection{\texttt{@book}}
@@ -367,7 +518,7 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
 \end{screen}
 
 出版社が刊行した書籍を引用する際は\verb|@book|を使います．
-似たエントリとして\hyperref[ssec:inbook]{\texttt{@inbook}}がありますが，特定のページを参照したのではなく，書籍全体を参照した場合は\verb|@book|を使いましょう．
+似たエントリーとして\hyperref[ssec:inbook]{\texttt{@inbook}}がありますが，特定のページを参照したのではなく，書籍全体を参照した場合は\verb|@book|を使いましょう．
 
 \subsection{\texttt{@booklet}}
 \label{ssec:booklet}
@@ -396,7 +547,7 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
     \end{itemize}
 \end{screen}
 
-\verb|@booklet|は使う機会が少ないため分類が難しいエントリですが，出版社が明記されていないような（薄い）冊子媒体が該当します．
+\verb|@booklet|は使う機会が少ないため分類が難しいエントリーですが，出版社が明記されていないような（薄い）冊子媒体が該当します．
 \verb|JSME-bst|では例として東京理科大学理工学部機械工学科（現・創域理工学部機械航空宇宙工学科）が毎年出しているMEニュースレター\footnote{MEニュースレター, \textless\url{https://www.rs.tus.ac.jp/me/newsletter.html}\textgreater}という広報の冊子を引用しました．
 
 \subsection{\texttt{@comment}}
@@ -653,7 +804,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
     \end{itemize}
 \end{screen}
 
-\verb|@online|は\verb|jsme.bst|独自のエントリなので他の\BibTeX{}スタイルファイルを用いるときには注意してください（\verb|jsme.bst|の元となった\verb|jecon.bst|では使用できます）．
+\verb|@online|は\verb|jsme.bst|独自のエントリーなので他の\BibTeX{}スタイルファイルを用いるときには注意してください（\verb|jsme.bst|の元となった\verb|jecon.bst|では使用できます）．
 本来，webページ等の引用はあまり推奨されるものではありませんが，データベースを研究室のwebページ等で公開していることがある\footnote{乱流の分野におけるデータベースとしては，東京理科大学河村研究室（現在は塚原研究室が管理） \textless\url{https://www.rs.tus.ac.jp/~t2lab/db/index.html}\textgreater や東京大学笠木研究室（現在は複数の大学によって管理） \textless\url{https://thtlab.jp}\textgreater などが挙げられます．}ので使う機会がゼロとは言えないでしょう．
 英語のwebページの場合は
 \renewcommand\UrlFont{\rmfamily}
@@ -664,7 +815,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 英語での参照日の書き方は\verb|access  = {10 October, 2023}|のように日，月（アルファベット），年の順です．
 日本語のwebページの場合は
 \begin{quote}
-    立川裕二, 博士論文執筆の際にお願いしたいこと, \textless\url{https://member.ipmu.jp/yuji.tachikawa/misc/dron.html}\textgreater, （参照日 2023年10月10日）.
+    立川裕二, 博士論文執筆の際にお願いしたいこと, \textless\url{https://member.ipmu.jp/yuji.tachikawa/misc/dron.html}\textgreater, (参照日 2023年10月10日).
 \end{quote}
 \renewcommand\UrlFont{\ttfamily}
 のように出力します．
