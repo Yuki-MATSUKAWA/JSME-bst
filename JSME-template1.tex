@@ -38,8 +38,8 @@
 %%% 参考文献リストの見出しを「参考文献」から「文献」に変更．
 \renewcommand{\refname}{文献}
 %%% その他の定義
-\newcommand{\jsme}{\texttt{jsme.bst}}
-\newcommand{\JSME}{\texttt{JSME-bst}}
+\newcommand{\jsmefile}{\texttt{jsme.bst}}
+\newcommand{\JSMErepos}{\texttt{JSME-bst}}
 \renewcommand{\figurename}{Fig.~}       % 図番号
 \renewcommand{\tablename}{Table~}       % 表番号
 
@@ -60,7 +60,7 @@
 	\cfoot{\thepage/\pageref{LastPage}}
 	\rfoot{}
 
-\title{【非公式】日本機械学会\BibTeX{}スタイルファイル \\ \JSME テンプレートその1（標準）}
+\title{【非公式】日本機械学会\BibTeX{}スタイルファイル \\ \JSMErepos テンプレートその1（標準）}
 \author{松川 裕樹\thanks{東京理科大学大学院 創域理工学研究科 機械航空宇宙工学専攻 博士後期課程，Email: \texttt{7523701 ＿＠＿ ed.tus.ac.jp}}}
 
 \date{最終更新：\today}
@@ -75,11 +75,11 @@
 
 \section{はじめに}
 \label{sec:introduction}
-\jsme は日本機械学会\footnote{一般社団法人 日本機械学会（The Japan Society of Mechanical Engineers, JSME），\textless\url{https://www.jsme.or.jp/}\textgreater}の原稿テンプレート\footnote{日本機械学会 原稿テンプレート，\textless\url{https://www.jsme.or.jp/publish/transact/for-authors.html}\textgreater}に基づいた参考文献の出力を実現するために作成した，非公式\BibTeX{}スタイルファイルテンプレートです．
-必要なファイル一式はGitHubの\JSME\footnote{\JSME, \textless\url{https://github.com/Yuki-MATSUKAWA/JSME-bst}\textgreater}から入手可能なので，用途に応じて自由に改変してください．
+\jsmefile は日本機械学会\footnote{一般社団法人 日本機械学会（The Japan Society of Mechanical Engineers, JSME），\textless\url{https://www.jsme.or.jp/}\textgreater}の原稿テンプレート\footnote{日本機械学会 原稿テンプレート，\textless\url{https://www.jsme.or.jp/publish/transact/for-authors.html}\textgreater}に基づいた参考文献の出力を実現するために作成した，非公式\BibTeX{}スタイルファイルテンプレートです．
+必要なファイル一式はGitHubの\JSMErepos\footnote{\JSMErepos, \textless\url{https://github.com/Yuki-MATSUKAWA/JSME-bst}\textgreater}から入手可能なので，用途に応じて自由に改変してください．
 今読んでいるこのファイル（\LaTeX{}ソース：\verb|JSME-template1.tex|，出力結果：\verb|JSME-template1.pdf|）では\BibTeX{}で用意されている全てのエントリーの出力結果を表示しています．
 参考文献のリストはこの\verb|pdf|の末尾で，出力している文献の\verb|bib|ファイルは英語文献\verb|mybib_en.bib|と日本語文献\verb|mybib_jp.bib|の二つです．
-\JSME の作成者である松川が流体力学，特に乱流遷移の研究をしているため，引用している文献は乱流遷移の周辺のものが多くなっています（全てではありません）．
+\JSMErepos の作成者である松川が流体力学，特に乱流遷移の研究をしているため，引用している文献は乱流遷移の周辺のものが多くなっています（全てではありません）．
 ただ，材料力学など他分野の方でも基本的な使い方は同じです．
 また，第~\ref{sec:cite}節でも述べますが，著者数が1名，2名，3名以上のそれぞれで引用時の出力結果が異なります．
 そのため\verb|mybib_en.bib|，\verb|mybib_jp.bib|では可能な限り著者数が1名，2名，3名以上の計3パターンを用意しています．
@@ -89,13 +89,13 @@
 それでもわからなければさまざまな書籍やwebサイトがあるので参考にしてみてください．
 また，その都度説明しますが，日本機械学会の原稿テンプレートに沿ったリストを作成するために\verb|bib|ファイルの作成方法が一部通常の\BibTeX{}と異なる場合があるのでご了承ください．
 
-\jsme 作成にあたり念のため動作チェックはしていますが，もし何か問題が発生した場合はGitHubにコメントしていただくかメールをいただけると幸いです．
+\jsmefile 作成にあたり念のため動作チェックはしていますが，もし何か問題が発生した場合はGitHubにコメントしていただくかメールをいただけると幸いです．
 可能な限り対応します．
 
 \section{日本機械学会の原稿執筆要領における注意点}
 \label{sec:caution}
 この節では日本機械学会の原稿テンプレートに記載されている執筆要領の中でも，特に文献の記載に関する注意点をまとめておきます．
-日本機械学会の規定に合わせて論文執筆する際は是非参考にしてください\footnote{\JSME 自体はもともと，JSMEの規定に沿って卒業論文執筆を行うことが決められている東京理科大学創域理工学部機械航空宇宙工学科の卒研生向けに作成したものです．もちろんGitHub上で公開しているので世界中の誰が使っても構いません．}．
+日本機械学会の規定に合わせて論文執筆する際は是非参考にしてください\footnote{\JSMErepos 自体はもともと，JSMEの規定に沿って卒業論文執筆を行うことが決められている東京理科大学創域理工学部機械航空宇宙工学科の卒研生向けに作成したものです．もちろんGitHub上で公開しているので世界中の誰が使っても構いません．}．
 
 \subsection{使用する書体・フォントについて}
 日本機械学会では本文に使用する書体を和文は明朝体，欧文はSerif体と規定されています．
@@ -106,7 +106,7 @@ Serif体のフォントとしてはTimes New RomanやCentury，Computer Modern�
 
 \subsection{文献の並べ方・引用の仕方}
 この節では文献リストのフィールド（\BibTeX{}における\verb|author|や\verb|title|）の並べ方について説明します．
-\jsme のユーザーは気にせず使用することができますが，改めて整理しておくので\jsme を使わないときにも役に立つと思います．
+\jsmefile のユーザーは気にせず使用することができますが，改めて整理しておくので\jsmefile を使わないときにも役に立つと思います．
 原則，日本機械学会の規定に合わせていますが，原稿テンプレートからは判断が難しい事項は一部独自の解釈を加えているものがあります．
 
 文献を並べる順序の規則は以下の通り．
@@ -345,14 +345,14 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
 また，エントリー名とフィールド名は大文字と小文字を区別しませんが，参照キーは区別するので気をつけてください．
 
 エントリーは雑誌論文や学位論文といった，その文献の該当する種別を表します．
-\jsme でサポートされているエントリーは\hyperref[ssec:article]{\texttt{@article}}, \hyperref[ssec:book]{\texttt{@book}}, \hyperref[ssec:booklet]{\texttt{@booklet}}, \hyperref[ssec:comment]{\texttt{@comment}}, \hyperref[ssec:conference]{\texttt{@conference}}, \hyperref[ssec:inbook]{\texttt{@inbook}}, \hyperref[ssec:incollection]{\texttt{@incollection}}, \hyperref[ssec:inproceedings]{\texttt{@inproceedings}}, \hyperref[ssec:manual]{\texttt{@manual}}, \hyperref[ssec:mastersthesis]{\texttt{@mastersthesis}}, \hyperref[ssec:misc]{\texttt{@misc}}, \hyperref[ssec:online]{\texttt{@online}}, \hyperref[ssec:phdthesis]{\texttt{@phdthesis}}, \hyperref[ssec:proceedings]{\texttt{@proceedings}}, \hyperref[ssec:techreport]{\texttt{@techreport}}, \hyperref[ssec:unpublished]{\texttt{@unpublished}}の16種類です．
+\jsmefile でサポートされているエントリーは\hyperref[ssec:article]{\texttt{@article}}, \hyperref[ssec:book]{\texttt{@book}}, \hyperref[ssec:booklet]{\texttt{@booklet}}, \hyperref[ssec:comment]{\texttt{@comment}}, \hyperref[ssec:conference]{\texttt{@conference}}, \hyperref[ssec:inbook]{\texttt{@inbook}}, \hyperref[ssec:incollection]{\texttt{@incollection}}, \hyperref[ssec:inproceedings]{\texttt{@inproceedings}}, \hyperref[ssec:manual]{\texttt{@manual}}, \hyperref[ssec:mastersthesis]{\texttt{@mastersthesis}}, \hyperref[ssec:misc]{\texttt{@misc}}, \hyperref[ssec:online]{\texttt{@online}}, \hyperref[ssec:phdthesis]{\texttt{@phdthesis}}, \hyperref[ssec:proceedings]{\texttt{@proceedings}}, \hyperref[ssec:techreport]{\texttt{@techreport}}, \hyperref[ssec:unpublished]{\texttt{@unpublished}}の16種類です．
 それぞれのエントリーで必須となるフィールドが異なり，文献一覧への出力の方法も異なるので面倒くさがらずに分類しましょう．
 ただ，全ての文献を正確に分類することは難しく，判断が人により異なることもあります．
-\JSME における分類の仕方も見る人によっては違和感を覚えるものがあるかもしれません．
+\JSMErepos における分類の仕方も見る人によっては違和感を覚えるものがあるかもしれません．
 それぞれのエントリーに関する詳細を\pageref{ssec:article}ページ以降で説明しているので参考にしてください．
 
 フィールドはその文献の著者情報や誌名情報を入力するデータ項目です．
-\jsme では\verb|access|, \verb|address|, \verb|archivePrefix|, \verb|author|, \verb|booktitle|, \verb|chapter|, \verb|doi|, \verb|edition|, \verb|editor|, \verb|eprint|, \verb|howpublished|, \verb|institution|, \verb|journal|, \verb|key|, \verb|month|, \verb|note|, \verb|number|, \verb|organization|, \verb|pages|, \verb|publisher|, \verb|school|, \verb|series|, \verb|title|, \verb|type|, \verb|url|, \verb|volume|, \verb|year|, \verb|yomi|, \verb|language|, \verb|langid|がサポートされています．
+\jsmefile では\verb|access|, \verb|address|, \verb|archivePrefix|, \verb|author|, \verb|booktitle|, \verb|chapter|, \verb|doi|, \verb|edition|, \verb|editor|, \verb|eprint|, \verb|howpublished|, \verb|institution|, \verb|journal|, \verb|key|, \verb|month|, \verb|note|, \verb|number|, \verb|organization|, \verb|pages|, \verb|publisher|, \verb|school|, \verb|series|, \verb|title|, \verb|type|, \verb|url|, \verb|volume|, \verb|year|, \verb|yomi|, \verb|language|, \verb|langid|がサポートされています．
 フィールドの値は
 \begin{verbatim}
     author = {Matsukawa, Yuki and Tsukahara, Takahiro}
@@ -373,7 +373,7 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
         日本機械学会の原稿テンプレートでは住所を書かないので必要ありません．
     \item \verb|archivePrefix| \\
         arXiv上の文献を引用する際に自動で出力されます．
-        \jsme では\verb|archivePrefix|があるとarXivの文献として判断します．
+        \jsmefile では\verb|archivePrefix|があるとarXivの文献として判断します．
     \item \verb|author| \\
         文献の著者情報を入力します．
         他の\BibTeX{}スタイルファイルと仕様が異なる場合があるので注意が必要です．
@@ -402,14 +402,14 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
     \item \verb|doi| \\
         文献のデジタルオブジェクト識別子（Digital Object Identifier, DOI）を入力します．
         学術論文だけでなくSpringer等の書籍などにもDOIが割り当てられています．
-        \jsme では\verb|doi|フィールドの値を読み込んで誌名（に相当する箇所）にハイパーリンクを埋め込むようにしています．
+        \jsmefile では\verb|doi|フィールドの値を読み込んで誌名（に相当する箇所）にハイパーリンクを埋め込むようにしています．
     \item \verb|edition|
         （第3版などの）版を入力します．
         \citet{奥村:技評2020}のように\verb|title = {［改訂第8版］\LaTeXe{}美文書作成入門}|と\verb|title|の中に書いてしまってもいいと思います．
     \item \verb|eprint| \\
         論文のeprintを入力します．
         arXivから\BibTeX{}形式で書誌情報を出力するとデフォルトで入ってくるフィールドです．
-        \jsme では\verb|archivePrefix|フィールドがあった場合に\verb|eprint|の情報からarXivの該当論文へのハイパーリンクを生成します（詳細は第~\ref{ssec:misc}節\verb|@misc|を参照）．
+        \jsmefile では\verb|archivePrefix|フィールドがあった場合に\verb|eprint|の情報からarXivの該当論文へのハイパーリンクを生成します（詳細は第~\ref{ssec:misc}節\verb|@misc|を参照）．
     \item \verb|howpublished| \\
         特殊な出版形態をとる場合の説明を入力します．
         また，第~\ref{ssec:misc}節では学部の卒業論文を\verb|@misc|に分類する際に\verb|howpublished|に「xx大学xx学部xx学科卒業論文」と書くことにしています．
@@ -421,13 +421,13 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
         \hyperref[ssec:article]{\texttt{@article}}でのみ有効なフィールドです．
     \item \verb|key| \\
         著者名に相当するものが無い場合，ソートに利用します．
-        \jsme では動作が完璧ではないのであまり使わないでほしいです．
+        \jsmefile では動作が完璧ではないのであまり使わないでほしいです．
     \item \verb|month| \\
         出版された月を入力します．
         日本機械学会では年（\verb|year|）だけ書けばいいので\verb|month|は不要．
     \item \verb|note| \\
         注記．
-        \jsme では講演番号や論文番号をここに書いてください．
+        \jsmefile では講演番号や論文番号をここに書いてください．
     \item \verb|number| \\
         雑誌等の号数を入力します．
     \item \verb|organization| \\
@@ -436,7 +436,7 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
         ページ番号を入力します．
         例えば35ページのみ引用する場合は\verb|pages = {35}|とし，35ページから64ページまでを引用する場合は\verb|pages = {35--64}|とします．
         このとき，開始ページと終了ページを結ぶ横棒はハイフン（\verb|-|）ではなくenダッシュとします（\verb|--|）．
-        ただし，\jsme を使用すれば\verb|pages|内でハイフンとしていても自動でenダッシュに変換してくれるので安心です．
+        ただし，\jsmefile を使用すれば\verb|pages|内でハイフンとしていても自動でenダッシュに変換してくれるので安心です．
     \item \verb|publisher| \\
         出版社の名前を入力します．
     \item \verb|school| \\
@@ -449,7 +449,7 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
         日本機械学会では不要かと思います．
     \item \verb|title| \\
         文献のタイトルを入力します．
-        \jsme では標準設定として，英語文献の場合はタイトル冒頭以外のアルファベットを全て小文字に変換して出力します（日本機械学会の原稿テンプレート通りの出力）．
+        \jsmefile では標準設定として，英語文献の場合はタイトル冒頭以外のアルファベットを全て小文字に変換して出力します（日本機械学会の原稿テンプレート通りの出力）．
         ただし，固有名詞や二次元を表す2Dなどのようにタイトルの途中で大文字を使用する場合は
         \begin{verbatim}
         title = {Subcritical transition of {Taylor--Couette--Poiseuille} flow 
@@ -459,7 +459,7 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
         のように\verb|{ }|で囲めば該当箇所はそのままの形で出力してくれます（\citealp{Matsukawa:PoF2022,Yoneda:arXiv2016}）．
     \item \verb|type| \\
         \hyperref[ssec:techreport]{\texttt{@techreport}}でのみ有効なフィールドです．
-        今後仕様を変えるかもしれませんが，\jsme では使わないでください．
+        今後仕様を変えるかもしれませんが，\jsmefile では使わないでください．
     \item \verb|url| \\
         文献やwebページのURLを入力します．
         \verb|doi|フィールドと\verb|url|フィールドの両方に値が入っていた場合は\verb|doi|の内容を優先してハイパーリンクを埋め込みます．
@@ -480,7 +480,7 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
         その文献が書かれている言語を指定するフィールドです．
         \verb|japanese|と書かれていると日本語文献として処理されますが，指定されていなくても基本的には自動で日本語文献を判別してくれます\footnote{\texttt{author}や\texttt{title}などのフィールドに日本語が含まれていると\texttt{is.kanji.str\$}という機能で日本語文献と判断します．}．
         \verb|biblatex|では\verb|langid|フィールドが使用されるので残しておいてもいいかもしれません．
-        \JSME もそのうち\verb|biblatex|対応バージョンを作成したいと考えています．
+        \JSMErepos もそのうち\verb|biblatex|対応バージョンを作成したいと考えています．
         また，TeX Live 2020以前の\upBibTeX{}では\verb|is.kanji.str$|が適切に動作しないため，\verb|langid|を使用してください\footnote{詳細は\href{https://github.com/ShiroTakeda/jecon-bst}{\texttt{jecon-bst (GitHub)}}の\texttt{jecon-example.pdf}を確認してください．}．
 \end{itemize}
 
@@ -529,7 +529,7 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
 \texttt{@article}は雑誌に掲載された論文です．
 流体力学分野では英文雑誌だとJournal of Fluid Mechanics\footnote{Journal of Fluid Mechanics, \textless\url{https://www.cambridge.org/core/journals/journal-of-fluid-mechanics}\textgreater}やPhysics of Fluids\footnote{Physics of Fluids, \textless\url{https://pubs.aip.org/aip/pof}\textgreater}などが挙げられます．
 国内雑誌だと日本機械学会誌\footnote{日本機械学会誌, \textless\url{https://www.jsme.or.jp/publication/kaisi/}\textgreater}や日本流体力学会誌『ながれ』\footnote{日本流体力学会誌『ながれ』, \textless\url{https://www.nagare.or.jp/publication/nagare.html}\textgreater}などが該当します．
-\verb|doi|と\verb|url|のフィールドは\jsme ではどちらも\verb|journal|にハイパーリンクを埋め込む操作を行うのでどちらを使っても同様の結果を得られます．
+\verb|doi|と\verb|url|のフィールドは\jsmefile ではどちらも\verb|journal|にハイパーリンクを埋め込む操作を行うのでどちらを使っても同様の結果を得られます．
 \verb|doi|も\verb|url|も無い場合は\verb|journal|にハイパーリンクを埋め込みません．
 また，ジャーナルによっては書誌情報を\BibTeX{}形式で出力した際に論文番号が\verb|pages|となっています．
 上記のPhysics of Fluidsの場合（\citealp{Matsukawa:PoF2022}）だとデフォルトで\verb|pages = {074109}|となっているため，このままだと
@@ -596,7 +596,7 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
 \end{screen}
 
 \verb|@booklet|は使う機会が少ないため分類が難しいエントリーですが，出版社が明記されていないような（薄い）冊子媒体が該当します．
-\JSME では例として東京理科大学理工学部機械工学科（現・創域理工学部機械航空宇宙工学科）が毎年出しているMEニュースレター\footnote{MEニュースレター, \textless\url{https://www.rs.tus.ac.jp/me/newsletter.html}\textgreater}という広報の冊子を引用しました．
+\JSMErepos では例として東京理科大学理工学部機械工学科（現・創域理工学部機械航空宇宙工学科）が毎年出しているMEニュースレター\footnote{MEニュースレター, \textless\url{https://www.rs.tus.ac.jp/me/newsletter.html}\textgreater}という広報の冊子を引用しました．
 
 \subsection{\texttt{@comment}}
 \label{ssec:comment}
@@ -819,7 +819,7 @@ Scribeというシステムとの互換性のために残されているらし�
 また，arXiv\footnote{arXiv（「アーカイブ」と読みます）, \textless\url{https://arxiv.org/}\textgreater}と呼ばれるプレプリントサーバーから引用した文献は\verb|@misc|に分類します．
 arXiv上のExport BibTeX Citationと書いてあるところから文献情報を見ると\verb|@misc|に分類されていることがわかると思います．
 この文献情報では上記のように\verb|eprint = {2308.07255}|, \verb|archivePrefix = {arXiv}|などと書かれていることが多いです．
-\jsme では\verb|archivePrefix|フィールドがあるとこの文献がarXiv上の文献だと認識してくれて\verb|eprint|の情報と合わせて
+\jsmefile では\verb|archivePrefix|フィールドがあるとこの文献がarXiv上の文献だと認識してくれて\verb|eprint|の情報と合わせて
 \begin{quote}
     Araki, R., Bos, W. J. T. and Goto, S., Space-local Navier--Stokes turbulence, \href{https://doi.org/10.48550/arXiv.2308.07255}{arXiv: 2308.07255} (2023).
 \end{quote}
@@ -852,7 +852,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
     \end{itemize}
 \end{screen}
 
-\verb|@online|は\jsme 独自のエントリーなので他の\BibTeX{}スタイルファイルを用いるときには注意してください（\jsme の元となった\verb|jecon.bst|では使用できます）．
+\verb|@online|は\jsmefile 独自のエントリーなので他の\BibTeX{}スタイルファイルを用いるときには注意してください（\jsmefile の元となった\verb|jecon.bst|では使用できます）．
 本来，webページ等の引用はあまり推奨されるものではありませんが，データベースを研究室のwebページ等で公開していることがある\footnote{乱流の分野におけるデータベースとしては，東京理科大学河村研究室（現在は塚原研究室が管理） \textless\url{https://www.rs.tus.ac.jp/~t2lab/db/index.html}\textgreater や東京大学笠木研究室（現在は複数の大学によって管理） \textless\url{https://thtlab.jp}\textgreater などが挙げられます．}ので使う機会がゼロとは言えないでしょう．
 英語のwebページの場合は
 \renewcommand\UrlFont{\rmfamily}
@@ -978,14 +978,14 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 
 
 
-\section{\jsme の使い方}
-それでは実際に\jsme を使ってみましょう．
+\section{\jsmefile の使い方}
+それでは実際に\jsmefile を使ってみましょう．
 
 \section*{謝辞}
 \addcontentsline{toc}{section}{謝辞}
-\jsme は武田史郎氏作の経済学用\BibTeX{}スタイルファイル\verb|jecon.bst|\footnote{\texttt{jecon-bst}, \textless\url{https://github.com/ShiroTakeda/jecon-bst}\textgreater}を改変して作成したものです．
-\verb|jecon.bst|内に残されていた武田氏の懇切丁寧なコメントおよび説明用の\verb|jecon-example.pdf|は\jsme を作成するにあたり大変参考になり，これらが無ければ実現しませんでした．
-また，\citet{奥村:技評2020}と\citet{吉永:翔泳社2018}は\JSME を作成するにあたり参考にした，この文書における「本当の」参考文献です．
+\jsmefile は武田史郎氏作の経済学用\BibTeX{}スタイルファイル\verb|jecon.bst|\footnote{\texttt{jecon-bst}, \textless\url{https://github.com/ShiroTakeda/jecon-bst}\textgreater}を改変して作成したものです．
+\verb|jecon.bst|内に残されていた武田氏の懇切丁寧なコメントおよび説明用の\verb|jecon-example.pdf|は\jsmefile を作成するにあたり大変参考になり，これらが無ければ実現しませんでした．
+また，\citet{奥村:技評2020}と\citet{吉永:翔泳社2018}は\JSMErepos を作成するにあたり参考にした，この文書における「本当の」参考文献です．
 ここに，深く感謝の意を表します．
 
 \clearpage
