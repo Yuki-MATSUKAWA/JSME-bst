@@ -96,6 +96,7 @@
 可能な限り対応しますが，\jsmefile を使用したことにより発生した問題に対しては一切の責任を持ちませんのでご了承ください．
 また，\JSMErepos リポジトリ内のファイルは全て日本機械学会の書式の実現のために作成した非公式ファイルなので使用方法等を日本機械学会に問い合わせることもご遠慮ください．
 
+
 \section{日本機械学会の原稿執筆要領における注意点}
 \label{sec:caution}
 この節では日本機械学会の原稿テンプレートに記載されている執筆要領の中でも，特に文献の記載に関する注意点をまとめておきます．
@@ -360,6 +361,7 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
         \verb|\cite{Schmid:Springer2001,Hirsch:AP2013}|            &\cite{Schmid:Springer2001,Hirsch:AP2013} \\
         \verb|\citet{Schmid:Springer2001,Hirsch:AP2013}|           &\citet{Schmid:Springer2001,Hirsch:AP2013} \\
         \verb|\citep{Schmid:Springer2001,Hirsch:AP2013}|           &\citep{Schmid:Springer2001,Hirsch:AP2013} \\
+        \verb|\citep[see][]{Schmid:Springer2001,Hirsch:AP2013}|           &\citep[see][]{Schmid:Springer2001,Hirsch:AP2013} \\
         \verb|\citealt{Schmid:Springer2001,Hirsch:AP2013}|         &\citealt{Schmid:Springer2001,Hirsch:AP2013} \\
         \verb|\citealp{Schmid:Springer2001,Hirsch:AP2013}|         &\citealp{Schmid:Springer2001,Hirsch:AP2013} \\
         \verb|\citeauthor{Schmid:Springer2001,Hirsch:AP2013}|      &\citeauthor{Schmid:Springer2001,Hirsch:AP2013} \\
@@ -378,6 +380,7 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
         \verb|\cite{Matsukawa:ICFD2022,Matsukawa:PoF2022}|            &\cite{Matsukawa:ICFD2022,Matsukawa:PoF2022} \\
         \verb|\citet{Matsukawa:ICFD2022,Matsukawa:PoF2022}|           &\citet{Matsukawa:ICFD2022,Matsukawa:PoF2022} \\
         \verb|\citep{Matsukawa:ICFD2022,Matsukawa:PoF2022}|           &\citep{Matsukawa:ICFD2022,Matsukawa:PoF2022} \\
+        \verb|\citep[see][]{Matsukawa:ICFD2022,Matsukawa:PoF2022}|           &\citep[see][]{Matsukawa:ICFD2022,Matsukawa:PoF2022} \\
         \verb|\citealt{Matsukawa:ICFD2022,Matsukawa:PoF2022}|         &\citealt{Matsukawa:ICFD2022,Matsukawa:PoF2022} \\
         \verb|\citealp{Matsukawa:ICFD2022,Matsukawa:PoF2022}|         &\citealp{Matsukawa:ICFD2022,Matsukawa:PoF2022} \\
         \verb|\citeauthor{Matsukawa:ICFD2022,Matsukawa:PoF2022}|      &\citeauthor{Matsukawa:ICFD2022,Matsukawa:PoF2022} \\
@@ -387,6 +390,7 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
         \verb|\cite{Matsukawa:ICFD2022,松川:流力年会2022}|            &\cite{Matsukawa:ICFD2022,松川:流力年会2022} \\
         \verb|\citet{Matsukawa:ICFD2022,松川:流力年会2022}|           &\citet{Matsukawa:ICFD2022,松川:流力年会2022} \\
         \verb|\citep{Matsukawa:ICFD2022,松川:流力年会2022}|           &\citep{Matsukawa:ICFD2022,松川:流力年会2022} \\
+        \verb|\citep[see][]{Matsukawa:ICFD2022,松川:流力年会2022}|           &\citep[see][]{Matsukawa:ICFD2022,松川:流力年会2022} \\
         \verb|\citealt{Matsukawa:ICFD2022,松川:流力年会2022}|         &\citealt{Matsukawa:ICFD2022,松川:流力年会2022} \\
         \verb|\citealp{Matsukawa:ICFD2022,松川:流力年会2022}|         &\citealp{Matsukawa:ICFD2022,松川:流力年会2022} \\
         \verb|\citeauthor{Matsukawa:ICFD2022,松川:流力年会2022}|      &\citeauthor{Matsukawa:ICFD2022,松川:流力年会2022} \\
@@ -632,6 +636,8 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
 
 出版社が刊行した書籍を引用する際は\verb|@book|を使います．
 似たエントリーとして\hyperref[ssec:inbook]{\texttt{@inbook}}がありますが，特定のページを参照したのではなく，書籍全体を参照した場合は\verb|@book|を使いましょう．
+\JSMErepos ではSpringer\footnote{Springer, \textless\url{https://www.springer.com/jp}\textgreater}や朝倉書店\footnote{朝倉書店, \textless\url{https://www.asakura.co.jp/}\textgreater}，丸善出版\footnote{丸善出版, \textless\url{https://www.maruzen-publishing.co.jp/}\textgreater}等の出版社から出た書籍を\verb|@book|に分類しています．
+\verb|publisher|フィールドにはこれらの出版社名を入れましょう．
 
 \subsection{\texttt{@booklet}}
 \label{ssec:booklet}
@@ -720,6 +726,9 @@ Scribeというシステムとの互換性のために残されているらし�
     \end{itemize}
 \end{screen}
 
+\hyperref[ssec:book]{\texttt{@book}}に似ていますが，\verb|@book|が書籍丸々一冊なのに対して\verb|@inbook|は書籍中の一部から引用する場合に使用します．
+そのため，\verb|@book|と異なり\verb|pages|フィールドが使用可能です．
+
 
 \subsection{\texttt{@incollection}}
 \label{ssec:incollection}
@@ -749,6 +758,11 @@ Scribeというシステムとの互換性のために残されているらし�
     \end{itemize}
 \end{screen}
 
+\verb|@incollection|は分類が難しいエントリーの一つです．
+これは書籍の一部からの引用ですが，\hyperref[ssec:inbook]{\texttt{@inbook}}と異なる点は，引用箇所が独立して表題を持っているようなものを指します．
+学会等があるテーマについて組んだ特集といったイメージです．
+\JSMErepos では京都大学数理解析研究所の講究録\footnote{京都大学数理解析研究所（RIMS）講究録, \textless\url{https://www.kurims.kyoto-u.ac.jp/ja/kokyuroku.html}\textgreater}や文部科学省科学研究補助金における特定の新学術領域研究の研究成果報告書等を\verb|@incollection|に分類しています．
+それは\hyperref[ssec:inproceedings]{\texttt{@inproceedings}}だろと言われそうな気もします．
 
 \subsection{\texttt{@inproceedings}}
 \label{ssec:inproceedings}
@@ -777,7 +791,10 @@ Scribeというシステムとの互換性のために残されているらし�
 \end{screen}
 
 \hyperref[ssec:conference]{\texttt{@conference}}と同様です．
-
+学会等の講演論文集の一部を引用するときに\verb|@inproceedings|を使用します．
+\hyperref[ssec:article]{\texttt{@article}}と並んで使用頻度の高いエントリーだと思います．
+\verb|booktitle|フィールドには日本語なら\texttt{booktitle = {\colorbox[gray]{0.8}{学会名}講演論文集}}，英語なら\texttt{booktitle = {Proceedings of \colorbox[gray]{0.8}{学会名}}}と入力しましょう．
+\hyperref[ssec:proceedings]{\texttt{@proceedings}}は講演論文集全体を引用しているのに対して，\verb|@inproceedings|は講演論文集の中の一講演を引用しています．
 
 
 \subsection{\texttt{@manual}}
@@ -804,6 +821,13 @@ Scribeというシステムとの互換性のために残されているらし�
 \end{verbatim}
     \end{itemize}
 \end{screen}
+
+マニュアルや技術文書は\verb|@manual|に分類しましょう．
+ただし，\verb|author|フィールドが必須項目ではないので，\jsmefile では企業名を\verb|author|に入れています．
+これはソートの際に\verb|author|フィールドが空欄だと参考文献一覧の変な場所に配置されてしまうからです．
+本来であれば\verb|key|フィールドで解決したいところですが，\jsmefile では動作が不安定なので避けたいところです．
+実は\verb|natbib.sty|において著者無し文献の本文中での引用は課題が残されているようです\footnote{詳細は\texttt{natbib.sty}の公式ドキュメント\textless\url{https://ctan.org/pkg/natbib}\textgreater をご覧ください．}．
+\verb|@manual|での不具合回避方法としては一旦，マニュアルを発行している機関・企業を\verb|author|とすることで解決としますが，著者無し文献の不具合回避方法は第~\ref{ssec:proceedings}節\verb|@proceedings|でも説明します．
 
 
 \subsection{\texttt{@mastersthesis}}
@@ -881,6 +905,7 @@ Scribeというシステムとの互換性のために残されているらし�
 学部の卒業論文は\verb|misc|でいいと思います．
 ただし，\verb|@mastersthesis|や\verb|@phdthesis|と異なり，\verb|school|のフィールドを使用できないので\verb|howpublished|で代用します．
 したがって，\verb|@mastersthesis|や\verb|@phdthesis|では\verb|school|に所属名だけ（例：\verb|school = {東京理科大学大学院理工学研究科機械工学専攻}|）書けばよかったものが\verb|@misc|で卒論を出力する際には\verb|howpublished = {北海道大学理学部地球科学科卒業論文}|のように「\verb|卒業論文|」の文字まで書く必要があります．
+該当するエントリーがよくわからなかったらとりあえず\verb|@misc|に入れておくという人は多いと思います．
 また，arXiv\footnote{arXiv（「アーカイブ」と読みます）, \textless\url{https://arxiv.org/}\textgreater}と呼ばれるプレプリントサーバーから引用した文献は\verb|@misc|に分類します．
 arXiv上のExport BibTeX Citationと書いてあるところから文献情報を見ると\verb|@misc|に分類されていることがわかると思います．
 この文献情報では上記のように\verb|eprint = {2308.07255}|, \verb|archivePrefix = {arXiv}|などと書かれていることが多いです．
@@ -891,15 +916,15 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 のように自動で書いてくれます．
 \verb|eprint|の情報からURLを自動生成するので，\href{https://doi.org/10.48550/arXiv.2308.07255}{arXiv: 2308.07255}と書かれている（青字の）箇所をクリックしたらarXivの該当ページにジャンプできます．
 
+また，\verb|@misc|では\verb|author|フィールドが任意項目となっています．
+第~\ref{ssec:manual}節\verb|@manual|でも説明したように，著者無し文献は不具合の元なので著者に相当しそうなものを\verb|author|に入れておいてください．
 
 \subsection{\texttt{@online}}
 \label{ssec:online}
 \begin{screen}
     \begin{itemize}
-        \item 必須項目 \\
-        後で確認．
-        \item オプション項目 \\
-        後で確認．
+        \item 使用可能項目 \\
+        \verb|author|, \verb|title|, \verb|howpublished|, \verb|month|, \verb|year|, \verb|url|, \verb|doi|, \verb|note|
         \item 出力（英語文献） \\
             \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, available from \textless\colorbox[gray]{0.8}{\texttt{url}}\textgreater, (accessed on \colorbox[gray]{0.8}{access}).
         \item 出力（日本語文献） \\
@@ -959,6 +984,9 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
     \end{itemize}
 \end{screen}
 
+\verb|@phdthesis|は博士論文が該当します．
+エントリー名に\verb|thesis|と入っていますが，英語文献の場合はdissertationと出力されます．
+基本的な使い方は\hyperref[ssec:mastersthesis]{\texttt{@mastersthesis}}と同じです．
 
 \subsection{\texttt{@proceedings}}
 \label{ssec:proceedings}
@@ -973,6 +1001,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
 @proceedings{THMT2023,
+    editor  = {THMT},
     title   = "{Proceedings of 10th International Symposium 
                 on Turbulence, Heat and Mass Transfer}",
     yomi    = {Proceedings},
@@ -982,19 +1011,38 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
     \end{itemize}
 \end{screen}
 
-
-\citeauthor{流力年会2023}
-
-% \bibitem[流力年会2023()]{流力年会2023}
-
-\citetext{任意の文字列\citeauthor{THMT2023}}
-
-% \bibitem{THMT (2023)}{THMT2023}
-
-\cite{THMT2023}
-
-\citep[see][]{Matsukawa:ICFD2022}
-
+学会の講演論文集全体を引用する際には\verb|@proceedings|を使用します．
+\hyperref[ssec:conference]{\texttt{@conference}}や\hyperref[ssec:inproceedings]{\texttt{@inproceedings}}は講演論文集の中の一講演を引用しているのに対して，\verb|@proceedings|は講演論文集全体を引用しています．
+\hyperref[ssec:manual]{\texttt{@manual}}や\hyperref[ssec:misc]{\texttt{@misc}}と同様，\verb|author|フィールドが必須項目ではありません．
+したがって，文献一覧のソートの際は\verb|title|の読みを和文・英文問わず\verb|yomi|フィールドで指定してあげないと変な場所に飛ばされてしまいます．
+また，もし
+\begin{quote}
+\begin{verbatim}
+@proceedings{THMT2023,
+    title   = "{Proceedings of 10th International Symposium 
+                on Turbulence, Heat and Mass Transfer}",
+    yomi    = {Proceedings},
+    year    = {2023}
+}
+@proceedings{流力年会2023,
+    title   = {日本流体力学会年会2023講演論文集},
+    yomi    = {Nihonryuutairikigakkainenkai2023},
+    year    = {2023}
+}
+\end{verbatim}
+\end{quote}
+のように\verb|bib|ファイルに書いていた場合，文中で引用した際に
+\begin{table}[h]
+    \centering
+    \begin{tabular}{ll}
+        コマンド    &出力結果 \\
+        \verb|\citet{THMT2023}| &THM (2023) \\
+        \verb|\citet{流力年会2023}| &流 (2023) \\
+    \end{tabular}
+\end{table}
+となり，おかしな表示となってしまいます．
+そのため，\verb|editor|フィールドに「引用時に著者代わりに出力したい文字列」を書いておきましょう．
+文献一覧には\verb|editor|は出力されませんが，本文中での引用では\citet{THMT2023}や\citet{流力年会2023}のように\verb|editor (year)|で出力してくれます．
 
 
 \subsection{\texttt{@techreport}}
@@ -1024,6 +1072,9 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
     \end{itemize}
 \end{screen}
 
+研究機関等から発行された技術報告書は\verb|@techreport|に分類します．
+技術報告書を発行している研究機関はさまざまありますが，例えばNASA\footnote{アメリカ航空宇宙局（NASA）, \textless\url{https://ntrs.nasa.gov/}\textgreater}やJAXA\footnote{宇宙航空研究開発機構（JAXA）, \textless\url{https://www.jaxa.jp/}\textgreater}，鉄道総研\footnote{鉄道総合技術研究所（鉄道総研）, \textless\url{https://www.rtri.or.jp/}\textgreater}などが挙げられます．
+また，企業によっては技術報告書を公開しているところもあります．
 
 
 \subsection{\texttt{@unpublished}}
@@ -1053,12 +1104,28 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
     \end{itemize}
 \end{screen}
 
+\verb|@unpublished|は正式には出版されていない本などが該当します．
+ただ，\verb|@unpublished|を使う機会はほぼ無いと思われますし，そもそも具体的に何が該当するのかもパッとイメージできるものではありません．
+また，大抵の人は分類がよくわからなかったら\hyperref[ssec:misc]{\texttt{@misc}}に入れてしまう気がします．
+しかし，\jsmefile を作成するうえでパターンを網羅しておきたかったので（無理矢理）分類したものとしては大学のオープンコースウェア（OCW）の講義資料等です．
+講義資料であれば正式に出版された書籍ではありませんがweb上にあるのをよく見かけると思います．
+上記の例はMITのOCW\footnote{MIT Open Course Ware, \textless\url{https://ocw.mit.edu/}\textgreater}における講義資料です．
 
 
-
+\clearpage
 \section{\jsmefile の使い方}
 それでは実際に\jsmefile を使ってみましょう．
 
+\pLaTeX{}を使用する場合は以下のようになります．
+\begin{verbatim}
+    $ platex JSME-template1.tex
+    $ pbibtex JSME-template1
+    $ platex JSME-template1.tex （複数回）
+    $ dvipdfmx JSME-template1
+\end{verbatim}
+
+
+\clearpage
 \section*{謝辞}
 \addcontentsline{toc}{section}{謝辞}
 \jsmefile は武田史郎氏作の経済学用\BibTeX{}スタイルファイル\verb|jecon.bst|\footnote{\texttt{jecon-bst}, \textless\url{https://github.com/ShiroTakeda/jecon-bst}\textgreater}を改変して作成したものです．
