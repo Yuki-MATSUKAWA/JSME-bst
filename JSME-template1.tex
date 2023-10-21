@@ -1,4 +1,4 @@
-\documentclass[a4paper,fleqn,uplatex]{jsarticle}
+\documentclass[a4paper,fleqn,uplatex,dvipdfmx]{jsarticle}
 
 %%% テキストエリア指定
 \setlength{\hoffset}{-5.4truemm}
@@ -17,7 +17,8 @@
 %%% 図の挿入
 \usepackage{graphicx}
 %%% hyperref
-\usepackage[dvipdfmx,bookmarks=true,setpagesize=false,colorlinks,allcolors=blue]{hyperref}
+%%% ハイパーリンクの色を全て黒にしたいときは allcolors=black にする
+\usepackage[bookmarks=true,setpagesize=false,colorlinks,allcolors=blue]{hyperref}
 \usepackage{pxjahyper}
 %%% ロゴ関連
 \usepackage{bxtexlogo}
@@ -1115,14 +1116,72 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 \clearpage
 \section{\jsmefile の使い方}
 それでは実際に\jsmefile を使ってみましょう．
+必要なファイルは以下の通りです．
+括弧の中は\JSMErepos の場合の該当ファイルを指します．
+\begin{itemize}
+    \item 本文の\verb|tex|ファイル（\verb|JSME-template1.tex|）
+    \item \BibTeX{}の\verb|bst|スタイルファイル（\jsmefile）
+    \item 読み込む文献リストの\verb|bib|ファイル（\verb|mybib_en.bib|, \verb|mybib_jp.bib|）
+\end{itemize}
+次に本文の\verb|tex|ファイルの設定ですが，おおまかに
+\begin{verbatim}
+    \documentclass[a4paper,fleqn,uplatex,dvipdfmx]{jsarticle}
+    %%% hyperref
+    %%% ハイパーリンクの色を全て黒にしたいときは allcolors=black にする
+    \usepackage[bookmarks=true,setpagesize=false,colorlinks,allcolors=blue]{hyperref}
+    \usepackage{pxjahyper}
+    %%% natbib
+    \usepackage{natbib}
+    %%% 参考文献リストの見出しを「参考文献」から「文献」に変更．
+    \renewcommand{\refname}{文献}
+    \begin{document}
 
-\pLaTeX{}を使用する場合は以下のようになります．
+    本文
+
+    %%% \nocite{*}が有効のとき，引用していない文献も含めて全て表示．
+    \nocite{*}
+    %%% 使用する bst ファイル
+    \bibliographystyle{jsme}
+    %%% 読み込む bib ファイル
+    \bibliography{mybib_en.bib,mybib_jp.bib}
+    %%% 目次に「文献」を追加
+    \addcontentsline{toc}{section}{\refname}
+    
+    \end{document}
+\end{verbatim}
+のようになります．
+まず\verb|\documentclass|と\verb|\begin{document}|の間のプリアンブルで必要なパッケージを入れます．
+ここでは\verb|hyperref|を入れることでハイパーリンクを有効にし，\verb|pxjahyper|を入れることでしおりの日本語表示を有効にしています．
+ここで使用するオプション等はユーザーに任せます．
+そして，本文中で\verb|\citet|や\verb|\citep|等のコマンドを有効化するために\verb|natbib|を入れます．
+次に，\verb|\begin{document}|以降の本文の末尾に\verb|\bibliographystyle{jsme}|と入れることで\jsmefile がここで使用する\BibTeX{}スタイルファイルとして読み込まれます．
+他の\BibTeX{}スタイルファイルを使用する際はここを変更してください．
+次に，読み込む文献リストの\verb|bib|ファイルを\verb|\bibliography{}|で指定してください．
+ここでは\verb|mybib_en.bib|と\verb|mybib_jp.bib|が読み込まれています．
+実際に皆さんの環境で使用する際には本文の\verb|tex|ファイルと同じディレクトリに\verb|bib|ファイルを入れるのが普通ですが，小分けにした\verb|bib|ファイルが多くあるのであれば，\texttt{\textcolor{red}{bibliography/}}\verb|mybib_en.bib|みたいに階層を変えてもいいです．
+ただし，その場合には\verb|\bibliography{|\texttt{\textcolor{red}{bibliography/}}\verb|mybib_en.bib,|\texttt{\textcolor{red}{bibliography/}}\verb|mybib_jp.bib}|のように\verb|\bibliography|のパスも変更してください．
+\verb|\addcontentsline{toc}{section}{\refname}|は目次に「文献」を追加したい場合にはこのように入れます．
+\verb|\nocite{*}|は本文中で引用していない文献も含め，読み込んだ\verb|bib|ファイル内の全ての文献をリストアップします．
+本文中で引用したもののみ一覧に載せたい場合はこの行をコメントアウトしてください．
+
+次に，コンパイルについてです．
+\verb|JSME-template1.tex|は\upLaTeX{}と\upBibTeX{}を使用しているので，ユーザーの使用環境に応じて変更してください．
+ここでは\pLaTeX{}の場合と\upLaTeX{}の場合の説明をします．
+\pLaTeX{}と\pBibTeX{}を使用する場合は以下のようなコマンドになります．
 \begin{verbatim}
     $ platex JSME-template1.tex
     $ pbibtex JSME-template1
     $ platex JSME-template1.tex （複数回）
     $ dvipdfmx JSME-template1
 \end{verbatim}
+\upLaTeX{}と\upBibTeX{}を使用する場合は以下のようなコマンドになります．
+\begin{verbatim}
+    $ uplatex JSME-template1.tex
+    $ upbibtex JSME-template1
+    $ uplatex JSME-template1.tex （複数回）
+    $ dvipdfmx JSME-template1
+\end{verbatim}
+これでうまくいけば\verb|pdf|が生成されているはずです．
 
 
 \clearpage
@@ -1145,6 +1204,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 mybib_en.bib,
 mybib_jp.bib
 }
+%%% 目次に「文献」を追加
 \addcontentsline{toc}{section}{\refname}
 
 
