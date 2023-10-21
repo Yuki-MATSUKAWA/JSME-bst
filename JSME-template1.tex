@@ -91,7 +91,8 @@
 それでもわからなければさまざまな書籍やwebサイトがあるので参考にしてみてください．
 また，その都度説明しますが，日本機械学会の原稿テンプレートに沿ったリストを作成するために\verb|bib|ファイルの作成方法が一部通常の\BibTeX{}と異なる場合があるのでご了承ください．
 
-\jsmefile 作成にあたり念のため動作チェックはしていますが，もし何か問題が発生した場合や不明点があればGitHubにコメントしていただくかメールをいただけると幸いです．
+\jsmefile 作成にあたり可能な限り日本機械学会の原稿テンプレートを忠実に再現できるよう努力していますが，まだ十分に再現できていない箇所もあります．
+もし何か問題や不明点があればGitHubにコメントしていただくかメールをいただけると幸いです．
 可能な限り対応しますが，\jsmefile を使用したことにより発生した問題に対しては一切の責任を持ちませんのでご了承ください．
 また，\JSMErepos リポジトリ内のファイルは全て日本機械学会の書式の実現のために作成した非公式ファイルなので使用方法等を日本機械学会に問い合わせることもご遠慮ください．
 
@@ -183,21 +184,36 @@ Serif体の書体としては{\usefont{T1}{ptm}{m}{n} Times}\footnote{Times New 
         \item 「2014年以降発行の日本機械学会論文集は通しページを廃止したためDOIを記載するように」との注釈が日本機械学会の原稿テンプレートに書かれているが，\jsmefile ではDOIから生成されたURLを誌名（に相当する箇所）にハイパーリンクとして埋め込むように設定している．
     \end{itemize}
 \end{itembox}
-\begin{itembox}[l]{\textgt{\large 本文中での引用の仕方}}
-    \begin{itemize}
-        \item 
-\end{itemize}
-\end{itembox}
 
 
 
 \section{引用のコマンドと本文中での表示}
 \label{sec:cite}
+本文中での文献の引用の仕方は以下の通りです．
+\begin{itembox}[l]{\textgt{\large 本文中での引用の仕方}}
+    \begin{itemize}
+        \item 本文中の引用箇所には，著者名と発行年を記載する．
+        \item 英語文献の場合
+        \begin{itemize}
+            \item 著者1名：\citet{Reynolds:PhilTransRoySoc1883}または\citep{Reynolds:PhilTransRoySoc1883}
+            \item 著者2名：\citet{Matsukawa:PoF2022}または\citep{Matsukawa:PoF2022}
+            \item 著者3名以上：\citet{Berghout:JFM2020}または\citep{Berghout:JFM2020}
+        \end{itemize}
+        \item 日本語文献の場合
+        \begin{itemize}
+            \item 著者1名：\citet{塚原:ながれ2023}または\citep{塚原:ながれ2023}
+            \item 著者2名：\citet{塚原:ながれ2015}または\citep{塚原:ながれ2015}
+            \item 著者3名以上：\citet{塚原:伝熱2007}または\citep{塚原:伝熱2007}
+        \end{itemize}
+        \item 発行年が同じである同じ著者からの二つ以上の引用を記載する場合には，発行年の後にa, b, c, \ldots を記載する． \\
+        例：\citet{Matsukawa:ICFD2022}, \citet{松川:東北大SENAC2022}
+\end{itemize}
+\end{itembox}
+
 Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等の，本文中で文献を引用する際のコマンドとその出力結果の一覧を示しています．
 これらのコマンドを使用するには\verb|natbib.sty|というスタイルファイルを読み込む必要があります．
 このテンプレートではプリアンブルに\verb|\usepackage{natbib}|と書くことで\verb|natbib.sty|を読み込んでいます．
 \verb|\cite|と\verb|\citet|は出力結果が同じなのでどちらを使っても構いませんが，他のコマンドは細かい箇所（カンマや括弧の有無）に違いがあるので自分の出力したい内容に合わせて使うようにしてください．
-
 
 \begin{itemize}
     \item \verb|\cite|, \verb|\citet| \\
