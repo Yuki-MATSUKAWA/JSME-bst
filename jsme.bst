@@ -2,7 +2,7 @@
 %
 % Author: Yuki MATSUKAWA (松川裕樹)
 % First-written: 2023/09/02
-% Latest version: 2023/09/02
+% Latest version: 2023/10/21
 % Version 1.0.0
 
 % This work is based on jecon-bst by Shiro Takeda (https://github.com/ShiroTakeda/jecon-bst)
@@ -16,7 +16,7 @@
 
 
 % version 指定
-FUNCTION {jecon.version} { "6.5.1" }
+FUNCTION {jsme.version} { "1.0.0" }
 
 % Debug mode．0 以外を指定すると様々な情報を表示させることが可能．
 FUNCTION {jecon.debug}
@@ -5310,7 +5310,7 @@ FUNCTION{punctuation}
 {
   "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"	 write$ newline$
   "%"									 write$ newline$
-  "%  This bbl file is created by jecon.bst ver." jecon.version *	 write$ newline$
+  "%  This bbl file is created by jecon.bst ver." jsme.version *	 write$ newline$
   "%  The latest jecon.bst is available at"				 write$ newline$
   "%  <http://shirotakeda.org/ja/tex-ja/jecon-ja.html>"		    write$ newline$
   "%"									 write$ newline$
