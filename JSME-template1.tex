@@ -31,6 +31,8 @@
 \usepackage{otf}
 %%% フォントを Times に変更
 \usepackage{newtxtext,newtxmath}
+%%% フォントを Palatino に変更
+% \usepackage{mathpazo}
 %%% 色の変更
 \usepackage{color}
 %%% natbib
@@ -83,34 +85,39 @@
 ただ，材料力学など他分野の方でも基本的な使い方は同じです．
 また，第~\ref{sec:cite}節でも述べますが，著者数が1名，2名，3名以上のそれぞれで引用時の出力結果が異なります．
 そのため\verb|mybib_en.bib|，\verb|mybib_jp.bib|では可能な限り著者数が1名，2名，3名以上の計3パターンを用意しています．
-ただ，基本的に実在の文献を集めて載せているので学位論文（\verb|phdthesis|, \verb|mastersthesis|）のように原則著者が一人のものや\verb|manual|，\verb|unpublished|など一部のエントリーでは全てのパターンを網羅できていない場合もあるのでご了承ください（ただ，参考にするうえで困ることのないくらいにはパターンを網羅しているつもりです）．
+ただ，基本的に実在の文献を集めて載せているので学位論文（\verb|@phdthesis|, \verb|@mastersthesis|）のように原則著者が一人のものや\verb|@manual|，\verb|@unpublished|など一部のエントリーでは全てのパターンを網羅できていない場合もあるのでご了承ください（ただ，参考にするうえで困ることのないくらいにはパターンを網羅しているつもりです）．
 
 この文書では\BibTeX{}初心者でも使いやすいよう，\BibTeX{}そのものの使い方や\verb|bib|ファイルの作成方法といった内容も可能な限り説明します．
 それでもわからなければさまざまな書籍やwebサイトがあるので参考にしてみてください．
 また，その都度説明しますが，日本機械学会の原稿テンプレートに沿ったリストを作成するために\verb|bib|ファイルの作成方法が一部通常の\BibTeX{}と異なる場合があるのでご了承ください．
 
-\jsmefile 作成にあたり念のため動作チェックはしていますが，もし何か問題が発生した場合はGitHubにコメントしていただくかメールをいただけると幸いです．
-可能な限り対応します．
+\jsmefile 作成にあたり念のため動作チェックはしていますが，もし何か問題が発生した場合や不明点があればGitHubにコメントしていただくかメールをいただけると幸いです．
+可能な限り対応しますが，\jsmefile を使用したことにより発生した問題に対しては一切の責任を持ちませんのでご了承ください．
+また，\JSMErepos リポジトリ内のファイルは全て日本機械学会の書式の実現のために作成した非公式ファイルなので使用方法等を日本機械学会に問い合わせることもご遠慮ください．
 
 \section{日本機械学会の原稿執筆要領における注意点}
 \label{sec:caution}
 この節では日本機械学会の原稿テンプレートに記載されている執筆要領の中でも，特に文献の記載に関する注意点をまとめておきます．
 日本機械学会の規定に合わせて論文執筆する際は是非参考にしてください\footnote{\JSMErepos 自体はもともと，JSMEの規定に沿って卒業論文執筆を行うことが決められている東京理科大学創域理工学部機械航空宇宙工学科の卒研生向けに作成したものです．もちろんGitHub上で公開しているので世界中の誰が使っても構いません．}．
 
-\subsection{使用する書体・フォントについて}
+\subsection{使用する書体について}
 日本機械学会では本文に使用する書体を和文は明朝体，欧文はSerif体と規定されています．
-Serif体のフォントとしてはTimes New RomanやCentury，Computer Modernなどが挙げられます．
-知らない人が結構多いのですが，\LaTeX{}標準のフォントはComputer Modernであって，Times New Romanではないので注意．
-フォントを変える際はプリアンブルで指定します．
-この文書の場合はプリアンブルの\verb|\usepackage{newtxtext,newtxmath}|でフォントをTimes New Romanに変更しています．
+これに倣い，参考文献を記載する際も和文を明朝体，欧文をSerif体とします．
+Serif体の書体としては{\usefont{T1}{ptm}{m}{n} Times}\footnote{Times New RomanとTimesは厳密には異なる書体ですが，ここで大きな問題となることはないでしょう．}や{\usefont{T1}{pplx}{m}{n} Palatino}，{\usefont{OT1}{cmr}{m}{n} Computer Modern}などが挙げられます．
+\LaTeX{}標準の書体は{\usefont{OT1}{cmr}{m}{n} Computer Modern}であって，{\usefont{T1}{ptm}{m}{n} Times}ではないので注意．
+書体を変える際はプリアンブル（\verb|\begin{document}|以前に書く設定）で指定します．
+この文書の場合はプリアンブルの\verb|\usepackage{newtxtext,newtxmath}|で書体を{\usefont{T1}{ptm}{m}{n} Times}に変更しています．
+もし文書全体の書体を{\usefont{OT1}{cmr}{m}{n} Computer Modern}に変更したいときは\verb|\usepackage{newtxtext,newtxmath}|をコメントアウトし，{\usefont{T1}{pplx}{m}{n} Palatino}に変更したいときは\verb|\usepackage{mathpazo}|のコメントアウトを外します．
+また，サイズは$10\,\mathrm{pt}$とします．
 
 \subsection{文献の並べ方・引用の仕方}
 この節では文献リストのフィールド（\BibTeX{}における\verb|author|や\verb|title|）の並べ方について説明します．
 \jsmefile のユーザーは気にせず使用することができますが，改めて整理しておくので\jsmefile を使わないときにも役に立つと思います．
 原則，日本機械学会の規定に合わせていますが，原稿テンプレートからは判断が難しい事項は一部独自の解釈を加えているものがあります．
 
-文献を並べる順序の規則は以下の通り．
-\begin{itembox}[l]{文献ソート規則}
+文献を並べる順序の規則は以下の通りです．
+4番については\jsmefile の設定を調整中です．
+\begin{itembox}[l]{\textgt{\large 文献ソート規則}}
     \begin{enumerate}
         \item （Family, Givenの順で並べた際の）筆頭著者の氏名のアルファベット順．並べる際，日本人の氏名は漢字と仮名を用いた日本語表記で構わないが順序はアルファベット順とする．
         \item 筆頭著者が同一人物の場合，第二著者以降のアルファベット順で並べる．著者数が異なる場合は著者数が少ない方が先．これを最後の著者まで繰り返す．
@@ -122,9 +129,10 @@ Serif体のフォントとしてはTimes New RomanやCentury，Computer Modern�
         \end{quote}
     \end{enumerate}
 \end{itembox}
-文献を並べる際の表記に関する注意事項は以下の通り．
+文献を並べる際の表記に関する注意事項は以下の通りです．
+\verb|author|や\verb|title|などのフィールドについての詳細は第~\ref{ssec:field}節を，各エントリー（\verb|@article|や\verb|@book|など）ごとの詳細は第~\ref{ssec:article}節以降を参照してください．
 \renewcommand\UrlFont{\rmfamily}
-\begin{itembox}[l]{文献リスト作成の注意事項（全体）}
+\begin{itembox}[l]{\textgt{\large 文献リスト作成の注意事項（全体）}}
     \begin{itemize}
         \item 並び順は原則として \\
             著者（\verb|author|）$\to$タイトル（\verb|title|）$\to$誌名（\verb|journal|）・書名（\verb|booktitle|）$\to$出版社（\verb|publisher|）・大学名（\verb|school|）・機関名（\verb|institution|）$\to$巻（\verb|volume|）$\to$号（\verb|number|）$\to$発行年（\verb|year|）$\to$ページ（\verb|pages|）$\to$論文番号・講演番号（\verb|note|） \\
@@ -137,12 +145,13 @@ Serif体のフォントとしてはTimes New RomanやCentury，Computer Modern�
         \item 文献自体が日本語で書かれている場合は外国人が書いていても日本語文献とする．
         \item 文献自体が英語で書かれている場合は日本人が書いていても英語文献とする．
         \item フィールドとフィールドの間は日本語文献・英語文献問わず半角カンマと半角スペース（, ）で繋ぐ．全角カンマ（，）ではないので注意．
-        \item 他学会の文献テンプレートでは誌名を\textit{Italic}にしたり巻数を\textbf{Bold}にしたりすることがあるが，日本機械学会では全てローマン体で統一する．
+        \item 他学会の文献テンプレートでは誌名を\textit{Italic}体にしたり巻数を\textbf{Boldface}体にしたりすることがあるが，日本機械学会では全て\textrm{Roman}体で統一する（WebページのURLを\LaTeX{}で出力するときに\texttt{Typewriter}体が用いられることが多いが，これも\textrm{Roman}体にする．）．
         \item 以上の内容が満たされていて，文献にアクセスするうえで十分な情報が書かれていれば月（\verb|month|）や章（\verb|chapter|）等は不要．
     \end{itemize}
 \end{itembox}
+次に，文献リストを作成する際の著者名表記に関する注意事項です．
 \renewcommand\UrlFont{\ttfamily}
-\begin{itembox}[l]{文献リスト作成の注意事項（著者名）}
+\begin{itembox}[l]{\textgt{\large 文献リスト作成の注意事項（著者名）}}
     \begin{itemize}
         \item 著者の氏名は「姓」「名」の順で書き，間にスペース等は入れない（例：松川裕樹）．
         \item 英語文献の著者の氏名はFamily nameのみ略記せず，Middle nameやGiven nameはイニシャルで記載する（例：Matsukawa Yuki $\to$ Matsukawa, Y.）．
@@ -163,16 +172,18 @@ Serif体のフォントとしてはTimes New RomanやCentury，Computer Modern�
             のように最後だけandで繋ぐ．最後のandの前にカンマは入れない．
     \end{itemize}
 \end{itembox}
-\begin{itembox}[l]{文献リスト作成の注意事項（その他）}
+最後に，文献リスト作成時のその他の注意事項を説明します．
+\begin{itembox}[l]{\textgt{\large 文献リスト作成の注意事項（その他）}}
     \begin{itemize}
         \item 英語文献のタイトルは最初の単語の頭文字のみ大文字（固有名詞等は除く）．
         \item 誌名・書名は省略せずに記載する．
         \item 巻・号は日本語・英語文献問わずVol.~xx，No.~xxとする．
         \item 発行年は西暦で表記し，括弧で括る．ただし，発行年の前のみ半角カンマは不要．
         \item ページ数は単ページの場合はp.~xxとし，複数ページに亘る場合はpp.~xx--yyとする．
+        \item 「2014年以降発行の日本機械学会論文集は通しページを廃止したためDOIを記載するように」との注釈が日本機械学会の原稿テンプレートに書かれているが，\jsmefile ではDOIから生成されたURLを誌名（に相当する箇所）にハイパーリンクとして埋め込むように設定している．
     \end{itemize}
 \end{itembox}
-\begin{itembox}[l]{本文中での引用の仕方}
+\begin{itembox}[l]{\textgt{\large 本文中での引用の仕方}}
     \begin{itemize}
         \item 
 \end{itemize}
@@ -188,7 +199,8 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
 \verb|\cite|と\verb|\citet|は出力結果が同じなのでどちらを使っても構いませんが，他のコマンドは細かい箇所（カンマや括弧の有無）に違いがあるので自分の出力したい内容に合わせて使うようにしてください．
 
 
-\subsection*{\texttt{\textbackslash{}cite}, \texttt{\textbackslash{}citet}}
+\begin{itemize}
+    \item \verb|\cite|, \verb|\citet| \\
 \verb|\cite|と\verb|\citet|は文章中で著者名と発行年を \verb|author (year)| の形で引用する際に使用するコマンドです．
 \begin{quote}
 \begin{verbatim}
@@ -196,13 +208,9 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
 \end{verbatim}
     \citet{Reynolds:PhilTransRoySoc1883}の実験では水の入った円管に染料を流すことにより，整った流れ（層流）と乱れた流れ（乱流）の切り替わりについて観察した．
 \end{quote}
-
-\subsection*{\texttt{\textbackslash{}citep}}
-
-\subsection*{\texttt{\textbackslash{}citealt}}
-
-\subsection*{\texttt{\textbackslash{}citealp}}
-
+    \item \verb|\citep|
+    \item \verb|\citealt|
+    \item \verb|\citealp| \\
 \begin{quote}
 入力：
 \begin{verbatim}
@@ -212,12 +220,10 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
     流体流れは層流と乱流に大別することができ，流速が遅い場合には整った流れ（層流）となり，速い場合には乱れた流れ（乱流）となる（\citealp{Reynolds:PhilTransRoySoc1883}）．
 \end{quote}
 
-
-\subsection*{\texttt{\textbackslash{}citeauthor}}
-
-\subsection*{\texttt{\textbackslash{}citeyear}}
-
-\subsection*{\texttt{\textbackslash{}citeyearpar}}
+    \item \verb|\citeauthor|
+    \item \verb|\citeyear|
+    \item \verb|\citeyearpar|
+\end{itemize}
 
 \begin{table}[t]
     \centering
@@ -360,6 +366,7 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
 \end{verbatim}
 のように\verb|{ }|または\verb|" "|で囲います．
 フィールドの詳細は以下の通りです（エントリーの分類同様，人によって意見が異なる場合があります）．
+また，下記以外のフィールドを使用しても\jsmefile では無視されます．
 
 \subsection{各フィールドの詳細}
 \label{ssec:field}
