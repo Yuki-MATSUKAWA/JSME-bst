@@ -225,10 +225,10 @@ Table~\ref{tab:English}--\ref{tab:same_authors}は，本文中で文献を引用
 \begin{quote}
 入力：
 \begin{verbatim}
-\citet{Reynolds:PhilTransRoySoc1883}の実験では水の入った円管に染料を流すことにより，整った流れ（層流）と乱れた流れ（乱流）の切り替わりについて観察した．
+\citet{Reynolds:PhilTransRoySoc1883}の実験では水の入った円管に染料を流すことにより，整った流れ（層流）と乱れた流れ（乱流）の切り替わりを明らかにした．
 \end{verbatim}
 出力：\\
-    \citet{Reynolds:PhilTransRoySoc1883}の実験では水の入った円管に染料を流すことにより，整った流れ（層流）と乱れた流れ（乱流）の切り替わりについて観察した．
+    \citet{Reynolds:PhilTransRoySoc1883}の実験では水の入った円管に染料を流すことにより，整った流れ（層流）と乱れた流れ（乱流）の切り替わりを明らかにした．
 \end{quote}
     \item \verb|\citep| \\
     著者と発行年を\citep{Reynolds:PhilTransRoySoc1883}のように\verb|(author, year)|の形で引用する際に使用するコマンドです．
@@ -1032,7 +1032,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 }
 \end{verbatim}
 \end{quote}
-のように\verb|bib|ファイルに書いていた場合，文中で引用した際に
+のように\verb|bib|ファイルに書いていた場合，文中で引用した際に以下のようにおかしな表示となってしまいます．
 \begin{table}[h]
     \centering
     \begin{tabular}{ll}
@@ -1041,7 +1041,6 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
         \verb|\citet{流力年会2023}| &流 (2023) \\
     \end{tabular}
 \end{table}
-となり，おかしな表示となってしまいます．
 そのため，\verb|editor|フィールドに「引用時に著者代わりに出力したい文字列」を書いておきましょう．
 文献一覧には\verb|editor|は出力されませんが，本文中での引用では\citet{THMT2023}や\citet{流力年会2023}のように\verb|editor (year)|で出力してくれます．
 
