@@ -192,11 +192,11 @@ Serif体の書体としては{\usefont{T1}{ptm}{m}{n} Times}\footnote{Times New 
 本文中での文献の引用の仕方は以下の通りです．
 \begin{itembox}[l]{\textgt{\large 本文中での引用の仕方}}
     \begin{itemize}
-        \item 本文中の引用箇所には，著者名と発行年を記載する．
+        \item 本文中の引用箇所には，著者名と発行年を記載する（Harvard方式）．
         \item 英語文献の場合
         \begin{itemize}
             \item 著者1名：\citet{Reynolds:PhilTransRoySoc1883}または\citep{Reynolds:PhilTransRoySoc1883}
-            \item 著者2名：\citet{Matsukawa:PoF2022}または\citep{Matsukawa:PoF2022}
+            \item 著者2名：\citet{Schmid:Springer2001}または\citep{Schmid:Springer2001}
             \item 著者3名以上：\citet{Berghout:JFM2020}または\citep{Berghout:JFM2020}
         \end{itemize}
         \item 日本語文献の場合
@@ -210,23 +210,42 @@ Serif体の書体としては{\usefont{T1}{ptm}{m}{n} Times}\footnote{Times New 
 \end{itemize}
 \end{itembox}
 
-Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等の，本文中で文献を引用する際のコマンドとその出力結果の一覧を示しています．
+日本機械学会の規定では本文中での文献の引用の際には，「著者名」と「発行年」を記載し，文献一覧は著者名によりソートするHarvard方式\footnote{文献の引用箇所に番号を付け，引用順に文献一覧を並べる方式をVancouver方式と言います．}が採用されています．
+そのため，\jsmefile では\verb|\citet|や\verb|\citealp|等のコマンドを使用して引用することをおすすめします．
+Table~\ref{tab:English}--\ref{tab:same_authors}は，本文中で文献を引用する際のコマンドとその出力結果の一覧を示しています．
 これらのコマンドを使用するには\verb|natbib.sty|というスタイルファイルを読み込む必要があります．
 このテンプレートではプリアンブルに\verb|\usepackage{natbib}|と書くことで\verb|natbib.sty|を読み込んでいます．
 \verb|\cite|と\verb|\citet|は出力結果が同じなのでどちらを使っても構いませんが，他のコマンドは細かい箇所（カンマや括弧の有無）に違いがあるので自分の出力したい内容に合わせて使うようにしてください．
 
 \begin{itemize}
     \item \verb|\cite|, \verb|\citet| \\
-\verb|\cite|と\verb|\citet|は文章中で著者名と発行年を \verb|author (year)| の形で引用する際に使用するコマンドです．
+    \verb|\cite|と\verb|\citet|は文章中で著者名と発行年を\citet{Reynolds:PhilTransRoySoc1883}のように \verb|author (year)| の形で引用する際に使用するコマンドです．
 \begin{quote}
+入力：
 \begin{verbatim}
 \citet{Reynolds:PhilTransRoySoc1883}の実験では水の入った円管に染料を流すことにより，整った流れ（層流）と乱れた流れ（乱流）の切り替わりについて観察した．
 \end{verbatim}
+出力：\\
     \citet{Reynolds:PhilTransRoySoc1883}の実験では水の入った円管に染料を流すことにより，整った流れ（層流）と乱れた流れ（乱流）の切り替わりについて観察した．
 \end{quote}
-    \item \verb|\citep|
-    \item \verb|\citealt|
+    \item \verb|\citep| \\
+    著者と発行年を\citep{Reynolds:PhilTransRoySoc1883}のように\verb|(author, year)|の形で引用する際に使用するコマンドです．
+    括弧が半角括弧なので英文の中でのみ使用してください．
+\begin{quote}
+入力：
+\begin{verbatim}
+Fluid flow can be broadly divided into laminar flow and 
+turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
+\end{verbatim}
+出力：\\
+    Fluid flow can be broadly divided into laminar flow and turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
+\end{quote}
+    \item \verb|\citealt| \\
+    著者と発行年を\citealt{Reynolds:PhilTransRoySoc1883}のように半角スペースのみで分離し，\verb|author year|の形で出力するコマンドです．
+    日本機械学会の書き方には合わないので使用しないでください．
     \item \verb|\citealp| \\
+    著者と発行年を\citealp{Reynolds:PhilTransRoySoc1883}のように半角カンマと半角スペースで分離し，\verb|author, year|の形で出力するコマンドです．
+    和文中の全角括弧内で使用してください．
 \begin{quote}
 入力：
 \begin{verbatim}
@@ -235,10 +254,12 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
 出力：\\
     流体流れは層流と乱流に大別することができ，流速が遅い場合には整った流れ（層流）となり，速い場合には乱れた流れ（乱流）となる（\citealp{Reynolds:PhilTransRoySoc1883}）．
 \end{quote}
-
-    \item \verb|\citeauthor|
-    \item \verb|\citeyear|
-    \item \verb|\citeyearpar|
+    \item \verb|\citeauthor| \\
+    著者名のみ出力するコマンドです．
+    \item \verb|\citeyear| \\
+    発行年のみ出力するコマンドです．
+    \item \verb|\citeyearpar| \\
+    発行年のみを\verb|(year)|の形で出力するコマンドです．
 \end{itemize}
 
 \begin{table}[t]
@@ -317,8 +338,8 @@ Table~\ref{tab:English}, \ref{tab:Japanese}は\verb|\citep|や\verb|\citealp|等
 
 \begin{table}[t]
     \centering
-    \caption{Commands and output results for English bibliography.}
-    \label{tab:English2}
+    \caption{Commands and output results for the bibliography from the same authors.}
+    \label{tab:same_authors}
     \begin{tabular}{ll}
         コマンド &出力結果 \\
         \multicolumn{2}{c}{------英語文献と英語文献------} \\
