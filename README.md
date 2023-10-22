@@ -1,6 +1,8 @@
 # JSME-bst（【非公式】日本機械学会BibTeXスタイルファイルテンプレート）
 `jsme.bst`は[日本機械学会の原稿テンプレート](https://www.jsme.or.jp/publish/transact/for-authors.html)に基づいた参考文献の出力を実現するために作成した，非公式BibTeXスタイルファイルテンプレートです．
+
 必要なファイル一式はGitHubの[JSME-bst](https://github.com/Yuki-MATSUKAWA/JSME-bst)から入手可能なので，用途に応じて自由に改変してください．
+
 参考文献のリストはこの`pdf`ファイルの末尾で，出力している文献の`bib`ファイルは英語文献`mybib_en.bib`と日本語文献`mybib_jp.bib`の二つです．
 `JSME-bst`の作成者である松川が流体力学，特に乱流遷移の研究をしているため，引用している文献は乱流遷移の周辺のものが多くなっています（全てではありません）．
 ただ，材料力学など他分野の方でも基本的な使い方は同じです．
