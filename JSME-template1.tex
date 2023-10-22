@@ -43,6 +43,8 @@
 %%% その他の定義
 \newcommand{\jsmefile}{\texttt{jsme.bst}}
 \newcommand{\JSMErepos}{\texttt{JSME-bst}}
+\newcommand{\ttarticle}{\texttt{@article}}
+\newcommand{\ttbook}{\texttt{@book}}
 \renewcommand{\figurename}{Fig.~}       % 図番号
 \renewcommand{\tablename}{Table~}       % 表番号
 
@@ -86,7 +88,7 @@
 ただ，材料力学など他分野の方でも基本的な使い方は同じです．
 また，第~\ref{sec:cite}節でも述べますが，著者数が1名，2名，3名以上のそれぞれで引用時の出力結果が異なります．
 そのため\verb|mybib_en.bib|，\verb|mybib_jp.bib|では可能な限り著者数が1名，2名，3名以上の計3パターンを用意しています．
-ただ，基本的に実在の文献を集めて載せているので学位論文（\verb|@phdthesis|, \verb|@mastersthesis|）のように原則著者が一人のものや\verb|@manual|，\verb|@unpublished|など一部のエントリーでは全てのパターンを網羅できていない場合もあるのでご了承ください（ただ，参考にするうえで困ることのないくらいにはパターンを網羅しているつもりです）．
+ただ，基本的に実在の文献を集めて載せているので学位論文（\hyperref[ssec:phdthesis]{\texttt{@phdthesis}}, \hyperref[ssec:mastersthesis]{\texttt{@mastersthesis}}）のように原則著者が一人のものや\hyperref[ssec:manual]{\texttt{@manual}}，\hyperref[ssec:unpublished]{\texttt{@unpublished}}など一部のエントリーでは全てのパターンを網羅できていない場合もあるのでご了承ください（ただ，参考にするうえで困ることのないくらいにはパターンを網羅しているつもりです）．
 
 この文書では\BibTeX{}初心者でも使いやすいよう，\BibTeX{}そのものの使い方や\verb|bib|ファイルの作成方法といった内容も可能な限り説明します．
 それでもわからなければさまざまな書籍やwebサイトがあるので参考にしてみてください．
@@ -133,7 +135,7 @@ Serif体の書体としては{\usefont{T1}{ptm}{m}{n} Times}\footnote{Times New 
     \end{enumerate}
 \end{itembox}
 文献を並べる際の表記に関する注意事項は以下の通りです．
-\verb|author|や\verb|title|などのフィールドについての詳細は第~\ref{ssec:field}節を，各エントリー（\verb|@article|や\verb|@book|など）ごとの詳細は第~\ref{ssec:article}節以降を参照してください．
+\verb|author|や\verb|title|などのフィールドについての詳細は第~\ref{ssec:field}節を，各エントリー（\ttarticle や\verb|@book|など）ごとの詳細は第~\ref{ssec:article}節以降を参照してください．
 \renewcommand\UrlFont{\rmfamily}
 \begin{itembox}[l]{\textgt{\large 文献リスト作成の注意事項（全体）}}
     \begin{itemize}
@@ -425,7 +427,7 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
 また，エントリー名とフィールド名は大文字と小文字を区別しませんが，参照キーは区別するので気をつけてください．
 
 エントリーは雑誌論文や学位論文といった，その文献の該当する種別を表します．
-\jsmefile でサポートされているエントリーは\hyperref[ssec:article]{\texttt{@article}}, \hyperref[ssec:book]{\texttt{@book}}, \hyperref[ssec:booklet]{\texttt{@booklet}}, \hyperref[ssec:comment]{\texttt{@comment}}, \hyperref[ssec:conference]{\texttt{@conference}}, \hyperref[ssec:inbook]{\texttt{@inbook}}, \hyperref[ssec:incollection]{\texttt{@incollection}}, \hyperref[ssec:inproceedings]{\texttt{@inproceedings}}, \hyperref[ssec:manual]{\texttt{@manual}}, \hyperref[ssec:mastersthesis]{\texttt{@mastersthesis}}, \hyperref[ssec:misc]{\texttt{@misc}}, \hyperref[ssec:online]{\texttt{@online}}, \hyperref[ssec:phdthesis]{\texttt{@phdthesis}}, \hyperref[ssec:proceedings]{\texttt{@proceedings}}, \hyperref[ssec:techreport]{\texttt{@techreport}}, \hyperref[ssec:unpublished]{\texttt{@unpublished}}の16種類です．
+\jsmefile でサポートされているエントリーは\hyperref[ssec:article]{\ttarticle}, \hyperref[ssec:book]{\texttt{@book}}, \hyperref[ssec:booklet]{\texttt{@booklet}}, \hyperref[ssec:comment]{\texttt{@comment}}, \hyperref[ssec:conference]{\texttt{@conference}}, \hyperref[ssec:inbook]{\texttt{@inbook}}, \hyperref[ssec:incollection]{\texttt{@incollection}}, \hyperref[ssec:inproceedings]{\texttt{@inproceedings}}, \hyperref[ssec:manual]{\texttt{@manual}}, \hyperref[ssec:mastersthesis]{\texttt{@mastersthesis}}, \hyperref[ssec:misc]{\texttt{@misc}}, \hyperref[ssec:online]{\texttt{@online}}, \hyperref[ssec:phdthesis]{\texttt{@phdthesis}}, \hyperref[ssec:proceedings]{\texttt{@proceedings}}, \hyperref[ssec:techreport]{\texttt{@techreport}}, \hyperref[ssec:unpublished]{\texttt{@unpublished}}の16種類です．
 それぞれのエントリーで必須となるフィールドが異なり，文献一覧への出力の方法も異なるので面倒くさがらずに分類しましょう．
 ただ，全ての文献を正確に分類することは難しく，判断が人により異なることもあります．
 \JSMErepos における分類の仕方も見る人によっては違和感を覚えるものがあるかもしれません．
@@ -499,7 +501,7 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
         報告書が出された機関名を入力します．
     \item \verb|journal| \\
         学術雑誌論文が出された誌名を入力します．
-        \hyperref[ssec:article]{\texttt{@article}}でのみ有効なフィールドです．
+        \hyperref[ssec:article]{\ttarticle}でのみ有効なフィールドです．
     \item \verb|key| \\
         著者名に相当するものが無い場合，ソートに利用します．
         \jsmefile では動作が完璧ではないのであまり使わないでほしいです．
@@ -566,7 +568,7 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
 \end{itemize}
 
 
-\subsection{\texttt{@article}}
+\subsection{\ttarticle}
 \label{ssec:article}
 \begin{screen}
     \begin{itemize}
@@ -596,7 +598,7 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
     \end{itemize}
 \end{screen}
 
-\texttt{@article}は雑誌に掲載された論文です．
+\ttarticle は雑誌に掲載された論文です．
 流体力学分野では英文雑誌だとJournal of Fluid Mechanics\footnote{Journal of Fluid Mechanics, \textless\url{https://www.cambridge.org/core/journals/journal-of-fluid-mechanics}\textgreater}やPhysics of Fluids\footnote{Physics of Fluids, \textless\url{https://pubs.aip.org/aip/pof}\textgreater}などが挙げられます．
 国内雑誌だと日本機械学会誌\footnote{日本機械学会誌, \textless\url{https://www.jsme.or.jp/publication/kaisi/}\textgreater}や日本流体力学会誌『ながれ』\footnote{日本流体力学会誌『ながれ』, \textless\url{https://www.nagare.or.jp/publication/nagare.html}\textgreater}などが該当します．
 \verb|doi|と\verb|url|のフィールドは\jsmefile ではどちらも\verb|journal|にハイパーリンクを埋め込む操作を行うのでどちらを使っても同様の結果を得られます．
@@ -762,8 +764,9 @@ Scribeというシステムとの互換性のために残されているらし�
 \verb|@incollection|は分類が難しいエントリーの一つです．
 これは書籍の一部からの引用ですが，\hyperref[ssec:inbook]{\texttt{@inbook}}と異なる点は，引用箇所が独立して表題を持っているようなものを指します．
 学会等があるテーマについて組んだ特集といったイメージです．
-\JSMErepos では京都大学数理解析研究所の講究録\footnote{京都大学数理解析研究所（RIMS）講究録, \textless\url{https://www.kurims.kyoto-u.ac.jp/ja/kokyuroku.html}\textgreater}や文部科学省科学研究補助金における特定の新学術領域研究の研究成果報告書等を\verb|@incollection|に分類しています．
-それは\hyperref[ssec:inproceedings]{\texttt{@inproceedings}}だろと言われそうな気もします．
+上記の\citet{Lueptow:Springer2000}の例では，それ単独でStability and experimental velocity field in Taylor--Couette flow with axial and radial flowという題目（\verb|title|）を持っていますが，これはPhysics of Rotating Fluidsという書籍（\verb|booktitle|）の一部です．
+日本語文献では京都大学数理解析研究所の講究録\footnote{京都大学数理解析研究所（RIMS）講究録, \textless\url{https://www.kurims.kyoto-u.ac.jp/ja/kokyuroku.html}\textgreater}や文部科学省科学研究補助金における特定の新学術領域研究の研究成果報告書等を\verb|@incollection|に分類しています．
+それは\hyperref[ssec:inproceedings]{\texttt{@inproceedings}}だろとか\hyperref[ssec:techreport]{\texttt{@techreport}}だろとか言われそうな気もします．
 
 \subsection{\texttt{@inproceedings}}
 \label{ssec:inproceedings}
@@ -793,7 +796,7 @@ Scribeというシステムとの互換性のために残されているらし�
 
 \hyperref[ssec:conference]{\texttt{@conference}}と同様です．
 学会等の講演論文集の一部を引用するときに\verb|@inproceedings|を使用します．
-\hyperref[ssec:article]{\texttt{@article}}と並んで使用頻度の高いエントリーだと思います．
+\hyperref[ssec:article]{\ttarticle}と並んで使用頻度の高いエントリーだと思います．
 \verb|booktitle|フィールドには日本語なら\texttt{booktitle = \{\colorbox[gray]{0.8}{学会名}講演論文集\}}，英語なら\texttt{booktitle = \{Proceedings of \colorbox[gray]{0.8}{学会名}\}}と入力しましょう．
 \hyperref[ssec:proceedings]{\texttt{@proceedings}}は講演論文集全体を引用しているのに対して，\verb|@inproceedings|は講演論文集の中の一講演を引用しています．
 
@@ -925,7 +928,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 \begin{screen}
     \begin{itemize}
         \item 使用可能項目 \\
-        \verb|author|, \verb|title|, \verb|howpublished|, \verb|month|, \verb|year|, \verb|url|, \verb|doi|, \verb|note|
+        \verb|author|, \verb|title|, \verb|howpublished|, \verb|month|, \verb|year|, \verb|url|, \verb|doi|, \verb|access|, \verb|note|
         \item 出力（英語文献） \\
             \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, available from \textless\colorbox[gray]{0.8}{\texttt{url}}\textgreater, (accessed on \colorbox[gray]{0.8}{access}).
         \item 出力（日本語文献） \\
@@ -1124,31 +1127,34 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
     \item 読み込む文献リストの\verb|bib|ファイル（\verb|mybib_en.bib|, \verb|mybib_jp.bib|）
 \end{itemize}
 次に本文の\verb|tex|ファイルの設定ですが，おおまかに
+\begin{screen}
 \begin{verbatim}
-    \documentclass[a4paper,fleqn,uplatex,dvipdfmx]{jsarticle}
-    %%% hyperref
-    %%% ハイパーリンクの色を全て黒にしたいときは allcolors=black にする
-    \usepackage[bookmarks=true,setpagesize=false,colorlinks,allcolors=blue]{hyperref}
-    \usepackage{pxjahyper}
-    %%% natbib
-    \usepackage{natbib}
-    %%% 参考文献リストの見出しを「参考文献」から「文献」に変更．
-    \renewcommand{\refname}{文献}
-    \begin{document}
+\documentclass[a4paper,fleqn,uplatex,dvipdfmx]{jsarticle}
+%%% hyperref
+%%% ハイパーリンクの色を全て黒にしたいときは allcolors=black にする
+\usepackage[bookmarks=true,setpagesize=false,colorlinks,allcolors=blue]{hyperref}
+\usepackage{pxjahyper}
+%%% natbib
+\usepackage{natbib}
+%%% 参考文献リストの見出しを「参考文献」から「文献」に変更．
+\renewcommand{\refname}{文献}
+\begin{document}
 
-    本文
+本文
 
-    %%% \nocite{*}が有効のとき，引用していない文献も含めて全て表示．
-    \nocite{*}
-    %%% 使用する bst ファイル
-    \bibliographystyle{jsme}
-    %%% 読み込む bib ファイル
-    \bibliography{mybib_en.bib,mybib_jp.bib}
-    %%% 目次に「文献」を追加
-    \addcontentsline{toc}{section}{\refname}
-    
-    \end{document}
+%%% ハイパーリンクのズレを調整
+\phantomsection
+%%% \nocite{*}が有効のとき，引用していない文献も含めて全て表示
+\nocite{*}
+%%% 目次に「文献」を追加
+\addcontentsline{toc}{section}{\refname}
+%%% 使用する bst ファイル
+\bibliographystyle{jsme}
+%%% 読み込む bib ファイル
+\bibliography{mybib_en.bib,mybib_jp.bib}
+\end{document}
 \end{verbatim}
+\end{screen}
 のようになります．
 まず\verb|\documentclass|と\verb|\begin{document}|の間のプリアンブルで必要なパッケージを入れます．
 ここでは\verb|hyperref|を入れることでハイパーリンクを有効にし，\verb|pxjahyper|を入れることでしおりの日本語表示を有効にしています．
@@ -1161,20 +1167,22 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 実際に皆さんの環境で使用する際には本文の\verb|tex|ファイルと同じディレクトリに\verb|bib|ファイルを入れるのが普通ですが，小分けにした\verb|bib|ファイルが多くあるのであれば，\texttt{\textcolor{red}{bibliography/}}\verb|mybib_en.bib|みたいに階層を変えてもいいです．
 ただし，その場合には\verb|\bibliography{|\texttt{\textcolor{red}{bibliography/}}\verb|mybib_en.bib,|\texttt{\textcolor{red}{bibliography/}}\verb|mybib_jp.bib}|のように\verb|\bibliography|のパスも変更してください．
 \verb|\addcontentsline{toc}{section}{\refname}|は目次に「文献」を追加したい場合にはこのように入れます．
+また，目次で生成される「文献」へのハイパーリンクにズレが発生することがあるので，その際は\verb|\phantomsection|で空の節（幻の節）を入れてあげることで調整します．
 \verb|\nocite{*}|は本文中で引用していない文献も含め，読み込んだ\verb|bib|ファイル内の全ての文献をリストアップします．
 本文中で引用したもののみ一覧に載せたい場合はこの行をコメントアウトしてください．
+その他細かいことは\verb|JSME-template1.tex|の中身も読んでみてください．
 
 次に，コンパイルについてです．
-\verb|JSME-template1.tex|は\upLaTeX{}と\upBibTeX{}を使用しているので，ユーザーの使用環境に応じて変更してください．
-ここでは\pLaTeX{}の場合と\upLaTeX{}の場合の説明をします．
-\pLaTeX{}と\pBibTeX{}を使用する場合は以下のようなコマンドになります．
+\verb|JSME-template1.tex|から\verb|JSME-template1.pdf|の生成は\upLaTeX{}$+$\upBibTeX{}を使用しているので，ユーザーの使用環境に応じて変更してください．
+ここでは\pLaTeX{}$+$\pBibTeX{}の場合と\upLaTeX{}$+$\upBibTeX{}の場合の説明をします．
+\pLaTeX{}$+$\pBibTeX{}を使用する場合は以下のようなコマンドになります．
 \begin{verbatim}
     $ platex JSME-template1.tex
     $ pbibtex JSME-template1
     $ platex JSME-template1.tex （複数回）
     $ dvipdfmx JSME-template1
 \end{verbatim}
-\upLaTeX{}と\upBibTeX{}を使用する場合は以下のようなコマンドになります．
+\upLaTeX{}$+$\upBibTeX{}を使用する場合は以下のようなコマンドになります．
 \begin{verbatim}
     $ uplatex JSME-template1.tex
     $ upbibtex JSME-template1
@@ -1193,10 +1201,14 @@ Overleaf\footnote{Overleaf, \textless\url{https://ja.overleaf.com}\textgreater}�
 ここに，深く感謝の意を表します．
 
 \clearpage
-%%% 参考文献内の URL 表示をタイプライター調にしない．
+%%% ハイパーリンクのズレを調整
+\phantomsection
+%%% 参考文献内の URL 表示をタイプライター調にしない
 \renewcommand\UrlFont{\rmfamily}
-%%% \nocite{*}が有効のとき，引用していない文献も含めて全て表示．
+%%% \nocite{*}が有効のとき，引用していない文献も含めて全て表示
 \nocite{*}
+%%% 目次に「文献」を追加
+\addcontentsline{toc}{section}{\refname}
 %%% 使用する bst ファイル
 \bibliographystyle{jsme}
 %%% 読み込む bib ファイル
@@ -1204,10 +1216,6 @@ Overleaf\footnote{Overleaf, \textless\url{https://ja.overleaf.com}\textgreater}�
 mybib_en.bib,
 mybib_jp.bib
 }
-%%% 目次に「文献」を追加
-\addcontentsline{toc}{section}{\refname}
-
-
 
 
 \end{document}
