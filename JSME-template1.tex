@@ -120,14 +120,14 @@
 日本機械学会の規定に合わせて論文執筆する際は是非参考にしてください\footnote{\JSMErepos 自体はもともと，JSMEの規定に沿って卒業論文執筆を行うことが決められている東京理科大学創域理工学部機械航空宇宙工学科の卒研生向けに作成したものです．もちろんGitHub上で公開しているので世界中の誰が使っても構いません．}．
 
 \subsection{使用する書体について}
-日本機械学会では本文に使用する書体を和文は明朝体，欧文はSerif体と規定されています．
+日本機械学会では本文に使用する書体を和文は明朝体，欧文はSerif体，サイズは$10\,\mathrm{pt}$と規定されています．
 これに倣い，参考文献を記載する際も和文を明朝体，欧文をSerif体とします．
-Serif体の書体としては{\usefont{T1}{ptm}{m}{n} Times}\footnote{Times New RomanとTimesは厳密には異なる書体ですが，ここで大きな問題となることはないでしょう．}や{\usefont{T1}{pplx}{m}{n} Palatino}，{\usefont{OT1}{cmr}{m}{n} Computer Modern}などが挙げられます．
+Serif体の書体としては{\usefont{T1}{ptm}{m}{n} Times}や{\usefont{T1}{pplx}{m}{n} Palatino}，{\usefont{OT1}{cmr}{m}{n} Computer Modern}などが挙げられます．
 \LaTeX{}標準の書体は{\usefont{OT1}{cmr}{m}{n} Computer Modern}であって，{\usefont{T1}{ptm}{m}{n} Times}ではないので注意．
 書体を変える際はプリアンブル（\verb|\begin{document}|以前に書く設定）で指定します．
 この文書の場合はプリアンブルの\verb|\usepackage{newtxtext,newtxmath}|で書体を{\usefont{T1}{ptm}{m}{n} Times}に変更しています．
 もし文書全体の書体を{\usefont{OT1}{cmr}{m}{n} Computer Modern}に変更したいときは\verb|\usepackage{newtxtext,newtxmath}|をコメントアウトし，{\usefont{T1}{pplx}{m}{n} Palatino}に変更したいときは\verb|\usepackage{mathpazo}|のコメントアウトを外します．
-また，サイズは$10\,\mathrm{pt}$とします．
+ここでは参考文献の書き方に焦点を当てて説明するのでその他の箇所の書式は日本機械学会の原稿テンプレートをよく読んで作成してください．
 
 \subsection{文献の並べ方・引用の仕方}
 この節では文献リストのフィールド（\BibTeX{}における\verb|author|や\verb|title|）の並べ方について説明します．
