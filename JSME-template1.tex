@@ -1181,6 +1181,18 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 実際に皆さんの環境で使用する際には本文の\verb|tex|ファイルと同じディレクトリに\verb|bib|ファイルを入れるのが普通ですが，小分けにした\verb|bib|ファイルが多くあるのであれば，\texttt{\textcolor{red}{bibliography/}}\verb|mybib_en.bib|みたいに階層を変えてもいいです．
 ただし，その場合には\verb|\bibliography{|\texttt{\textcolor{red}{bibliography/}}\verb|mybib_en.bib,|\texttt{\textcolor{red}{bibliography/}}\verb|mybib_jp.bib}|のように\verb|\bibliography|のパスも変更してください．
 \verb|\addcontentsline{toc}{section}{\refname}|は目次に「文献」を追加したい場合にはこのように入れます．
+ここでは「文献」に相当するものが節なので\verb|section|と書いていますが，章に相当する場合は\verb|chapter|に変えてあげてください．
+これは使用するドキュメントクラス\footnote{\texttt{tex}ファイル冒頭の\texttt{\textbackslash documentclass}の記述を確認．}が\verb|book|または\verb|report|の名前を含む場合が該当します．
+同時に，これらのドキュメントクラスでは参考文献の節の名前が\verb|\refname|ではなく\verb|\bibname|で定義されるので
+\begin{quote}
+\begin{verbatim}
+%%% 参考文献リストの見出しを「参考文献」から「文献」に変更．
+\renewcommand{\bibname}{文献}
+%%% 目次に「文献」を追加
+\addcontentsline{toc}{chapter}{\bibname}
+\end{verbatim}
+\end{quote}
+と変更する必要があります．
 また，目次で生成される「文献」へのハイパーリンクにズレが発生することがあるので，その際は\verb|\phantomsection|で空の節（幻の節）を入れてあげることで調整します．
 \verb|\nocite{*}|は本文中で引用していない文献も含め，読み込んだ\verb|bib|ファイル内の全ての文献をリストアップします．
 本文中で引用したもののみ一覧に載せたい場合はこの行をコメントアウトしてください．
