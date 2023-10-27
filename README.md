@@ -1,4 +1,7 @@
 # JSME-bst（【非公式】日本機械学会BibTeXスタイルファイルテンプレート）
+ハイパーリンク無しバージョンはそのうち作ってアップします．
+
+
 `jsme.bst`は[日本機械学会の原稿テンプレート](https://www.jsme.or.jp/publish/transact/for-authors.html)に基づいた参考文献の出力を実現するために作成した，非公式BibTeXスタイルファイルテンプレートです．
 
 必要なファイル一式はGitHubの[JSME-bst](https://github.com/Yuki-MATSUKAWA/JSME-bst)から入手可能なので，用途に応じて自由に改変してください．
