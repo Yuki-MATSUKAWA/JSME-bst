@@ -1,5 +1,8 @@
 # JSME-bst（【非公式】日本機械学会BibTeXスタイルファイルテンプレート）
 ハイパーリンク無しバージョンは作成中です．
+
+現在使用可能なファイルは`JSME-template1.tex`, `JSME-template1.pdf`, `jsme.bst`です．
+
 * `JSME-template1.tex`, `JSME-template1.pdf` -> ハイパーリンク有りの`jsme.bst`説明書
 * `JSME-template2.tex`, `JSME-template2.pdf` -> ハイパーリンク無しの`jsme-nolink.bst`説明書
 * `jsmepaper1.tex`, `jsmepaper1.pdf` -> ハイパーリンク有りの日本機械学会原稿テンプレート

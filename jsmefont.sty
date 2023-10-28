@@ -1,0 +1,91 @@
+% jaddfont.sty
+%
+%
+\def\@magscale#1{ scaled \magstep #1}
+\def\@halfmag{ scaled \magstephalf}
+\def\@ptscale#1{ scaled #100}
+\font\fivbfp = cmb10   \@ptscale5 % extended bold 
+\font\fivbfs = cmbxsl10\@ptscale5 % extended bold slanted
+\font\sixbfp = cmb10   \@ptscale6 % extended bold 
+\font\sixbfs = cmbxsl10\@ptscale6 % extended bold slanted
+\font\sevbfp = cmb10   \@ptscale7 % extended bold 
+\font\sevbfs = cmbxsl10\@ptscale7 % extended bold slanted
+\font\egtbfp = cmb10   \@ptscale8 % extended bold 
+\font\egtbfs = cmbxsl10\@ptscale8 % extended bold slanted
+\font\ninbfp = cmb10   \@ptscale9 % extended bold 
+\font\ninbfs = cmbxsl10\@ptscale9 % extended bold slanted
+\font\tenbfp = cmb10    % extended bold 
+\font\tenbfs = cmbxsl10 % extended bold slanted
+\font\elvbfp = cmb10    \@halfmag % exelvded bold 
+\font\elvbfs = cmbxsl10 \@halfmag % exelvded bold slanted
+\font\twlbfp = cmb10    \@magscale1 % no extended bold 
+\font\twlbfs = cmbxsl10 \@magscale1 % extended bold slanted
+\font\frtnbfp = cmb10    \@magscale2 % extended bold 
+\font\frtnbfs = cmbxsl10 \@magscale2 % extended bold slanted
+\font\svtnbfp = cmb10    \@magscale3 % extended bold 
+\font\svtnbfs = cmbxsl10 \@magscale3 % extended bold slanted
+\font\twtybfp = cmb10    \@magscale4 % extended bold 
+\font\twtybfs = cmbxsl10 \@magscale4 % extended bold slanted
+\font\twfvbfp = cmb10    \@magscale5 % extended bold 
+\font\twfvbfs = cmbxsl10 \@magscale5 % extended bold slanted
+\def\semilarge{\@setfontsize\semilarge\@xipt{15.5}}
+%\newfam\bfpfam
+%\newfam\bfsfam
+\def\vptfontadd{
+ \def\bfs{\fam\bfsfam\fivbfs}\textfont\bfsfam\fivbfs%
+ \scriptfont\bfsfam\fivbfs \scriptscriptfont\bfsfam\fivbfs
+ \def\bfp{\fam\bfpfam\fivbfp}\textfont\bfpfam\fivbfp%
+ \scriptfont\bfpfam\fivbfp \scriptscriptfont\bfpfam\fivbfp
+}
+\def\viptfontadd{
+ \def\bfs{\fam\bfsfam\sixbfs}\textfont\bfsfam\sixbfs%
+ \scriptfont\bfsfam\sixbfs \scriptscriptfont\bfsfam\sixbfs
+ \def\bfp{\fam\bfpfam\sixbfp}\textfont\bfpfam\sixbfp%
+ \scriptfont\bfpfam\sixbfp \scriptscriptfont\bfpfam\sixbfp
+}
+\def\viiptfontadd{
+ \def\bfs{\fam\bfsfam\sevbfs}\textfont\bfsfam\sevbfs%
+ \scriptfont\bfsfam\sevbfs \scriptscriptfont\bfsfam\sevbfs
+ \def\bfp{\fam\bfpfam\sevbfp}\textfont\bfpfam\sevbfp%
+ \scriptfont\bfpfam\sevbfp \scriptscriptfont\bfpfam\sevbfp
+}
+\def\viiiptfontadd{
+ \def\bfs{\fam\bfsfam\egtbfs}\textfont\bfsfam\egtbfs%
+ \scriptfont\bfsfam\egtbfs \scriptscriptfont\bfsfam\egtbfs
+ \def\bfp{\fam\bfpfam\egtbfp}\textfont\bfpfam\egtbfp%
+ \scriptfont\bfpfam\egtbfp \scriptscriptfont\bfpfam\egtbfp
+}
+\def\ixptfontadd{
+ \def\bfs{\fam\bfsfam\ninbfs}\textfont\bfsfam\ninbfs%
+ \scriptfont\bfsfam\ninbfs \scriptscriptfont\bfsfam\ninbfs
+ \def\bfp{\fam\bfpfam\ninbfp}\textfont\bfpfam\ninbfp%
+ \scriptfont\bfpfam\ninbfp \scriptscriptfont\bfpfam\ninbfp
+}
+\def\xptfontadd{
+ \def\bfs{\fam\bfsfam\tenbfs}\textfont\bfsfam\tenbfs%
+ \scriptfont\bfsfam\sevbfs \scriptscriptfont\bfsfam\fivbfs
+ \def\bfp{\fam\bfpfam\tenbfp}\textfont\bfpfam\tenbfp%
+ \scriptfont\bfpfam\sevbfp \scriptscriptfont\bfpfam\fivbfp
+}
+\def\xiptfontadd{
+ \def\bfs{\fam\bfsfam\elvbfs}\textfont\bfsfam\elvbfs%
+ \scriptfont\bfsfam\egtbfs \scriptscriptfont\bfsfam\sixbfs
+ \def\bfp{\fam\bfpfam\elvbfp}\textfont\bfpfam\elvbfp%
+ \scriptfont\bfpfam\egtbfp \scriptscriptfont\bfpfam\sixbfp
+}
+\def\xiiptfontadd{
+ \def\bfs{\fam\bfsfam\twlbfs}\textfont\bfsfam\twlbfs%
+ \scriptfont\bfsfam\ninbfs \scriptscriptfont\bfsfam\sevbfs
+ \def\bfp{\fam\bfpfam\twlbfp}\textfont\bfpfam\twlbfp%
+ \scriptfont\bfpfam\ninbfp \scriptscriptfont\bfpfam\sevbfp
+}
+\def\xivptfontadd{
+ \def\bfs{\fam\bfsfam\frtnbfs}\def\bfp{\fam\bfpfam\frtnbfp}}
+\def\xviiptfontadd{
+ \def\bfs{\fam\bfsfam\svtnbfs}\def\bfp{\fam\bfpfam\svtnbfp}}
+\def\xxptfontadd{
+ \def\bfs{\fam\bfsfam\twtybfs}\def\bfp{\fam\bfpfam\twtybfp}}
+\def\xxvptfontadd{
+ \def\bfs{\fam\bfsfam\twfvbfs}\def\bfp{\fam\bfpfam\twfvbfp}}
+%
+% ----------------- end jsmefont.sty ------------------------

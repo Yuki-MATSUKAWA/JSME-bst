@@ -1,0 +1,455 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% jsadd.sty v2.0 (2010.07.28)                                                %%
+%%                                                                            %%
+%% このバージョンは、JSADD VERSION 1.12を１段組用に変更したものです。         %%
+%%                                                                            %%
+%% 前バージョンのコメントはすべてオリジナルのまま残してあります。             %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% JSADD VERSION 1.12 <10 Sep 2001>
+%
+% 2001/09/10  Omit * in English title.
+% 2000/07/12  Add subtitle by advice of 
+%                    Tatsujiro MIYAZAKI<miyazaki@mech.kyushu-u.ac.jp>
+% 1999/11/04  Changed by Kikuo Fujita <fujita@mech.eng.osaka-u.ac.jp>
+% Copyright (C) 1994 by Ken Kishimoto <kkishim@kokushikan.ac.jp>
+%
+%  Below here, new command for jsadd.sty for jsmepaper.sty. but these 
+%  command are also available under normal jarticle style document.
+%
+%   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   %      maketitle and  others           %(redefinition)
+%   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% [ Various parts such as \@@etitle, \@@keywords, vskip values are
+%   customized by Kikuo Fujita, Osaka University ]: 
+%
+%  my titlepage:
+%
+% Title has both items in English and Japanese. These items may be placed
+% in anywhere before \maketitle.
+%
+%  \begin{document}
+%  \jtitle      \etitle{ .... }
+%  \jauthor     \eauthor{ ... }
+%  \jthanks     \ethanks{ ... }
+%  \jkeywords   \ekeywords { ... }
+%  \jabstruct   \eabstruct { ... }
+%  \maketitle
+%
+% Customized by Kikuo Fujita, Osaka University
+
+%
+\makeatletter
+\newcount\@abind
+\def\jtitle#1{\gdef\@jtitle{#1}}\jtitle{}
+\def\etitle#1{\gdef\@etitle{#1}}\etitle{}
+\def\jsubtitle#1{\gdef\@jsubtitle{#1}}\jsubtitle{}
+\def\esubtitle#1{\gdef\@esubtitle{#1}}\esubtitle{}
+\def\jauthor#1{\gdef\@jauthor{#1}}\jauthor{}
+\def\eauthor#1{\gdef\@eauthor{#1}}\eauthor{}
+\def\jaffiliation#1{\long\gdef\@jaffiliation{#1}}\jaffiliation{}
+\def\eaffiliation#1{\long\gdef\@eaffiliation{#1}}\eaffiliation{}
+\def\ereceived#1{\long\gdef\@ereceived{#1}}\ereceived{}
+\def\jabstract#1{\long\gdef\@jabstract{#1}}\jabstract{}
+\def\eabstract#1{\long\gdef\@eabstract{#1}}\eabstract{}
+\def\jkeywords#1{\gdef\@jkeywords{#1}}\jkeywords{}
+\def\ekeywords#1{\gdef\@ekeywords{#1}}\ekeywords{}
+\def\jthanks#1{\gdef\@jthanks{#1}}\jthanks{}
+\def\ethanks#1{\gdef\@ethanks{#1}}\ethanks{}
+\def\email#1{\gdef\@email{#1}}\email{}
+\def\presentation#1{\gdef\@present{#1}}\presentation{}
+\let\abstract\eabstract
+\let\keywords\ekeywords
+\let\title\jtitle
+\let\subtitle\jsubtitle
+\let\author\jauthor
+\let\affiliation\jafiliation
+\let\received\ereceived
+\let\ethanks\eaffiliation
+\let\jthanks\jaffiliation
+\let\thanks\jaffiliation
+%
+% re-define maketitle macros for saving memory otherwise this definition 
+% is not necessary.
+% main format of maketitle is defiened in @maketitle.
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% １段組用に変更ここから %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\newcommand{\maketitle}{\par
+\newdimen\titleleft \titleleft 0mm
+ \newdimen\titlewidth\titlewidth\textwidth\advance\titlewidth-0\titleleft
+ \begingroup
+   \def\thefootnote{\fnsymbol{footnote}}
+   \def\@makefnmark{\hbox to 0pt{$^{\@thefnmark}$\hss}} 
+   \if@twocolumn\twocolumn[\@maketitle] 
+   \else\newpage\global\@topnum\z@\@maketitle\fi%
+   \thispagestyle{plain}
+  \footnotetext{{\fontsize{8.5pt}{8.5pt}\selectfont%\hskip-6mm\kern -1.5em
+  {\setlength{\tabcolsep}{2pt}
+     \begin{tabular}[b]{rl}
+     \ifx\@present\empty
+%      \ifx\@date\empty\else$^{*}$ & 原稿受付\ \@date\\\fi%
+      \ifx\@date\empty\else \multicolumn{2}{l}\@date\\\fi%
+     \else
+      \ifx\@date\empty\else$^{*}$ & \@present ，原稿受付\ \@date\\\fi%
+     \fi
+     \@jaffiliation\\
+    \ifx\@email\empty\else \multicolumn{2}{l}{E-mail of corresponding author:\ {\@email}}\fi
+     \end{tabular}}}}\par
+  \baselineskip 15.6pt\endgroup
+ \setcounter{footnote}{0}
+ \let\maketitle\relax
+ \let\@maketitle\relax
+ \let\eaffiliation\relax\gdef\@eafiliation{}
+ \let\jaffiliation\relax\gdef\@jafiliation{}
+ \gdef\@ethanks{}\gdef\@eauthor{}\gdef\@etitle{}\gdef\@ekeywords{}
+ \gdef\@jthanks{}\gdef\@jauthor{}\gdef\@jtitle{}\gdef\@jkeywords{}
+ \let\ethanks\relax\let\jthanks\relax
+ \let\titlewidth\relax\let\titleleft\relax}
+% bold italic `Key Words:' 
+\def\keywordsname{\fontkeywords Key Words:}
+\font\fontkeywords=cmbxsl10 scaled 900
+%
+\newcommand{\nospitem}{\itemsep=0pt\parskip=0pt\parsep=0pt\partopsep=0pt}
+\def\@@title#1#2{\parindent=0pt\hfil\parbox{\titlewidth}{
+		\begin{center}\Large\bfseries
+		 \renewcommand{\baselinestretch}{1.2}\setlength{\baselineskip}{18pt}
+	       #1\\{\large #2}\end{center}}\vskip 0.8em}
+\def\@@etitle#1#2{\hfil\parbox{\titlewidth}{
+		\begin{center}\large\bfseries
+		 \renewcommand{\baselinestretch}{0.95}\setlength{\baselineskip}{18pt}
+	       #1\\{\large\bfseries {\bfseries#2}}\end{center}}\vskip .6em}
+\def\@@author#1{%
+  \hfil\ifnum\@abind=1%
+  {\parbox[t]{\titlewidth}{\begin{flushright}{\large #1}\end{flushright}}}
+  \else{\parbox[t]{\titlewidth}{\centering{\large{#1}}}}\fi%
+  \vskip 1ex}
+% enLarge title font a little bit.
+%                                        09 July 2001, Ken Kishimoto
+\def\@@abstract#1{%
+  \begin{list}{}{\setlength{\leftmargin}{0mm}%
+  \topsep=0pt \partopsep=0pt \parsep=0pt \listparindent=0pt
+%  \setlength{\rightmargin}{\leftmargin}\small\baselineskip=10.7pt}
+  \setlength{\rightmargin}{\leftmargin}\fontsize{10}{15.2}\selectfont}
+% \baselineskip=10.7pt}
+  \item[]\ignorespaces\mbox{}\abind #1 \par\vskip .3em\end{list}}
+\def\@@keywords#1{
+  \setbox\@tempboxa\hbox{\small\textit{\textbf{Key Words}}~:~~~}
+  \begin{list}{\normalsize\textit{\textbf{Keywords}}~:~}
+   {\setlength{\leftmargin}{1.0mm}%{2.5mm}
+   \topsep=0pt \partopsep=0pt \parsep=0pt \listparindent=9pt
+   \setlength{\rightmargin}{0mm}
+   \setlength{\labelwidth}{20em}
+   \advance \leftmargin \wd\@tempboxa
+   \normalsize\baselineskip=11.3pt}
+  \item #1 \end{list}\relax}
+%\newcommand{\abind}{\par\vskip.2\baselineskip\ignorespaces{\hskip 2em}}
+\newcommand{\abind}{\par\vskip.2\baselineskip\ignorespaces{}}
+%
+\newcommand{\@maketitle}{\newpage\null%
+ \@abind=1
+ \ifx\@jtitle\empty\else\addvspace{20pt}\@@title{\@jtitle}{\@jsubtitle}\fi
+ \ifx\@jauthor\empty\else\@@author{\@jauthor}\fi
+ \ifx\@jabstract\empty\else\addvspace{5pt}\@@abstract{\@jabstract}\fi
+ \ifx\@jkeywords\empty\else\addvspace{5pt}\@@keywords{\@jkeywords}\fi
+ \@abind=2
+% \ifx\@etitle\empty\else\addvspace{-22pt}\@@etitle{\@etitle}{\@esubtitle}\fi
+ \ifx\@etitle\empty\else\addvspace{0pt}\@@etitle{\@etitle}{\@esubtitle}\fi
+ \ifx\@eauthor\empty\else\addvspace{5pt}\@@author{\@eauthor}\fi
+ \ifx\@eaffiliation\empty\else{%\addvspace{7pt}{
+ \begin{center}\renewcommand{\arraystretch}{0.85}\fontsize{8pt}{12pt}\selectfont%\itshape
+ \begin{tabular}{c}\@eaffiliation\end{tabular}
+ \end{center}
+ }\fi
+ \ifx\@ereceived\empty\else\addvspace{14pt}{%
+	\begin{center}%
+		\textbf{\@ereceived}%
+	\end{center}%
+ }\fi%
+ \ifx\@eabstract\empty\else\@@abstract{\textbf{Abstract}\\{\@eabstract}}\fi
+ \ifx\@ekeywords\empty\else\addvspace{9pt}\@@keywords{\@ekeywords}\fi
+ \addvspace{26pt}\par}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% １段組用に変更ここまで %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\mark{{}{}} 
+%
+%           %%%%%%%%%%%%%%%%%%%%%%%%%
+%           %          cite         %(再定義)
+%           %%%%%%%%%%%%%%%%%%%%%%%%%
+% cite 参照文献の引用番号をを上つき小文字にする. 
+
+% '\@cite#1#2' is replaced based on `supercite.sty` to fit with JSME
+% regulation [customized by Kikuo Fujita, Osaka University]:
+
+\renewcommand{\@cite}[2]{\raisebox{1.1ex}{\scriptsize{(#1)}}}
+% \renewcommand{\@cite}[2]{\raisebox{1.1ex}{\scriptsize{(#1)\if@tempswa ,#2)\fi}}}
+\newcount\@tempcntc
+\def\@citex[#1]#2{\if@filesw\immediate\write\@auxout{\string\citation{#2}}\fi
+  \@tempcnta\z@\@tempcntb\m@ne\def\@citea{}\@cite{\@for\@citeb:=#2\do
+    {\@ifundefined
+       {b@\@citeb}{\@citeo\@tempcntb\m@ne\@citea\def\@citea{)\penalty\@m\ (,}{\bf ?}\@warning
+       {Citation `\@citeb' on page \thepage \space undefined}}%
+    {\setbox\z@\hbox{\global\@tempcntc0\csname b@\@citeb\endcsname\relax}%
+     \ifnum\@tempcntc=\z@ \@citeo\@tempcntb\m@ne
+       \@citea\def\@citea{,}\hbox{\csname b@\@citeb\endcsname}%
+     \else
+      \advance\@tempcntb\@ne
+      \ifnum\@tempcntb=\@tempcntc
+      \else\advance\@tempcntb\m@ne\@citeo
+      \@tempcnta\@tempcntc\@tempcntb\@tempcntc\fi\fi}}\@citeo}{#1}}
+\def\@citeo{\ifnum\@tempcnta>\@tempcntb\else\@citea\def\@citea{)\penalty\@m\ (}%
+  \ifnum\@tempcnta=\@tempcntb\the\@tempcnta\else
+   {\advance\@tempcnta\@ne\ifnum\@tempcnta=\@tempcntb \else \def\@citea{)$\sim$(}\fi
+    \advance\@tempcnta\m@ne\the\@tempcnta\@citea\the\@tempcntb}\fi\fi}
+
+%
+%           %%%%%%%%%%%%%%%%%%%%%%%%%
+%           %   @makecaption        %(再定義)
+%           %%%%%%%%%%%%%%%%%%%%%%%%%
+% '\@makecaption' is replaced [customized by Kikuo Fujita, Osaka
+% University]: 
+\newlength{\@tmpwidth}
+
+\long\def\@makecaption#1#2{
+\fontsize{9.5pt}{9.5}\selectfont{
+ \addvspace{6pt}
+ \setbox\@tempboxa\hbox{#1 \hspace{1ex} #2}
+ \ifdim \wd\@tempboxa >\hsize {
+   \setlength{\@tmpwidth}{0.83\hsize} 
+   {\begin{center}
+      \begin{tabular}{@{}lp{\@tmpwidth}@{}} #1 & #2 \end{tabular}
+    \end{center}}
+ } \else
+   \hbox to\hsize{\hfil\box\@tempboxa\hfil} 
+ \fi}
+ \addvspace{6pt}}
+
+% 図表の表題は JSME では 英語とする。
+\def\fnum@figure{Fig. \thefigure}
+\def\fnum@table{Table \thetable}
+%
+%           %%%%%%%%%%%%%%%%%%%%%%%%%
+%           %   mtcation mfcation   %(新定義)
+%           %%%%%%%%%%%%%%%%%%%%%%%%%
+% table, figure 環境の外で図表の表題を定義する。
+\def\mfcaption#1{\par
+  \refstepcounter{figure}
+  \addcontentsline{lof}{figure}%
+  {\protect\numberline{\thefigure}{#1}}
+  \begingroup
+    \@parboxrestore\normalsize
+    \@makecaption{\fnum@figure}{\ignorespaces #1}\par\vskip\baselineskip
+  \endgroup}
+%
+\def\mtcaption#1{\par
+  \refstepcounter{table}
+  \addcontentsline{lot}{table}%
+  {\protect\numberline{\thetable}{#1}}
+  \begingroup
+    \@parboxrestore\normalsize
+    \@makecaption{\fnum@table}{\ignorespaces #1}\par
+  \endgroup}
+%
+%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           %      indention   (environment)     %(新定義)
+%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% USAGE:  preamble に \includeonly{indention} する。
+%
+% DEFINITION:
+%  environment <<indention>> and <<\inditem>>
+%
+% DESCRIPTION & APPLIED SAMPLE
+%
+% \begin{indention}
+%   \inditem{{\tt mmmm}something}
+%   ....
+% \end{indention}
+% 
+% SAMPLE:
+% 
+% 定義したインデントコマンドの例です。インデントを 2cm として
+% \begin{indention}{2cm}
+%   indention 環境に字下げする長さを指定して記述すると 本文よりその大きさ分
+%   字下げされています。この中で項目を記述することもできます。
+%   \inditem{{\tt itemize}環境}
+%   inditem は indention 環境中でのみ使用できる項目記述です。引数を１つ取り
+%   ます。この引数は各項目の先頭にラベルとして付けて出力します。
+%   indention 環境をネストすることもできます。
+%   \begin{indention}{2cm}
+%     このようにさらに字下げが行われます。最初の行の字下げをしないときには 
+%     $backslash$noindent を先頭に入れるとよいでしょう。
+%   \end{indention}
+%   ここで，内側の indention 環境が閉じて，一つ前のインデントに戻りました。
+% \end{indention}
+% これで全部のインデント環境を終りました。
+% 
+\def\indention#1{\par\advance\leftskip #1
+  \def\inditem##1{
+  \dimen1\leftskip\advance\dimen1 -1ex
+  \hskip -\leftskip\makebox[\dimen1][r]{##1\hskip 1ex}}}
+\let\endindention=\par
+%
+%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           %      enumerate   (environment)     %
+%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% 上下の間隔や項目間の空白をなくしたもの
+%
+% USAGE:  使用法は LaTeX に同じ。
+%
+\def\enumerate{\ifnum \@enumdepth >3 \@toodeep\else
+    \advance\@enumdepth \@ne 
+    \edef\@enumctr{enum\romannumeral\the\@enumdepth}%
+    \list{\csname label\@enumctr\endcsname}
+    {\usecounter{\@enumctr}\def\makelabel##1{\hss\llap{##1}}
+    \topsep=0pt\itemsep=0pt\parskip=0pt\parsep=0pt\partopsep=0pt}\fi}
+%
+%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           %      itemize     (environment)     %
+%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% 上下の間隔や項目間の空白をなくしたもの
+%
+% USAGE:  使用法は LaTeX に同じ。
+%
+\def\itemize{\ifnum \@itemdepth >3 \@toodeep\else
+    \advance\@itemdepth \@ne
+    \edef\@itemitem{labelitem\romannumeral\the\@itemdepth}%
+    \list{\csname\@itemitem\endcsname}%
+    {\def\makelabel##1{\hss\llap{##1}}
+    \topsep=0pt\itemsep=0pt\parskip=0pt\parsep=0pt\partopsep=0pt}\fi}
+%
+%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           %      enumlist    (environment)     %
+%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% enumrate と description を組み合せたような環境
+% adapted 伊藤和人,'LaTeX 自由自在',秀和システムトレーディング,(1991),129
+%
+% USAGE:  preamble に \includeonly{enumlist} する。
+%
+% DEFINITION:
+%  environment <<enumlist>> and <<\ellist>>
+%
+% DESCRIPTION & APPLIED SAMPLE
+%
+% \begin{enumlist}
+%   \ellist{{\tt mmmm}something}  <-- \item can not do this. use \ellist.
+%   ....
+% \end{enumlist}
+% 
+% SAMPLE:
+% 
+% \begin{enumlist}
+%   \ellist{{\tt itemize}環境}
+%   itemize環境は，各項目の先頭にラベルとして記号を付け，全体をやや字下げし
+%   て出力します。
+% 
+%   itemize環境の中に更に，itemize環境が入るネスティングが可能です。ネステ
+%   ィングを行なうとラベルは$\bullet$→{\bfseries --}→$\ast$→$\cdot$となります。
+%   \ellist{{\tt enumrate}環境}
+%   enumrate 環境は，itemize 環境と異なり各項目に番号を振ります。enumrate 
+%   環境も4レベルまでのネスティングが可能です。
+%   \ellist{{\tt description}環境}
+%   description 環境では，各項目に，ユーザーが項目名を付けます。項目名はラ
+%   ベルとなりますが，\item コマンドのオプション引数として指定します。ラベ
+%   ルは英語では太い字で，日本語では，ゴチック体で出力されます。書体を変更
+%   するには書体変更コマンドを項目中に含めるとよいでしょう。
+%   \ellist{}
+%   これは，引数のない \verb!\ellist!コマンドの例です。
+%   \ellist{{\tt enumlist}環境}
+%   enumlist環境は，ここで始めて定義された箇条書き環境です。ネスティングは
+%   できません。この例は{\tt enumlist}環境でかかれています。
+% \end{enumlist}
+%
+\def\enumlist{%
+  \newcounter\mycount
+  \list{}{\leftmargin 7em\labelsep 1em\labelwidth\leftmargin
+  \advanced\labelwidth-\labelsep\usecounter{mycount}}\item[]}
+\def\ellist#1{\def\makelabel{\bfseries\Roman{mycount}. #1\hfil}}%
+\let\endenumlist=\endlist
+%
+%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           %              dhline                %(新定義)
+%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 表組で、太い横線を用いる。太さを変える場合には arrayrulewidth の倍数を
+% 変化させれば良い。
+%
+\def\dhline{\noalign{\ifnum0=`}\fi%
+   \hrule \@height 3\arrayrulewidth \futurelet
+   \@tempa\@xhline}
+%
+%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           %    各種記号(汎用)                  %(新定義)
+%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ￥
+\def\yen{{\setbox0=\hbox{Y}Y\kern-.97\wd0\vbox{\hrule height.1ex width.98\wd0
+\kern.33ex\hrule height.1ex width.98\wd0\kern.45ex}}}
+%% ℃
+\def\degc{\raisebox{0.2em}{\(^{\circ}\)}\hspace{-.1em}C}
+%% Klab symbol
+\font\rbm=cmbxti10
+\def\KLab{{\Large\bfseries K}\kern-0.4ex{\rbm L\kern-.28em\raise.6ex\hbox{A}\kern-.1em B}}
+\def\signif#1{\gdef\@signif{#1}}\signif{}
+%\signif{\KLab}
+%
+%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           %    各種記号(math 環境専用)         %(新定義)
+%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% style of differncial equation
+\def\dif#1#2{{\displaystyle\frac{d{#1}}{d{#2}}}}
+\def\ddif#1#2{{\displaystyle\frac{d^2{#1}}{d{#2}^2}}}
+\def\pdif#1#2{{\displaystyle\frac{\partial{#1}}{\partial{#2}}}}
+\def\pddif#1#2{{\displaystyle\frac{\partial^2{#1}}{\partial{#2}^2}}}
+%
+%
+%
+% referred 1[column output ]-in-2[column document].sty
+%
+\let\@origin@lpar\par                   % original definition of \par
+\newdimen\@fullwidthfootnote \newsavebox{\@fullwdp@gebox}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newdimen\lastp@geheight \lastp@geheight=10mm
+\newsavebox{\lastp@gebox}
+%
+% define \endabstract
+%
+\long\def\endabstract#1{\gdef\@endabstract{#1}} % permit paragraphs
+%
+% to create enough space of footnote to align columns of the last page
+%
+\def\lastpagehr#1{\global\lastp@geheight=#1%
+ \@ifundefined{maxsize}{}{\global\advance\maxsize-#1}% for supertab.sty
+ \global\sbox{\lastp@gebox}{%
+  \hspace*{0.05\textwidth}
+  \noindent
+  \begin{minipage}{.9\textwidth}
+   \vspace*{0.8em}%
+   \begin{center}
+    \rule{0.4\textwidth}{0.2pt}
+   \end{center}   
+   \vspace{1ex}
+  \end{minipage}}%
+%
+% insert footnote with abstract if enough room left
+%                 without abstract otherwise
+%
+  \@tempdima\ht\lastp@gebox \advance\@tempdima\dp\lastp@gebox
+ \ifdim\@tempdima>\lastp@geheight
+  \@tempdima\lastp@geheight \global\lastp@geheight=0pt
+ \else
+  \global\advance\lastp@geheight -\@tempdima
+  \@tempdima\lastp@geheight \global\lastp@geheight\textheight
+ \fi
+  \def\footnoterule{\null}% force it to \null at the last page
+  \insert\footins{\footnotesize
+  \interlinepenalty\interfootnotelinepenalty
+  \splittopskip\footnotesep
+  \splitmaxdepth \dp\strutbox \floatingpenalty \@MM
+  \hsize\textwidth \@parboxrestore
+   \ifdim\lastp@geheight=\z@\else\usebox{\lastp@gebox}\fi%
+  \vspace*{\@tempdima}}}

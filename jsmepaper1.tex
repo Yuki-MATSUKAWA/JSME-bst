@@ -1,0 +1,326 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% jsmepaper.tex v2.1 (2013.12.25)                                            %%
+%%                                                                            %%
+%% このバージョンは、jsmepaper.tex,v v2.0に対して修正を加えたものです         %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% このサンプル & 解説は，pLaTeX-2e 専用です．
+%%
+%% jsmepaper.tex
+%%                              Ver 0.1 Ken Kishimoto Mar. 3 1994
+%%                              Ver 1.2 Ken Kishimoto May. 30 1999
+%%                              Ver 1.5 Ken Kishimoto Oct. 11 1999
+%%                              Ver 1.57 Ken Kishimoto Mar. 09 2000
+%% $Id: jsmepaper.tex,v 1.5 2001/10/10 18:31:15 ken Exp ken $
+%%
+\documentclass[a4jsme, fleqn]{jsmepaper}
+\usepackage{epic,eepic}
+\pagestyle{empty}
+%\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\newif\iflatexe\latexetrue
+
+%%% hyperref
+%%% ハイパーリンクに色が付かないようにしたいときは allcolors=blue の箇所を hidelinks にする
+\usepackage[bookmarks=false,colorlinks,allcolors=blue]{hyperref}
+% \usepackage{pxjahyper}
+%%% natbib
+\usepackage{natbib}
+%%% 参考文献リストの見出しを「参考文献」から「文献」に変更．
+\renewcommand{\refname}{文献}
+\newcommand{\newblock}{\hskip .11em\@plus.33em\@minus.07em}
+
+%
+\newcommand{\JSME}{日本機械学会}
+\newcommand{\bs}[1]{{$\backslash${#1}}\,}
+\newcommand{\mydoc}{jsme\-paper\-.cls}
+\newcommand{\addindex}[1]{#1\index{\protect #1}}
+%
+\title{投稿論文作成について}
+\subtitle{（日本機械学会指定テンプレートファイル利用について）}
+\etitle{Making research paper}
+\esubtitle{(About the use of the JSME specification template file)}
+\jauthor{機械 太郎$^{*1}$，技術 さくら$^{*2}$，東京 花子$^{*3}$}
+\eauthor{Taro KIKAI$^{*1}$, Sakura GIJYUTSU$^{*2}$ and Hanako TOKYO$^{*3}$}
+\email{taro@jsme.or.jp}
+\jaffiliation{%
+	$^{*1}$ & 正員，日本機械大学（〒160-0016　東京都新宿区信濃町35）\\
+	$^{*2}$ & 学生員，日本機械大学 工学部（〒160-0001　東京都新宿区工学町1）\\
+	$^{*3}$ & 日本機械大学 工学部
+}
+\eaffiliation{%
+	$^{*1}$\ Japan Society of Mechanical Engineering\\
+	35 Shinanomachi, Shinjuku-ku, Tokyo 160-0016, Japan\\
+	$^{*2,*3}$\ Department of Mechanical Engineering, Kikai University\\
+	1 Kogakumachi, Shinjuku-ku, Tokyo 160-0001, Japan}
+\date{No.xx-xxxx [DOI: 10.1299/transjsme.1x-xxxxx]}
+\received{Received:\ XXXX;\ \ Revised:\ XXXX;\ \ Accepted:\ XXXX}
+\abstract{%
+The length of the abstract should be 200-300 words. In the beginning of the abstract, the subject of the paper should be stated clearly, together with its scope and objectives. Then, the methods, equipment, results and conclusions in the paper should be stated concisely in a sufficiently logical manner. The discussion on the results may also be stated to emphasize their importance appropriately.%
+}
+\keywords{Term1, Term2, Term3, Term4,…(Show five to ten key words)}
+%
+%\japan
+\makeindex
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+%
+%
+\section{緒言}
+
+このテンプレートファイルは，原稿体裁を整えて投稿することができるようにスタイルファイルとして，フォントサイズなどの書式を設定し，登録している．1行の文字数，1ページの行数など定められた形式で作成することができる．
+
+本文の文字数は，1ページ当たり，50文字×46行×1段組で2300字とする．また，文章の区切りには全角の読点「，」（カンマ）と句点「．」（ピリオド）を用いる．カッコも全角入力する．
+
+本文中の文字の書式は，明朝体・Serif系（Century，Times New Romanなど）を利用し，章節項については，ゴシック体を使用する．
+
+\section{このテンプレートファイルの使い方}
+
+このテンプレートの表題（副題），著者名，本文などはあらかじめ本会指定のフォントサイズなどの書式が設定されている．この書式を崩さずに入力すれば，文字数，行数など定められた体裁で論文を作成することができる．しかし，絶対的な出来上がりのレベルを保証するものではないので，体裁が望むレベルに達しない場合には，使用の環境に合わせ，投稿者各自において微調整を行うなど，本会の論文集掲載の体裁に最も近い設定を行う必要がある．なお，書式を崩してしまった場合は，段落内にカーソルを置き，［書式設定］ツールバーの「スタイル」ボックスで，指定したいスタイルをクリックすると体裁を容易に整えることができる．
+
+\section{原稿執筆の手引き}
+\subsection{構成について}
+（1）原稿は，左横書きとし，表題・著者名などは本会指定の様式に従って作成する．
+
+（2）原稿の構成は，次の順序に従うとよい．
+
+　　　英文抄録
+
+　　　緒言（まえがき）（研究の目的，文献サーベイによる論文の位置付け，内容の概略説明，など）
+
+　　　主部（理論解析，実験装置・方法およびその結果，結果の解釈および考察，など）
+
+　　　結言（むすび）　（全体として得られた結論，など）
+
+　　　謝辞
+
+　　　文献
+
+　　　References
+
+　　　付録
+
+ただし，以上は一つの例であって，著者は内容に適した最も効果的な形式を選ぶことが望ましい．
+
+\subsection{原稿の規定ページ数について}
+
+論文集に掲載される原稿1編当たりのページ数は，投稿規定に定められるとおりとする．また，編修委員が特に必要と認めた原稿については超過を認めることがある．しかし，本文の記述はできるだけ簡潔・的確に整理することが望ましい．
+
+\subsection{原稿の作成に際して}
+
+原稿の冒頭には，和文の表題・副題，著者名，英文の表題・副題，英文著者名（苗字は例に従い大文字），著者全員の英文連絡先（部署名・所属機関名，所在地）を入れる．著者の記載順は，電子投稿・審査システムと同じ著者順位とする．投稿後の著者の追加，削除，表示変更および順番変更等は認められない．機械工学関係の用語は，原則として文部科学省制定の「学術用語集・機械工学編」（昭和60年）およびJIS（日本工業規格）に規定する標準用語を用いる．制定のないものは，適当と思われる慣用語を用いる．意味のあいまいな用語を定義なしに使ったり，新造語を不用意に使ったりすることは，避けなければならない．
+
+\subsection{表題および副題の付け方}
+
+原稿の表題は内容を明確に表現するもので，しかも簡潔なものが望まれる．また，必要に応じて副題を付けてもよいが，第1報，第2報という表現は極力避けるようにする．やむをえず第1報，第2報とする場合でも，校閲の際にはすべて独立した原稿として取り扱われるので，続報論文でも内容が理解できるように記述する．なお，副題をつける場合には両括弧でくくる．
+
+\subsection{英文抄録の書き方}
+
+原稿には本文の前に英文抄録を載せる．英文抄録には研究目的と結論を必ず記述する（必要に応じ研究の方法論も含む）．長さは200〜300語程度で，途中で改行をしない．本文と切り離してそれだけを読んでも，論文の内容がある程度把握できるようにすること（“〜については，本文において述べる”，などの記述を避ける）．また，本文中の図・表・文献は，引用しない．式を書く必要がある場合は，式の番号を引用せずに，式をそのまま書く．
+
+\subsection{キーワードの付け方}
+
+キーワードは，論文の内容を代表する重要な用語である．これによって論文の分類，検索が迅速になる．キーワードは，本文を執筆した後に書くのが望ましい．
+
+（1）キーワードは，5〜10語句とする．
+
+（2）キーワードは，英文抄録の直下に英語で記載する．キーワードにはハイフンは使用せず（ハイフンを使用してひとつの言葉として一般に認識されるものを除く），前置詞・冠詞も含めない．
+
+\subsection{脚注の書き方}
+
+原稿用紙1ページ下に本文との間に線を入れ，論文番号（投稿時はxx-xxxx），著者全員の会員資格，著者の所属機関名，所属機関所在地，代表著者1名のE-mailアドレスを書く．著者の所属機関名については，当該研究が行われた時点での所属機関名・部署名等を記載する．研究を行った後に著者の所属機関に変更があった場合は，投稿時の機関名を記入し，現所属についてはカッコ書きにて（現○○）のように，必要に応じて記載することもできる．
+
+\subsection{見出し（章，節，項）の付け方および書き方}
+
+本文は適当に区分して，見出しを付ける．体裁としては，章は2行分をとって，行の中ほどに書く．また，節・項は行の左端より1文字あけて書き，改行して本文を記載する．ただし節の後に項がくるときは改行する．書体は，ゴシック体を使用する．
+
+\subsection{量記号・単位記号の書き方}
+
+量記号はイタリック体，単位記号はローマン体とする．無次元数はイタリック体で書く．
+
+\subsection{用いる単位について}
+
+単位は，SI単位を使用する．数学記号・単位記号および量記号は，半角英数字を使用する．なお，SI単位については，本会発行の「機械工学SIマニュアル」および「JIS Z 8203 国際単位系（SI）およびその使い方」を参照する．記載時には，例「200 MPa」のように数値と物理単位記号の間には半角スペースを設ける．
+
+\subsection{用いる記号}
+
+数学記号は，JIS Z 8201に従う．また，量を表す文字記号（量記号）は，JIS Z 8202に従う．なお，数字の書き方は，表1の例に従う．年度の表し方については，本年または昨年などとせず，かならず2007年のように西暦ではっきり記述する．
+
+数量を表す場合および序数的表現の場合には，アラビア数字を使う．ただし，漢字などと結合して名称を表す用語および概数を表す場合は，漢字とする．
+
+〔例〕
+
+アラビア数字の場合：10 m，図1，表3，2010年9月1日
+
+漢字の場合：三角形，三条ねじ，二サイクル機関，数百例
+
+\section{図および写真・表の作成に関して}
+
+（1）本文中では，図1，表1のように日本語で書く．写真は，図として扱う．カラーで掲載できる．
+
+（2）番号・説明などは，図についてはその下に，表についてはその上に書く．
+
+（3）本文と，図・表の間は1行以上の空白を空けて，見やすくする．
+
+（4）図中・表中の説明および題目はすべて英語で書く（最初の文字は大文字とする）．例に従い該当図表が示す重要知見に係る説明もあわせて記述すること．図のCaptionの書体は，Serif系を利用し，9.5ポイントの大きさで記載する．
+
+（5）図および表の横に空白ができても，その空白部には本文を記入してはならない．
+
+（6）図および表は，余白部分にはみ出してはならない．
+
+（7）論文の内容をわかりやすく的確に伝えるために，図・表を適当に用いて，本文と対応するページにレイアウトする．
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{c}
+\begin{minipage}[t]{0.5\hsize}
+\begin{center}
+\caption{Examples of writing numbers.}
+$\begin{array}{l|l}
+\hline
+\mbox{Recommended}&\mbox{Not recommended}\\
+\hline
+0.357&.357\\
+\hline
+3.141 6&3.141,6\\
+\hline
+3.141 6\times 2.5&3.141 6\cdot 2.5\\
+\hline
+3.141 6\times 10^3&3.141 6\mbox{E}+3\\
+\hline
+1000\mbox{ or }1 000&1,000\\
+\hline
+\end{array}$
+\end{center}
+\end{minipage}
+%\end{table}
+
+%\begin{table}[htbp]
+\begin{minipage}[t]{0.5\hsize}
+\begin{center}
+\caption{Examples of writing a square root and a fraction.}
+$\begin{array}{l|l}
+\hline
+\mbox{Recommended}&\mbox{Not recommended}\\
+\hline
+\sqrt{x-y}&\sqrt{x-y}\\
+\hline
+(a+b)/(c+d)&a+b/c+d\\
+\hline
+\end{array}$
+\end{center}
+\end{minipage}
+\end{tabular}
+\end{center}
+\end{table}
+
+
+\begin{table}[t]
+\begin{center}
+\caption{Physical properties of air at atmospheric pressure}
+$\begin{array}{c|c|c|c|c|c|c|c}
+\hline
+T[\mbox{℃}]&\rho [\mbox{kg}/\mbox{m}^3]&c_p[\mbox{J}/(\mbox{kg}\cdot\mbox{K})]&\eta [\mbox{Pa}\cdot\mbox{s}]&\nu [\mbox{m}^2/\mbox{s}]&k[\mbox{W}/(\mbox{m}\cdot\mbox{K})]&a[\mbox{m}^2/\mbox{s}]&Pr\\
+\hline
+&&\times 10^3&\times 10^{-5}&\times 10^{-5}&\times 10^{-2}&\times 10^{-5}&\\
+0&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}\\
+10&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}\\
+20&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}\\
+27&1.1763&1.007&1.862&1.583&2.614&2.207&0.717\\
+30&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}\\
+40&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}\\
+50&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}\\
+60&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}\\
+70&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}\\
+80&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}\\
+90&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}&\mbox{x.xxxx}
+\end{array}$
+\end{center}
+\end{table}
+
+\newpage
+\section{数式の書き方}
+
+式番号は，式と同じ行に右寄せして（ ）の中に書く．また，本文で式を引用するときは，式（1）のように書く．式を書くときは，行頭に2文字分空白を空ける．また，必要行数分を必ず使うようにして書く．3行必要とする式を2行につめて書いたり，2行に分かれる式を1行に収めたりしない．なお，本文と式，式相互間は1行以上の空白を空けて，見やすくする．
+
+また，原則として数式エディタのポイント数は本文に準じるものとするが，添え字等が小さく読みにくくなるときは適宜拡大する．
+\\
+\begin{eqnarray}
+&&\mbox{d}\left\{\sum^N_{i=1}\frac{1}{2}m_i\left[\left(\frac{\mbox{d}x_i}{\mbox{d}t}\right)^2+\left(\frac{\mbox{d}y_i}{\mbox{d}t}\right)^2+\left(\frac{\mbox{d}z_i}{\mbox{d}t}\right)^2+\right]\right\}=\sum^N_{i=1}(X_i\mbox{d}x_i+Y_i\mbox{d}y_i+Z_i\mbox{d}z_i)\\
+&&\bar{C}(t)=\frac{1}{N}\sum^N_{i=1}C_i(t)\\
+&&\frac{p_v-p_{sat}}{p_{sat}}=-\left(2.13204+2\sqrt{\pi}\frac{1-\zeta}{\zeta}\right)\frac{(u_v-u_{int})\cdot n}{\sqrt{2RT_{int}}}\\
+&&\frac{T_v-T_{int}}{T_{int}}=-0.44675\frac{(u_v-u_{int})\cdot n}{\sqrt{2RT_{int}}}
+\end{eqnarray}
+
+\section{文献・Referencesの書き方}
+
+他者の報告・データなどを引用するときには，必ずその出所を明示しなければならない．また，研究の背景を説明する際には，必ず必要な文献を引用する．できるだけ最近発行された文献を引用するとよい．できれば，日本機械学会の発行する論文集に掲載された論文を引用するのが望ましい．文献は日本語版と英語版を記載すること（このテンプレートの末尾にある記載例参照）．引用文献がすべて英語版のみ（日本語の文献を含まない）であれば\textbf{References}のみの記載でよい．
+
+(1)一般に公表されていない文献（投稿予定および投稿中で未発表の論文も含む）は，できるだけ引用しない．また，Webサイトの引用については止むを得ない場合を除き，できるだけ引用しない．引用せざるを得ない場合は，必ず参照日付を明記する．（例　\textbf{文献} (参照日 2013年8月14日)　\textbf{References} (accessed on 14 August, 2013)）
+
+(2)本文中の引用箇所には，著者名と発行年を記載する．
+
+（日本語文献例　著者1名の場合：(竹内，2005)　著者2名の場合： (山田，佐藤，2013)
+
+英語文献例　著者1名の場合：(Nagashima, 2005)　著者2名の場合：(Ahrendt and Taplin, 1951)）
+
+3名以上の著者がいる場合の著者名の記載方法は，代表著者名他の記載とする．
+
+（日本語文献例 (蔦原他，2003)　英語文献例 (Takeuchi et al., 2006)）
+
+発行年が同じである同じ著者からの２つ以上の引用を記載する場合には，発行年の後にa，b，cを記載する．
+
+（例　(Karin and Hanamura, 2010a, 2010b)）
+
+(3)引用した文献は，本文末尾に\textbf{文献}および\textbf{References}としてアルファベット順にまとめて記載する．
+
+(4)\textbf{文献}および\textbf{References}に記載する誌名は，略記せずにすべてを記載する．
+
+(5)著者名，誌名は\textbf{文献}では日本語標記にし，\textbf{References}ではすべて英語表記にしたものを記載する．
+
+日本機械学会論文集（2014年1月以降発刊される新学術誌）の英語表記は，Transactions of the JSME (in Japanese) とする．
+
+(6)書き方は，次の形式に従う．\textbf{文献}および\textbf{References}に記載された例を参照のこと．
+
+（著者名）
+
+a)\textbf{文献}では著者全員の姓名，\textbf{References}では著者全員の姓，および名のイニシャルを記載例に従って書く．
+
+（誌名・書名）
+
+b)誌名・書名は略記せず，そのままの誌名・書名を記入する．英語がない場合は\textbf{References}ではローマ字で記載する．文献が日本語の場合は，\textbf{References}には(in Japanese) と記載する．
+
+（巻，号，発行年）
+
+c)巻，号は，Vol.○，No.○とする．発行年は，（西暦）とする．
+
+（ページ数）
+
+d)ページ数は，雑誌・講演論文集などで論文を引用した場合は，始まりのページと終わりのページをpp.○-○と明示する．単行本などで引用したページが単ページの場合は，p.○と明示する．
+
+e)雑誌などで，通しページ（例えば通年）のある場合は，原則として通しページを記入する．
+
+f)CD-ROMの引用においては，ページのある場合は，講演論文集と同様とする．ページのない場合は，論文を特定できる番号，ファイル名等を明示する．
+
+\section{結言}
+
+本テンプレートファイルのスタイルを利用すると，各々の項目の書式が自動的に利用できるので便利である．
+
+%%% ハイパーリンクのズレを調整
+% \phantomsection
+%%% 参考文献内の URL 表示をタイプライター調にしない
+\renewcommand\UrlFont{\rmfamily}
+%%% \nocite{*}が有効のとき，引用していない文献も含めて全て表示
+\nocite{*}
+%%% 目次に「文献」を追加
+% \addcontentsline{toc}{section}{\refname}
+%%% 使用する bst ファイル
+\bibliographystyle{jsme}
+%%% 読み込む bib ファイル
+\bibliography{jsmebib}
+
+
+\end{document}
+
