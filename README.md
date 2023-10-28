@@ -5,11 +5,14 @@
 
 - `JSME-template1.tex`, `JSME-template1.pdf` -> ハイパーリンク有りの`jsme.bst`説明書
 - `JSME-template2.tex`, `JSME-template2.pdf` -> ハイパーリンク無しの`jsme-nolink.bst`説明書
-- `jsmepaper1.tex`, `jsmepaper1.pdf` -> ハイパーリンク有りの日本機械学会原稿テンプレート
-- `jsmepaper2.tex`, `jsmepaper2.pdf` -> ハイパーリンク無しの日本機械学会原稿テンプレート
 - `jsme.bst` -> ハイパーリンク有りの`bst`ファイル
 - `jsme-nolink.bst` -> ハイパーリンク無しの`bst`ファイル
-- `a4jsme.sty`, `jsadd.sty`, `jsme10.sty`, `jsmefont.sty`, `jsmepaper.cls` -> `jsmepaper1.pdf`, `jsmepaper2.pdf`作成時に必要なファイル（日本機械学会オリジナル）
+- `mybib_en.bib`, `mybib_jp.bib` -> 説明書用の文献リスト`bib`ファイル
+- `JSME_original` -> 日本機械学会オリジナルのLaTeX原稿テンプレートを用いた際の処理
+    - `jsmepaper1.tex`, `jsmepaper1.pdf` -> ハイパーリンク有りの日本機械学会原稿テンプレート
+    - `jsmepaper2.tex`, `jsmepaper2.pdf` -> ハイパーリンク無しの日本機械学会原稿テンプレート
+    - `a4jsme.sty`, `jsadd.sty`, `jsme10.sty`, `jsmefont.sty`, `jsmepaper.cls` -> `jsmepaper1.pdf`, `jsmepaper2.pdf`作成時に必要なファイル（日本機械学会オリジナル）
+    - `jsmebib.bib` -> 日本機械学会原稿テンプレートの文献リスト`bib`ファイル
 
 
 `jsme.bst`は[日本機械学会の原稿テンプレート](https://www.jsme.or.jp/publish/transact/for-authors.html)に基づいた参考文献の出力を実現するために作成した，非公式BibTeXスタイルファイルテンプレートです．
