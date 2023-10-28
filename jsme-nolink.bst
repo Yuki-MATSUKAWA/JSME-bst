@@ -3512,8 +3512,8 @@ FUNCTION {article}
     { format.month output.nocomma }
   if$
 
-  format.url.doi output.nocomma
   format.note output.nocomma
+  format.url.doi output.nocomma
   fin.entry
 }
 
@@ -3546,9 +3546,9 @@ FUNCTION {book}
     'skip$
   if$
   
-  format.url.doi output.nocomma
   format.note output.nocomma
   format.hoyakusho output.nocomma
+  format.url.doi output.nocomma
   fin.entry
 }
 
@@ -3562,9 +3562,8 @@ FUNCTION {booklet}
   format.address output.nocomma
   format.year output.nocomma
 
-  format.url.doi output.nocomma
-
   format.note output.nocomma
+  format.url.doi output.nocomma
   fin.entry
 }
 
@@ -3596,9 +3595,8 @@ FUNCTION {inbook}
 
   format.chapter.pages "chapter and pages" output.check.nocomma
 
-  format.url.doi output.nocomma
-
   format.note output.nocomma
+  format.url.doi output.nocomma
   fin.entry
 }
 
@@ -3625,9 +3623,10 @@ FUNCTION {incollection}
   
   format.chapter.pages output.nocomma
 
+  format.note output.nocomma
+
   format.url.doi output.nocomma
 
-  format.note output.nocomma
   fin.entry
 }
 
@@ -3653,9 +3652,11 @@ FUNCTION {inproceedings}
   if$
 
   format.pages output.nocomma
-  format.url.doi output.nocomma
 
   format.note output.nocomma
+
+  format.url.doi output.nocomma
+
   fin.entry
 }
 
@@ -3700,9 +3701,9 @@ FUNCTION {manual}
     'skip$
   if$
 
-  format.url.doi output.nocomma
 
   format.note output.nocomma
+  format.url.doi output.nocomma
   fin.entry
 }
 
@@ -3727,9 +3728,8 @@ FUNCTION {mastersthesis}
     'skip$
   if$
 
-  format.url.doi output.nocomma
-
   format.note output.nocomma
+  format.url.doi output.nocomma
   fin.entry
 }
 
@@ -3753,9 +3753,9 @@ FUNCTION {misc}
     { format.month output.nocomma }
   if$
 
-  format.url.doi output.nocomma
 
   format.note output.nocomma
+  format.url.doi output.nocomma
   fin.entry
   empty.misc.check
 }
@@ -3807,9 +3807,9 @@ FUNCTION {phdthesis}
     'skip$
   if$
 
-  format.url.doi output.nocomma
 
   format.note output.nocomma
+  format.url.doi output.nocomma
   fin.entry
 }
 
@@ -3836,9 +3836,9 @@ FUNCTION {proceedings}
     'skip$
   if$
 
-  format.url.doi output.nocomma
 
   format.note output.nocomma
+  format.url.doi output.nocomma
   fin.entry
 }
 
@@ -3864,9 +3864,9 @@ FUNCTION {techreport}
 
   format.chapter.pages output.nocomma %%% added
 
-  format.url.doi output.nocomma
 
   format.note output.nocomma
+  format.url.doi output.nocomma
   fin.entry
 }
 
@@ -3890,9 +3890,9 @@ FUNCTION {unpublished}
     }
   if$
 
-  format.url.doi output.nocomma
 
   format.note output.nocomma
+  format.url.doi output.nocomma
   fin.entry
 }
 
