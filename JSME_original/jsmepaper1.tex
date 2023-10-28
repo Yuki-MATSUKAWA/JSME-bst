@@ -25,9 +25,9 @@
 
 %%% hyperref
 %%% ハイパーリンクに色が付かないようにしたいときは allcolors=blue の箇所を hidelinks にする
-\usepackage[bookmarks=true,bookmarksnumbered=true,setpagesize=false,colorlinks,allcolors=blue]{hyperref}
+% \usepackage[bookmarks=true,bookmarksnumbered=true,setpagesize=false,colorlinks,allcolors=blue]{hyperref}
 % \usepackage[bookmarks=false,colorlinks,allcolors=blue]{hyperref}
-\usepackage{pxjahyper}
+% \usepackage{pxjahyper}
 %%% natbib
 \usepackage{natbib}
 %%% 参考文献リストの見出しを「参考文献」から「文献」に変更．
@@ -219,6 +219,13 @@ $\begin{array}{l|l}
 \end{center}
 \end{table}
 
+\begin{figure}[t]
+\begin{center}
+\includegraphics[width=96.2mm]{figure/1.eps}
+%\includegraphics{figure/1.eps}
+\caption{The nonlinear propagation of plane acoustic wave radiated by the sound source. Using the exact solution of the system of Euler equations, the nondimensional profiles of fluid velocity, acoustic pressure and temperature variation at the time of shock formation are plotted with the solid (black), dashed (red) and dash-dotted (blue) curves, respectively. As the wave propagates, the nonlinear effect accumulates to distort the profile, and ultimately leads to the formation of shock wave. The shock formation point is denoted by a small arrow in the figure.}
+\end{center}
+\end{figure}
 
 \begin{table}[t]
 \begin{center}
@@ -314,13 +321,13 @@ f)CD-ROMの引用においては，ページのある場合は，講演論文集
 %%% ハイパーリンクのズレを調整
 % \phantomsection
 %%% 参考文献内の URL 表示をタイプライター調にしない
-\renewcommand\UrlFont{\rmfamily}
+% \renewcommand\UrlFont{\rmfamily}
 %%% \nocite{*}が有効のとき，引用していない文献も含めて全て表示
 \nocite{*}
 %%% 目次に「文献」を追加
 % \addcontentsline{toc}{section}{\refname}
 %%% 使用する bst ファイル
-\bibliographystyle{jsme}
+\bibliographystyle{jsme-nolink}
 %%% 読み込む bib ファイル
 \bibliography{jsmebib}
 

@@ -224,21 +224,26 @@
    {\reset@font\semilarge\center\bfseries}
    {\leavevmode\setbox\@tempboxa\hbox{#1}%
     \hspace*{-2pt}\protect\@spsection{{\normalsize#1}}}}
+\newcommand{\@spsection}[1]{% %%%%% (少ない文字は等間隔空け) %%%%%
+    \setbox\@tempboxa\hbox{\begin{tabular}{@{}c@{}}#1\end{tabular}}
+    \ifdim\wd\@tempboxa>9zw#1\else
+    \ifdim\wd\@tempboxa>3zw\makebox[8zw][s]{#1}\else\makebox[5zw][s]{#1}\fi\fi}
 % \newcommand{\@spsection}[1]{% %%%%% (少ない文字は等間隔空け) %%%%%
-%     \setbox\@tempboxa\hbox{\begin{tabular}{@{}c@{}}#1\end{tabular}}
-%     \ifdim\wd\@tempboxa>9zw#1\else
-%     \ifdim\wd\@tempboxa>3zw\makebox[8zw][s]{#1}\else\makebox[5zw][s]{#1}\fi\fi}
-\newcommand{\@spsection}[1]{%
-    % PDFのしおりに適切なテキストを設定します。
-    \texorpdfstring{%
-        % 以下はPDFの中身にのみ影響します。
-        \setbox\@tempboxa\hbox{\centering#1}
-        \ifdim\wd\@tempboxa>9zw#1\else
-        \ifdim\wd\@tempboxa>3zw\makebox[8zw][s]{#1}\else\makebox[5zw][s]{#1}\fi\fi
-    }{%
-        #1 % ここには、PDFのしおりに表示したいプレーンテキストを設定します。
-    }
-}
+%     \texorpdfstring{%
+%         \setbox\@tempboxa\hbox{#1}
+%         \ifdim\wd\@tempboxa>9zw#1\else
+%         \ifdim\wd\@tempboxa>3zw\makebox[8zw][s]{#1}\else\makebox[5zw][s]{#1}\fi\fi
+%     }{}
+% }
+% \let\oldsection\section  % 元の\sectionコマンドを保存
+
+% \renewcommand\section[2][]{%
+%   \ifx&#1&% オプション引数が空かどうかをチェック
+%     \oldsection{#2}% 空の場合は通常のセクションを作成
+%   \else
+%     \oldsection[#1]{#2}% オプション引数がある場合、それをしおり用のタイトルとして使用
+%   \fi
+% }
 \newcommand{\subsection}[1]{\@startsection{subsection}{2}{\z@}%
 %   {0.0\Cvs \@plus.5\Cdp \@minus.2\Cdp}%
    {\Cvs}%
