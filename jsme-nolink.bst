@@ -1033,13 +1033,13 @@ FUNCTION {bst.url.post.jp}
 
 % 非ゼロならDOIを表示．ゼロなら非表示．
 FUNCTION {bst.show.doi}
-% { #1 }	  % non-#0 -> Show DOI field (default)
-{ #0 }    % #0 -> Not show DOI field.
+{ #1 }	  % non-#0 -> Show DOI field (default)
+% { #0 }    % #0 -> Not show DOI field.
 
 % DOIの前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.doi.pre}
-{ ", DOI: http://dx.doi.org/" doi * } % (default)
+{ ", DOI: " } % (default)
 
 % DOIの後に付ける文字列 (英語文献用)
 %
@@ -1049,7 +1049,7 @@ FUNCTION {bst.doi.post}
 % DOIの前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.doi.pre.jp}
-{ ", DOI: http://dx.doi.org/" doi * } % (default)
+{ ", DOI: " } % (default)
 
 % DOIの後に付ける文字列 (日本語文献用)
 %

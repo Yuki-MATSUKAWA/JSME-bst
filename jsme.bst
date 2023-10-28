@@ -3900,7 +3900,6 @@ FUNCTION {inproceedings}
   format.in.ed.booktitle "booktitle" output.check.nocomma
   format.bvolume output.nocomma
   format.number.series output.nocomma
-  format.pages output.nocomma
   output.address.organization.publisher
 
   bst.year.position #0 = not
@@ -3908,6 +3907,7 @@ FUNCTION {inproceedings}
     { format.month output.nocomma }
   if$
 
+  format.pages output.nocomma
   format.url.doi output.nocomma
 
   format.note output.nocomma
