@@ -1009,22 +1009,22 @@ FUNCTION {bst.show.url}
 % URLの前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.url.pre}
-{ ", available from \textless " }	% (default)
+{ ", available from \textless\url{" }	% (default)
 
 % URLの後に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.url.post}
-{ "\textgreater" }	   % (default)
+{ "}\textgreater" }	   % (default)
 
 % URLの前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.url.pre.jp}
-{ ", \textless " }	% (default)
+{ ", \textless\url{" }	% (default)
 
 % URLの後に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.url.post.jp}
-{ "\textgreater" }	   % (default)
+{ "}\textgreater" }	   % (default)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	DOI (digital object identifier)
@@ -1039,22 +1039,22 @@ FUNCTION {bst.show.doi}
 % DOIの前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.doi.pre}
-{ ", DOI: " } % (default)
+{ ", DOI: \url{" } % (default)
 
 % DOIの後に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.doi.post}
-{ "" }	   % (default)
+{ "}" }	   % (default)
 
 % DOIの前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.doi.pre.jp}
-{ ", DOI: " } % (default)
+{ ", DOI: \url{" } % (default)
 
 % DOIの後に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.doi.post.jp}
-{ "" }	   % (default)
+{ "}" }	   % (default)
 
 % URL と DOI の表示方法
 %
