@@ -108,9 +108,9 @@
 それでもわからなければさまざまな書籍やwebサイトがあるので参考にしてみてください．
 また，その都度説明しますが，日本機械学会の原稿テンプレートに沿ったリストを作成するために\verb|bib|ファイルの作成方法が一部通常の\BibTeX{}と異なる場合があるのでご了承ください．
 
-\jsmefile 作成にあたり可能な限り日本機械学会の原稿テンプレートを忠実に再現できるよう努力していますが，まだ十分に再現できていない箇所もあります．
+\JSMErepos 作成にあたり可能な限り日本機械学会の原稿テンプレートを忠実に再現できるよう努力していますが，まだ十分に再現できていない箇所もあります．
 もし何か問題や不明点があればGitHubにコメントしていただくかメールをいただけると幸いです．
-可能な限り対応しますが，\jsmefile を使用したことにより発生した問題に対しては一切の責任を持ちませんのでご了承ください．
+可能な限り対応しますが，\JSMErepos を使用したことにより発生した問題に対しては一切の責任を持ちませんのでご了承ください．
 また，\JSMErepos リポジトリ内のファイルは全て日本機械学会の書式の実現のために作成した非公式ファイルなので使用方法等を日本機械学会に問い合わせることもご遠慮ください．
 
 
@@ -149,7 +149,7 @@ Serif体の書体としては{\usefont{T1}{ptm}{m}{n} Times}や{\usefont{T1}{ppl
     \end{enumerate}
 \end{itembox}
 文献を並べる際の表記に関する注意事項は以下の通りです．
-\verb|author|や\verb|title|などのフィールドについての詳細は第~\ref{ssec:field}節を，各エントリー（\ttarticle や\verb|@book|など）ごとの詳細は第~\ref{ssec:article}節以降を参照してください．
+\verb|author|や\verb|title|などのフィールドについての詳細は第~\ref{ssec:field}節を，各エントリー（\ttarticle や\ttbook など）ごとの詳細は第~\ref{ssec:article}節以降を参照してください．
 \renewcommand\UrlFont{\rmfamily}
 \begin{itembox}[l]{\textgt{\large 文献リスト作成の注意事項（全体）}}
     \begin{itemize}
@@ -441,7 +441,7 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
 また，エントリー名とフィールド名は大文字と小文字を区別しませんが，参照キーは区別するので気をつけてください．
 
 エントリーは雑誌論文や学位論文といった，その文献の該当する種別を表します．
-\jsmefile でサポートされているエントリーは\hyperref[ssec:article]{\ttarticle}, \hyperref[ssec:book]{\texttt{@book}}, \hyperref[ssec:booklet]{\ttbooklet}, \hyperref[ssec:comment]{\ttcomment}, \hyperref[ssec:conference]{\ttconference}, \hyperref[ssec:inbook]{\ttinbook}, \hyperref[ssec:incollection]{\ttincollection}, \hyperref[ssec:inproceedings]{\ttinproceedings}, \hyperref[ssec:manual]{\ttmanual}, \hyperref[ssec:mastersthesis]{\ttmastersthesis}, \hyperref[ssec:misc]{\ttmisc}, \hyperref[ssec:online]{\ttonline}, \hyperref[ssec:phdthesis]{\ttphdthesis}, \hyperref[ssec:proceedings]{\ttproceedings}, \hyperref[ssec:techreport]{\tttechreport}, \hyperref[ssec:unpublished]{\ttunpublished}の16種類です．
+\jsmefile でサポートされているエントリーは\hyperref[ssec:article]{\ttarticle}, \hyperref[ssec:book]{\ttbook}, \hyperref[ssec:booklet]{\ttbooklet}, \hyperref[ssec:comment]{\ttcomment}, \hyperref[ssec:conference]{\ttconference}, \hyperref[ssec:inbook]{\ttinbook}, \hyperref[ssec:incollection]{\ttincollection}, \hyperref[ssec:inproceedings]{\ttinproceedings}, \hyperref[ssec:manual]{\ttmanual}, \hyperref[ssec:mastersthesis]{\ttmastersthesis}, \hyperref[ssec:misc]{\ttmisc}, \hyperref[ssec:online]{\ttonline}, \hyperref[ssec:phdthesis]{\ttphdthesis}, \hyperref[ssec:proceedings]{\ttproceedings}, \hyperref[ssec:techreport]{\tttechreport}, \hyperref[ssec:unpublished]{\ttunpublished}の16種類です．
 それぞれのエントリーで必須となるフィールドが異なり，文献一覧への出力の方法も異なるので面倒くさがらずに分類しましょう．
 ただ，全ての文献を正確に分類することは難しく，判断が人により異なることもあります．
 \JSMErepos における分類の仕方も見る人によっては違和感を覚えるものがあるかもしれません．
@@ -542,7 +542,7 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
         学部の卒業論文の場合は\hyperref[ssec:misc]{\ttmisc}に分類し，\verb|school|フィールドの代わりに\verb|howpublished|を使用してください．
     \item \verb|series| \\
         書籍のシリーズを入力します．
-        \hyperref[ssec:book]{\texttt{@book}}と\hyperref[ssec:inbook]{\ttinbook}でのみ有効なフィールドです．
+        \hyperref[ssec:book]{\ttbook}と\hyperref[ssec:inbook]{\ttinbook}でのみ有効なフィールドです．
         日本機械学会では不要かと思います．
     \item \verb|title| \\
         文献のタイトルを入力します．
@@ -626,7 +626,7 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
 そのため，論文番号や講演番号は\verb|note|に入れるようにしましょう．
 
 
-\subsection{\texttt{@book}}
+\subsection{\ttbook}
 \label{ssec:book}
 \begin{screen}
     \begin{itemize}
@@ -651,9 +651,9 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
     \end{itemize}
 \end{screen}
 
-出版社が刊行した書籍を引用する際は\verb|@book|を使います．
-似たエントリーとして\hyperref[ssec:inbook]{\ttinbook}がありますが，特定のページを参照したのではなく，書籍全体を参照した場合は\verb|@book|を使いましょう．
-\JSMErepos ではSpringer\footnote{Springer, \textless\url{https://www.springer.com/jp}\textgreater}や朝倉書店\footnote{朝倉書店, \textless\url{https://www.asakura.co.jp/}\textgreater}，丸善出版\footnote{丸善出版, \textless\url{https://www.maruzen-publishing.co.jp/}\textgreater}等の出版社から出た書籍を\verb|@book|に分類しています．
+出版社が刊行した書籍を引用する際は\ttbook を使います．
+似たエントリーとして\hyperref[ssec:inbook]{\ttinbook}がありますが，特定のページを参照したのではなく，書籍全体を参照した場合は\ttbook を使いましょう．
+\JSMErepos ではSpringer\footnote{Springer, \textless\url{https://www.springer.com/jp}\textgreater}や朝倉書店\footnote{朝倉書店, \textless\url{https://www.asakura.co.jp/}\textgreater}，丸善出版\footnote{丸善出版, \textless\url{https://www.maruzen-publishing.co.jp/}\textgreater}等の出版社から出た書籍を\ttbook に分類しています．
 \verb|publisher|フィールドにはこれらの出版社名を入れましょう．
 
 \subsection{\ttbooklet}
@@ -743,8 +743,8 @@ Scribeというシステムとの互換性のために残されているらし�
     \end{itemize}
 \end{screen}
 
-\hyperref[ssec:book]{\texttt{@book}}に似ていますが，\verb|@book|が書籍丸々一冊なのに対して\ttinbook は書籍中の一部から引用する場合に使用します．
-そのため，\verb|@book|と異なり\verb|pages|フィールドが使用可能です．
+\hyperref[ssec:book]{\ttbook}に似ていますが，\ttbook が書籍丸々一冊なのに対して\ttinbook は書籍中の一部から引用する場合に使用します．
+そのため，\ttbook と異なり\verb|pages|フィールドが使用可能です．
 
 
 \subsection{\ttincollection}

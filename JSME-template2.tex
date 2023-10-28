@@ -41,7 +41,7 @@
 %%% 参考文献リストの見出しを「参考文献」から「文献」に変更．
 \renewcommand{\refname}{文献}
 %%% その他の定義
-\newcommand{\jsmefile}{\texttt{jsme.bst}}
+\newcommand{\jsmefile}{\texttt{jsme-nolink.bst}}
 \newcommand{\JSMErepos}{\texttt{JSME-bst}}
 \newcommand{\ttarticle}{\texttt{@article}}
 \newcommand{\ttbook}{\texttt{@book}}
@@ -79,7 +79,7 @@
 	\cfoot{\thepage/\pageref{LastPage}}
 	\rfoot{}
 
-\title{【非公式】日本機械学会\BibTeX{}スタイルファイル \\ \JSMErepos テンプレートその1（標準）}
+\title{【非公式】日本機械学会\BibTeX{}スタイルファイル \\ \JSMErepos テンプレートその2（ハイパーリンク無し版）}
 \author{松川 裕樹\thanks{東京理科大学大学院 創域理工学研究科 機械航空宇宙工学専攻 博士後期課程，Email: \texttt{7523701 ＿＠＿ ed.tus.ac.jp}}}
 
 \date{最終更新：\today}
@@ -94,23 +94,23 @@
 
 \section{はじめに}
 \label{sec:introduction}
-\jsmefile は日本機械学会\footnote{一般社団法人 日本機械学会（The Japan Society of Mechanical Engineers, JSME），\textless\url{https://www.jsme.or.jp/}\textgreater}の原稿テンプレート\footnote{日本機械学会 原稿テンプレート，\textless\url{https://www.jsme.or.jp/publish/transact/for-authors.html}\textgreater}に基づいた参考文献の出力を実現するために作成した，非公式\BibTeX{}スタイルファイルテンプレートです．
-必要なファイル一式はGitHubの\JSMErepos\footnote{\JSMErepos, \textless\url{https://github.com/Yuki-MATSUKAWA/JSME-bst}\textgreater}から入手可能なので，用途に応じて自由に改変してください．
-今読んでいるこのファイル（\LaTeX{}ソース：\verb|JSME-template1.tex|，出力結果：\verb|JSME-template1.pdf|）では\BibTeX{}で用意されている全てのエントリーの出力結果を表示しています．
+\jsmefile は日本機械学会\footnote{一般社団法人 日本機械学会（The Japan Society of Mechanical Engineers, JSME），\textless\verb|https://www.jsme.or.jp/|\textgreater}の原稿テンプレート\footnote{日本機械学会 原稿テンプレート，\textless\verb|https://www.jsme.or.jp/publish/transact/for-authors.html|\textgreater}に基づいた参考文献の出力を実現するために作成した，非公式\BibTeX{}スタイルファイルテンプレートです．
+必要なファイル一式はGitHubの\JSMErepos\footnote{\JSMErepos, \textless\verb|https://github.com/Yuki-MATSUKAWA/JSME-bst|\textgreater}から入手可能なので，用途に応じて自由に改変してください．
+今読んでいるこのファイル（\LaTeX{}ソース：\verb|JSME-template2.tex|，出力結果：\verb|JSME-template2.pdf|）では\BibTeX{}で用意されている全てのエントリーの出力結果を表示しています．
 参考文献のリストはこの\verb|pdf|の末尾で，出力している文献の\verb|bib|ファイルは英語文献\verb|mybib_en.bib|と日本語文献\verb|mybib_jp.bib|の二つです．
 \JSMErepos の作成者である松川が流体力学，特に乱流遷移の研究をしているため，引用している文献は乱流遷移の周辺のものが多くなっています（全てではありません）．
 ただ，材料力学など他分野の方でも基本的な使い方は同じです．
 また，第~\ref{sec:cite}節でも述べますが，著者数が1名，2名，3名以上のそれぞれで引用時の出力結果が異なります．
 そのため\verb|mybib_en.bib|，\verb|mybib_jp.bib|では可能な限り著者数が1名，2名，3名以上の計3パターンを用意しています．
-ただ，基本的に実在の文献を集めて載せているので学位論文（\hyperref[ssec:phdthesis]{\ttphdthesis}, \hyperref[ssec:mastersthesis]{\ttmastersthesis}）のように原則著者が一人のものや\hyperref[ssec:manual]{\ttmanual}，\hyperref[ssec:unpublished]{\ttunpublished}など一部のエントリーでは全てのパターンを網羅できていない場合もあるのでご了承ください（ただ，参考にするうえで困ることのないくらいにはパターンを網羅しているつもりです）．
+ただ，基本的に実在の文献を集めて載せているので学位論文（\ttphdthesis, \ttmastersthesis）のように原則著者が一人のものや\ttmanual，\ttunpublished など一部のエントリーでは全てのパターンを網羅できていない場合もあるのでご了承ください（ただ，参考にするうえで困ることのないくらいにはパターンを網羅しているつもりです）．
 
 この文書では\BibTeX{}初心者でも使いやすいよう，\BibTeX{}そのものの使い方や\verb|bib|ファイルの作成方法といった内容も可能な限り説明します．
 それでもわからなければさまざまな書籍やwebサイトがあるので参考にしてみてください．
 また，その都度説明しますが，日本機械学会の原稿テンプレートに沿ったリストを作成するために\verb|bib|ファイルの作成方法が一部通常の\BibTeX{}と異なる場合があるのでご了承ください．
 
-\jsmefile 作成にあたり可能な限り日本機械学会の原稿テンプレートを忠実に再現できるよう努力していますが，まだ十分に再現できていない箇所もあります．
+\JSMErepos 作成にあたり可能な限り日本機械学会の原稿テンプレートを忠実に再現できるよう努力していますが，まだ十分に再現できていない箇所もあります．
 もし何か問題や不明点があればGitHubにコメントしていただくかメールをいただけると幸いです．
-可能な限り対応しますが，\jsmefile を使用したことにより発生した問題に対しては一切の責任を持ちませんのでご了承ください．
+可能な限り対応しますが，\JSMErepos を使用したことにより発生した問題に対しては一切の責任を持ちませんのでご了承ください．
 また，\JSMErepos リポジトリ内のファイルは全て日本機械学会の書式の実現のために作成した非公式ファイルなので使用方法等を日本機械学会に問い合わせることもご遠慮ください．
 
 
@@ -144,13 +144,12 @@ Serif体の書体としては{\usefont{T1}{ptm}{m}{n} Times}や{\usefont{T1}{ppl
         \item 確認できる範囲で発行年月日が同じだった場合，タイトルのアルファベット順で並べ，西暦の後に小文字でアルファベットを順に振る．
         \begin{quote}
             Matsukawa, Y. and Tsukahara, T., Laminarization in subcritical Taylor--Couette--Poiseuille flow with increasing pressure gradient, Proceedings of Nineteenth International Conference on Flow Dynamics (2022a). \\
-            Matsukawa, Y. and Tsukahara, T., Subcritical transition of Taylor--Couette--Poiseuille flow at high radius ratio, \href{https://doi.org/10.1063/5.0096676}{Physics of Fluids}, Vol.~34, No.~7 (2022b), 074109.
+            Matsukawa, Y. and Tsukahara, T., Subcritical transition of Taylor--Couette--Poiseuille flow at high radius ratio, Physics of Fluids, Vol.~34, No.~7 (2022b), 074109.
         \end{quote}
     \end{enumerate}
 \end{itembox}
 文献を並べる際の表記に関する注意事項は以下の通りです．
-\verb|author|や\verb|title|などのフィールドについての詳細は第~\ref{ssec:field}節を，各エントリー（\ttarticle や\verb|@book|など）ごとの詳細は第~\ref{ssec:article}節以降を参照してください．
-\renewcommand\UrlFont{\rmfamily}
+\verb|author|や\verb|title|などのフィールドについての詳細は第~\ref{ssec:field}節を，各エントリー（\ttarticle や\ttbook など）ごとの詳細は第~\ref{ssec:article}節以降を参照してください．
 \begin{itembox}[l]{\textgt{\large 文献リスト作成の注意事項（全体）}}
     \begin{itemize}
         \item 並び順は原則として \\
@@ -159,7 +158,7 @@ Serif体の書体としては{\usefont{T1}{ptm}{m}{n} Times}や{\usefont{T1}{ppl
             ただし，存在しないフィールドがある場合は抜かす．
             また，webページ等の引用は極力避けるべきだが，引用する場合には必ず末尾にURLと参照日を明記する（第~\ref{ssec:online}節\ttonline を参照）．
             \begin{quote}
-                Kawamura Laboratory, DNS database of wall turbulence and heat transfer: Text database of Poiseuille flow for $\mathit{Re}_\tau = 64$, available from \textless\url{https://www.rs.tus.ac.jp/~t2lab/db/index.html}\textgreater, (accessed on 10 October, 2023).
+                Kawamura Laboratory, DNS database of wall turbulence and heat transfer: Text database of Poiseuille flow for $\mathit{Re}_\tau = 64$, available from \textless https://www.rs.tus.ac.jp/~t2lab/db/index.html\textgreater, (accessed on 10 October, 2023).
             \end{quote}
         \item 文献自体が日本語で書かれている場合は外国人が書いていても日本語文献とする．
         \item 文献自体が英語で書かれている場合は日本人が書いていても英語文献とする．
@@ -169,7 +168,7 @@ Serif体の書体としては{\usefont{T1}{ptm}{m}{n} Times}や{\usefont{T1}{ppl
     \end{itemize}
 \end{itembox}
 次に，文献リストを作成する際の著者名表記に関する注意事項です．
-\renewcommand\UrlFont{\ttfamily}
+
 \begin{itembox}[l]{\textgt{\large 文献リスト作成の注意事項（著者名）}}
     \begin{itemize}
         \item 著者の氏名は「姓」「名」の順で書き，間にスペース等は入れない（例：松川裕樹）．
@@ -199,7 +198,7 @@ Serif体の書体としては{\usefont{T1}{ptm}{m}{n} Times}や{\usefont{T1}{ppl
         \item 巻・号は日本語・英語文献問わずVol.~xx，No.~xxとする．
         \item 発行年は西暦で表記し，括弧で括る．ただし，発行年の前のみ半角カンマは不要．
         \item ページ数は単ページの場合はp.~xxとし，複数ページに亘る場合はpp.~xx--yyとする．
-        \item 「2014年以降発行の日本機械学会論文集は通しページを廃止したためDOIを記載するように」との注釈が日本機械学会の原稿テンプレートに書かれているが，\jsmefile ではDOIから生成されたURLを誌名（に相当する箇所）にハイパーリンクとして埋め込むように設定している．
+        \item 「2014年以降発行の日本機械学会論文集は通しページを廃止したためDOIを記載するように」との注釈が日本機械学会の原稿テンプレートに書かれているが，\jsmefile では\verb|doi|フィールドに値を入れていた場合，末尾にDOIを記載するように設定している．
     \end{itemize}
 \end{itembox}
 
@@ -441,7 +440,7 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
 また，エントリー名とフィールド名は大文字と小文字を区別しませんが，参照キーは区別するので気をつけてください．
 
 エントリーは雑誌論文や学位論文といった，その文献の該当する種別を表します．
-\jsmefile でサポートされているエントリーは\hyperref[ssec:article]{\ttarticle}, \hyperref[ssec:book]{\texttt{@book}}, \hyperref[ssec:booklet]{\ttbooklet}, \hyperref[ssec:comment]{\ttcomment}, \hyperref[ssec:conference]{\ttconference}, \hyperref[ssec:inbook]{\ttinbook}, \hyperref[ssec:incollection]{\ttincollection}, \hyperref[ssec:inproceedings]{\ttinproceedings}, \hyperref[ssec:manual]{\ttmanual}, \hyperref[ssec:mastersthesis]{\ttmastersthesis}, \hyperref[ssec:misc]{\ttmisc}, \hyperref[ssec:online]{\ttonline}, \hyperref[ssec:phdthesis]{\ttphdthesis}, \hyperref[ssec:proceedings]{\ttproceedings}, \hyperref[ssec:techreport]{\tttechreport}, \hyperref[ssec:unpublished]{\ttunpublished}の16種類です．
+\jsmefile でサポートされているエントリーは\ttarticle, \ttbook, \ttbooklet, \ttcomment, \ttconference, \ttinbook, \ttincollection, \ttinproceedings, \ttmanual, \ttmastersthesis, \ttmisc, \ttonline, \ttphdthesis, \ttproceedings, \tttechreport, \ttunpublished の16種類です．
 それぞれのエントリーで必須となるフィールドが異なり，文献一覧への出力の方法も異なるので面倒くさがらずに分類しましょう．
 ただ，全ての文献を正確に分類することは難しく，判断が人により異なることもあります．
 \JSMErepos における分類の仕方も見る人によっては違和感を覚えるものがあるかもしれません．
@@ -491,7 +490,7 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
         また，著者が複数いる場合は\verb| and |で著者を区切ります．
         日本語文献の場合は後述の\verb|yomi|フィールドで読み方を指定してください．
     \item \verb|booktitle| \\
-        書籍の名前ですが，\hyperref[ssec:conference]{\ttconference}, \hyperref[ssec:incollection]{\ttincollection}, \hyperref[ssec:inproceedings]{\ttinproceedings}で使われることからわかるように，引用する文献が書籍のうちの一部である場合の書籍そのものの題名を書きます．
+        書籍の名前ですが，\ttconference, \ttincollection, \ttinproceedings で使われることからわかるように，引用する文献が書籍のうちの一部である場合の書籍そのものの題名を書きます．
         例えば，\citet{Lueptow:Springer2000}はそれ単独でStability and experimental velocity field in Taylor--Couette flow with axial and radial flowという題目（\verb|title|）を持っていますが，これはPhysics of Rotating Fluidsという書籍（\verb|booktitle|）の一部です．
     \item \verb|chapter| \\
         書籍の一部の章を引用するときに使用します．
@@ -511,11 +510,11 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
         特殊な出版形態をとる場合の説明を入力します．
         また，第~\ref{ssec:misc}節では学部の卒業論文を\ttmisc に分類する際に\verb|howpublished|に「xx大学xx学部xx学科卒業論文」と書くことにしています．
     \item \verb|institution| \\
-        技術報告書（\hyperref[ssec:techreport]{\tttechreport}）でのみ使用されるフィールドです．
+        技術報告書（\tttechreport）でのみ使用されるフィールドです．
         報告書が出された機関名を入力します．
     \item \verb|journal| \\
         学術雑誌論文が出された誌名を入力します．
-        \hyperref[ssec:article]{\ttarticle}でのみ有効なフィールドです．
+        \ttarticle でのみ有効なフィールドです．
     \item \verb|key| \\
         著者名に相当するものが無い場合，ソートに利用します．
         \jsmefile では動作が完璧ではないのであまり使わないでほしいです．
@@ -538,11 +537,11 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
         出版社の名前を入力します．
     \item \verb|school| \\
         学校名を入力します．
-        \hyperref[ssec:mastersthesis]{\ttmastersthesis}と\hyperref[ssec:phdthesis]{\ttphdthesis}でのみ有効なフィールドです．
-        学部の卒業論文の場合は\hyperref[ssec:misc]{\ttmisc}に分類し，\verb|school|フィールドの代わりに\verb|howpublished|を使用してください．
+        \ttmastersthesis と\ttphdthesis でのみ有効なフィールドです．
+        学部の卒業論文の場合は\ttmisc に分類し，\verb|school|フィールドの代わりに\verb|howpublished|を使用してください．
     \item \verb|series| \\
         書籍のシリーズを入力します．
-        \hyperref[ssec:book]{\texttt{@book}}と\hyperref[ssec:inbook]{\ttinbook}でのみ有効なフィールドです．
+        \ttbook と\ttinbook でのみ有効なフィールドです．
         日本機械学会では不要かと思います．
     \item \verb|title| \\
         文献のタイトルを入力します．
@@ -555,7 +554,7 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
         \end{verbatim}
         のように\verb|{ }|で囲めば該当箇所はそのままの形で出力してくれます（\citealp{Matsukawa:PoF2022,Yoneda:arXiv2016}）．
     \item \verb|type| \\
-        \hyperref[ssec:techreport]{\tttechreport}でのみ有効なフィールドです．
+        \tttechreport でのみ有効なフィールドです．
         今後仕様を変えるかもしれませんが，\jsmefile では使わないでください．
     \item \verb|url| \\
         文献やwebページのURLを入力します．
@@ -578,7 +577,7 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
         \verb|japanese|と書かれていると日本語文献として処理されますが，指定されていなくても基本的には自動で日本語文献を判別してくれます\footnote{\texttt{author}や\texttt{title}などのフィールドに日本語が含まれていると\texttt{is.kanji.str\$}という機能で日本語文献と判断します．}．
         \verb|biblatex|では\verb|langid|フィールドが使用されるので残しておいてもいいかもしれません．
         \JSMErepos もそのうち\verb|biblatex|対応バージョンを作成したいと考えています．
-        また，TeX Live 2020以前の\upBibTeX{}では\verb|is.kanji.str$|が適切に動作しないため，\verb|langid|を使用してください\footnote{詳細は\href{https://github.com/ShiroTakeda/jecon-bst}{\texttt{jecon-bst (GitHub)}}の\texttt{jecon-example.pdf}を確認してください．}．
+        また，TeX Live 2020以前の\upBibTeX{}では\verb|is.kanji.str$|が適切に動作しないため，\verb|langid|を使用してください\footnote{詳細は\verb|jecon-bst (GitHub)|\textless \verb|https://github.com/ShiroTakeda/jecon-bst|\textgreater の\verb|jecon-example.pdf|を確認してください．}．
 \end{itemize}
 
 
@@ -613,20 +612,20 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
 \end{screen}
 
 \ttarticle は雑誌に掲載された論文です．
-流体力学分野では英文雑誌だとJournal of Fluid Mechanics\footnote{Journal of Fluid Mechanics, \textless\url{https://www.cambridge.org/core/journals/journal-of-fluid-mechanics}\textgreater}やPhysics of Fluids\footnote{Physics of Fluids, \textless\url{https://pubs.aip.org/aip/pof}\textgreater}などが挙げられます．
-国内雑誌だと日本機械学会誌\footnote{日本機械学会誌, \textless\url{https://www.jsme.or.jp/publication/kaisi/}\textgreater}や日本流体力学会誌『ながれ』\footnote{日本流体力学会誌『ながれ』, \textless\url{https://www.nagare.or.jp/publication/nagare.html}\textgreater}などが該当します．
+流体力学分野では英文雑誌だとJournal of Fluid Mechanics\footnote{Journal of Fluid Mechanics, \textless\verb|https://www.cambridge.org/core/journals/journal-of-fluid-mechanics|\textgreater}やPhysics of Fluids\footnote{Physics of Fluids, \textless\verb|https://pubs.aip.org/aip/pof|\textgreater}などが挙げられます．
+国内雑誌だと日本機械学会誌\footnote{日本機械学会誌, \textless\verb|https://www.jsme.or.jp/publication/kaisi/|\textgreater}や日本流体力学会誌『ながれ』\footnote{日本流体力学会誌『ながれ』, \textless\verb|https://www.nagare.or.jp/publication/nagare.html|\textgreater}などが該当します．
 \verb|doi|と\verb|url|のフィールドは\jsmefile ではどちらも\verb|journal|にハイパーリンクを埋め込む操作を行うのでどちらを使っても同様の結果を得られます．
 \verb|doi|も\verb|url|も無い場合は\verb|journal|にハイパーリンクを埋め込みません．
 また，ジャーナルによっては書誌情報を\BibTeX{}形式で出力した際に論文番号が\verb|pages|となっています．
 上記のPhysics of Fluidsの場合（\citealp{Matsukawa:PoF2022}）だとデフォルトで\verb|pages = {074109}|となっているため，このままだと
 \begin{quote}
-    Matsukawa, Y. and Tsukahara, T., Subcritical transition of Taylor--Couette--Poiseuille flow at high radius ratio, \href{https://doi.org/10.1063/5.0096676}{Physics of Fluids}, Vol.~34, No.~7 (2022b), \textcolor{red}{p.~074109}.
+    Matsukawa, Y. and Tsukahara, T., Subcritical transition of Taylor--Couette--Poiseuille flow at high radius ratio, Physics of Fluids, Vol.~34, No.~7 (2022b), \textcolor{red}{p.~074109}.
 \end{quote}
 と出力され，違和感があります．
 そのため，論文番号や講演番号は\verb|note|に入れるようにしましょう．
 
 
-\subsection{\texttt{@book}}
+\subsection{\ttbook}
 \label{ssec:book}
 \begin{screen}
     \begin{itemize}
@@ -651,9 +650,9 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
     \end{itemize}
 \end{screen}
 
-出版社が刊行した書籍を引用する際は\verb|@book|を使います．
-似たエントリーとして\hyperref[ssec:inbook]{\ttinbook}がありますが，特定のページを参照したのではなく，書籍全体を参照した場合は\verb|@book|を使いましょう．
-\JSMErepos ではSpringer\footnote{Springer, \textless\url{https://www.springer.com/jp}\textgreater}や朝倉書店\footnote{朝倉書店, \textless\url{https://www.asakura.co.jp/}\textgreater}，丸善出版\footnote{丸善出版, \textless\url{https://www.maruzen-publishing.co.jp/}\textgreater}等の出版社から出た書籍を\verb|@book|に分類しています．
+出版社が刊行した書籍を引用する際は\ttbook を使います．
+似たエントリーとして\ttinbook がありますが，特定のページを参照したのではなく，書籍全体を参照した場合は\ttbook を使いましょう．
+\JSMErepos ではSpringer\footnote{Springer, \textless\verb|https://www.springer.com/jp|\textgreater}や朝倉書店\footnote{朝倉書店, \textless\verb|https://www.asakura.co.jp/|\textgreater}，丸善出版\footnote{丸善出版, \textless\verb|https://www.maruzen-publishing.co.jp/|\textgreater}等の出版社から出た書籍を\ttbook に分類しています．
 \verb|publisher|フィールドにはこれらの出版社名を入れましょう．
 
 \subsection{\ttbooklet}
@@ -684,7 +683,7 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
 \end{screen}
 
 \ttbooklet は使う機会が少ないため分類が難しいエントリーですが，出版社が明記されていないような（薄い）冊子媒体が該当します．
-\JSMErepos では例として東京理科大学理工学部機械工学科（現・創域理工学部機械航空宇宙工学科）が毎年出しているMEニュースレター\footnote{MEニュースレター, \textless\url{https://www.rs.tus.ac.jp/me/newsletter.html}\textgreater}という広報の冊子を引用しました．
+\JSMErepos では例として東京理科大学理工学部機械工学科（現・創域理工学部機械航空宇宙工学科）が毎年出しているMEニュースレター\footnote{MEニュースレター, \textless\verb|https://www.rs.tus.ac.jp/me/newsletter.html|\textgreater}という広報の冊子を引用しました．
 
 \subsection{\ttcomment}
 \label{ssec:comment}
@@ -713,7 +712,7 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
 
 \subsection{\ttconference}
 \label{ssec:conference}
-\hyperref[ssec:inproceedings]{\ttinproceedings}と同様なので省略．
+\ttinproceedings と同様なので省略．
 Scribeというシステムとの互換性のために残されているらしい（\citealp{奥村:技評2020}）．
 
 
@@ -743,8 +742,8 @@ Scribeというシステムとの互換性のために残されているらし�
     \end{itemize}
 \end{screen}
 
-\hyperref[ssec:book]{\texttt{@book}}に似ていますが，\verb|@book|が書籍丸々一冊なのに対して\ttinbook は書籍中の一部から引用する場合に使用します．
-そのため，\verb|@book|と異なり\verb|pages|フィールドが使用可能です．
+\ttbook に似ていますが，\ttbook が書籍丸々一冊なのに対して\ttinbook は書籍中の一部から引用する場合に使用します．
+そのため，\ttbook と異なり\verb|pages|フィールドが使用可能です．
 
 
 \subsection{\ttincollection}
@@ -776,11 +775,11 @@ Scribeというシステムとの互換性のために残されているらし�
 \end{screen}
 
 \ttincollection は分類が難しいエントリーの一つです．
-これは書籍の一部からの引用ですが，\hyperref[ssec:inbook]{\ttinbook}と異なる点は，引用箇所が独立して表題を持っているようなものを指します．
+これは書籍の一部からの引用ですが，\ttinbook と異なる点は，引用箇所が独立して表題を持っているようなものを指します．
 学会等があるテーマについて組んだ特集といったイメージです．
 上記の\citet{Lueptow:Springer2000}の例では，それ単独でStability and experimental velocity field in Taylor--Couette flow with axial and radial flowという題目（\verb|title|）を持っていますが，これはPhysics of Rotating Fluidsという書籍（\verb|booktitle|）の一部です．
-日本語文献では京都大学数理解析研究所の講究録\footnote{京都大学数理解析研究所（RIMS）講究録, \textless\url{https://www.kurims.kyoto-u.ac.jp/ja/kokyuroku.html}\textgreater}や文部科学省科学研究補助金における特定の新学術領域研究の研究成果報告書等を\ttincollection に分類しています．
-それは\hyperref[ssec:inproceedings]{\ttinproceedings}だろとか\hyperref[ssec:techreport]{\tttechreport}だろとか言われそうな気もします．
+日本語文献では京都大学数理解析研究所の講究録\footnote{京都大学数理解析研究所（RIMS）講究録, \textless\verb|https://www.kurims.kyoto-u.ac.jp/ja/kokyuroku.html|\textgreater}や文部科学省科学研究補助金における特定の新学術領域研究の研究成果報告書等を\ttincollection に分類しています．
+それは\ttinproceedings だろとか\tttechreport だろとか言われそうな気もします．
 
 \subsection{\ttinproceedings}
 \label{ssec:inproceedings}
@@ -808,11 +807,11 @@ Scribeというシステムとの互換性のために残されているらし�
     \end{itemize}
 \end{screen}
 
-\hyperref[ssec:conference]{\ttconference}と同様です．
+\ttconference と同様です．
 学会等の講演論文集の一部を引用するときに\ttinproceedings を使用します．
-\hyperref[ssec:article]{\ttarticle}と並んで使用頻度の高いエントリーだと思います．
+\ttarticle と並んで使用頻度の高いエントリーだと思います．
 \verb|booktitle|フィールドには日本語なら\texttt{booktitle = \{\colorbox[gray]{0.8}{学会名}講演論文集\}}，英語なら\texttt{booktitle = \{Proceedings of \colorbox[gray]{0.8}{学会名}\}}と入力しましょう．
-\hyperref[ssec:proceedings]{\ttproceedings}は講演論文集全体を引用しているのに対して，\ttinproceedings は講演論文集の中の一講演を引用しています．
+\ttproceedings は講演論文集全体を引用しているのに対して，\ttinproceedings は講演論文集の中の一講演を引用しています．
 
 
 \subsection{\ttmanual}
@@ -844,7 +843,7 @@ Scribeというシステムとの互換性のために残されているらし�
 ただし，\verb|author|フィールドが必須項目ではないので，\jsmefile では企業名を\verb|author|に入れています．
 これはソートの際に\verb|author|フィールドが空欄だと参考文献一覧の変な場所に配置されてしまうからです．
 本来であれば\verb|key|フィールドで解決したいところですが，\jsmefile では動作が不安定なので避けたいところです．
-実は\verb|natbib.sty|において著者無し文献の本文中での引用は課題が残されているようです\footnote{詳細は\texttt{natbib.sty}の公式ドキュメント\textless\url{https://ctan.org/pkg/natbib}\textgreater をご覧ください．}．
+実は\verb|natbib.sty|において著者無し文献の本文中での引用は課題が残されているようです\footnote{詳細は\verb|natbib.sty|の公式ドキュメント\textless\verb|https://ctan.org/pkg/natbib|\textgreater をご覧ください．}．
 \ttmanual での不具合回避方法としては一旦，マニュアルを発行している機関・企業を\verb|author|とすることで解決としますが，著者無し文献の不具合回避方法は第~\ref{ssec:proceedings}節\ttproceedings でも説明します．
 
 
@@ -924,15 +923,14 @@ Scribeというシステムとの互換性のために残されているらし�
 ただし，\ttmastersthesis や\ttphdthesis と異なり，\verb|school|のフィールドを使用できないので\verb|howpublished|で代用します．
 したがって，\ttmastersthesis や\ttphdthesis では\verb|school|に所属名だけ（例：\verb|school = {東京理科大学大学院理工学研究科機械工学専攻}|）書けばよかったものが\ttmisc で卒論を出力する際には\verb|howpublished = {北海道大学理学部地球科学科卒業論文}|のように「\verb|卒業論文|」の文字まで書く必要があります．
 該当するエントリーがよくわからなかったらとりあえず\ttmisc に入れておくという人は多いと思います．
-また，arXiv\footnote{arXiv（「アーカイブ」と読みます）, \textless\url{https://arxiv.org/}\textgreater}と呼ばれるプレプリントサーバーから引用した文献は\ttmisc に分類します．
+また，arXiv\footnote{arXiv（「アーカイブ」と読みます）, \textless\verb|https://arxiv.org/|\textgreater}と呼ばれるプレプリントサーバーから引用した文献は\ttmisc に分類します．
 arXiv上のExport BibTeX Citationと書いてあるところから文献情報を見ると\ttmisc に分類されていることがわかると思います．
 この文献情報では上記のように\verb|eprint = {2308.07255}|, \verb|archivePrefix = {arXiv}|などと書かれていることが多いです．
 \jsmefile では\verb|archivePrefix|フィールドがあるとこの文献がarXiv上の文献だと認識してくれて\verb|eprint|の情報と合わせて
 \begin{quote}
-    Araki, R., Bos, W. J. T. and Goto, S., Space-local Navier--Stokes turbulence, \href{https://doi.org/10.48550/arXiv.2308.07255}{arXiv: 2308.07255} (2023).
+    Araki, R., Bos, W. J. T. and Goto, S., Space-local Navier--Stokes turbulence, arXiv: 2308.07255 (2023).
 \end{quote}
 のように自動で書いてくれます．
-\verb|eprint|の情報からURLを自動生成するので，\href{https://doi.org/10.48550/arXiv.2308.07255}{arXiv: 2308.07255}と書かれている（青字の）箇所をクリックしたらarXivの該当ページにジャンプできます．
 
 また，\ttmisc では\verb|author|フィールドが任意項目となっています．
 第~\ref{ssec:manual}節\ttmanual でも説明したように，著者無し文献は不具合の元なので著者に相当しそうなものを\verb|author|に入れておいてください．
@@ -961,19 +959,17 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 \end{screen}
 
 \ttonline は\jsmefile 独自のエントリーなので他の\BibTeX{}スタイルファイルを用いるときには注意してください（\jsmefile の元となった\verb|jecon.bst|では使用できます）．
-本来，webページ等の引用はあまり推奨されるものではありませんが，データベースを研究室のwebページ等で公開していることがある\footnote{乱流の分野におけるデータベースとしては，東京理科大学河村研究室（現在は塚原研究室が管理） \textless\url{https://www.rs.tus.ac.jp/~t2lab/db/index.html}\textgreater や東京大学笠木研究室（現在は複数の大学によって管理） \textless\url{https://thtlab.jp}\textgreater などが挙げられます．}ので使う機会がゼロとは言えないでしょう．
+本来，webページ等の引用はあまり推奨されるものではありませんが，データベースを研究室のwebページ等で公開していることがある\footnote{乱流の分野におけるデータベースとしては，東京理科大学河村研究室（現在は塚原研究室が管理） \textless\verb|https://www.rs.tus.ac.jp/~t2lab/db/index.html|\textgreater や東京大学笠木研究室（現在は複数の大学によって管理） \textless\verb|https://thtlab.jp|\textgreater などが挙げられます．}ので使う機会がゼロとは言えないでしょう．
 英語のwebページの場合は
-\renewcommand\UrlFont{\rmfamily}
 \begin{quote}
-    Kawamura Laboratory, DNS database of wall turbulence and heat transfer: Text database of Poiseuille flow for $\mathit{Re}_\tau = 64$, available from \textless\url{https://www.rs.tus.ac.jp/~t2lab/db/index.html}\textgreater, (accessed on 10 October, 2023).
+    Kawamura Laboratory, DNS database of wall turbulence and heat transfer: Text database of Poiseuille flow for $\mathit{Re}_\tau = 64$, available from \textless https://www.rs.tus.ac.jp/~t2lab/db/index.html\textgreater, (accessed on 10 October, 2023).
 \end{quote}
 のように，末尾にwebページのURLと参照日を入れることが日本機械学会の原稿テンプレートに記載されています．
 英語での参照日の書き方は\verb|access  = {10 October, 2023}|のように日，月（アルファベット），年の順です．
 日本語のwebページの場合は
 \begin{quote}
-    立川裕二, 博士論文執筆の際にお願いしたいこと, \textless\url{https://member.ipmu.jp/yuji.tachikawa/misc/dron.html}\textgreater, (参照日 2023年10月10日).
+    立川裕二, 博士論文執筆の際にお願いしたいこと, \textless https://member.ipmu.jp/yuji.tachikawa/misc/dron.html\textgreater, (参照日 2023年10月10日).
 \end{quote}
-\renewcommand\UrlFont{\ttfamily}
 のように出力します．
 
 \subsection{\ttphdthesis}
@@ -1004,7 +1000,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 
 \ttphdthesis は博士論文が該当します．
 エントリー名に\verb|thesis|と入っていますが，英語文献の場合はdissertationと出力されます．
-基本的な使い方は\hyperref[ssec:mastersthesis]{\ttmastersthesis}と同じです．
+基本的な使い方は\ttmastersthesis と同じです．
 
 \subsection{\ttproceedings}
 \label{ssec:proceedings}
@@ -1030,8 +1026,8 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 \end{screen}
 
 学会の講演論文集全体を引用する際には\ttproceedings を使用します．
-\hyperref[ssec:conference]{\ttconference}や\hyperref[ssec:inproceedings]{\ttinproceedings}は講演論文集の中の一講演を引用しているのに対して，\ttproceedings は講演論文集全体を引用しています．
-\hyperref[ssec:manual]{\ttmanual}や\hyperref[ssec:misc]{\ttmisc}と同様，\verb|author|フィールドが必須項目ではありません．
+\ttconference や\ttinproceedings は講演論文集の中の一講演を引用しているのに対して，\ttproceedings は講演論文集全体を引用しています．
+\ttmanual や\ttmisc と同様，\verb|author|フィールドが必須項目ではありません．
 したがって，文献一覧のソートの際は\verb|title|の読みを和文・英文問わず\verb|yomi|フィールドで指定してあげないと変な場所に飛ばされてしまいます．
 また，もし
 \begin{quote}
@@ -1090,7 +1086,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 \end{screen}
 
 研究機関等から発行された技術報告書は\tttechreport に分類します．
-技術報告書を発行している研究機関はさまざまありますが，例えばNASA\footnote{アメリカ航空宇宙局（NASA） Technical Reports Server, \textless\url{https://ntrs.nasa.gov/}\textgreater}や国立天文台\footnote{大学共同利用機関法人 自然科学研究機構 国立天文台，国立天文台欧文報告, \textless\url{https://www.nao.ac.jp/about-naoj/reports/publications-naoj.html}\textgreater}，鉄道総研\footnote{公益財団法人 鉄道総合技術研究所（鉄道総研），鉄道総研報告, \textless\url{https://www.rtri.or.jp/publish/rtrirep/}\textgreater}などが挙げられます．
+技術報告書を発行している研究機関はさまざまありますが，例えばNASA\footnote{アメリカ航空宇宙局（NASA） Technical Reports Server, \textless\verb|https://ntrs.nasa.gov/|\textgreater}や国立天文台\footnote{大学共同利用機関法人 自然科学研究機構 国立天文台，国立天文台欧文報告, \textless\verb|https://www.nao.ac.jp/about-naoj/reports/publications-naoj.html|\textgreater}，鉄道総研\footnote{公益財団法人 鉄道総合技術研究所（鉄道総研），鉄道総研報告, \textless\verb|https://www.rtri.or.jp/publish/rtrirep/|\textgreater}などが挙げられます．
 また，企業によっては技術報告書を公開しているところもあります．
 \tttechreport には\verb|type|という任意フィールドがありますが，諸事情でここに何か書いても何も表示しないようにしているので使わないでください．
 本当は\verb|type = {Technical Report}|などと書くとそのように表示されます．
@@ -1124,10 +1120,10 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 
 \ttunpublished は正式には出版されていない本などが該当します．
 ただ，\ttunpublished を使う機会はほぼ無いと思われますし，そもそも具体的に何が該当するのかもパッとイメージできるものではありません．
-また，大抵の人は分類がよくわからなかったら\hyperref[ssec:misc]{\ttmisc}に入れてしまう気がします．
+また，大抵の人は分類がよくわからなかったら\ttmisc に入れてしまう気がします．
 しかし，\jsmefile を作成するうえでパターンを網羅しておきたかったので（無理矢理）分類したものとしては大学のオープンコースウェア（OCW）の講義資料等です．
 講義資料であれば正式に出版された書籍ではありませんがweb上にあるのをよく見かけると思います．
-上記の例はMITのOCW\footnote{MIT Open Course Ware, \textless\url{https://ocw.mit.edu/}\textgreater}における講義資料です．
+上記の例はMITのOCW\footnote{MIT Open Course Ware, \textless\verb|https://ocw.mit.edu/|\textgreater}における講義資料です．
 
 
 \clearpage
@@ -1216,27 +1212,27 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
     $ dvipdfmx JSME-template1
 \end{verbatim}
 これでうまくいけば\verb|pdf|が生成されているはずです．
-Overleaf\footnote{Overleaf, \textless\url{https://ja.overleaf.com}\textgreater}なら「リコンパイル」を押すだけなので簡単です．
+Overleaf\footnote{Overleaf, \textless\verb|https://ja.overleaf.com|\textgreater}なら「リコンパイル」を押すだけなので簡単です．
 
 \clearpage
 \section*{謝辞}
 \addcontentsline{toc}{section}{謝辞}
-\jsmefile は武田史郎氏作の経済学用\BibTeX{}スタイルファイル\verb|jecon.bst|\footnote{\texttt{jecon-bst}, \textless\url{https://github.com/ShiroTakeda/jecon-bst}\textgreater}を改変して作成したものです．
+\jsmefile は武田史郎氏作の経済学用\BibTeX{}スタイルファイル\verb|jecon.bst|\footnote{\verb|jecon-bst|, \textless\verb|https://github.com/ShiroTakeda/jecon-bst|\textgreater}を改変して作成したものです．
 \verb|jecon.bst|内に残されていた武田氏の懇切丁寧なコメントおよび説明用の\verb|jecon-example.pdf|は\jsmefile を作成するにあたり大変参考になり，これらが無ければ実現しませんでした．
 また，\citet{奥村:技評2020}と\citet{吉永:翔泳社2018}は\JSMErepos を作成するにあたり参考にした，この文書における「本当の」参考文献です．
 ここに，深く感謝の意を表します．
 
 \clearpage
 %%% ハイパーリンクのズレを調整
-\phantomsection
+% \phantomsection
 %%% 参考文献内の URL 表示をタイプライター調にしない
-\renewcommand\UrlFont{\rmfamily}
+% \renewcommand\UrlFont{\rmfamily}
 %%% \nocite{*}が有効のとき，引用していない文献も含めて全て表示
 \nocite{*}
 %%% 目次に「文献」を追加
 \addcontentsline{toc}{section}{\refname}
 %%% 使用する bst ファイル
-\bibliographystyle{jsme}
+\bibliographystyle{jsme-nolink}
 %%% 読み込む bib ファイル
 \bibliography{
 mybib_en.bib,
