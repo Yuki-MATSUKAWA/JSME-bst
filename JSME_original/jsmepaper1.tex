@@ -13,7 +13,9 @@
 %%                              Ver 1.57 Ken Kishimoto Mar. 09 2000
 %% $Id: jsmepaper.tex,v 1.5 2001/10/10 18:31:15 ken Exp ken $
 %%
-\documentclass[a4jsme, fleqn]{jsmepaper}
+
+%%%
+\documentclass[a4jsme, fleqn, dvipdfmx]{jsmepaper}
 \usepackage{epic,eepic}
 \pagestyle{empty}
 %\usepackage{graphics}
@@ -23,12 +25,13 @@
 
 %%% hyperref
 %%% ハイパーリンクに色が付かないようにしたいときは allcolors=blue の箇所を hidelinks にする
-\usepackage[bookmarks=false,colorlinks,allcolors=blue]{hyperref}
-% \usepackage{pxjahyper}
+\usepackage[bookmarks=true,bookmarksnumbered=true,setpagesize=false,colorlinks,allcolors=blue]{hyperref}
+% \usepackage[bookmarks=false,colorlinks,allcolors=blue]{hyperref}
+\usepackage{pxjahyper}
 %%% natbib
 \usepackage{natbib}
 %%% 参考文献リストの見出しを「参考文献」から「文献」に変更．
-\renewcommand{\refname}{文献}
+% \renewcommand{\refname}{文献}
 \newcommand{\newblock}{\hskip .11em\@plus.33em\@minus.07em}
 
 %
@@ -262,7 +265,7 @@ T[\mbox{℃}]&\rho [\mbox{kg}/\mbox{m}^3]&c_p[\mbox{J}/(\mbox{kg}\cdot\mbox{K})]
 
 (2)本文中の引用箇所には，著者名と発行年を記載する．
 
-（日本語文献例　著者1名の場合：(竹内，2005)　著者2名の場合： (山田，佐藤，2013)
+（日本語文献例　著者1名の場合：(\citealp{竹内:JSME2005})　著者2名の場合： (山田，佐藤，2013)
 
 英語文献例　著者1名の場合：(Nagashima, 2005)　著者2名の場合：(Ahrendt and Taplin, 1951)）
 
