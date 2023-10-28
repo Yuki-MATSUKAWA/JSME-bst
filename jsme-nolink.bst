@@ -1,4 +1,5 @@
-%% jsme.bst: 日本機械学会 BibTeX スタイルファイル（BibTeX style file for JSME）
+%% jsme-nolink.bst: 日本機械学会 BibTeX スタイルファイル（BibTeX style file for JSME）
+%% ハイパーリンク非対応バージョン（hyperref パッケージ不使用時）
 %
 % Author: Yuki MATSUKAWA (松川裕樹)
 % First-written: 2023/09/02
