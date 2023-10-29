@@ -2,8 +2,8 @@
 %
 % Author: Yuki MATSUKAWA (松川裕樹)
 % First-written: 2023/09/02
-% Latest version: 2023/10/21
-% Version 1.0.0
+% Latest version: 2023/10/29
+% Version 2.1.0
 
 % This work is based on jecon-bst by Shiro Takeda (https://github.com/ShiroTakeda/jecon-bst)
 % and modified to output references according to the JSME manuscript template 
@@ -16,7 +16,7 @@
 
 
 % version 指定
-FUNCTION {jsme.version} { "1.0.0" }
+FUNCTION {jsme.version} { "2.1.0" }
 
 % Debug mode．0 以外を指定すると様々な情報を表示させることが可能．
 FUNCTION {jecon.debug}
