@@ -1,5 +1,7 @@
 # JSME-bst（【非公式】日本機械学会BibTeXスタイルファイルテンプレート）
 
+日本機械学会オリジナルの原稿テンプレートに合わせた内容（`JSME-original`内）に関しては現在調整中です（clsファイルの書き換えを検討中）．
+
 - `JSME-template1.tex`, `JSME-template1.pdf` -> ハイパーリンク有りの`jsme.bst`説明書
 - `JSME-template2.tex`, `JSME-template2.pdf` -> ハイパーリンク無しの`jsme-nolink.bst`説明書
 - `jsme.bst` -> ハイパーリンク有りの`bst`ファイル
