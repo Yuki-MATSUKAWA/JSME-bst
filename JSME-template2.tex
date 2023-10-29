@@ -6,6 +6,7 @@
 %%%
 %%%                    v1.0.0 Yuki MATSUKAWA 22 Oct. 2023
 %%%                    v2.0.0 Yuki MATSUKAWA 28 Oct. 2023
+%%%                    v2.1.0 Yuki MATSUKAWA 29 Oct. 2023
 %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[a4paper,fleqn,uplatex,dvipdfmx]{jsarticle}
@@ -77,7 +78,7 @@ Serif体の書体としては{\usefont{T1}{ptm}{m}{n} Times}や{\usefont{T1}{ppl
 ここでは参考文献の書き方に焦点を当てて説明するのでその他の箇所の書式は日本機械学会の原稿テンプレートをよく読んで作成してください．
 
 \subsection{文献の並べ方・引用の仕方}
-この節では文献リストのフィールド（\BibTeX{}における\verb|author|や\verb|title|）の並べ方について説明します．
+この節では文献リストのフィールド（\BibTeX{}における\ttauthor や\tttitle）の並べ方について説明します．
 \jsmefile のユーザーは気にせず使用することができますが，改めて整理しておくので\jsmefile を使わないときにも役に立つと思います．
 原則，日本機械学会の規定に合わせていますが，原稿テンプレートからは判断が難しい事項は一部独自の解釈を加えているものがあります．
 
@@ -96,12 +97,12 @@ Serif体の書体としては{\usefont{T1}{ptm}{m}{n} Times}や{\usefont{T1}{ppl
     \end{enumerate}
 \end{itembox}
 文献を並べる際の表記に関する注意事項は以下の通りです．
-\verb|author|や\verb|title|などのフィールドについての詳細は第~\ref{ssec:field}節を，各エントリー（\ttarticle や\ttbook など）ごとの詳細は第~\ref{ssec:article}節以降を参照してください．
+\ttauthor や\tttitle などのフィールドについての詳細は第~\ref{ssec:field}節を，各エントリー（\ttarticle や\ttbook など）ごとの詳細は第~\ref{ssec:article}節以降を参照してください．
 \renewcommand\UrlFont{\rmfamily}
 \begin{itembox}[l]{\textgt{\large 文献リスト作成の注意事項（全体）}}
     \begin{itemize}
         \item 並び順は原則として \\
-            著者（\verb|author|）$\to$タイトル（\verb|title|）$\to$誌名（\verb|journal|）・書名（\verb|booktitle|）$\to$出版社（\verb|publisher|）・大学名（\verb|school|）・機関名（\verb|institution|）$\to$巻（\verb|volume|）$\to$号（\verb|number|）$\to$発行年（\verb|year|）$\to$ページ（\verb|pages|）$\to$論文番号・講演番号（\verb|note|） \\
+            著者（\ttauthor）$\to$タイトル（\tttitle）$\to$誌名（\ttjournal）・書名（\ttbooktitle）$\to$出版社（\ttpublisher）・大学名（\ttschool）・機関名（\ttinstitution）$\to$巻（\ttvolume）$\to$号（\ttnumber）$\to$発行年（\ttyear）$\to$ページ（\ttpages）$\to$論文番号・講演番号（\ttnote） \\
             とする．
             ただし，存在しないフィールドがある場合は抜かす．
             また，webページ等の引用は極力避けるべきだが，引用する場合には必ず末尾にURLと参照日を明記する（第~\ref{ssec:online}節\ttonline を参照）．
@@ -112,7 +113,7 @@ Serif体の書体としては{\usefont{T1}{ptm}{m}{n} Times}や{\usefont{T1}{ppl
         \item 文献自体が英語で書かれている場合は日本人が書いていても英語文献とする．
         \item フィールドとフィールドの間は日本語文献・英語文献問わず半角カンマと半角スペース（, ）で繋ぐ．全角カンマ（，）ではないので注意．
         \item 他学会の文献テンプレートでは誌名を\textit{Italic}体にしたり巻数を\textbf{Boldface}体にしたりすることがあるが，日本機械学会では全て\textrm{Roman}体で統一する（WebページのURLを\LaTeX{}で出力するときに\texttt{Typewriter}体が用いられることが多いが，これも\textrm{Roman}体にする．）．
-        \item 以上の内容が満たされていて，文献にアクセスするうえで十分な情報が書かれていれば月（\verb|month|）や章（\verb|chapter|）等は不要．
+        \item 以上の内容が満たされていて，文献にアクセスするうえで十分な情報が書かれていれば月（\ttmonth）や章（\ttchapter）等は不要．
     \end{itemize}
 \end{itembox}
 \renewcommand\UrlFont{\ttfamily}
@@ -147,7 +148,7 @@ Serif体の書体としては{\usefont{T1}{ptm}{m}{n} Times}や{\usefont{T1}{ppl
         \item 巻・号は日本語・英語文献問わずVol.~xx，No.~xxとする．
         \item 発行年は西暦で表記し，括弧で括る．ただし，発行年の前のみ半角カンマは不要．
         \item ページ数は単ページの場合はp.~xxとし，複数ページに亘る場合はpp.~xx--yyとする．
-        \item 「2014年以降発行の日本機械学会論文集は通しページを廃止したためDOIを記載するように」との注釈が日本機械学会の原稿テンプレートに書かれているが，\jsmefile では\verb|doi|フィールドに値を入れていた場合，末尾にDOIを記載するように設定している．
+        \item 「2014年以降発行の日本機械学会論文集は通しページを廃止したためDOIを記載するように」との注釈が日本機械学会の原稿テンプレートに書かれているが，\jsmefile では\ttdoi フィールドに値を入れていた場合，末尾にDOIを記載するように設定している．
     \end{itemize}
 \end{itembox}
 
@@ -396,7 +397,7 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
 それぞれのエントリーに関する詳細を\pageref{ssec:article}ページ以降で説明しているので参考にしてください．
 
 フィールドはその文献の著者情報や誌名情報を入力するデータ項目です．
-\jsmefile では\verb|access|, \verb|address|, \verb|archivePrefix|, \verb|author|, \verb|booktitle|, \verb|chapter|, \verb|doi|, \verb|edition|, \verb|editor|, \verb|eprint|, \verb|howpublished|, \verb|institution|, \verb|journal|, \verb|key|, \verb|month|, \verb|note|, \verb|number|, \verb|organization|, \verb|pages|, \verb|publisher|, \verb|school|, \verb|series|, \verb|title|, \verb|type|, \verb|url|, \verb|volume|, \verb|year|, \verb|yomi|, \verb|language|, \verb|langid|がサポートされています．
+\jsmefile では\ttaccess, \ttaddress, \ttarchivePrefix, \ttauthor, \ttbooktitle, \ttchapter, \ttdoi, \ttedition, \tteditor, \tteprint, \tthowpublished, \ttinstitution, \ttjournal, \ttkey, \ttlangid, \ttlanguage, \ttmonth, \ttnote, \ttnumber, \ttorganization, \ttpages, \ttpublisher, \ttschool, \ttseries, \tttitle, \tttype, \tturl, \ttvolume, \ttyear, \ttyomi がサポートされています．
 フィールドの値は
 \begin{verbatim}
     author = {Matsukawa, Yuki and Tsukahara, Takahiro}
@@ -409,17 +410,17 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
 \subsection{各フィールドの詳細}
 \label{ssec:field}
 \begin{itemize}
-    \item \verb|access| \\
+    \item \ttaccess \\
         Webページを閲覧した日付（参照日）を記入します．
         \ttonline でのみ有効です．
         書き方の詳細は第~\ref{ssec:online}節（\ttonline ）を参照．
-    \item \verb|address| \\
-        出版社（\verb|publisher|）の住所．
+    \item \ttaddress \\
+        出版社（\ttpublisher）の住所．
         日本機械学会の原稿テンプレートでは住所を書かないので必要ありません．
-    \item \verb|archivePrefix| \\
+    \item \ttarchivePrefix \\
         arXiv上の文献を引用する際に自動で出力されます．
-        \jsmefile では\verb|archivePrefix|があるとarXivの文献として判断します．
-    \item \verb|author| \\
+        \jsmefile では\ttarchivePrefix があるとarXivの文献として判断します．
+    \item \ttauthor \\
         文献の著者情報を入力します．
         他の\BibTeX{}スタイルファイルと仕様が異なる場合があるので注意が必要です．
         日本語文献でも英語文献でも
@@ -437,62 +438,74 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
         のようになります．
         \verb|Family, Given|で書く場合は日本語文献でも半角カンマと半角スペースで姓と名を区切ります．
         また，著者が複数いる場合は\verb| and |で著者を区切ります．
-        日本語文献の場合は後述の\verb|yomi|フィールドで読み方を指定してください．
-    \item \verb|booktitle| \\
+        日本語文献の場合は後述の\ttyomi フィールドで読み方を指定してください．
+    \item \ttbooktitle \\
         書籍の名前ですが，\ttconference, \ttincollection, \ttinproceedings で使われることからわかるように，引用する文献が書籍のうちの一部である場合の書籍そのものの題名を書きます．
-        例えば，\citet{Lueptow:Springer2000}はそれ単独でStability and experimental velocity field in Taylor--Couette flow with axial and radial flowという題目（\verb|title|）を持っていますが，これはPhysics of Rotating Fluidsという書籍（\verb|booktitle|）の一部です．
-    \item \verb|chapter| \\
+        例えば，\citet{Lueptow:Springer2000}はそれ単独でStability and experimental velocity field in Taylor--Couette flow with axial and radial flowという題目（\tttitle）を持っていますが，これはPhysics of Rotating Fluidsという書籍（\ttbooktitle）の一部です．
+    \item \ttchapter \\
         書籍の一部の章を引用するときに使用します．
         日本機械学会では章番号ではなくページ数で引用するので使う必要はありません．
-    \item \verb|doi| \\
+    \item \ttdoi \\
         文献のデジタルオブジェクト識別子（Digital Object Identifier, DOI）を入力します．
         学術論文だけでなくSpringer等の書籍などにもDOIが割り当てられています．
-        \jsmefile では\verb|doi|フィールドの値を読み込んで末尾に記載するようにしています．
-    \item \verb|edition|
+        \jsmefile では\ttdoi フィールドの値を読み込んで末尾に記載するようにしています．
+    \item \ttedition
         （第3版などの）版を入力します．
-        \citet{奥村:技評2020}のように\verb|title = {［改訂第8版］\LaTeXe{}美文書作成入門}|と\verb|title|の中に書いてしまってもいいと思います．
-    \item \verb|eprint| \\
+        \citet{奥村:技評2020}のように\verb|title = {［改訂第8版］\LaTeXe{}美文書作成入門}|と\tttitle の中に書いてしまってもいいと思います．
+    \item \tteditor \\
+        編者名を入力します．
+        書き方は著者名（\ttauthor）と同じですが，\jsmefile では\tteditor に値を入れても基本的には文献一覧には出力されません．
+        ただし，著者（\ttauthor）無し文献の場合，\verb|natbib|による文章中での引用がおかしくなるのでその際は\ttauthor 代わりに\tteditor を使用します（詳細は\ttproceedings を参照）．
+        また，日本機械学会原稿テンプレートでは『伝熱ハンドブック』の編者として日本機械学会を指定し，その後ろに「編」と入れるように書かれていますが，現状これを\jsmefile で再現する際は\tteditor を使用せずに\verb|author = {日本機械学会編}|とするのが無難です．
+        近い将来修正して\tteditor で対応できるようにしたいです．
+    \item \tteprint \\
         論文のeprintを入力します．
         arXivから\BibTeX{}形式で書誌情報を出力するとデフォルトで入ってくるフィールドです．
-        \jsmefile では\verb|archivePrefix|フィールドがあった場合に\verb|eprint|の情報を記載します（詳細は第~\ref{ssec:misc}節\ttmisc を参照）．
-    \item \verb|howpublished| \\
+        \jsmefile では\ttarchivePrefix フィールドがあった場合に\tteprint の情報を記載します（詳細は第~\ref{ssec:misc}節\ttmisc を参照）．
+    \item \tthowpublished \\
         特殊な出版形態をとる場合の説明を入力します．
-        また，第~\ref{ssec:misc}節では学部の卒業論文を\ttmisc に分類する際に\verb|howpublished|に「xx大学xx学部xx学科卒業論文」と書くことにしています．
-    \item \verb|institution| \\
+        また，第~\ref{ssec:misc}節では学部の卒業論文を\ttmisc に分類する際に\tthowpublished に「xx大学xx学部xx学科卒業論文」と書くことにしています．
+    \item \ttinstitution \\
         技術報告書（\tttechreport）でのみ使用されるフィールドです．
         報告書が出された機関名を入力します．
-    \item \verb|journal| \\
+    \item \ttjournal \\
         学術雑誌論文が出された誌名を入力します．
         \ttarticle でのみ有効なフィールドです．
-    \item \verb|key| \\
+    \item \ttkey \\
         著者名に相当するものが無い場合，ソートに利用します．
         \jsmefile では動作が完璧ではないのであまり使わないでほしいです．
-    \item \verb|month| \\
+    \item \ttlangid, \ttlanguage \\
+        その文献が書かれている言語を指定するフィールドです．
+        \verb|japanese|と書かれていると日本語文献として処理されますが，指定されていなくても基本的には自動で日本語文献を判別してくれます\footnote{\ttauthor や\tttitle などのフィールドに日本語が含まれていると\texttt{is.kanji.str\$}という機能で日本語文献と判断します．}．
+        \verb|biblatex|では\ttlangid フィールドが使用されるので残しておいてもいいかもしれません．
+        \JSMErepos もそのうち\verb|biblatex|対応バージョンを作成したいと考えています．
+        また，TeX Live 2020以前の\upBibTeX{}では\verb|is.kanji.str$|が適切に動作しないため，\ttlangid を使用してください\footnote{詳細は\verb|jecon-bst (GitHub)|\textless \url{https://github.com/ShiroTakeda/jecon-bst}\textgreater の\verb|jecon-example.pdf|を確認してください．}．
+    \item \ttmonth \\
         出版された月を入力します．
-        日本機械学会では年（\verb|year|）だけ書けばいいので\verb|month|は不要．
-    \item \verb|note| \\
+        日本機械学会では年（\ttyear）だけ書けばいいので\ttmonth は不要．
+    \item \ttnote \\
         注記．
         \jsmefile では講演番号や論文番号をここに書いてください．
-    \item \verb|number| \\
+    \item \ttnumber \\
         雑誌等の号数を入力します．
-    \item \verb|organization| \\
+    \item \ttorganization \\
         会議の主催者・団体やマニュアルを出している機関を入力します．
-    \item \verb|pages| \\
+    \item \ttpages \\
         ページ番号を入力します．
         例えば35ページのみ引用する場合は\verb|pages = {35}|とし，35ページから64ページまでを引用する場合は\verb|pages = {35--64}|とします．
         このとき，開始ページと終了ページを結ぶ横棒はハイフン（\verb|-|）ではなくenダッシュとします（\verb|--|）．
-        ただし，\jsmefile を使用すれば\verb|pages|内でハイフンとしていても自動でenダッシュに変換してくれるので安心です．
-    \item \verb|publisher| \\
+        ただし，\jsmefile を使用すれば\ttpages 内でハイフンとしていても自動でenダッシュに変換してくれるので安心です．
+    \item \ttpublisher \\
         出版社の名前を入力します．
-    \item \verb|school| \\
+    \item \ttschool \\
         学校名を入力します．
         \ttmastersthesis と\ttphdthesis でのみ有効なフィールドです．
-        学部の卒業論文の場合は\ttmisc に分類し，\verb|school|フィールドの代わりに\verb|howpublished|を使用してください．
-    \item \verb|series| \\
+        学部の卒業論文の場合は\ttmisc に分類し，\ttschool フィールドの代わりに\tthowpublished を使用してください．
+    \item \ttseries \\
         書籍のシリーズを入力します．
         \ttbook と\ttinbook でのみ有効なフィールドです．
         日本機械学会では不要かと思います．
-    \item \verb|title| \\
+    \item \tttitle \\
         文献のタイトルを入力します．
         \jsmefile では標準設定として，英語文献の場合はタイトル冒頭以外のアルファベットを全て小文字に変換して出力します（日本機械学会の原稿テンプレート通りの出力）．
         ただし，固有名詞や二次元を表す2Dなどのようにタイトルの途中で大文字を使用する場合は
@@ -502,31 +515,25 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
         title = {A mathematical consideration of vortex thinning in {2D} turbulence}
         \end{verbatim}
         のように\verb|{ }|で囲めば該当箇所はそのままの形で出力してくれます（\citealp{Matsukawa:PoF2022,Yoneda:arXiv2016}）．
-    \item \verb|type| \\
+    \item \tttype \\
         \tttechreport でのみ有効なフィールドです．
         今後仕様を変えるかもしれませんが，\jsmefile では使わないでください．
-    \item \verb|url| \\
+    \item \tturl \\
         文献やwebページのURLを入力します．
         \jsmefile では\ttonline でのみ有効なフィールドです．
-    \item \verb|volume| \\
+    \item \ttvolume \\
         雑誌等の巻数（第3巻，Vol.~3など）を入力します．
-    \item \verb|year| \\
+    \item \ttyear \\
         発行年を入力します．
         学位論文の場合は修了「年」を記入します（第~\ref{ssec:mastersthesis}節\ttmastersthesis を参照）．
-    \item \verb|yomi| \\
-        著者（\verb|author|）の読みを入力します．
-        \verb|yomi|の内容から判断してアルファベット順に文献をソートしてくれます．
+    \item \ttyomi \\
+        著者（\ttauthor）の読みを入力します．
+        \ttyomi の内容から判断してアルファベット順に文献をソートしてくれます．
         \begin{verbatim}
         yomi = {Matsukawa, Yuki and Tsukahara, Takahiro}
         \end{verbatim}
         のようにローマ字で読みを書くと，英語文献と日本語文献を混ぜてアルファベット順でソートしてくれます．
         ひらがなで読みを書くと日本語文献と英語文献が分けられてしまうので日本機械学会の規定に合いません．
-    \item \verb|language|, \verb|langid| \\
-        その文献が書かれている言語を指定するフィールドです．
-        \verb|japanese|と書かれていると日本語文献として処理されますが，指定されていなくても基本的には自動で日本語文献を判別してくれます\footnote{\texttt{author}や\texttt{title}などのフィールドに日本語が含まれていると\texttt{is.kanji.str\$}という機能で日本語文献と判断します．}．
-        \verb|biblatex|では\verb|langid|フィールドが使用されるので残しておいてもいいかもしれません．
-        \JSMErepos もそのうち\verb|biblatex|対応バージョンを作成したいと考えています．
-        また，TeX Live 2020以前の\upBibTeX{}では\verb|is.kanji.str$|が適切に動作しないため，\verb|langid|を使用してください\footnote{詳細は\verb|jecon-bst (GitHub)|\textless \url{https://github.com/ShiroTakeda/jecon-bst}\textgreater の\verb|jecon-example.pdf|を確認してください．}．
 \end{itemize}
 
 
@@ -535,13 +542,13 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
 \begin{screen}
     \begin{itemize}
         \item 必須項目 \\
-        \verb|author|, \verb|title|, \verb|journal|, \verb|year|
+        \ttauthor, \tttitle, \ttjournal, \ttyear
         \item オプション項目 \\
-        \verb|volume|, \verb|number|, \verb|pages|, \verb|month|, \verb|note|, \verb|key|
+        \ttvolume, \ttnumber, \ttpages, \ttmonth, \ttnote, \ttkey
         \item 出力（英語文献） \\
-            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{journal}} (\colorbox[gray]{0.8}{\texttt{year}}), Vol.~\colorbox[gray]{0.8}{\texttt{volume}}, No.~\colorbox[gray]{0.8}{\texttt{number}}, pp.~\colorbox[gray]{0.8}{\texttt{pages}}, \colorbox[gray]{0.8}{\texttt{note}}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttjournal} (\colorbox[gray]{0.8}{\ttyear}), Vol.~\colorbox[gray]{0.8}{\ttvolume}, No.~\colorbox[gray]{0.8}{\ttnumber}, pp.~\colorbox[gray]{0.8}{\ttpages}, \colorbox[gray]{0.8}{\ttnote}.
         \item 出力（日本語文献） \\
-            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}}, \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{journal}} (\colorbox[gray]{0.8}{\texttt{year}}), Vol.~\colorbox[gray]{0.8}{\texttt{volume}}, No.~\colorbox[gray]{0.8}{\texttt{number}}, pp.~\colorbox[gray]{0.8}{\texttt{pages}}, \colorbox[gray]{0.8}{\texttt{note}}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttjournal} (\colorbox[gray]{0.8}{\ttyear}), Vol.~\colorbox[gray]{0.8}{\ttvolume}, No.~\colorbox[gray]{0.8}{\ttnumber}, pp.~\colorbox[gray]{0.8}{\ttpages}, \colorbox[gray]{0.8}{\ttnote}.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
 @article{Matsukawa:PoF2022,
@@ -563,15 +570,15 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
 \ttarticle は雑誌に掲載された論文です．
 流体力学分野では英文雑誌だとJournal of Fluid Mechanics\footnote{Journal of Fluid Mechanics, \textless\url{https://www.cambridge.org/core/journals/journal-of-fluid-mechanics}\textgreater}やPhysics of Fluids\footnote{Physics of Fluids, \textless\url{https://pubs.aip.org/aip/pof}\textgreater}などが挙げられます．
 国内雑誌だと日本機械学会誌\footnote{日本機械学会誌, \textless\url{https://www.jsme.or.jp/publication/kaisi/}\textgreater}や日本流体力学会誌『ながれ』\footnote{日本流体力学会誌『ながれ』, \textless\url{https://www.nagare.or.jp/publication/nagare.html}\textgreater}などが該当します．
-\jsmefile では\verb|doi|フィールドに値が入っている場合，文献末尾にDOIを記載するように設定しています．
-\verb|doi|が無い場合は記載しません．
-また，ジャーナルによっては書誌情報を\BibTeX{}形式で出力した際に論文番号が\verb|pages|となっています．
+\jsmefile では\ttdoi フィールドに値が入っている場合，文献末尾にDOIを記載するように設定しています．
+\ttdoi が無い場合は記載しません．
+また，ジャーナルによっては書誌情報を\BibTeX{}形式で出力した際に論文番号が\ttpages となっています．
 上記のPhysics of Fluidsの場合（\citealp{Matsukawa:PoF2022}）だとデフォルトで\verb|pages = {074109}|となっているため，このままだと
 \begin{quote}
     Matsukawa, Y. and Tsukahara, T., Subcritical transition of Taylor--Couette--Poiseuille flow at high radius ratio, Physics of Fluids, Vol.~34, No.~7 (2022b), \textcolor{red}{p.~074109}.
 \end{quote}
 と出力され，違和感があります．
-そのため，論文番号や講演番号は\verb|note|に入れるようにしましょう．
+そのため，論文番号や講演番号は\ttnote に入れるようにしましょう．
 
 
 \subsection{\ttbook}
@@ -579,13 +586,13 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
 \begin{screen}
     \begin{itemize}
         \item 必須項目 \\
-        \verb|author| / \verb|editor|, \verb|title|, \verb|publisher|, \verb|year|
+        \ttauthor / \tteditor, \tttitle, \ttpublisher, \ttyear
         \item オプション項目 \\
-        \verb|volume|, \verb|number|, \verb|series|, \verb|address|, \verb|edition|, \verb|month|, \verb|note|, \verb|key|
+        \ttvolume, \ttnumber, \ttseries, \ttaddress, \ttedition, \ttmonth, \ttnote, \ttkey
         \item 出力（英語文献） \\
-            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{publisher}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttpublisher} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
         \item 出力（日本語文献） \\
-            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}}, \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{publisher}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttpublisher} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
 @book{Schmid:Springer2001,
@@ -602,20 +609,20 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
 出版社が刊行した書籍を引用する際は\ttbook を使います．
 似たエントリーとして\ttinbook がありますが，特定のページを参照したのではなく，書籍全体を参照した場合は\ttbook を使いましょう．
 \JSMErepos ではSpringer\footnote{Springer, \textless\url{https://www.springer.com/jp}\textgreater}や朝倉書店\footnote{朝倉書店, \textless\url{https://www.asakura.co.jp/}\textgreater}，丸善出版\footnote{丸善出版, \textless\url{https://www.maruzen-publishing.co.jp/}\textgreater}等の出版社から出た書籍を\ttbook に分類しています．
-\verb|publisher|フィールドにはこれらの出版社名を入れましょう．
+\ttpublisher フィールドにはこれらの出版社名を入れましょう．
 
 \subsection{\ttbooklet}
 \label{ssec:booklet}
 \begin{screen}
     \begin{itemize}
         \item 必須項目 \\
-        \verb|title|
+        \tttitle
         \item オプション項目 \\
-        \verb|author|, \verb|howpublished|, \verb|address|, \verb|month|, \verb|year|, \verb|note|, \verb|key|
+        \ttauthor, \tthowpublished, \ttaddress, \ttmonth, \ttyear, \ttnote, \ttkey
         \item 出力（英語文献） \\
-            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{howpublished}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\tthowpublished} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
         \item 出力（日本語文献） \\
-            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}}, \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{howpublished}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\tthowpublished} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
 @booklet{Wang:MEnews2014,
@@ -670,13 +677,13 @@ Scribeというシステムとの互換性のために残されているらし�
 \begin{screen}
     \begin{itemize}
         \item 必須項目 \\
-        \verb|author| / \verb|editor|, \verb|title|, \verb|chapter| / \verb|pages|, \verb|publisher|, \verb|year|
+        \ttauthor / \tteditor, \tttitle, \ttchapter / \ttpages, \ttpublisher, \ttyear
         \item オプション項目 \\
-        \verb|volume|, \verb|series|, \verb|address|, \verb|edition|, \verb|month|, \verb|note|, \verb|key|
+        \ttvolume, \ttseries, \ttaddress, \ttedition, \ttmonth, \ttnote, \ttkey
         \item 出力（英語文献） \\
-            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{publisher}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{pages}}, \colorbox[gray]{0.8}{\texttt{note}}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttpublisher} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttpages}, \colorbox[gray]{0.8}{\ttnote}.
         \item 出力（日本語文献） \\
-            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}}, \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{publisher}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{pages}}, \colorbox[gray]{0.8}{\texttt{note}}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttpublisher} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttpages}, \colorbox[gray]{0.8}{\ttnote}.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
 @inbook{Davidson:Oxford2015,
@@ -692,7 +699,7 @@ Scribeというシステムとの互換性のために残されているらし�
 \end{screen}
 
 \ttbook に似ていますが，\ttbook が書籍丸々一冊なのに対して\ttinbook は書籍中の一部から引用する場合に使用します．
-そのため，\ttbook と異なり\verb|pages|フィールドが使用可能です．
+そのため，\ttbook と異なり\ttpages フィールドが使用可能です．
 
 
 \subsection{\ttincollection}
@@ -700,13 +707,13 @@ Scribeというシステムとの互換性のために残されているらし�
 \begin{screen}
     \begin{itemize}
         \item 必須項目 \\
-        \verb|author|, \verb|title|, \verb|booktitle|, \verb|year|
+        \ttauthor, \tttitle, \ttbooktitle, \ttyear
         \item オプション項目 \\
-        \verb|editor|, \verb|pages|, \verb|organization|, \verb|publisher|, \verb|address|, \verb|month|, \verb|note|, \verb|key|
+        \tteditor, \ttpages, \ttorganization, \ttpublisher, \ttaddress, \ttmonth, \ttnote, \ttkey
         \item 出力（英語文献） \\
-            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{booktitle}}, \colorbox[gray]{0.8}{\texttt{publisher}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{pages}}, \colorbox[gray]{0.8}{\texttt{note}}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttbooktitle}, \colorbox[gray]{0.8}{\ttpublisher} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttpages}, \colorbox[gray]{0.8}{\ttnote}.
         \item 出力（日本語文献） \\
-            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}}, \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{booktitle}}, \colorbox[gray]{0.8}{\texttt{publisher}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{pages}}, \colorbox[gray]{0.8}{\texttt{note}}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttbooktitle}, \colorbox[gray]{0.8}{\ttpublisher} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttpages}, \colorbox[gray]{0.8}{\ttnote}.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
 @incollection{Lueptow:Springer2000,
@@ -726,7 +733,7 @@ Scribeというシステムとの互換性のために残されているらし�
 \ttincollection は分類が難しいエントリーの一つです．
 これは書籍の一部からの引用ですが，\ttinbook と異なる点は，引用箇所が独立して表題を持っているようなものを指します．
 学会等があるテーマについて組んだ特集といったイメージです．
-上記の\citet{Lueptow:Springer2000}の例では，それ単独でStability and experimental velocity field in Taylor--Couette flow with axial and radial flowという題目（\verb|title|）を持っていますが，これはPhysics of Rotating Fluidsという書籍（\verb|booktitle|）の一部です．
+上記の\citet{Lueptow:Springer2000}の例では，それ単独でStability and experimental velocity field in Taylor--Couette flow with axial and radial flowという題目（\tttitle）を持っていますが，これはPhysics of Rotating Fluidsという書籍（\ttbooktitle）の一部です．
 日本語文献では京都大学数理解析研究所の講究録\footnote{京都大学数理解析研究所（RIMS）講究録, \textless\url{https://www.kurims.kyoto-u.ac.jp/ja/kokyuroku.html}\textgreater}や文部科学省科学研究補助金における特定の新学術領域研究の研究成果報告書等を\ttincollection に分類しています．
 それは\ttinproceedings だろとか\tttechreport だろとか言われそうな気もします．
 
@@ -735,13 +742,13 @@ Scribeというシステムとの互換性のために残されているらし�
 \begin{screen}
     \begin{itemize}
         \item 必須項目 \\
-        \verb|author|, \verb|title|, \verb|booktitle|, \verb|year|
+        \ttauthor, \tttitle, \ttbooktitle, \ttyear
         \item オプション項目 \\
-        \verb|editor|, \verb|pages|, \verb|organization|, \verb|publisher|, \verb|address|, \verb|month|, \verb|note|, \verb|key|
+        \tteditor, \ttpages, \ttorganization, \ttpublisher, \ttaddress, \ttmonth, \ttnote, \ttkey
         \item 出力（英語文献） \\
-            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{booktitle}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttbooktitle} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
         \item 出力（日本語文献） \\
-            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}}, \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{booktitle}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttbooktitle} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
 @inproceedings{Matsukawa:ICFD2022,
@@ -759,7 +766,7 @@ Scribeというシステムとの互換性のために残されているらし�
 \ttconference と同様です．
 学会等の講演論文集の一部を引用するときに\ttinproceedings を使用します．
 \ttarticle と並んで使用頻度の高いエントリーだと思います．
-\verb|booktitle|フィールドには日本語なら\texttt{booktitle = \{\colorbox[gray]{0.8}{学会名}講演論文集\}}，英語なら\texttt{booktitle = \{Proceedings of \colorbox[gray]{0.8}{学会名}\}}と入力しましょう．
+\ttbooktitle フィールドには日本語なら\texttt{booktitle = \{\colorbox[gray]{0.8}{学会名}講演論文集\}}，英語なら\texttt{booktitle = \{Proceedings of \colorbox[gray]{0.8}{学会名}\}}と入力しましょう．
 \ttproceedings は講演論文集全体を引用しているのに対して，\ttinproceedings は講演論文集の中の一講演を引用しています．
 
 
@@ -768,13 +775,13 @@ Scribeというシステムとの互換性のために残されているらし�
 \begin{screen}
     \begin{itemize}
         \item 必須項目 \\
-        \verb|title|
+        \tttitle
         \item オプション項目 \\
-        \verb|author|, \verb|organization|, \verb|address|, \verb|edition|, \verb|month|, \verb|year|, \verb|note|, \verb|key|
+        \ttauthor, \ttorganization, \ttaddress, \ttedition, \ttmonth, \ttyear, \ttnote, \ttkey
         \item 出力（英語文献） \\
-            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
         \item 出力（日本語文献） \\
-            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}}, \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
 @manual{Tecplot2023,
@@ -789,11 +796,11 @@ Scribeというシステムとの互換性のために残されているらし�
 \end{screen}
 
 マニュアルや技術文書は\ttmanual に分類しましょう．
-ただし，\verb|author|フィールドが必須項目ではないので，\jsmefile では企業名を\verb|author|に入れています．
-これはソートの際に\verb|author|フィールドが空欄だと参考文献一覧の変な場所に配置されてしまうからです．
-本来であれば\verb|key|フィールドで解決したいところですが，\jsmefile では動作が不安定なので避けたいところです．
+ただし，\ttauthor フィールドが必須項目ではないので，\jsmefile では企業名を\ttauthor に入れています．
+これはソートの際に\ttauthor フィールドが空欄だと参考文献一覧の変な場所に配置されてしまうからです．
+本来であれば\ttkey フィールドで解決したいところですが，\jsmefile では動作が不安定なので避けたいところです．
 実は\verb|natbib.sty|において著者無し文献の本文中での引用は課題が残されているようです\footnote{詳細は\verb|natbib.sty|の公式ドキュメント\textless\url{https://ctan.org/pkg/natbib}\textgreater をご覧ください．}．
-\ttmanual での不具合回避方法としては一旦，マニュアルを発行している機関・企業を\verb|author|とすることで解決としますが，著者無し文献の不具合回避方法は第~\ref{ssec:proceedings}節\ttproceedings でも説明します．
+\ttmanual での不具合回避方法としては一旦，マニュアルを発行している機関・企業を\ttauthor とすることで解決としますが，著者無し文献の不具合回避方法は第~\ref{ssec:proceedings}節\ttproceedings でも説明します．
 
 
 \subsection{\ttmastersthesis}
@@ -801,13 +808,13 @@ Scribeというシステムとの互換性のために残されているらし�
 \begin{screen}
     \begin{itemize}
         \item 必須項目 \\
-        \verb|author|, \verb|title|, \verb|school|, \verb|year|
+        \ttauthor, \tttitle, \ttschool, \ttyear
         \item オプション項目 \\
-        \verb|address|, \verb|month|, \verb|note|, \verb|key|
+        \ttaddress, \ttmonth, \ttnote, \ttkey
         \item 出力（英語文献） \\
-            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, Master's thesis, \colorbox[gray]{0.8}{\texttt{school}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, Master's thesis, \colorbox[gray]{0.8}{\ttschool} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
         \item 出力（日本語文献） \\
-            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}}, \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{school}}修士論文 (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttschool}修士論文 (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
 @mastersthesis{松川:修論2023,
@@ -825,7 +832,7 @@ Scribeというシステムとの互換性のために残されているらし�
 修士論文は\ttmastersthesis に分類します．
 \verb|@masterthesis|ではなく\texttt{@master\textcolor{red}{s}thesis}です．
 \verb|s|を忘れないでください．
-また，\verb|year|は修了「年度」ではなく修了「年」を西暦で書いてください．
+また，\ttyear は修了「年度」ではなく修了「年」を西暦で書いてください．
 例えば，日本の大学を2023年3月に修了した人は2022年度修了生ですが\verb|year = {2023}|です．
 
 \subsection{\ttmisc}
@@ -835,13 +842,13 @@ Scribeというシステムとの互換性のために残されているらし�
         \item 必須項目 \\
         無し
         \item オプション項目 \\
-        \verb|author|, \verb|title|, \verb|howpublished|, \verb|archivePrefix|, \verb|eprint|, \verb|month|, \verb|year|, \verb|note|, \verb|key|
+        \ttauthor, \tttitle, \tthowpublished, \ttarchivePrefix, \tteprint, \ttmonth, \ttyear, \ttnote, \ttkey
         \item 出力（通常，英語文献） \\
-            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{howpublished}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\tthowpublished} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
         \item 出力（通常，日本語文献） \\
-            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}}, \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{howpublished}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\tthowpublished} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
         \item 出力（arXivの場合） \\
-            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, arXiv: \colorbox[gray]{0.8}{\texttt{eprint}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, arXiv: \colorbox[gray]{0.8}{\tteprint} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
         \item \verb|bib|ファイル作成例（通常） \vspace{-3mm}
 \begin{verbatim}
 @misc{湯村:卒論2006,
@@ -869,31 +876,31 @@ Scribeというシステムとの互換性のために残されているらし�
 
 その他該当種別が無いものは\ttmisc とします．
 学部の卒業論文は\verb|misc|でいいと思います．
-ただし，\ttmastersthesis や\ttphdthesis と異なり，\verb|school|のフィールドを使用できないので\verb|howpublished|で代用します．
-したがって，\ttmastersthesis や\ttphdthesis では\verb|school|に所属名だけ（例：\verb|school = {東京理科大学大学院理工学研究科機械工学専攻}|）書けばよかったものが\ttmisc で卒論を出力する際には\verb|howpublished = {北海道大学理学部地球科学科卒業論文}|のように「\verb|卒業論文|」の文字まで書く必要があります．
+ただし，\ttmastersthesis や\ttphdthesis と異なり，\ttschool のフィールドを使用できないので\tthowpublished で代用します．
+したがって，\ttmastersthesis や\ttphdthesis では\ttschool に所属名だけ（例：\verb|school = {東京理科大学大学院理工学研究科機械工学専攻}|）書けばよかったものが\ttmisc で卒論を出力する際には\verb|howpublished = {北海道大学理学部地球科学科卒業論文}|のように「\verb|卒業論文|」の文字まで書く必要があります．
 該当するエントリーがよくわからなかったらとりあえず\ttmisc に入れておくという人は多いと思います．
 また，arXiv\footnote{arXiv（「アーカイブ」と読みます）, \textless\url{https://arxiv.org/}\textgreater}と呼ばれるプレプリントサーバーから引用した文献は\ttmisc に分類します．
 arXiv上のExport BibTeX Citationと書いてあるところから文献情報を見ると\ttmisc に分類されていることがわかると思います．
 この文献情報では上記のように\verb|eprint = {2308.07255}|, \verb|archivePrefix = {arXiv}|などと書かれていることが多いです．
-\jsmefile では\verb|archivePrefix|フィールドがあるとこの文献がarXiv上の文献だと認識してくれて\verb|eprint|の情報と合わせて
+\jsmefile では\ttarchivePrefix フィールドがあるとこの文献がarXiv上の文献だと認識してくれて\tteprint の情報と合わせて
 \begin{quote}
     Araki, R., Bos, W. J. T. and Goto, S., Space-local Navier--Stokes turbulence, arXiv: 2308.07255 (2023).
 \end{quote}
 のように自動で書いてくれます．
 
-また，\ttmisc では\verb|author|フィールドが任意項目となっています．
-第~\ref{ssec:manual}節\ttmanual でも説明したように，著者無し文献は不具合の元なので著者に相当しそうなものを\verb|author|に入れておいてください．
+また，\ttmisc では\ttauthor フィールドが任意項目となっています．
+第~\ref{ssec:manual}節\ttmanual でも説明したように，著者無し文献は不具合の元なので著者に相当しそうなものを\ttauthor に入れておいてください．
 
 \subsection{\ttonline}
 \label{ssec:online}
 \begin{screen}
     \begin{itemize}
         \item 使用可能項目 \\
-        \verb|author|, \verb|title|, \verb|howpublished|, \verb|month|, \verb|year|, \verb|url|, \verb|doi|, \verb|access|, \verb|note|
+        \ttauthor, \tttitle, \tthowpublished, \ttmonth, \ttyear, \tturl, \ttdoi, \ttaccess, \ttnote
         \item 出力（英語文献） \\
-            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, available from \textless\colorbox[gray]{0.8}{\texttt{url}}\textgreater, (accessed on \colorbox[gray]{0.8}{access}).
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, available from \textless\colorbox[gray]{0.8}{\tturl}\textgreater, (accessed on \colorbox[gray]{0.8}{access}).
         \item 出力（日本語文献） \\
-            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}}, \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \textless\colorbox[gray]{0.8}{\texttt{url}}\textgreater, (参照日 \colorbox[gray]{0.8}{access}).
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \textless\colorbox[gray]{0.8}{\tturl}\textgreater, (参照日 \colorbox[gray]{0.8}{access}).
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
 @online{Kawamura_Ret64,
@@ -930,13 +937,13 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 \begin{screen}
     \begin{itemize}
         \item 必須項目 \\
-        \verb|author|, \verb|title|, \verb|school|, \verb|year|
+        \ttauthor, \tttitle, \ttschool, \ttyear
         \item オプション項目 \\
-        \verb|address|, \verb|month|, \verb|note|, \verb|key|
+        \ttaddress, \ttmonth, \ttnote, \ttkey
         \item 出力（英語文献） \\
-            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, Ph.D. dissertation, \colorbox[gray]{0.8}{\texttt{school}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, Ph.D. dissertation, \colorbox[gray]{0.8}{\ttschool} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
         \item 出力（日本語文献） \\
-            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}}, \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{school}}博士論文 (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttschool}博士論文 (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
 @phdthesis{塚原:博論2007,
@@ -960,11 +967,11 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 \begin{screen}
     \begin{itemize}
         \item 必須項目 \\
-        \verb|title|, \verb|year|
+        \tttitle, \ttyear
         \item オプション項目 \\
-        \verb|editor|, \verb|organization|, \verb|publisher|, \verb|address|, \verb|month|, \verb|note|, \verb|key|
+        \tteditor, \ttorganization, \ttpublisher, \ttaddress, \ttmonth, \ttnote, \ttkey
         \item 出力 \\
-            \colorbox[gray]{0.8}{\texttt{title}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+            \colorbox[gray]{0.8}{\tttitle} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
 @proceedings{THMT2023,
@@ -980,8 +987,8 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 
 学会の講演論文集全体を引用する際には\ttproceedings を使用します．
 \ttconference や\ttinproceedings は講演論文集の中の一講演を引用しているのに対して，\ttproceedings は講演論文集全体を引用しています．
-\ttmanual や\ttmisc と同様，\verb|author|フィールドが必須項目ではありません．
-したがって，文献一覧のソートの際は\verb|title|の読みを和文・英文問わず\verb|yomi|フィールドで指定してあげないと変な場所に飛ばされてしまいます．
+\ttmanual や\ttmisc と同様，\ttauthor フィールドが必須項目ではありません．
+したがって，文献一覧のソートの際は\tttitle の読みを和文・英文問わず\ttyomi フィールドで指定してあげないと変な場所に飛ばされてしまいます．
 また，もし
 \begin{quote}
 \begin{verbatim}
@@ -1007,8 +1014,8 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
         \verb|\citet{流力年会2023}| &流 (2023) \\
     \end{tabular}
 \end{table}
-そのため，\verb|editor|フィールドに「引用時に著者代わりに出力したい文字列」を書いておきましょう．
-文献一覧には\verb|editor|は出力されませんが，本文中での引用では\citet{THMT2023}や\citet{流力年会2023}のように\verb|editor (year)|で出力してくれます．
+そのため，\tteditor フィールドに「引用時に著者代わりに出力したい文字列」を書いておきましょう．
+文献一覧には\tteditor は出力されませんが，本文中での引用では\citet{THMT2023}や\citet{流力年会2023}のように\verb|editor (year)|で出力してくれます．
 
 
 \subsection{\tttechreport}
@@ -1016,13 +1023,13 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 \begin{screen}
     \begin{itemize}
         \item 必須項目 \\
-        \verb|author|, \verb|title|, \verb|institution|, \verb|year|
+        \ttauthor, \tttitle, \ttinstitution, \ttyear
         \item オプション項目 \\
-        \verb|type|, \verb|number|, \verb|address|, \verb|month|, \verb|note|, \verb|key|
+        \tttype, \ttnumber, \ttaddress, \ttmonth, \ttnote, \ttkey
         \item 出力（英語文献） \\
-            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{institution}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttinstitution} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
         \item 出力（日本語文献） \\
-            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}}, \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, \colorbox[gray]{0.8}{\texttt{institution}} (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttinstitution} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
 @techreport{Neuhart:NASAreport2004,
@@ -1041,7 +1048,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 研究機関等から発行された技術報告書は\tttechreport に分類します．
 技術報告書を発行している研究機関はさまざまありますが，例えばNASA\footnote{アメリカ航空宇宙局（NASA） Technical Reports Server, \textless\url{https://ntrs.nasa.gov/}\textgreater}や国立天文台\footnote{大学共同利用機関法人 自然科学研究機構 国立天文台，国立天文台欧文報告, \textless\url{https://www.nao.ac.jp/about-naoj/reports/publications-naoj.html}\textgreater}，鉄道総研\footnote{公益財団法人 鉄道総合技術研究所（鉄道総研），鉄道総研報告, \textless\url{https://www.rtri.or.jp/publish/rtrirep/}\textgreater}などが挙げられます．
 また，企業によっては技術報告書を公開しているところもあります．
-\tttechreport には\verb|type|という任意フィールドがありますが，諸事情でここに何か書いても何も表示しないようにしているので使わないでください．
+\tttechreport には\tttype という任意フィールドがありますが，諸事情でここに何か書いても何も表示しないようにしているので使わないでください．
 本当は\verb|type = {Technical Report}|などと書くとそのように表示されます．
 
 \subsection{\ttunpublished}
@@ -1049,13 +1056,13 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 \begin{screen}
     \begin{itemize}
         \item 必須項目 \\
-        \verb|author|, \verb|title|, \verb|note|
+        \ttauthor, \tttitle, \ttnote
         \item オプション項目 \\
-        \verb|month|, \verb|year|, \verb|key|
+        \ttmonth, \ttyear, \ttkey
         \item 出力（英語文献） \\
-            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}} and \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
         \item 出力（日本語文献） \\
-            \colorbox[gray]{0.8}{\texttt{author 1}}, \colorbox[gray]{0.8}{\texttt{author 2}}, \colorbox[gray]{0.8}{\texttt{author 3}}, \colorbox[gray]{0.8}{\texttt{title}}, (\colorbox[gray]{0.8}{\texttt{year}}), \colorbox[gray]{0.8}{\texttt{note}}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
 @unpublished{Dunkel:MITOCW2015,
@@ -1140,24 +1147,24 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 と変更する必要があります．
 \verb|\nocite{*}|は本文中で引用していない文献も含め，読み込んだ\verb|bib|ファイル内の全ての文献をリストアップします．
 本文中で引用したもののみ一覧に載せたい場合はこの行をコメントアウトしてください．
-その他細かいことは\verb|JSME-template1.tex|の中身も読んでみてください．
+その他細かいことは\verb|JSME-template2.tex|の中身も読んでみてください．
 
 次に，コンパイルについてです．
-\verb|JSME-template1.tex|から\verb|JSME-template1.pdf|の生成は\upLaTeX{}$+$\upBibTeX{}を使用しているので，ユーザーの使用環境に応じて変更してください．
+\verb|JSME-template2.tex|から\verb|JSME-template2.pdf|の生成は\upLaTeX{}$+$\upBibTeX{}を使用しているので，ユーザーの使用環境に応じて変更してください．
 ここでは\pLaTeX{}$+$\pBibTeX{}の場合と\upLaTeX{}$+$\upBibTeX{}の場合の説明をします．
 \pLaTeX{}$+$\pBibTeX{}を使用する場合は以下のようなコマンドになります．
 \begin{verbatim}
-    $ platex JSME-template1.tex
-    $ pbibtex JSME-template1
-    $ platex JSME-template1.tex （複数回）
-    $ dvipdfmx JSME-template1
+    $ platex JSME-template2.tex
+    $ pbibtex JSME-template2
+    $ platex JSME-template2.tex （複数回）
+    $ dvipdfmx JSME-template2
 \end{verbatim}
 \upLaTeX{}$+$\upBibTeX{}を使用する場合は以下のようなコマンドになります．
 \begin{verbatim}
-    $ uplatex JSME-template1.tex
-    $ upbibtex JSME-template1
-    $ uplatex JSME-template1.tex （複数回）
-    $ dvipdfmx JSME-template1
+    $ uplatex JSME-template2.tex
+    $ upbibtex JSME-template2
+    $ uplatex JSME-template2.tex （複数回）
+    $ dvipdfmx JSME-template2
 \end{verbatim}
 これでうまくいけば\verb|pdf|が生成されているはずです．
 Overleaf\footnote{Overleaf, \textless\url{https://ja.overleaf.com}\textgreater}なら「リコンパイル」を押すだけなので簡単です．

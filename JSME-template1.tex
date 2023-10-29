@@ -6,6 +6,7 @@
 %%%
 %%%                    v1.0.0 Yuki MATSUKAWA 22 Oct. 2023
 %%%                    v2.0.0 Yuki MATSUKAWA 28 Oct. 2023
+%%%                    v2.1.0 Yuki MATSUKAWA 29 Oct. 2023
 %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[a4paper,fleqn,uplatex,dvipdfmx]{jsarticle}
@@ -1136,7 +1137,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 実際に皆さんの環境で使用する際には本文の\verb|tex|ファイルと同じディレクトリに\verb|bib|ファイルを入れるのが普通ですが，小分けにした\verb|bib|ファイルが多くあるのであれば，\texttt{\textcolor{red}{bibliography/}}\verb|mybib_en.bib|みたいに階層を変えてもいいです．
 ただし，その場合には\verb|\bibliography{|\texttt{\textcolor{red}{bibliography/}}\verb|mybib_en.bib,|\texttt{\textcolor{red}{bibliography/}}\verb|mybib_jp.bib}|のように\verb|\bibliography|のパスも変更してください．
 \verb|\addcontentsline{toc}{section}{\refname}|は目次に「文献」を追加したい場合にはこのように入れます．
-ここでは「文献」に相当するものが節なので\verb|section|と書いていますが，章に相当する場合は\ttchapter に変えてあげてください．
+ここでは「文献」に相当するものが節なので\verb|section|と書いていますが，章に相当する場合は\verb|chapter|に変えてあげてください．
 これは使用するドキュメントクラス\footnote{\texttt{tex}ファイル冒頭の\texttt{\textbackslash documentclass}の記述を確認．}が\verb|book|または\verb|report|の名前を含む場合が該当します．
 同時に，これらのドキュメントクラスでは参考文献の節の名前が\verb|\refname|ではなく\verb|\bibname|で定義されるので
 \begin{quote}
