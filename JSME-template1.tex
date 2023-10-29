@@ -1,83 +1,37 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%
+%%%      【非公式】日本機械学会 BibTeX スタイルファイル
+%%%           JSME-bst テンプレートその1（標準）
+%%%                jsme.bst 取扱説明書
+%%%
+%%%                    v1.0.0 Yuki MATSUKAWA 22 Oct. 2023
+%%%                    v2.0.0 Yuki MATSUKAWA 28 Oct. 2023
+%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[a4paper,fleqn,uplatex,dvipdfmx]{jsarticle}
 
-%%% テキストエリア指定
-\setlength{\hoffset}{-5.4truemm}
-\setlength{\voffset}{-10.4truemm}
-\setlength{\oddsidemargin}{0truemm}
-\setlength{\evensidemargin}{0truemm}
-\setlength{\topmargin}{0truemm}
-\setlength{\footskip}{10truemm}
-\setlength{\textheight}{250truemm}
-\setlength{\textwidth}{170truemm}
-\setlength{\headsep}{5truept}
-\setlength{\headheight}{20truept}
-\setlength{\marginparsep}{0truemm}
-\setlength{\marginparwidth}{0truemm}
-
+%%% 共通設定の読み込み
+\usepackage{JSME-template}
 %%% 図の挿入
 \usepackage{graphicx}
-%%% hyperref
-%%% ハイパーリンクに色が付かないようにしたいときは allcolors=blue の箇所を hidelinks にする
-\usepackage[bookmarks=true,bookmarksnumbered=true,setpagesize=false,colorlinks,allcolors=blue]{hyperref}
-\usepackage{pxjahyper}
-%%% ロゴ関連
-\usepackage{bxtexlogo}
 %%% 数式等
 \usepackage{physics}
 \usepackage{amsmath,amssymb}
-%%% 枠
-\usepackage{ascmac}
-\usepackage{fancybox}
-%%% otf
-\usepackage{otf}
 %%% フォントを Times に変更
 \usepackage{newtxtext,newtxmath}
 %%% フォントを Palatino に変更
 % \usepackage{mathpazo}
-%%% 色の変更
-\usepackage{color}
+%%% hyperref
+%%% ハイパーリンクに色が付かないようにしたいときは allcolors=blue の箇所を hidelinks にする
+\usepackage[bookmarks=true,bookmarksnumbered=true,setpagesize=false,colorlinks,allcolors=blue]{hyperref}
+\usepackage{pxjahyper}
 %%% natbib
 \usepackage{natbib}
 %%% 参考文献リストの見出しを「参考文献」から「文献」に変更．
 \renewcommand{\refname}{文献}
 %%% その他の定義
 \newcommand{\jsmefile}{\texttt{jsme.bst}}
-\newcommand{\JSMErepos}{\texttt{JSME-bst}}
-\newcommand{\ttarticle}{\texttt{@article}}
-\newcommand{\ttbook}{\texttt{@book}}
-\newcommand{\ttbooklet}{\texttt{@booklet}}
-\newcommand{\ttcomment}{\texttt{@comment}}
-\newcommand{\ttconference}{\texttt{@conference}}
-\newcommand{\ttinbook}{\texttt{@inbook}}
-\newcommand{\ttincollection}{\texttt{@incollection}}
-\newcommand{\ttinproceedings}{\texttt{@inproceedings}}
-\newcommand{\ttmanual}{\texttt{@manual}}
-\newcommand{\ttmastersthesis}{\texttt{@mastersthesis}}
-\newcommand{\ttmisc}{\texttt{@misc}}
-\newcommand{\ttonline}{\texttt{@online}}
-\newcommand{\ttphdthesis}{\texttt{@phdthesis}}
-\newcommand{\ttproceedings}{\texttt{@proceedings}}
-\newcommand{\tttechreport}{\texttt{@techreport}}
-\newcommand{\ttunpublished}{\texttt{@unpublished}}
-\renewcommand{\figurename}{Fig.~}       % 図番号
-\renewcommand{\tablename}{Table~}       % 表番号
 
-%%% ヘッダー・フッター
-\usepackage{fancyhdr}
-\usepackage{lastpage}
-\fancypagestyle{cover}
-{%
-	\fancyhf{}
-	\cfoot{\thepage/\pageref{LastPage}}
-	\renewcommand{\headrulewidth}{0.0pt}
-}
-\pagestyle{fancy}
-	\lhead{【非公式】日本機械学会\BibTeX{}スタイルファイルの使い方}
-	\chead{}
-	\rhead{東京理科大学 松川裕樹}
-	\lfoot{}
-	\cfoot{\thepage/\pageref{LastPage}}
-	\rfoot{}
 
 \title{【非公式】日本機械学会\BibTeX{}スタイルファイル \\ \JSMErepos テンプレートその1（標準）}
 \author{松川 裕樹\thanks{東京理科大学大学院 創域理工学研究科 機械航空宇宙工学専攻 博士後期課程，Email: \texttt{7523701 ＿＠＿ ed.tus.ac.jp}}}
