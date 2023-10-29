@@ -454,8 +454,10 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
         \citet{奥村:技評2020}のように\verb|title = {［改訂第8版］\LaTeXe{}美文書作成入門}|と\tttitle の中に書いてしまってもいいと思います．
     \item \tteditor \\
         編者名を入力します．
-        書き方は著者名（\ttauthor）と同じですが，\jsmefile では\tteditor に値を入れても文献一覧には出力されません．
-        \citet{JSME:丸善2013}
+        書き方は著者名（\ttauthor）と同じですが，\jsmefile では\tteditor に値を入れても基本的には文献一覧には出力されません．
+        ただし，著者（\ttauthor）無し文献の場合，\verb|natbib|による文章中での引用がおかしくなるのでその際は\ttauthor 代わりに\tteditor を使用します（詳細は\hyperref[ssec:proceedings]{\ttproceedings}を参照）．
+        また，日本機械学会原稿テンプレートでは『伝熱ハンドブック』の編者として日本機械学会を指定し，その後ろに「編」と入れるように書かれていますが，現状これを\jsmefile で再現する際は\tteditor を使用せずに\verb|author = {日本機械学会編}|とするのが無難です．
+        近い将来修正して\tteditor で対応できるようにしたいです．
     \item \tteprint \\
         論文のeprintを入力します．
         arXivから\BibTeX{}形式で書誌情報を出力するとデフォルトで入ってくるフィールドです．

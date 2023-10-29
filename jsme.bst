@@ -518,7 +518,7 @@ FUNCTION {bst.title.post.jp}
 % book の title 前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.book.pre}
-{ "" }    % (default)
+{ ", " }    % (default)
 
 % book の title 後に付ける文字列 (英語文献用)
 %
