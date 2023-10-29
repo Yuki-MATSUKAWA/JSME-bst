@@ -661,7 +661,7 @@ FUNCTION {bst.editor}
 % editor を表す文字列 (日本語文献用)
 %
 FUNCTION {bst.editor.jp}
-{ "（編）" }	% (default)
+{ "編" }	% (default)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	kanyaku (監訳者)
