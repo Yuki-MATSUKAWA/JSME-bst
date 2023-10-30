@@ -395,6 +395,7 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
 ただ，全ての文献を正確に分類することは難しく，判断が人により異なることもあります．
 \JSMErepos における分類の仕方も見る人によっては違和感を覚えるものがあるかもしれません．
 それぞれのエントリーに関する詳細を\pageref{ssec:article}ページ以降で説明しているので参考にしてください．
+ただし，ここで説明する内容は一般的な\BibTeX{}におけるエントリーの説明と若干異なる箇所があるのでご了承ください．
 
 フィールドはその文献の著者情報や誌名情報を入力するデータ項目です．
 \jsmefile では\ttaccess, \ttaddress, \ttarchivePrefix, \ttauthor, \ttbooktitle, \ttchapter, \ttdoi, \ttedition, \tteditor, \tteprint, \tthowpublished, \ttinstitution, \ttjournal, \ttkey, \ttlangid, \ttlanguage, \ttmonth, \ttnote, \ttnumber, \ttorganization, \ttpages, \ttpublisher, \ttschool, \ttseries, \tttitle, \tttype, \tturl, \ttvolume, \ttyear, \ttyomi がサポートされています．
@@ -544,11 +545,11 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
         \item 必須項目 \\
         \ttauthor, \tttitle, \ttjournal, \ttyear
         \item オプション項目 \\
-        \ttvolume, \ttnumber, \ttpages, \ttmonth, \ttnote, \ttkey
+        \ttvolume, \ttnumber, \ttpages, \ttmonth, \ttnote, \ttkey, \ttdoi
         \item 出力（英語文献） \\
-            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttjournal} (\colorbox[gray]{0.8}{\ttyear}), Vol.~\colorbox[gray]{0.8}{\ttvolume}, No.~\colorbox[gray]{0.8}{\ttnumber}, pp.~\colorbox[gray]{0.8}{\ttpages}, \colorbox[gray]{0.8}{\ttnote}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttjournal} (\colorbox[gray]{0.8}{\ttyear}), Vol.~\colorbox[gray]{0.8}{\ttvolume}, No.~\colorbox[gray]{0.8}{\ttnumber}, pp.~\colorbox[gray]{0.8}{\ttpages}, \colorbox[gray]{0.8}{\ttnote}, DOI: \colorbox[gray]{0.8}{\ttdoi}.
         \item 出力（日本語文献） \\
-            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttjournal} (\colorbox[gray]{0.8}{\ttyear}), Vol.~\colorbox[gray]{0.8}{\ttvolume}, No.~\colorbox[gray]{0.8}{\ttnumber}, pp.~\colorbox[gray]{0.8}{\ttpages}, \colorbox[gray]{0.8}{\ttnote}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttjournal} (\colorbox[gray]{0.8}{\ttyear}), Vol.~\colorbox[gray]{0.8}{\ttvolume}, No.~\colorbox[gray]{0.8}{\ttnumber}, pp.~\colorbox[gray]{0.8}{\ttpages}, \colorbox[gray]{0.8}{\ttnote}, DOI: \colorbox[gray]{0.8}{\ttdoi}.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
 @article{Matsukawa:PoF2022,
@@ -588,11 +589,11 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
         \item 必須項目 \\
         \ttauthor / \tteditor, \tttitle, \ttpublisher, \ttyear
         \item オプション項目 \\
-        \ttvolume, \ttnumber, \ttseries, \ttaddress, \ttedition, \ttmonth, \ttnote, \ttkey
+        \ttvolume, \ttnumber, \ttseries, \ttaddress, \ttedition, \ttmonth, \ttnote, \ttkey, \ttdoi
         \item 出力（英語文献） \\
-            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttpublisher} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttpublisher} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}, DOI: \colorbox[gray]{0.8}{\ttdoi}.
         \item 出力（日本語文献） \\
-            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttpublisher} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttpublisher} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}, DOI: \colorbox[gray]{0.8}{\ttdoi}.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
 @book{Schmid:Springer2001,
@@ -618,11 +619,11 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
         \item 必須項目 \\
         \tttitle
         \item オプション項目 \\
-        \ttauthor, \tthowpublished, \ttaddress, \ttmonth, \ttyear, \ttnote, \ttkey
+        \ttauthor, \tthowpublished, \ttaddress, \ttmonth, \ttyear, \ttnote, \ttkey, \ttdoi
         \item 出力（英語文献） \\
-            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\tthowpublished} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\tthowpublished} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}, DOI: \colorbox[gray]{0.8}{\ttdoi}.
         \item 出力（日本語文献） \\
-            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\tthowpublished} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\tthowpublished} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}, DOI: \colorbox[gray]{0.8}{\ttdoi}.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
 @booklet{Wang:MEnews2014,
@@ -679,11 +680,11 @@ Scribeというシステムとの互換性のために残されているらし�
         \item 必須項目 \\
         \ttauthor / \tteditor, \tttitle, \ttchapter / \ttpages, \ttpublisher, \ttyear
         \item オプション項目 \\
-        \ttvolume, \ttseries, \ttaddress, \ttedition, \ttmonth, \ttnote, \ttkey
+        \ttvolume, \ttseries, \ttaddress, \ttedition, \ttmonth, \ttnote, \ttkey, \ttdoi
         \item 出力（英語文献） \\
-            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttpublisher} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttpages}, \colorbox[gray]{0.8}{\ttnote}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttpublisher} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttpages}, \colorbox[gray]{0.8}{\ttnote}, DOI: \colorbox[gray]{0.8}{\ttdoi}.
         \item 出力（日本語文献） \\
-            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttpublisher} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttpages}, \colorbox[gray]{0.8}{\ttnote}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttpublisher} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttpages}, \colorbox[gray]{0.8}{\ttnote}, DOI: \colorbox[gray]{0.8}{\ttdoi}.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
 @inbook{Davidson:Oxford2015,
@@ -709,11 +710,11 @@ Scribeというシステムとの互換性のために残されているらし�
         \item 必須項目 \\
         \ttauthor, \tttitle, \ttbooktitle, \ttyear
         \item オプション項目 \\
-        \tteditor, \ttpages, \ttorganization, \ttpublisher, \ttaddress, \ttmonth, \ttnote, \ttkey
+        \tteditor, \ttpages, \ttorganization, \ttpublisher, \ttaddress, \ttmonth, \ttnote, \ttkey, \ttdoi
         \item 出力（英語文献） \\
-            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttbooktitle}, \colorbox[gray]{0.8}{\ttpublisher} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttpages}, \colorbox[gray]{0.8}{\ttnote}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttbooktitle}, \colorbox[gray]{0.8}{\ttpublisher} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttpages}, \colorbox[gray]{0.8}{\ttnote}, DOI: \colorbox[gray]{0.8}{\ttdoi}.
         \item 出力（日本語文献） \\
-            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttbooktitle}, \colorbox[gray]{0.8}{\ttpublisher} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttpages}, \colorbox[gray]{0.8}{\ttnote}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttbooktitle}, \colorbox[gray]{0.8}{\ttpublisher} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttpages}, \colorbox[gray]{0.8}{\ttnote}, DOI: \colorbox[gray]{0.8}{\ttdoi}.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
 @incollection{Lueptow:Springer2000,
@@ -744,11 +745,11 @@ Scribeというシステムとの互換性のために残されているらし�
         \item 必須項目 \\
         \ttauthor, \tttitle, \ttbooktitle, \ttyear
         \item オプション項目 \\
-        \tteditor, \ttpages, \ttorganization, \ttpublisher, \ttaddress, \ttmonth, \ttnote, \ttkey
+        \tteditor, \ttpages, \ttorganization, \ttpublisher, \ttaddress, \ttmonth, \ttnote, \ttkey, \ttdoi
         \item 出力（英語文献） \\
-            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttbooktitle} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttbooktitle} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}, DOI: \colorbox[gray]{0.8}{\ttdoi}.
         \item 出力（日本語文献） \\
-            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttbooktitle} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttbooktitle} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}, DOI: \colorbox[gray]{0.8}{\ttdoi}.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
 @inproceedings{Matsukawa:ICFD2022,
@@ -777,11 +778,11 @@ Scribeというシステムとの互換性のために残されているらし�
         \item 必須項目 \\
         \tttitle
         \item オプション項目 \\
-        \ttauthor, \ttorganization, \ttaddress, \ttedition, \ttmonth, \ttyear, \ttnote, \ttkey
+        \ttauthor, \ttorganization, \ttaddress, \ttedition, \ttmonth, \ttyear, \ttnote, \ttkey, \ttdoi
         \item 出力（英語文献） \\
-            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}, DOI: \colorbox[gray]{0.8}{\ttdoi}.
         \item 出力（日本語文献） \\
-            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}, DOI: \colorbox[gray]{0.8}{\ttdoi}.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
 @manual{Tecplot2023,
@@ -810,11 +811,11 @@ Scribeというシステムとの互換性のために残されているらし�
         \item 必須項目 \\
         \ttauthor, \tttitle, \ttschool, \ttyear
         \item オプション項目 \\
-        \ttaddress, \ttmonth, \ttnote, \ttkey
+        \ttaddress, \ttmonth, \ttnote, \ttkey, \ttdoi
         \item 出力（英語文献） \\
-            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, Master's thesis, \colorbox[gray]{0.8}{\ttschool} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, Master's thesis, \colorbox[gray]{0.8}{\ttschool} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}, DOI: \colorbox[gray]{0.8}{\ttdoi}.
         \item 出力（日本語文献） \\
-            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttschool}修士論文 (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttschool}修士論文 (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}, DOI: \colorbox[gray]{0.8}{\ttdoi}.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
 @mastersthesis{松川:修論2023,
@@ -842,11 +843,11 @@ Scribeというシステムとの互換性のために残されているらし�
         \item 必須項目 \\
         無し
         \item オプション項目 \\
-        \ttauthor, \tttitle, \tthowpublished, \ttarchivePrefix, \tteprint, \ttmonth, \ttyear, \ttnote, \ttkey
+        \ttauthor, \tttitle, \tthowpublished, \ttarchivePrefix, \tteprint, \ttmonth, \ttyear, \ttnote, \ttkey, \ttdoi
         \item 出力（通常，英語文献） \\
-            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\tthowpublished} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\tthowpublished} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}, DOI: \colorbox[gray]{0.8}{\ttdoi}.
         \item 出力（通常，日本語文献） \\
-            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\tthowpublished} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\tthowpublished} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}, DOI: \colorbox[gray]{0.8}{\ttdoi}.
         \item 出力（arXivの場合） \\
             \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, arXiv: \colorbox[gray]{0.8}{\tteprint} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
         \item \verb|bib|ファイル作成例（通常） \vspace{-3mm}
@@ -939,11 +940,11 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
         \item 必須項目 \\
         \ttauthor, \tttitle, \ttschool, \ttyear
         \item オプション項目 \\
-        \ttaddress, \ttmonth, \ttnote, \ttkey
+        \ttaddress, \ttmonth, \ttnote, \ttkey, \ttdoi
         \item 出力（英語文献） \\
-            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, Ph.D. dissertation, \colorbox[gray]{0.8}{\ttschool} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, Ph.D. dissertation, \colorbox[gray]{0.8}{\ttschool} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}, DOI: \colorbox[gray]{0.8}{\ttdoi}.
         \item 出力（日本語文献） \\
-            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttschool}博士論文 (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttschool}博士論文 (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}, DOI: \colorbox[gray]{0.8}{\ttdoi}.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
 @phdthesis{塚原:博論2007,
@@ -969,9 +970,9 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
         \item 必須項目 \\
         \tttitle, \ttyear
         \item オプション項目 \\
-        \tteditor, \ttorganization, \ttpublisher, \ttaddress, \ttmonth, \ttnote, \ttkey
+        \tteditor, \ttorganization, \ttpublisher, \ttaddress, \ttmonth, \ttnote, \ttkey, \ttdoi
         \item 出力 \\
-            \colorbox[gray]{0.8}{\tttitle} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
+            \colorbox[gray]{0.8}{\tttitle} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}, DOI: \colorbox[gray]{0.8}{\ttdoi}.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
 @proceedings{THMT2023,
@@ -1025,11 +1026,11 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
         \item 必須項目 \\
         \ttauthor, \tttitle, \ttinstitution, \ttyear
         \item オプション項目 \\
-        \tttype, \ttnumber, \ttaddress, \ttmonth, \ttnote, \ttkey
+        \tttype, \ttnumber, \ttaddress, \ttmonth, \ttnote, \ttkey, \ttdoi
         \item 出力（英語文献） \\
-            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttinstitution} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttinstitution} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}, DOI: \colorbox[gray]{0.8}{\ttdoi}.
         \item 出力（日本語文献） \\
-            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttinstitution} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttinstitution} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}, DOI: \colorbox[gray]{0.8}{\ttdoi}.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
 @techreport{Neuhart:NASAreport2004,
@@ -1058,11 +1059,11 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
         \item 必須項目 \\
         \ttauthor, \tttitle, \ttnote
         \item オプション項目 \\
-        \ttmonth, \ttyear, \ttkey
+        \ttmonth, \ttyear, \ttkey, \ttdoi
         \item 出力（英語文献） \\
-            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}, DOI: \colorbox[gray]{0.8}{\ttdoi}.
         \item 出力（日本語文献） \\
-            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
+            \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}, DOI: \colorbox[gray]{0.8}{\ttdoi}.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
 \begin{verbatim}
 @unpublished{Dunkel:MITOCW2015,

@@ -396,6 +396,7 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
 ただ，全ての文献を正確に分類することは難しく，判断が人により異なることもあります．
 \JSMErepos における分類の仕方も見る人によっては違和感を覚えるものがあるかもしれません．
 それぞれのエントリーに関する詳細を\pageref{ssec:article}ページ以降で説明しているので参考にしてください．
+ただし，ここで説明する内容は一般的な\BibTeX{}におけるエントリーの説明と若干異なる箇所があるのでご了承ください．
 
 フィールドはその文献の著者情報や誌名情報を入力するデータ項目です．
 \jsmefile では\ttaccess, \ttaddress, \ttarchivePrefix, \ttauthor, \ttbooktitle, \ttchapter, \ttdoi, \ttedition, \tteditor, \tteprint, \tthowpublished, \ttinstitution, \ttjournal, \ttkey, \ttlangid, \ttlanguage, \ttmonth, \ttnote, \ttnumber, \ttorganization, \ttpages, \ttpublisher, \ttschool, \ttseries, \tttitle, \tttype, \tturl, \ttvolume, \ttyear, \ttyomi がサポートされています．
@@ -589,7 +590,7 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
         \item 必須項目 \\
         \ttauthor / \tteditor, \tttitle, \ttpublisher, \ttyear
         \item オプション項目 \\
-        \ttvolume, \ttnumber, \ttseries, \ttaddress, \ttedition, \ttmonth, \ttnote, \ttkey
+        \ttvolume, \ttnumber, \ttseries, \ttaddress, \ttedition, \ttmonth, \ttnote, \ttkey, \ttdoi, \tturl
         \item 出力（英語文献） \\
             \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttpublisher} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
         \item 出力（日本語文献） \\
@@ -619,7 +620,7 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
         \item 必須項目 \\
         \tttitle
         \item オプション項目 \\
-        \ttauthor, \tthowpublished, \ttaddress, \ttmonth, \ttyear, \ttnote, \ttkey
+        \ttauthor, \tthowpublished, \ttaddress, \ttmonth, \ttyear, \ttnote, \ttkey, \ttdoi, \tturl
         \item 出力（英語文献） \\
             \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\tthowpublished} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
         \item 出力（日本語文献） \\
@@ -680,7 +681,7 @@ Scribeというシステムとの互換性のために残されているらし�
         \item 必須項目 \\
         \ttauthor / \tteditor, \tttitle, \ttchapter / \ttpages, \ttpublisher, \ttyear
         \item オプション項目 \\
-        \ttvolume, \ttseries, \ttaddress, \ttedition, \ttmonth, \ttnote, \ttkey
+        \ttvolume, \ttseries, \ttaddress, \ttedition, \ttmonth, \ttnote, \ttkey, \ttdoi, \tturl
         \item 出力（英語文献） \\
             \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttpublisher} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttpages}, \colorbox[gray]{0.8}{\ttnote}.
         \item 出力（日本語文献） \\
@@ -710,7 +711,7 @@ Scribeというシステムとの互換性のために残されているらし�
         \item 必須項目 \\
         \ttauthor, \tttitle, \ttbooktitle, \ttyear
         \item オプション項目 \\
-        \tteditor, \ttpages, \ttorganization, \ttpublisher, \ttaddress, \ttmonth, \ttnote, \ttkey
+        \tteditor, \ttpages, \ttorganization, \ttpublisher, \ttaddress, \ttmonth, \ttnote, \ttkey, \ttdoi, \tturl
         \item 出力（英語文献） \\
             \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttbooktitle}, \colorbox[gray]{0.8}{\ttpublisher} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttpages}, \colorbox[gray]{0.8}{\ttnote}.
         \item 出力（日本語文献） \\
@@ -745,7 +746,7 @@ Scribeというシステムとの互換性のために残されているらし�
         \item 必須項目 \\
         \ttauthor, \tttitle, \ttbooktitle, \ttyear
         \item オプション項目 \\
-        \tteditor, \ttpages, \ttorganization, \ttpublisher, \ttaddress, \ttmonth, \ttnote, \ttkey
+        \tteditor, \ttpages, \ttorganization, \ttpublisher, \ttaddress, \ttmonth, \ttnote, \ttkey, \ttdoi, \tturl
         \item 出力（英語文献） \\
             \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttbooktitle} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
         \item 出力（日本語文献） \\
@@ -778,7 +779,7 @@ Scribeというシステムとの互換性のために残されているらし�
         \item 必須項目 \\
         \tttitle
         \item オプション項目 \\
-        \ttauthor, \ttorganization, \ttaddress, \ttedition, \ttmonth, \ttyear, \ttnote, \ttkey
+        \ttauthor, \ttorganization, \ttaddress, \ttedition, \ttmonth, \ttyear, \ttnote, \ttkey, \ttdoi, \tturl
         \item 出力（英語文献） \\
             \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
         \item 出力（日本語文献） \\
@@ -811,7 +812,7 @@ Scribeというシステムとの互換性のために残されているらし�
         \item 必須項目 \\
         \ttauthor, \tttitle, \ttschool, \ttyear
         \item オプション項目 \\
-        \ttaddress, \ttmonth, \ttnote, \ttkey
+        \ttaddress, \ttmonth, \ttnote, \ttkey, \ttdoi, \tturl
         \item 出力（英語文献） \\
             \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, Master's thesis, \colorbox[gray]{0.8}{\ttschool} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
         \item 出力（日本語文献） \\
@@ -843,7 +844,7 @@ Scribeというシステムとの互換性のために残されているらし�
         \item 必須項目 \\
         無し
         \item オプション項目 \\
-        \ttauthor, \tttitle, \tthowpublished, \ttarchivePrefix, \tteprint, \ttmonth, \ttyear, \ttnote, \ttkey
+        \ttauthor, \tttitle, \tthowpublished, \ttarchivePrefix, \tteprint, \ttmonth, \ttyear, \ttnote, \ttkey, \ttdoi, \tturl
         \item 出力（通常，英語文献） \\
             \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\tthowpublished} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
         \item 出力（通常，日本語文献） \\
@@ -939,7 +940,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
         \item 必須項目 \\
         \ttauthor, \tttitle, \ttschool, \ttyear
         \item オプション項目 \\
-        \ttaddress, \ttmonth, \ttnote, \ttkey
+        \ttaddress, \ttmonth, \ttnote, \ttkey, \ttdoi, \tturl
         \item 出力（英語文献） \\
             \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, Ph.D. dissertation, \colorbox[gray]{0.8}{\ttschool} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
         \item 出力（日本語文献） \\
@@ -969,7 +970,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
         \item 必須項目 \\
         \tttitle, \ttyear
         \item オプション項目 \\
-        \tteditor, \ttorganization, \ttpublisher, \ttaddress, \ttmonth, \ttnote, \ttkey
+        \tteditor, \ttorganization, \ttpublisher, \ttaddress, \ttmonth, \ttnote, \ttkey, \ttdoi, \tturl
         \item 出力 \\
             \colorbox[gray]{0.8}{\tttitle} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
         \item \verb|bib|ファイル作成例 \vspace{-3mm}
@@ -1025,7 +1026,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
         \item 必須項目 \\
         \ttauthor, \tttitle, \ttinstitution, \ttyear
         \item オプション項目 \\
-        \tttype, \ttnumber, \ttaddress, \ttmonth, \ttnote, \ttkey
+        \tttype, \ttnumber, \ttaddress, \ttmonth, \ttnote, \ttkey, \ttdoi, \tturl
         \item 出力（英語文献） \\
             \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttinstitution} (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
         \item 出力（日本語文献） \\
@@ -1058,7 +1059,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
         \item 必須項目 \\
         \ttauthor, \tttitle, \ttnote
         \item オプション項目 \\
-        \ttmonth, \ttyear, \ttkey
+        \ttmonth, \ttyear, \ttkey, \ttdoi, \tturl
         \item 出力（英語文献） \\
             \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, (\colorbox[gray]{0.8}{\ttyear}), \colorbox[gray]{0.8}{\ttnote}.
         \item 出力（日本語文献） \\
