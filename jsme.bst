@@ -439,7 +439,7 @@ FUNCTION {bst.author.pre}
 % author の後に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.author.post}
-{ ", " }	  % (default)
+{ "" }	  % (default)
 
 % author の前に付ける文字列 (日本語文献用)
 %
@@ -449,7 +449,7 @@ FUNCTION {bst.author.pre.jp}
 % author の後に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.author.post.jp}
-{ ", " }	  % (default)
+{ "" }	  % (default)
 
 %%% 日本語文献の author, editor の姓・名の間に入れる文字列 
 % (姓名のどちらか一方が一文字のケース)
@@ -495,7 +495,7 @@ FUNCTION {bst.year.post.jp}
 % title の前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.title.pre}
-{ "" }    % (default)
+{ "\relax, " }    % (default)
 
 % title の後に付ける文字列 (英語文献用)
 %
@@ -505,7 +505,7 @@ FUNCTION {bst.title.post}
 % title の前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.title.pre.jp}
-{ "" }    % (default)
+{ ", " }    % (default)
 
 % title の後に付ける文字列 (日本語文献用)
 %
@@ -518,7 +518,7 @@ FUNCTION {bst.title.post.jp}
 % book の title 前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.book.pre}
-{ ", " }    % (default)
+{ "\relax, " }    % (default)
 
 % book の title 後に付ける文字列 (英語文献用)
 %
@@ -651,12 +651,12 @@ FUNCTION {bst.journal.post.jp}
 % 複数 editor を表す文字列 (英語文献用)
 %
 FUNCTION {bst.editors}
-{ " eds. " }	% (default)
+{ " eds." }	% (default)
 
 % 一人の editor を表す文字列 (英語文献用)
 %
 FUNCTION {bst.editor}
-{ " ed. " }    % (default)
+{ " ed." }    % (default)
 
 % editor を表す文字列 (日本語文献用)
 %
