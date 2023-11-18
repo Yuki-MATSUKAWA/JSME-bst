@@ -543,7 +543,7 @@ FUNCTION {bst.book.post.jp}
 FUNCTION {bst.btitle.pre}
 { doi empty$
     { url empty$
-        { "" }                        % DOIもURLも無かったらカンマのみ出力
+        { ", " }                        % DOIもURLも無かったらカンマのみ出力
         { "\href{" url * "}{" * }     % DOIは無いけどURLがある場合はリンクを書籍名に埋め込み
       if$
     }
@@ -5311,9 +5311,9 @@ FUNCTION{punctuation}
 {
   "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"	 write$ newline$
   "%"									 write$ newline$
-  "%  This bbl file is created by jecon.bst ver." jsme.version *	 write$ newline$
-  "%  The latest jecon.bst is available at"				 write$ newline$
-  "%  <http://shirotakeda.org/ja/tex-ja/jecon-ja.html>"		    write$ newline$
+  "%  This bbl file is created by jsme.bst ver." jsme.version *	 write$ newline$
+  "%  The latest jsme.bst is available at"				 write$ newline$
+  "%  <https://github.com/Yuki-MATSUKAWA/JSME-bst>"		    write$ newline$
   "%"									 write$ newline$
   "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"	 write$ newline$
   newline$
