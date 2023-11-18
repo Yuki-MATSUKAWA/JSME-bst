@@ -2889,8 +2889,8 @@ FUNCTION {format.pages}
     { "" }
     { is.kanji.entry
 	{ pages multi.page.check
-	  { bst.pages.pre.jp pages n.dashify convert.num.pages tie.or.space.connect * bst.page.post.jp * }
-	  { bst.page.pre.jp pages convert.num.pages tie.or.space.connect * bst.page.post.jp * }
+	  { bst.pages.pre.jp pages n.dashify convert.num.pages tie.or.space.connect * bst.page.post.jp }
+	  { bst.page.pre.jp pages convert.num.pages tie.or.space.connect * bst.page.post.jp }
 	 if$
 	}
 	{ pages multi.page.check
@@ -3821,6 +3821,7 @@ FUNCTION {proceedings}
     { organization output.nocomma }
     { format.editors output.nonnull.nocomma }
   if$
+  write$
   bst.year.position #0 =
     { format.year "year" output.check.nocomma }
     'skip$
