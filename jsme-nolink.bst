@@ -3,21 +3,21 @@
 %
 % Author: Yuki MATSUKAWA (松川裕樹)
 % First-written: 2023/09/02
-% Latest version: 2023/10/30
-% Version 2.2.0
+% Latest version: 2023/11/18
+% Version 2.3.0
 
 % This work is based on jecon-bst by Shiro Takeda (https://github.com/ShiroTakeda/jecon-bst)
 % and modified to output references according to the JSME manuscript template 
 % (https://www.jsme.or.jp/publish/transact/for-authors.html).
 
-% jsme.bstは武田史郎氏作のjecon-bst（https://github.com/ShiroTakeda/jecon-bst）を基に，
+% jsme.bst は武田史郎氏作の jecon-bst（https://github.com/ShiroTakeda/jecon-bst）を基に，
 % 日本機械学会原稿テンプレート（https://www.jsme.or.jp/publish/transact/for-authors.html）に沿った
 % 文献出力ができるよう改変したものです．
-% そのため，jecon.bstの名残が散在しています．ご了承ください．
+% そのため，jecon.bst の名残が散在しています．ご了承ください．
 
 
 % version 指定
-FUNCTION {jsme.version} { "2.1.0" }
+FUNCTION {jsme.version} { "2.3.0" }
 
 % Debug mode．0 以外を指定すると様々な情報を表示させることが可能．
 FUNCTION {jecon.debug}
