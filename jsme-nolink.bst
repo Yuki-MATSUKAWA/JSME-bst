@@ -5056,9 +5056,9 @@ FUNCTION{punctuation}
 {
   "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"	 write$ newline$
   "%"									 write$ newline$
-  "%  This bbl file is created by jecon.bst ver." jsme.version *	 write$ newline$
+  "%  This bbl file is created by jsme.bst ver." jsme.version *	 write$ newline$
   "%  The latest jecon.bst is available at"				 write$ newline$
-  "%  <http://shirotakeda.org/ja/tex-ja/jecon-ja.html>"		    write$ newline$
+  "%  <https://github.com/Yuki-MATSUKAWA/JSME-bst>"		    write$ newline$
   "%"									 write$ newline$
   "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"	 write$ newline$
   newline$
