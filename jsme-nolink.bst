@@ -1672,6 +1672,42 @@ FUNCTION {format.journal}
   if$
 }
 
+%%% 「?.」、「?,」のようなケースで、period、comma を除去する関数
+FUNCTION {remove.irrelevant.period.comma}
+{ 's :=
+  s empty$
+    { "" }
+    % 後ろから3文字とって比較
+    { s #-1 #3 substring$ "?,'" =
+      s #-1 #3 substring$ "?.'" = or
+	% 後ろから3文字を除いたものに "'" を付ける．
+	{ s #-3 global.max$ substring$ "'" * }
+	{ s #-1 #4 substring$ "?,''" =
+	  s #-1 #4 substring$ "?.''" = or
+	    { s #-4 global.max$ substring$ "''" * }
+	    { s #-1 #2 substring$ "?," =
+	      s #-1 #2 substring$ "?." = or
+		{ s #-2 global.max$ substring$ "" * }
+		{ s #-1 #3 substring$ "?,~" =
+		  s #-1 #3 substring$ "?.~" = or
+		    { s #-4 global.max$ substring$ "?~" * }
+		    { s #-1 #3 substring$ "?, " =
+		      s #-1 #3 substring$ "?. " = or
+			{ s #-4 global.max$ substring$ "? " * }
+			's
+		      if$
+		    }
+		  if$
+		}
+	      if$
+	    }
+	  if$
+	}
+      if$
+    }
+  if$
+}
+
 %%% book の title の整形。
 FUNCTION {format.book.sub}
 { bst.book.lower.case #0 =
@@ -2180,42 +2216,6 @@ FUNCTION {format.editors.x}
 	{ editor check.kanji.str
 	    { bst.editor.jp * }
 	    { bst.editor * }
-	  if$
-	}
-      if$
-    }
-  if$
-}
-
-%%% 「?.」、「?,」のようなケースで、period、comma を除去する関数
-FUNCTION {remove.irrelevant.period.comma}
-{ 's :=
-  s empty$
-    { "" }
-    % 後ろから3文字とって比較
-    { s #-1 #3 substring$ "?,'" =
-      s #-1 #3 substring$ "?.'" = or
-	% 後ろから3文字を除いたものに "'" を付ける．
-	{ s #-3 global.max$ substring$ "'" * }
-	{ s #-1 #4 substring$ "?,''" =
-	  s #-1 #4 substring$ "?.''" = or
-	    { s #-4 global.max$ substring$ "''" * }
-	    { s #-1 #2 substring$ "?," =
-	      s #-1 #2 substring$ "?." = or
-		{ s #-2 global.max$ substring$ "" * }
-		{ s #-1 #3 substring$ "?,~" =
-		  s #-1 #3 substring$ "?.~" = or
-		    { s #-4 global.max$ substring$ "?~" * }
-		    { s #-1 #3 substring$ "?, " =
-		      s #-1 #3 substring$ "?. " = or
-			{ s #-4 global.max$ substring$ "? " * }
-			's
-		      if$
-		    }
-		  if$
-		}
-	      if$
-	    }
 	  if$
 	}
       if$
