@@ -440,7 +440,7 @@ FUNCTION {bst.author.pre}
 % author の後に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.author.post}
-{ ", " }	  % (default)
+{ "" }	  % (default)
 
 % author の前に付ける文字列 (日本語文献用)
 %
@@ -450,7 +450,7 @@ FUNCTION {bst.author.pre.jp}
 % author の後に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.author.post.jp}
-{ ", " }	  % (default)
+{ "" }	  % (default)
 
 %%% 日本語文献の author, editor の姓・名の間に入れる文字列 
 % (姓名のどちらか一方が一文字のケース)
@@ -496,7 +496,7 @@ FUNCTION {bst.year.post.jp}
 % title の前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.title.pre}
-{ "" }    % (default)
+{ "\relax, " }    % (default)
 
 % title の後に付ける文字列 (英語文献用)
 %
@@ -506,7 +506,7 @@ FUNCTION {bst.title.post}
 % title の前に付ける文字列 (日本語文献用)
 %
 FUNCTION {bst.title.pre.jp}
-{ "" }    % (default)
+{ ", " }    % (default)
 
 % title の後に付ける文字列 (日本語文献用)
 %
@@ -519,7 +519,7 @@ FUNCTION {bst.title.post.jp}
 % book の title 前に付ける文字列 (英語文献用)
 %
 FUNCTION {bst.book.pre}
-{ ", " }    % (default)
+{ "\relax, " }    % (default)
 
 % book の title 後に付ける文字列 (英語文献用)
 %
@@ -588,17 +588,17 @@ FUNCTION {bst.journal.post.jp}
 % 複数 editor を表す文字列 (英語文献用)
 %
 FUNCTION {bst.editors}
-{ " eds. " }	% (default)
+{ " eds." }	% (default)
 
 % 一人の editor を表す文字列 (英語文献用)
 %
 FUNCTION {bst.editor}
-{ " ed. " }    % (default)
+{ " ed." }    % (default)
 
 % editor を表す文字列 (日本語文献用)
 %
 FUNCTION {bst.editor.jp}
-{ "（編）" }	% (default)
+{ "編" }	% (default)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	kanyaku (監訳者)
@@ -1672,6 +1672,42 @@ FUNCTION {format.journal}
   if$
 }
 
+%%% 「?.」、「?,」のようなケースで、period、comma を除去する関数
+FUNCTION {remove.irrelevant.period.comma}
+{ 's :=
+  s empty$
+    { "" }
+    % 後ろから3文字とって比較
+    { s #-1 #3 substring$ "?,'" =
+      s #-1 #3 substring$ "?.'" = or
+	% 後ろから3文字を除いたものに "'" を付ける．
+	{ s #-3 global.max$ substring$ "'" * }
+	{ s #-1 #4 substring$ "?,''" =
+	  s #-1 #4 substring$ "?.''" = or
+	    { s #-4 global.max$ substring$ "''" * }
+	    { s #-1 #2 substring$ "?," =
+	      s #-1 #2 substring$ "?." = or
+		{ s #-2 global.max$ substring$ "" * }
+		{ s #-1 #3 substring$ "?,~" =
+		  s #-1 #3 substring$ "?.~" = or
+		    { s #-4 global.max$ substring$ "?~" * }
+		    { s #-1 #3 substring$ "?, " =
+		      s #-1 #3 substring$ "?. " = or
+			{ s #-4 global.max$ substring$ "? " * }
+			's
+		      if$
+		    }
+		  if$
+		}
+	      if$
+	    }
+	  if$
+	}
+      if$
+    }
+  if$
+}
+
 %%% book の title の整形。
 FUNCTION {format.book.sub}
 { bst.book.lower.case #0 =
@@ -2180,42 +2216,6 @@ FUNCTION {format.editors.x}
 	{ editor check.kanji.str
 	    { bst.editor.jp * }
 	    { bst.editor * }
-	  if$
-	}
-      if$
-    }
-  if$
-}
-
-%%% 「?.」、「?,」のようなケースで、period、comma を除去する関数
-FUNCTION {remove.irrelevant.period.comma}
-{ 's :=
-  s empty$
-    { "" }
-    % 後ろから3文字とって比較
-    { s #-1 #3 substring$ "?,'" =
-      s #-1 #3 substring$ "?.'" = or
-	% 後ろから3文字を除いたものに "'" を付ける．
-	{ s #-3 global.max$ substring$ "'" * }
-	{ s #-1 #4 substring$ "?,''" =
-	  s #-1 #4 substring$ "?.''" = or
-	    { s #-4 global.max$ substring$ "''" * }
-	    { s #-1 #2 substring$ "?," =
-	      s #-1 #2 substring$ "?." = or
-		{ s #-2 global.max$ substring$ "" * }
-		{ s #-1 #3 substring$ "?,~" =
-		  s #-1 #3 substring$ "?.~" = or
-		    { s #-4 global.max$ substring$ "?~" * }
-		    { s #-1 #3 substring$ "?, " =
-		      s #-1 #3 substring$ "?. " = or
-			{ s #-4 global.max$ substring$ "? " * }
-			's
-		      if$
-		    }
-		  if$
-		}
-	      if$
-	    }
 	  if$
 	}
       if$
@@ -2889,8 +2889,8 @@ FUNCTION {format.pages}
     { "" }
     { is.kanji.entry
 	{ pages multi.page.check
-	  { bst.pages.pre.jp pages n.dashify convert.num.pages tie.or.space.connect * bst.page.post.jp * }
-	  { bst.page.pre.jp pages convert.num.pages tie.or.space.connect * bst.page.post.jp * }
+	  { bst.pages.pre.jp pages n.dashify convert.num.pages tie.or.space.connect * bst.page.post.jp }
+	  { bst.page.pre.jp pages convert.num.pages tie.or.space.connect * bst.page.post.jp }
 	 if$
 	}
 	{ pages multi.page.check
@@ -3821,6 +3821,7 @@ FUNCTION {proceedings}
     { organization output.nocomma }
     { format.editors output.nonnull.nocomma }
   if$
+  write$
   bst.year.position #0 =
     { format.year "year" output.check.nocomma }
     'skip$
