@@ -85,23 +85,38 @@ Serif体のフォントとしては{\usefont{T1}{ptm}{m}{n} Times}や{\usefont{T
 原則，日本機械学会の規定に合わせていますが，原稿テンプレートからは判断が難しい事項は一部独自の解釈を加えているものがあります．
 
 文献を並べる順序の規則は以下の通りです．
-4番については\jsmefile の設定を調整中です．
-\begin{itembox}[l]{\textgt{\large 文献ソート規則}}
+% 4番については\jsmefile の設定を調整中です．
+\begin{tcolorbox}[enhanced, title=\textgt{文献ソート規則}, drop fuzzy shadow]
     \begin{enumerate}
         \item （Family, Givenの順で並べた際の）筆頭著者の氏名のアルファベット順．並べる際，日本人の氏名は漢字と仮名を用いた日本語表記で構わないが順序はアルファベット順とする．
         \item 筆頭著者が同一人物の場合，第二著者以降のアルファベット順で並べる．著者数が異なる場合は著者数が少ない方が先．これを最後の著者まで繰り返す．
         \item 著者が全員一致する文献があった場合は発行が早い順で並べる．
-        \item 確認できる範囲で発行年月日が同じだった場合，タイトルのアルファベット順で並べ，西暦の後に小文字でアルファベットを順に振る．
+        \item 確認できる範囲で発行年月日が同じだった場合，タイトルのアルファベット順で並べ，西暦の後に小文字でアルファベットを順に振る（現在，\jsmefile の設定を調整中）．
         \begin{quote}
             Matsukawa, Y. and Tsukahara, T., Laminarization in subcritical Taylor--Couette--Poiseuille flow with increasing pressure gradient, Proceedings of Nineteenth International Conference on Flow Dynamics (2022a). \\
             Matsukawa, Y. and Tsukahara, T., Subcritical transition of Taylor--Couette--Poiseuille flow at high radius ratio, \href{https://doi.org/10.1063/5.0096676}{Physics of Fluids}, Vol.~34, No.~7 (2022b), 074109.
         \end{quote}
     \end{enumerate}
-\end{itembox}
+\end{tcolorbox}
+
+
+
+% \begin{itembox}[l]{\textgt{\large 文献ソート規則}}
+%     \begin{enumerate}
+%         \item （Family, Givenの順で並べた際の）筆頭著者の氏名のアルファベット順．並べる際，日本人の氏名は漢字と仮名を用いた日本語表記で構わないが順序はアルファベット順とする．
+%         \item 筆頭著者が同一人物の場合，第二著者以降のアルファベット順で並べる．著者数が異なる場合は著者数が少ない方が先．これを最後の著者まで繰り返す．
+%         \item 著者が全員一致する文献があった場合は発行が早い順で並べる．
+%         \item 確認できる範囲で発行年月日が同じだった場合，タイトルのアルファベット順で並べ，西暦の後に小文字でアルファベットを順に振る．
+%         \begin{quote}
+%             Matsukawa, Y. and Tsukahara, T., Laminarization in subcritical Taylor--Couette--Poiseuille flow with increasing pressure gradient, Proceedings of Nineteenth International Conference on Flow Dynamics (2022a). \\
+%             Matsukawa, Y. and Tsukahara, T., Subcritical transition of Taylor--Couette--Poiseuille flow at high radius ratio, \href{https://doi.org/10.1063/5.0096676}{Physics of Fluids}, Vol.~34, No.~7 (2022b), 074109.
+%         \end{quote}
+%     \end{enumerate}
+% \end{itembox}
 文献を並べる際の表記に関する注意事項は以下の通りです．
-\ttauthor や\tttitle などのフィールドについての詳細は第~\ref{ssec:field}節を，各エントリー（\ttarticle や\ttbook など）ごとの詳細は第~\ref{ssec:article}節以降を参照してください．
+% \ttauthor や\tttitle などのフィールドについての詳細は第~\ref{ssec:field}節を，各エントリー（\ttarticle や\ttbook など）ごとの詳細は第~\ref{ssec:article}節以降を参照してください．
 \renewcommand\UrlFont{\rmfamily}
-\begin{itembox}[l]{\textgt{\large 文献リスト作成の注意事項（全体）}}
+\begin{tcolorbox}[enhanced, title=\textgt{文献リスト作成の注意事項（全体）}, drop fuzzy shadow]
     \begin{itemize}
         \item 並び順は原則として \\
             著者（\ttauthor）$\to$タイトル（\tttitle）$\to$誌名（\ttjournal）・書名（\ttbooktitle）$\to$出版社（\ttpublisher）・大学名（\ttschool）・機関名（\ttinstitution）$\to$巻（\ttvolume）$\to$号（\ttnumber）$\to$発行年（\ttyear）$\to$ページ（\ttpages）$\to$論文番号・講演番号（\ttnote） \\
@@ -114,13 +129,34 @@ Serif体のフォントとしては{\usefont{T1}{ptm}{m}{n} Times}や{\usefont{T
         \item 文献自体が日本語で書かれている場合は外国人が書いていても日本語文献とする．
         \item 文献自体が英語で書かれている場合は日本人が書いていても英語文献とする．
         \item フィールドとフィールドの間は日本語文献・英語文献問わず半角カンマと半角スペース（, ）で繋ぐ．全角カンマ（，）ではないので注意．
-        \item 他学会の文献テンプレートでは誌名を\textit{Italic}体にしたり巻数を\textbf{Boldface}体にしたりすることがあるが，日本機械学会では全て\textrm{Roman}体で統一する（WebページのURLを\LaTeX{}で出力するときに\texttt{Typewriter}体が用いられることが多いが，これも\textrm{Roman}体にする．）．
+        \item 他学会の文献テンプレートでは誌名を\textit{Italic}体にしたり巻数を\textbf{Boldface}体にしたりすることがあるが，日本機械学会では全て\textrm{Roman}体で統一する（WebページのURLを\LaTeX{}で出力するときに\texttt{Typewriter}体が用いられることが多いが，これも\textrm{Roman}体にする）．
         \item 以上の内容が満たされていて，文献にアクセスするうえで十分な情報が書かれていれば月（\ttmonth）や章（\ttchapter）等は不要．
     \end{itemize}
-\end{itembox}
+\end{tcolorbox}
+
+
+
+
+% \begin{itembox}[l]{\textgt{\large 文献リスト作成の注意事項（全体）}}
+%     \begin{itemize}
+%         \item 並び順は原則として \\
+%             著者（\ttauthor）$\to$タイトル（\tttitle）$\to$誌名（\ttjournal）・書名（\ttbooktitle）$\to$出版社（\ttpublisher）・大学名（\ttschool）・機関名（\ttinstitution）$\to$巻（\ttvolume）$\to$号（\ttnumber）$\to$発行年（\ttyear）$\to$ページ（\ttpages）$\to$論文番号・講演番号（\ttnote） \\
+%             とする．
+%             ただし，存在しないフィールドがある場合は抜かす．
+%             また，webページ等の引用は極力避けるべきだが，引用する場合には必ず末尾にURLと参照日を明記する（第~\ref{ssec:online}節\ttonline を参照）．
+%             \begin{quote}
+%                 Kawamura Laboratory, DNS database of wall turbulence and heat transfer: Text database of Poiseuille flow for $\mathit{Re}_\tau = 64$, available from \textless\url{https://www.rs.tus.ac.jp/~t2lab/db/index.html}\textgreater, (accessed on 10 October, 2023).
+%             \end{quote}
+%         \item 文献自体が日本語で書かれている場合は外国人が書いていても日本語文献とする．
+%         \item 文献自体が英語で書かれている場合は日本人が書いていても英語文献とする．
+%         \item フィールドとフィールドの間は日本語文献・英語文献問わず半角カンマと半角スペース（, ）で繋ぐ．全角カンマ（，）ではないので注意．
+%         \item 他学会の文献テンプレートでは誌名を\textit{Italic}体にしたり巻数を\textbf{Boldface}体にしたりすることがあるが，日本機械学会では全て\textrm{Roman}体で統一する（WebページのURLを\LaTeX{}で出力するときに\texttt{Typewriter}体が用いられることが多いが，これも\textrm{Roman}体にする．）．
+%         \item 以上の内容が満たされていて，文献にアクセスするうえで十分な情報が書かれていれば月（\ttmonth）や章（\ttchapter）等は不要．
+%     \end{itemize}
+% \end{itembox}
 次に，文献リストを作成する際の著者名表記に関する注意事項です．
 \renewcommand\UrlFont{\ttfamily}
-\begin{itembox}[l]{\textgt{\large 文献リスト作成の注意事項（著者名）}}
+\begin{tcolorbox}[enhanced, title=\textgt{文献リスト作成の注意事項（著者名）}, drop fuzzy shadow]
     \begin{itemize}
         \item 著者の氏名は「姓」「名」の順で書き，間にスペース等は入れない（例：松川裕樹）．
         \item 英語文献の著者の氏名はFamily nameのみ略記せず，Middle nameやGiven nameはイニシャルで記載する（例：Matsukawa Yuki $\to$ Matsukawa, Y.）．
@@ -140,9 +176,30 @@ Serif体のフォントとしては{\usefont{T1}{ptm}{m}{n} Times}や{\usefont{T
             \end{quote}
             のように最後だけandで繋ぐ．最後のandの前にカンマは入れない．
     \end{itemize}
-\end{itembox}
+\end{tcolorbox}
+% \begin{itembox}[l]{\textgt{\large 文献リスト作成の注意事項（著者名）}}
+%     \begin{itemize}
+%         \item 著者の氏名は「姓」「名」の順で書き，間にスペース等は入れない（例：松川裕樹）．
+%         \item 英語文献の著者の氏名はFamily nameのみ略記せず，Middle nameやGiven nameはイニシャルで記載する（例：Matsukawa Yuki $\to$ Matsukawa, Y.）．
+%         \item 著者は全員記載する．
+%         \item 日本語文献の著者数が二人以上の場合は
+%             \begin{quote}
+%                 松川裕樹, 塚原隆裕        
+%             \end{quote}
+%             のように半角カンマと半角スペースを間に入れて繋ぐ．
+%         \item 英語文献の著者数が二人の場合は
+%             \begin{quote}
+%                 Matsukawa, Y. and Tsukahara, T.        
+%             \end{quote}
+%             のようにandで繋ぎ，著者数が三人以上の場合は
+%             \begin{quote}
+%                 Araki, R., Bos, W. J. T. and Goto, S.            
+%             \end{quote}
+%             のように最後だけandで繋ぐ．最後のandの前にカンマは入れない．
+%     \end{itemize}
+% \end{itembox}
 最後に，文献リスト作成時のその他の注意事項を説明します．
-\begin{itembox}[l]{\textgt{\large 文献リスト作成の注意事項（その他）}}
+\begin{tcolorbox}[enhanced, title=\textgt{文献リスト作成の注意事項（その他）}, drop fuzzy shadow]
     \begin{itemize}
         \item 英語文献のタイトルは最初の単語の頭文字のみ大文字（固有名詞等は除く）．
         \item 誌名・書名は省略せずに記載する．
@@ -151,14 +208,25 @@ Serif体のフォントとしては{\usefont{T1}{ptm}{m}{n} Times}や{\usefont{T
         \item ページ数は単ページの場合はp.~xxとし，複数ページに亘る場合はpp.~xx--yyとする．
         \item 「2014年以降発行の日本機械学会論文集は通しページを廃止したためDOIを記載するように」との注釈が日本機械学会の原稿テンプレートに書かれているが，\jsmefile ではDOIから生成されたURLを誌名（に相当する箇所）にハイパーリンクとして埋め込むように設定している．
     \end{itemize}
-\end{itembox}
+\end{tcolorbox}
+
+% \begin{itembox}[l]{\textgt{\large 文献リスト作成の注意事項（その他）}}
+%     \begin{itemize}
+%         \item 英語文献のタイトルは最初の単語の頭文字のみ大文字（固有名詞等は除く）．
+%         \item 誌名・書名は省略せずに記載する．
+%         \item 巻・号は日本語・英語文献問わずVol.~xx，No.~xxとする．
+%         \item 発行年は西暦で表記し，括弧で括る．ただし，発行年の前のみ半角カンマは不要．
+%         \item ページ数は単ページの場合はp.~xxとし，複数ページに亘る場合はpp.~xx--yyとする．
+%         \item 「2014年以降発行の日本機械学会論文集は通しページを廃止したためDOIを記載するように」との注釈が日本機械学会の原稿テンプレートに書かれているが，\jsmefile ではDOIから生成されたURLを誌名（に相当する箇所）にハイパーリンクとして埋め込むように設定している．
+%     \end{itemize}
+% \end{itembox}
 
 
-
+\clearpage
 \section{引用のコマンドと本文中での表示}
 \label{sec:cite}
 本文中での文献の引用の仕方は以下の通りです．
-\begin{itembox}[l]{\textgt{\large 本文中での引用の仕方}}
+\begin{tcolorbox}[enhanced, title=\textgt{本文中での引用の仕方}, drop fuzzy shadow]
     \begin{itemize}
         \item 本文中の引用箇所には，著者名と発行年を記載する（Harvard方式）．
         \item 英語文献の場合
@@ -176,7 +244,27 @@ Serif体のフォントとしては{\usefont{T1}{ptm}{m}{n} Times}や{\usefont{T
         \item 発行年が同じである同じ著者からの二つ以上の引用を記載する場合には，発行年の後にa, b, c, \ldots を記載する． \\
         例：\citet{Matsukawa:ICFD2022}, \citet{松川:東北大SENAC2022}
 \end{itemize}
-\end{itembox}
+\end{tcolorbox}
+
+% \begin{itembox}[l]{\textgt{\large 本文中での引用の仕方}}
+%     \begin{itemize}
+%         \item 本文中の引用箇所には，著者名と発行年を記載する（Harvard方式）．
+%         \item 英語文献の場合
+%         \begin{itemize}
+%             \item 著者1名：\citet{Reynolds:PhilTransRoySoc1883}または\citep{Reynolds:PhilTransRoySoc1883}
+%             \item 著者2名：\citet{Schmid:Springer2001}または\citep{Schmid:Springer2001}
+%             \item 著者3名以上：\citet{Berghout:JFM2020}または\citep{Berghout:JFM2020}
+%         \end{itemize}
+%         \item 日本語文献の場合
+%         \begin{itemize}
+%             \item 著者1名：\citet{塚原:ながれ2023}または\citep{塚原:ながれ2023}
+%             \item 著者2名：\citet{塚原:ながれ2015}または\citep{塚原:ながれ2015}
+%             \item 著者3名以上：\citet{塚原:伝熱2007}または\citep{塚原:伝熱2007}
+%         \end{itemize}
+%         \item 発行年が同じである同じ著者からの二つ以上の引用を記載する場合には，発行年の後にa, b, c, \ldots を記載する． \\
+%         例：\citet{Matsukawa:ICFD2022}, \citet{松川:東北大SENAC2022}
+% \end{itemize}
+% \end{itembox}
 
 日本機械学会の規定では本文中での文献の引用の際には，「著者名」と「発行年」を記載し，文献一覧は著者名によりソートするHarvard方式\footnote{文献の引用箇所に番号を付け，引用順に文献一覧を並べる方式をVancouver方式と言います．}が採用されています．
 そのため，\jsmefile では\verb|\citet|や\verb|\citealp|等のコマンドを使用して引用することをおすすめします．
