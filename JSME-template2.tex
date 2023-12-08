@@ -1103,8 +1103,8 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
     \item \BibTeX{}の\verb|bst|スタイルファイル（\jsmefile）
     \item 読み込む文献リストの\verb|bib|ファイル（\verb|mybib_en.bib|, \verb|mybib_jp.bib|）
 \end{itemize}
-次に本文の\verb|tex|ファイルの設定ですが，おおまかに
-\begin{screen}
+次に本文の\verb|tex|ファイルの設定ですが，おおまかに下記のようになります．
+\begin{tcolorbox}[enhanced, title=\textgt{本文の\texttt{tex}ファイルに必要な設定}, drop fuzzy shadow]
 \begin{verbatim}
 \documentclass[a4paper,fleqn,uplatex,dvipdfmx]{jsarticle}
 %%% URL
@@ -1127,8 +1127,8 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 \bibliography{mybib_en.bib,mybib_jp.bib}
 \end{document}
 \end{verbatim}
-\end{screen}
-のようになります．
+\end{tcolorbox}
+
 まず\verb|\documentclass|と\verb|\begin{document}|の間のプリアンブルで必要なパッケージを入れます．
 ここでは\verb|url|パッケージを入れていますが，これは\verb|@online|を使用する際にURLの表示がおかしくならないようにするためです．
 \jsmefile ではハイパーリンクを使用しないため\verb|hyperref|を入れていませんが，\verb|url|は必要になります．
@@ -1143,14 +1143,15 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 ここでは「文献」に相当するものが節なので\verb|section|と書いていますが，章に相当する場合は\verb|chapter|に変えてあげてください．
 これは使用するドキュメントクラス\footnote{\texttt{tex}ファイル冒頭の\texttt{\textbackslash documentclass}の記述を確認．}が\verb|book|または\verb|report|の名前を含む場合が該当します．
 同時に，これらのドキュメントクラスでは参考文献の節の名前が\verb|\refname|ではなく\verb|\bibname|で定義されるので
-\begin{quote}
+\begin{tcolorbox}[enhanced, drop fuzzy shadow]
 \begin{verbatim}
 %%% 参考文献リストの見出しを「参考文献」から「文献」に変更．
 \renewcommand{\bibname}{文献}
 %%% 目次に「文献」を追加
 \addcontentsline{toc}{chapter}{\bibname}
 \end{verbatim}
-\end{quote}
+\end{tcolorbox}
+\noindent
 と変更する必要があります．
 \verb|\nocite{*}|は本文中で引用していない文献も含め，読み込んだ\verb|bib|ファイル内の全ての文献をリストアップします．
 本文中で引用したもののみ一覧に載せたい場合はこの行をコメントアウトしてください．
@@ -1160,19 +1161,25 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 \verb|JSME-template2.tex|から\verb|JSME-template2.pdf|の生成は\upLaTeX{}$+$\upBibTeX{}を使用しているので，ユーザーの使用環境に応じて変更してください．
 ここでは\pLaTeX{}$+$\pBibTeX{}の場合と\upLaTeX{}$+$\upBibTeX{}の場合の説明をします．
 \pLaTeX{}$+$\pBibTeX{}を使用する場合は以下のようなコマンドになります．
+\begin{tcolorbox}[enhanced, title=\pLaTeX{}$+$\pBibTeX{}, drop fuzzy shadow]
 \begin{verbatim}
-    $ platex JSME-template2.tex
-    $ pbibtex JSME-template2
-    $ platex JSME-template2.tex （複数回）
-    $ dvipdfmx JSME-template2
+$ platex JSME-template2.tex
+$ pbibtex JSME-template2
+$ platex JSME-template2.tex （複数回）
+$ dvipdfmx JSME-template2
 \end{verbatim}
+\end{tcolorbox}
+\noindent
 \upLaTeX{}$+$\upBibTeX{}を使用する場合は以下のようなコマンドになります．
+\begin{tcolorbox}[enhanced, title=\upLaTeX{}$+$\upBibTeX{}, drop fuzzy shadow]
 \begin{verbatim}
-    $ uplatex JSME-template2.tex
-    $ upbibtex JSME-template2
-    $ uplatex JSME-template2.tex （複数回）
-    $ dvipdfmx JSME-template2
+$ uplatex JSME-template2.tex
+$ upbibtex JSME-template2
+$ uplatex JSME-template2.tex （複数回）
+$ dvipdfmx JSME-template2
 \end{verbatim}
+\end{tcolorbox}
+\noindent
 これでうまくいけば\verb|pdf|が生成されているはずです．
 Overleaf\footnote{Overleaf, \textless\url{https://ja.overleaf.com}\textgreater}なら「リコンパイル」を押すだけなので簡単です．
 
