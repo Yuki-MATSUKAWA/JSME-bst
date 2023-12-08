@@ -568,34 +568,6 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
 
 \end{tcolorbox}
 
-% \begin{screen}
-%     \begin{itemize}
-%         \item 必須項目 \\
-%         \ttauthor, \tttitle, \ttjournal, \ttyear
-%         \item オプション項目 \\
-%         \ttvolume, \ttnumber, \ttpages, \ttmonth, \ttnote, \ttkey, \ttdoi, \tturl
-%         \item 出力（英語文献） \\
-%             \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors} and \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttjournal} (\colorbox[gray]{0.8}{\ttyear}), Vol.~\colorbox[gray]{0.8}{\ttvolume}, No.~\colorbox[gray]{0.8}{\ttnumber}, pp.~\colorbox[gray]{0.8}{\ttpages}, \colorbox[gray]{0.8}{\ttnote}.
-%         \item 出力（日本語文献） \\
-%             \colorbox[gray]{0.8}{\ttauthorf}, \colorbox[gray]{0.8}{\ttauthors}, \colorbox[gray]{0.8}{\ttauthort}, \colorbox[gray]{0.8}{\tttitle}, \colorbox[gray]{0.8}{\ttjournal} (\colorbox[gray]{0.8}{\ttyear}), Vol.~\colorbox[gray]{0.8}{\ttvolume}, No.~\colorbox[gray]{0.8}{\ttnumber}, pp.~\colorbox[gray]{0.8}{\ttpages}, \colorbox[gray]{0.8}{\ttnote}.
-%         \item \verb|bib|ファイル作成例 \vspace{-3mm}
-% \begin{verbatim}
-% @article{Matsukawa:PoF2022,
-%     author  = {Matsukawa, Yuki and Tsukahara, Takahiro},
-%     title   = {Subcritical transition of {Taylor--Couette--Poiseuille} flow 
-%                 at high radius ratio},
-%     journal = {Physics of Fluids},
-%     volume  = {34},
-%     number  = {7},
-%     year    = {2022},
-%     doi     = {10.1063/5.0096676},
-%     url     = {https://doi.org/10.1063/5.0096676},
-%     note    = {074109}
-% }
-% \end{verbatim}
-%     \end{itemize}
-% \end{screen}
-
 \ttarticle は雑誌に掲載された論文です．
 流体力学分野では英文雑誌だとJournal of Fluid Mechanics\footnote{Journal of Fluid Mechanics, \textless\url{https://www.cambridge.org/core/journals/journal-of-fluid-mechanics}\textgreater}やPhysics of Fluids\footnote{Physics of Fluids, \textless\url{https://pubs.aip.org/aip/pof}\textgreater}などが挙げられます．
 国内雑誌だと日本機械学会誌\footnote{日本機械学会誌, \textless\url{https://www.jsme.or.jp/publication/kaisi/}\textgreater}や日本流体力学会誌『ながれ』\footnote{日本流体力学会誌『ながれ』, \textless\url{https://www.nagare.or.jp/publication/nagare.html}\textgreater}などが該当します．
@@ -612,7 +584,7 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
 
 \subsection{\ttbook}
 \label{ssec:book}
-\begin{screen}
+\begin{tcolorbox}[enhanced, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \ttauthor / \tteditor, \tttitle, \ttpublisher, \ttyear
@@ -633,7 +605,7 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
 }
 \end{verbatim}
     \end{itemize}
-\end{screen}
+\end{tcolorbox}
 
 出版社が刊行した書籍を引用する際は\ttbook を使います．
 似たエントリーとして\hyperref[ssec:inbook]{\ttinbook}がありますが，特定のページを参照したのではなく，書籍全体を参照した場合は\ttbook を使いましょう．
@@ -1167,14 +1139,14 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 ここでは「文献」に相当するものが節なので\verb|section|と書いていますが，章に相当する場合は\verb|chapter|に変えてあげてください．
 これは使用するドキュメントクラス\footnote{\texttt{tex}ファイル冒頭の\texttt{\textbackslash documentclass}の記述を確認．}が\verb|book|または\verb|report|の名前を含む場合が該当します．
 同時に，これらのドキュメントクラスでは参考文献の節の名前が\verb|\refname|ではなく\verb|\bibname|で定義されるので
-\begin{quote}
+\begin{tcolorbox}[enhanced, drop fuzzy shadow]
 \begin{verbatim}
 %%% 参考文献リストの見出しを「参考文献」から「文献」に変更．
 \renewcommand{\bibname}{文献}
 %%% 目次に「文献」を追加
 \addcontentsline{toc}{chapter}{\bibname}
 \end{verbatim}
-\end{quote}
+\end{tcolorbox}
 と変更する必要があります．
 また，目次で生成される「文献」へのハイパーリンクにズレが発生することがあるので，その際は\verb|\phantomsection|で空の節（幻の節）を入れてあげることで調整します．
 \verb|\nocite{*}|は本文中で引用していない文献も含め，読み込んだ\verb|bib|ファイル内の全ての文献をリストアップします．
@@ -1185,21 +1157,26 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 \verb|JSME-template1.tex|から\verb|JSME-template1.pdf|の生成は\upLaTeX{}$+$\upBibTeX{}を使用しているので，ユーザーの使用環境に応じて変更してください．
 ここでは\pLaTeX{}$+$\pBibTeX{}の場合と\upLaTeX{}$+$\upBibTeX{}の場合の説明をします．
 \pLaTeX{}$+$\pBibTeX{}を使用する場合は以下のようなコマンドになります．
+\begin{tcolorbox}[enhanced, title=\pLaTeX{}$+$\pBibTeX{}, drop fuzzy shadow]
 \begin{verbatim}
-    $ platex JSME-template1.tex
-    $ pbibtex JSME-template1
-    $ platex JSME-template1.tex （複数回）
-    $ dvipdfmx JSME-template1
+$ platex JSME-template1.tex
+$ pbibtex JSME-template1
+$ platex JSME-template1.tex （複数回）
+$ dvipdfmx JSME-template1
 \end{verbatim}
+\end{tcolorbox}
 \upLaTeX{}$+$\upBibTeX{}を使用する場合は以下のようなコマンドになります．
+\begin{tcolorbox}[enhanced, title=\upLaTeX{}$+$\upBibTeX{}, drop fuzzy shadow]
 \begin{verbatim}
-    $ uplatex JSME-template1.tex
-    $ upbibtex JSME-template1
-    $ uplatex JSME-template1.tex （複数回）
-    $ dvipdfmx JSME-template1
+$ uplatex JSME-template1.tex
+$ upbibtex JSME-template1
+$ uplatex JSME-template1.tex （複数回）
+$ dvipdfmx JSME-template1
 \end{verbatim}
+\end{tcolorbox}
+
 これでうまくいけば\verb|pdf|が生成されているはずです．
-Overleaf\footnote{Overleaf, \textless\url{https://ja.overleaf.com}\textgreater}なら「リコンパイル」を押すだけなので簡単です．
+\verb|latexmk|を設定していればコマンド一つで簡単に処理できます．
 
 \clearpage
 \section*{謝辞}
