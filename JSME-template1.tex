@@ -97,6 +97,7 @@ Serif体のフォントとしては{\usefont{T1}{ptm}{m}{n} Times}や{\usefont{T
         \end{quote}
     \end{enumerate}
 \end{tcolorbox}
+\noindent
 文献を並べる際の表記に関する注意事項は以下の通りです．
 \renewcommand\UrlFont{\rmfamily}
 \begin{tcolorbox}[enhanced, title=\textgt{文献リスト作成の注意事項（全体）}, drop fuzzy shadow]
@@ -116,6 +117,7 @@ Serif体のフォントとしては{\usefont{T1}{ptm}{m}{n} Times}や{\usefont{T
         \item 以上の内容が満たされていて，文献にアクセスするうえで十分な情報が書かれていれば月（\ttmonth）や章（\ttchapter）等は不要．
     \end{itemize}
 \end{tcolorbox}
+\noindent
 次に，文献リストを作成する際の著者名表記に関する注意事項です．
 \renewcommand\UrlFont{\ttfamily}
 \begin{tcolorbox}[enhanced, title=\textgt{文献リスト作成の注意事項（著者名）}, drop fuzzy shadow]
@@ -139,6 +141,7 @@ Serif体のフォントとしては{\usefont{T1}{ptm}{m}{n} Times}や{\usefont{T
             のように最後だけandで繋ぐ．最後のandの前にカンマは入れない．
     \end{itemize}
 \end{tcolorbox}
+\noindent
 最後に，文献リスト作成時のその他の注意事項を説明します．
 \begin{tcolorbox}[enhanced, title=\textgt{文献リスト作成の注意事項（その他）}, drop fuzzy shadow]
     \begin{itemize}
@@ -371,6 +374,7 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
 ここでは書誌情報ファイル（\texttt{bib}ファイル）の作り方，使い方を説明します．
 この\verb|pdf|の末尾の参考文献リストは同じディレクトリにある\verb|mybib_en.bib|と\verb|mybib_jp.bib|から作成しているので参考にしてください．
 \verb|bib|ファイルに入力する書誌情報は次のような構造になっています．
+\begin{tcolorbox}[enhanced, title=\textgt{\texttt{bib}ファイル内の書誌情報の構造}, drop fuzzy shadow]
 \begin{verbatim}
 @エントリー名{参照キー,
     フィールド1 = {},
@@ -378,6 +382,8 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
     フィールド3 = {}
 }
 \end{verbatim}
+\end{tcolorbox}
+\noindent
 だいたいの雑誌論文のwebサイトでは\BibTeX{}形式で書誌情報を出力できる機能があるのでそこから\verb|bib|ファイルをダウンロードします．
 もちろん，ダウンロードした\verb|bib|ファイルを自分で書き換えることもできますし，自分で一から\verb|bib|ファイルを作成することも可能です．
 
@@ -614,7 +620,7 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
 
 \subsection{\ttbooklet}
 \label{ssec:booklet}
-\begin{screen}
+\begin{tcolorbox}[enhanced, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \tttitle
@@ -637,14 +643,14 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
 }
 \end{verbatim}
     \end{itemize}
-\end{screen}
+\end{tcolorbox}
 
 \ttbooklet は使う機会が少ないため分類が難しいエントリーですが，出版社が明記されていないような（薄い）冊子媒体が該当します．
 \JSMErepos では例として東京理科大学理工学部機械工学科（現・創域理工学部機械航空宇宙工学科）が毎年出しているMEニュースレター\footnote{MEニュースレター, \textless\url{https://www.rs.tus.ac.jp/me/newsletter.html}\textgreater}という広報の冊子を引用しました．
 
 \subsection{\ttcomment}
 \label{ssec:comment}
-\begin{screen}
+\begin{tcolorbox}[enhanced, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         無し
@@ -661,7 +667,7 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
 }
 \end{verbatim}
     \end{itemize}
-\end{screen}
+\end{tcolorbox}
 
 \verb|bib|ファイル内でコメントを書く場合に用います．
 通常の\verb|tex|ファイルや\verb|sty|ファイル内では\verb|%|を書くことでその行はコメントアウトされますが，\verb|bib|ファイル内では使えません．
@@ -675,7 +681,7 @@ Scribeというシステムとの互換性のために残されているらし�
 
 \subsection{\ttinbook}
 \label{ssec:inbook}
-\begin{screen}
+\begin{tcolorbox}[enhanced, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \ttauthor / \tteditor, \tttitle, \ttchapter / \ttpages, \ttpublisher, \ttyear
@@ -697,7 +703,7 @@ Scribeというシステムとの互換性のために残されているらし�
 }
 \end{verbatim}
     \end{itemize}
-\end{screen}
+\end{tcolorbox}
 
 \hyperref[ssec:book]{\ttbook}に似ていますが，\ttbook が書籍丸々一冊なのに対して\ttinbook は書籍中の一部から引用する場合に使用します．
 そのため，\ttbook と異なり\ttpages フィールドが使用可能です．
@@ -705,7 +711,7 @@ Scribeというシステムとの互換性のために残されているらし�
 
 \subsection{\ttincollection}
 \label{ssec:incollection}
-\begin{screen}
+\begin{tcolorbox}[enhanced, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \ttauthor, \tttitle, \ttbooktitle, \ttyear
@@ -729,7 +735,7 @@ Scribeというシステムとの互換性のために残されているらし�
 }
 \end{verbatim}
     \end{itemize}
-\end{screen}
+\end{tcolorbox}
 
 \ttincollection は分類が難しいエントリーの一つです．
 これは書籍の一部からの引用ですが，\hyperref[ssec:inbook]{\ttinbook}と異なる点は，引用箇所が独立して表題を持っているようなものを指します．
@@ -740,7 +746,7 @@ Scribeというシステムとの互換性のために残されているらし�
 
 \subsection{\ttinproceedings}
 \label{ssec:inproceedings}
-\begin{screen}
+\begin{tcolorbox}[enhanced, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \ttauthor, \tttitle, \ttbooktitle, \ttyear
@@ -762,7 +768,7 @@ Scribeというシステムとの互換性のために残されているらし�
 }
 \end{verbatim}
     \end{itemize}
-\end{screen}
+\end{tcolorbox}
 
 \hyperref[ssec:conference]{\ttconference}と同様です．
 学会等の講演論文集の一部を引用するときに\ttinproceedings を使用します．
@@ -773,7 +779,7 @@ Scribeというシステムとの互換性のために残されているらし�
 
 \subsection{\ttmanual}
 \label{ssec:manual}
-\begin{screen}
+\begin{tcolorbox}[enhanced, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \tttitle
@@ -794,7 +800,7 @@ Scribeというシステムとの互換性のために残されているらし�
 }
 \end{verbatim}
     \end{itemize}
-\end{screen}
+\end{tcolorbox}
 
 マニュアルや技術文書は\ttmanual に分類しましょう．
 ただし，\ttauthor フィールドが必須項目ではないので，\jsmefile では企業名を\ttauthor に入れています．
@@ -806,7 +812,7 @@ Scribeというシステムとの互換性のために残されているらし�
 
 \subsection{\ttmastersthesis}
 \label{ssec:mastersthesis}
-\begin{screen}
+\begin{tcolorbox}[enhanced, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \ttauthor, \tttitle, \ttschool, \ttyear
@@ -828,7 +834,7 @@ Scribeというシステムとの互換性のために残されているらし�
 }
 \end{verbatim}
     \end{itemize}
-\end{screen}
+\end{tcolorbox}
 
 修士論文は\ttmastersthesis に分類します．
 \verb|@masterthesis|ではなく\texttt{@master\textcolor{red}{s}thesis}です．
@@ -838,7 +844,7 @@ Scribeというシステムとの互換性のために残されているらし�
 
 \subsection{\ttmisc}
 \label{ssec:misc}
-\begin{screen}
+\begin{tcolorbox}[enhanced, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         無し
@@ -873,7 +879,7 @@ Scribeというシステムとの互換性のために残されているらし�
 }
 \end{verbatim}
     \end{itemize}
-\end{screen}
+\end{tcolorbox}
 
 その他該当種別が無いものは\ttmisc とします．
 学部の卒業論文は\ttmisc でいいと思います．
@@ -895,7 +901,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 
 \subsection{\ttonline}
 \label{ssec:online}
-\begin{screen}
+\begin{tcolorbox}[enhanced, drop fuzzy shadow]
     \begin{itemize}
         \item 使用可能項目 \\
         \ttauthor, \tttitle, \tthowpublished, \ttmonth, \ttyear, \tturl, \ttdoi, \ttaccess, \ttnote
@@ -914,7 +920,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 }
 \end{verbatim}
     \end{itemize}
-\end{screen}
+\end{tcolorbox}
 
 \ttonline は\jsmefile 独自のエントリーなので他の\BibTeX{}スタイルファイルを用いるときには注意してください（\jsmefile の元となった\verb|jecon.bst|では使用できます）．
 本来，webページ等の引用はあまり推奨されるものではありませんが，データベースを研究室のwebページ等で公開していることがある\footnote{乱流の分野におけるデータベースとしては，東京理科大学河村研究室（現在は塚原研究室が管理） \textless\url{https://www.rs.tus.ac.jp/~t2lab/db/index.html}\textgreater や東京大学笠木研究室（現在は複数の大学によって管理） \textless\url{https://thtlab.jp}\textgreater などが挙げられます．}ので使う機会がゼロとは言えないでしょう．
@@ -934,7 +940,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 
 \subsection{\ttphdthesis}
 \label{ssec:phdthesis}
-\begin{screen}
+\begin{tcolorbox}[enhanced, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \ttauthor, \tttitle, \ttschool, \ttyear
@@ -956,7 +962,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 }
 \end{verbatim}
     \end{itemize}
-\end{screen}
+\end{tcolorbox}
 
 \ttphdthesis は博士論文が該当します．
 エントリー名に\verb|thesis|と入っていますが，英語文献の場合はdissertationと出力されます．
@@ -964,7 +970,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 
 \subsection{\ttproceedings}
 \label{ssec:proceedings}
-\begin{screen}
+\begin{tcolorbox}[enhanced, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \tttitle, \ttyear
@@ -983,7 +989,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 }
 \end{verbatim}
     \end{itemize}
-\end{screen}
+\end{tcolorbox}
 
 学会の講演論文集全体を引用する際には\ttproceedings を使用します．
 \hyperref[ssec:conference]{\ttconference}や\hyperref[ssec:inproceedings]{\ttinproceedings}は講演論文集の中の一講演を引用しているのに対して，\ttproceedings は講演論文集全体を引用しています．
@@ -1020,7 +1026,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 
 \subsection{\tttechreport}
 \label{ssec:techreport}
-\begin{screen}
+\begin{tcolorbox}[enhanced, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \ttauthor, \tttitle, \ttinstitution, \ttyear
@@ -1043,7 +1049,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 }
 \end{verbatim}
     \end{itemize}
-\end{screen}
+\end{tcolorbox}
 
 研究機関等から発行された技術報告書は\tttechreport に分類します．
 技術報告書を発行している研究機関はさまざまありますが，例えばNASA\footnote{アメリカ航空宇宙局（NASA） Technical Reports Server, \textless\url{https://ntrs.nasa.gov/}\textgreater}や国立天文台\footnote{大学共同利用機関法人 自然科学研究機構 国立天文台，国立天文台欧文報告, \textless\url{https://www.nao.ac.jp/about-naoj/reports/publications-naoj.html}\textgreater}，鉄道総研\footnote{公益財団法人 鉄道総合技術研究所（鉄道総研），鉄道総研報告, \textless\url{https://www.rtri.or.jp/publish/rtrirep/}\textgreater}などが挙げられます．
@@ -1053,7 +1059,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 
 \subsection{\ttunpublished}
 \label{ssec:unpublished}
-\begin{screen}
+\begin{tcolorbox}[enhanced, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \ttauthor, \tttitle, \ttnote
@@ -1076,7 +1082,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 }
 \end{verbatim}
     \end{itemize}
-\end{screen}
+\end{tcolorbox}
 
 \ttunpublished は正式には出版されていない本などが該当します．
 ただ，\ttunpublished を使う機会はほぼ無いと思われますし，そもそも具体的に何が該当するのかもパッとイメージできるものではありません．
@@ -1097,7 +1103,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
     \item 読み込む文献リストの\verb|bib|ファイル（\verb|mybib_en.bib|, \verb|mybib_jp.bib|）
 \end{itemize}
 次に本文の\verb|tex|ファイルの設定ですが，おおまかに下記のようになります．
-\begin{tcolorbox}[enhanced, drop fuzzy shadow]
+\begin{tcolorbox}[enhanced, title=\textgt{本文の\texttt{tex}ファイルに必要な設定}, drop fuzzy shadow]
 \begin{verbatim}
 \documentclass[a4paper,fleqn,uplatex,dvipdfmx]{jsarticle}
 %%% hyperref
@@ -1147,6 +1153,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 \addcontentsline{toc}{chapter}{\bibname}
 \end{verbatim}
 \end{tcolorbox}
+\noindent
 と変更する必要があります．
 また，目次で生成される「文献」へのハイパーリンクにズレが発生することがあるので，その際は\verb|\phantomsection|で空の節（幻の節）を入れてあげることで調整します．
 \verb|\nocite{*}|は本文中で引用していない文献も含め，読み込んだ\verb|bib|ファイル内の全ての文献をリストアップします．
@@ -1165,6 +1172,7 @@ $ platex JSME-template1.tex （複数回）
 $ dvipdfmx JSME-template1
 \end{verbatim}
 \end{tcolorbox}
+\noindent
 \upLaTeX{}$+$\upBibTeX{}を使用する場合は以下のようなコマンドになります．
 \begin{tcolorbox}[enhanced, title=\upLaTeX{}$+$\upBibTeX{}, drop fuzzy shadow]
 \begin{verbatim}
@@ -1174,7 +1182,7 @@ $ uplatex JSME-template1.tex （複数回）
 $ dvipdfmx JSME-template1
 \end{verbatim}
 \end{tcolorbox}
-
+\noindent
 これでうまくいけば\verb|pdf|が生成されているはずです．
 \verb|latexmk|を設定していればコマンド一つで簡単に処理できます．
 
