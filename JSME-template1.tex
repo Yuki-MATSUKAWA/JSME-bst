@@ -545,7 +545,7 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
 
 \subsection{\ttarticle}
 \label{ssec:article}
-\begin{tcolorbox}[enhanced, drop fuzzy shadow]
+\begin{tcolorbox}[enhanced, title=\ttarticle, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \ttauthor, \tttitle, \ttjournal, \ttyear
@@ -590,7 +590,7 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
 
 \subsection{\ttbook}
 \label{ssec:book}
-\begin{tcolorbox}[enhanced, drop fuzzy shadow]
+\begin{tcolorbox}[enhanced, title=\ttbook, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \ttauthor / \tteditor, \tttitle, \ttpublisher, \ttyear
@@ -620,7 +620,7 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
 
 \subsection{\ttbooklet}
 \label{ssec:booklet}
-\begin{tcolorbox}[enhanced, drop fuzzy shadow]
+\begin{tcolorbox}[enhanced, title=\ttbooklet, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \tttitle
@@ -650,7 +650,7 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
 
 \subsection{\ttcomment}
 \label{ssec:comment}
-\begin{tcolorbox}[enhanced, drop fuzzy shadow]
+\begin{tcolorbox}[enhanced, title=\ttcomment, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         無し
@@ -681,7 +681,7 @@ Scribeというシステムとの互換性のために残されているらし�
 
 \subsection{\ttinbook}
 \label{ssec:inbook}
-\begin{tcolorbox}[enhanced, drop fuzzy shadow]
+\begin{tcolorbox}[enhanced, title=\ttinbook, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \ttauthor / \tteditor, \tttitle, \ttchapter / \ttpages, \ttpublisher, \ttyear
@@ -711,7 +711,7 @@ Scribeというシステムとの互換性のために残されているらし�
 
 \subsection{\ttincollection}
 \label{ssec:incollection}
-\begin{tcolorbox}[enhanced, drop fuzzy shadow]
+\begin{tcolorbox}[enhanced, title=\ttincollection, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \ttauthor, \tttitle, \ttbooktitle, \ttyear
@@ -746,7 +746,7 @@ Scribeというシステムとの互換性のために残されているらし�
 
 \subsection{\ttinproceedings}
 \label{ssec:inproceedings}
-\begin{tcolorbox}[enhanced, drop fuzzy shadow]
+\begin{tcolorbox}[enhanced, title=\ttinproceedings, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \ttauthor, \tttitle, \ttbooktitle, \ttyear
@@ -772,14 +772,15 @@ Scribeというシステムとの互換性のために残されているらし�
 
 \hyperref[ssec:conference]{\ttconference}と同様です．
 学会等の講演論文集の一部を引用するときに\ttinproceedings を使用します．
-\hyperref[ssec:article]{\ttarticle}と並んで使用頻度の高いエントリーだと思います．
+\hyperref[ssec:article]{\ttarticle}や\hyperref[ssec:inbook]{\ttinbook}と並んで使用頻度の高いエントリーだと思います．
 \ttbooktitle フィールドには日本語なら\texttt{booktitle = \{\colorbox[gray]{0.8}{学会名}講演論文集\}}，英語なら\texttt{booktitle = \{Proceedings of \colorbox[gray]{0.8}{学会名}\}}と入力しましょう．
 \hyperref[ssec:proceedings]{\ttproceedings}は講演論文集全体を引用しているのに対して，\ttinproceedings は講演論文集の中の一講演を引用しています．
+上の例では\ttnote に講演番号を入れています．
 
 
 \subsection{\ttmanual}
 \label{ssec:manual}
-\begin{tcolorbox}[enhanced, drop fuzzy shadow]
+\begin{tcolorbox}[enhanced, title=\ttmanual, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \tttitle
@@ -812,7 +813,7 @@ Scribeというシステムとの互換性のために残されているらし�
 
 \subsection{\ttmastersthesis}
 \label{ssec:mastersthesis}
-\begin{tcolorbox}[enhanced, drop fuzzy shadow]
+\begin{tcolorbox}[enhanced, title=\ttmastersthesis, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \ttauthor, \tttitle, \ttschool, \ttyear
@@ -844,7 +845,7 @@ Scribeというシステムとの互換性のために残されているらし�
 
 \subsection{\ttmisc}
 \label{ssec:misc}
-\begin{tcolorbox}[enhanced, drop fuzzy shadow]
+\begin{tcolorbox}[enhanced, title=\ttmisc, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         無し
@@ -901,7 +902,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 
 \subsection{\ttonline}
 \label{ssec:online}
-\begin{tcolorbox}[enhanced, drop fuzzy shadow]
+\begin{tcolorbox}[enhanced, title=\ttonline, drop fuzzy shadow]
     \begin{itemize}
         \item 使用可能項目 \\
         \ttauthor, \tttitle, \tthowpublished, \ttmonth, \ttyear, \tturl, \ttdoi, \ttaccess, \ttnote
@@ -940,7 +941,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 
 \subsection{\ttphdthesis}
 \label{ssec:phdthesis}
-\begin{tcolorbox}[enhanced, drop fuzzy shadow]
+\begin{tcolorbox}[enhanced, title=\ttphdthesis, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \ttauthor, \tttitle, \ttschool, \ttyear
@@ -970,7 +971,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 
 \subsection{\ttproceedings}
 \label{ssec:proceedings}
-\begin{tcolorbox}[enhanced, drop fuzzy shadow]
+\begin{tcolorbox}[enhanced, title=\ttproceedings, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \tttitle, \ttyear
@@ -1026,7 +1027,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 
 \subsection{\tttechreport}
 \label{ssec:techreport}
-\begin{tcolorbox}[enhanced, drop fuzzy shadow]
+\begin{tcolorbox}[enhanced, title=\tttechreport, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \ttauthor, \tttitle, \ttinstitution, \ttyear
@@ -1059,7 +1060,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 
 \subsection{\ttunpublished}
 \label{ssec:unpublished}
-\begin{tcolorbox}[enhanced, drop fuzzy shadow]
+\begin{tcolorbox}[enhanced, title=\ttunpublished, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \ttauthor, \tttitle, \ttnote
