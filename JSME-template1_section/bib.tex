@@ -546,6 +546,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
     author  = "{Kawamura Laboratory}",
     title   = {{DNS} Database of Wall Turbulence and Heat Transfer: 
                 Text database of {Poiseuille} flow for $\mathit{Re}_\tau = 64$},
+    year    = {},
     url     = {https://www.rs.tus.ac.jp/~t2lab/db/index.html},
     access  = {10 October, 2023}
 }
@@ -568,6 +569,8 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 \end{quote}
 \renewcommand\UrlFont{\ttfamily}
 のように出力します．
+また，他の文献と異なり発行年の \ttyear を出力する必要はありませんが，\jsmefile の仕様上，\ttyear フィールドを使わないとエラーが発生してしまいます．
+そのため，上記サンプルコードのように \verb|year = {}| と値を空にすることで対処してください．
 
 \subsection{\ttphdthesis}
 \label{ssec:phdthesis}
