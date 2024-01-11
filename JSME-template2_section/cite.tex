@@ -23,15 +23,15 @@
 \end{tcolorbox}
 
 日本機械学会の規定では本文中での文献の引用の際には，「著者名」と「発行年」を記載し，文献一覧は著者名によりソートするHarvard方式\footnote{文献の引用箇所に番号を付け，引用順に文献一覧を並べる方式をVancouver方式と言います．}が採用されています．
-そのため，\jsmefile では\verb|\citet|や\verb|\citealp|等のコマンドを使用して引用することをおすすめします．
+そのため，\jsmefile では \verb|\citet| や \verb|\citealp| 等のコマンドを使用して引用することをおすすめします．
 Table~\ref{tab:English}--\ref{tab:same_authors}は，本文中で文献を引用する際のコマンドとその出力結果の一覧を示しています．
-これらのコマンドを使用するには\verb|natbib.sty|というスタイルファイルを読み込む必要があります．
-このテンプレートではプリアンブルに\verb|\usepackage{natbib}|と書くことで\verb|natbib.sty|を読み込んでいます．
-\verb|\cite|と\verb|\citet|は出力結果が同じなのでどちらを使っても構いませんが，他のコマンドは細かい箇所（カンマや括弧の有無）に違いがあるので自分の出力したい内容に合わせて使うようにしてください．
+これらのコマンドを使用するには \verb|natbib.sty| というスタイルファイルを読み込む必要があります．
+このテンプレートではプリアンブルに \verb|\usepackage{natbib}| と書くことで \verb|natbib.sty| を読み込んでいます．
+\verb|\cite| と \verb|\citet| は出力結果が同じなのでどちらを使っても構いませんが，他のコマンドは細かい箇所（カンマや括弧の有無）に違いがあるので自分の出力したい内容に合わせて使うようにしてください．
 
 \begin{itemize}
     \item \verb|\cite|, \verb|\citet| \\
-    \verb|\cite|と\verb|\citet|は文章中で著者名と発行年を\citet{Reynolds:PhilTransRoySoc1883}のように \verb|author (year)| の形で引用する際に使用するコマンドです．
+    \verb|\cite| と \verb|\citet| は文章中で著者名と発行年を\citet{Reynolds:PhilTransRoySoc1883}のように \verb|author (year)| の形で引用する際に使用するコマンドです．
 \begin{quote}
 入力：
 \begin{verbatim}
@@ -41,7 +41,7 @@ Table~\ref{tab:English}--\ref{tab:same_authors}は，本文中で文献を引用
     \citet{Reynolds:PhilTransRoySoc1883}の実験では水の入った円管に染料を流すことにより，整った流れ（層流）と乱れた流れ（乱流）の切り替わりを明らかにした．
 \end{quote}
     \item \verb|\citep| \\
-    著者と発行年を\citep{Reynolds:PhilTransRoySoc1883}のように\verb|(author, year)|の形で引用する際に使用するコマンドです．
+    著者と発行年を\citep{Reynolds:PhilTransRoySoc1883}のように \verb|(author, year)| の形で引用する際に使用するコマンドです．
     括弧が半角括弧なので英文の中でのみ使用してください．
 \begin{quote}
 入力：
@@ -53,10 +53,10 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
     Fluid flow can be broadly divided into laminar flow and turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
 \end{quote}
     \item \verb|\citealt| \\
-    著者と発行年を\citealt{Reynolds:PhilTransRoySoc1883}のように半角スペースのみで分離し，\verb|author year|の形で出力するコマンドです．
+    著者と発行年を\citealt{Reynolds:PhilTransRoySoc1883}のように半角スペースのみで分離し，\verb|author year| の形で出力するコマンドです．
     日本機械学会の書き方には合わないので使用しないでください．
     \item \verb|\citealp| \\
-    著者と発行年を\citealp{Reynolds:PhilTransRoySoc1883}のように半角カンマと半角スペースで分離し，\verb|author, year|の形で出力するコマンドです．
+    著者と発行年を\citealp{Reynolds:PhilTransRoySoc1883}のように半角カンマと半角スペースで分離し，\verb|author, year| の形で出力するコマンドです．
     和文中の全角括弧内で使用してください．
 \begin{quote}
 入力：
@@ -71,7 +71,35 @@ turbulent flow \citep{Reynolds:PhilTransRoySoc1883}.
     \item \verb|\citeyear| \\
     発行年のみ出力するコマンドです．
     \item \verb|\citeyearpar| \\
-    発行年のみを\verb|(year)|の形で出力するコマンドです．
+    発行年のみを \verb|(year)| の形で出力するコマンドです．
+    \item \verb|\citetalias| \\
+    論文をPaper~Iなど，別の形で任意に出力することができます．
+    また，引用する文献自体は日本語文献であっても，図表中のキャプション内など英語で引用しなければいけない場面で重宝すると思います．
+    ただし，\verb|\defcitealias| コマンドを事前に読み込む必要があります．
+    キャプションの中には書けないようですが，\verb|\citetalias| よりも前の文章中で書いてあれば大丈夫です．
+    % こんな感じで宣言する．
+    \defcitealias{松川:修論2023}{Matsukawa (2023)}
+\begin{quote}
+入力：
+\begin{verbatim}
+\defcitealias{松川:修論2023}{Matsukawa (2023)}
+Cited from \citetalias{松川:修論2023}.
+\end{verbatim}
+出力：Cited from \citetalias{松川:修論2023}.
+\end{quote}
+    \item \verb|\citepalias| \\
+    \verb|\citetalias| の \verb|\citep| バージョンです．
+    使い方は \verb|\citetalias| と同様で，事前に \verb|\defcitealias| を読み込む必要があります．
+    % こんな感じで宣言する．
+    \defcitealias{松川:修論2023}{Matsukawa, 2023}
+\begin{quote}
+入力：
+\begin{verbatim}
+\defcitealias{松川:修論2023}{Matsukawa, 2023}
+Cited from \citepalias{松川:修論2023}.
+\end{verbatim}
+出力：Cited from my master's thesis \citepalias{松川:修論2023}.
+\end{quote}
 \end{itemize}
 
 \begin{table}[t]
