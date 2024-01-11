@@ -4,8 +4,8 @@
 
 日本機械学会オリジナルの原稿テンプレートに合わせた内容（`JSME-original`内）に関しては現在調整中です（`cls` ファイルの書き換えを検討中）．
 
-* `JSME-template1.tex`, `JSME-template1.pdf` -> ハイパーリンク有りの`jsme.bst`説明書
-* `JSME-template2.tex`, `JSME-template2.pdf` -> ハイパーリンク無しの`jsme-nolink.bst`説明書
+* `JSME-template1.tex`, `JSME-settings1.sty`, `JSME-template1.pdf` -> ハイパーリンク有りの`jsme.bst`説明書
+* `JSME-template2.tex`, `JSME-settings2.sty`, `JSME-template2.pdf` -> ハイパーリンク無しの`jsme-nolink.bst`説明書
 * `jsme.bst` -> ハイパーリンク有りの `bst` ファイル
 * `jsme-nolink.bst` -> ハイパーリンク無しの `bst` ファイル
 * `mybib_en.bib`, `mybib_jp.bib` -> 説明書用の文献リスト `bib` ファイル
