@@ -25,7 +25,7 @@
 また，エントリー名とフィールド名は大文字と小文字を区別しませんが，参照キーは区別するので気をつけてください．
 
 エントリーは雑誌論文や学位論文といった，その文献の該当する種別を表します．
-\jsmefile でサポートされているエントリーは \ttarticle, \hyperref[ssec:book]{\ttbook}, \hyperref[ssec:booklet]{\ttbooklet}, \hyperref[ssec:comment]{\ttcomment}, \hyperref[ssec:conference]{\ttconference}, \hyperref[ssec:inbook]{\ttinbook}, \hyperref[ssec:incollection]{\ttincollection}, \hyperref[ssec:inproceedings]{\ttinproceedings}, \hyperref[ssec:manual]{\ttmanual}, \hyperref[ssec:mastersthesis]{\ttmastersthesis}, \hyperref[ssec:misc]{\ttmisc}, \hyperref[ssec:online]{\ttonline}, \hyperref[ssec:phdthesis]{\ttphdthesis}, \hyperref[ssec:proceedings]{\ttproceedings}, \hyperref[ssec:techreport]{\tttechreport}, \hyperref[ssec:unpublished]{\ttunpublished}の16種類です．
+\jsmefile でサポートされているエントリーは \ttarticle, \ttbook, \ttbooklet, \ttcomment, \ttconference, \ttinbook, \ttincollection, \ttinproceedings, \ttmanual, \ttmastersthesis, \ttmisc, \ttonline, \ttphdthesis, \ttproceedings, \tttechreport, \ttunpublished の16種類です．
 それぞれのエントリーで必須となるフィールドが異なり，文献一覧への出力の方法も異なるので面倒くさがらずに分類しましょう．
 ただ，全ての文献を正確に分類することは難しく，判断が人により異なることもあります．
 \JSMErepos における分類の仕方も見る人によっては違和感を覚えるものがあるかもしれません．
@@ -33,7 +33,7 @@
 ただし，ここで説明する内容は一般的な \BibTeX におけるエントリーの説明と若干異なる箇所があるのでご了承ください．
 
 フィールドはその文献の著者情報や誌名情報を入力するデータ項目です．
-\jsmefile では\ttaccess, \ttaddress, \ttarchivePrefix, \ttauthor, \ttbooktitle, \ttchapter, \ttdoi, \ttedition, \tteditor, \tteprint, \tthowpublished, \ttinstitution, \ttjournal, \ttkey, \ttlangid, \ttlanguage, \ttmonth, \ttnote, \ttnumber, \ttorganization, \ttpages, \ttpublisher, \ttschool, \ttseries, \tttitle, \tttype, \tturl, \ttvolume, \ttyear, \ttyomi がサポートされています．
+\jsmefile では \ttaccess, \ttaddress, \ttarchivePrefix, \ttauthor, \ttbooktitle, \ttchapter, \ttdoi, \ttedition, \tteditor, \tteprint, \tthowpublished, \ttinstitution, \ttjournal, \ttkey, \ttlangid, \ttlanguage, \ttmonth, \ttnote, \ttnumber, \ttorganization, \ttpages, \ttpublisher, \ttschool, \ttseries, \tttitle, \tttype, \tturl, \ttvolume, \ttyear, \ttyomi がサポートされています．
 フィールドの値は
 \begin{verbatim}
     author = {Matsukawa, Yuki and Tsukahara, Takahiro}
@@ -76,7 +76,7 @@
         また，著者が複数いる場合は\verb| and |で著者を区切ります．
         日本語文献の場合は後述の \ttyomi フィールドで読み方を指定してください．
     \item \ttbooktitle \\
-        書籍の名前ですが，\hyperref[ssec:conference]{\ttconference}, \hyperref[ssec:incollection]{\ttincollection}, \hyperref[ssec:inproceedings]{\ttinproceedings}で使われることからわかるように，引用する文献が書籍のうちの一部である場合の書籍そのものの題名を書きます．
+        書籍の名前ですが，\ttconference, \ttincollection, \ttinproceedings で使われることからわかるように，引用する文献が書籍のうちの一部である場合の書籍そのものの題名を書きます．
         例えば，\citet{Lueptow:Springer2000}はそれ単独でStability and experimental velocity field in Taylor--Couette flow with axial and radial flowという題目（\tttitle）を持っていますが，これはPhysics of Rotating Fluidsという書籍（\ttbooktitle）の一部です．
     \item \ttchapter \\
         書籍の一部の章を引用するときに使用します．
@@ -91,7 +91,7 @@
     \item \tteditor \\
         編者名を入力します．
         書き方は著者名（\ttauthor）と同じですが，\jsmefile では \tteditor に値を入れても基本的には文献一覧には出力されません．
-        ただし，著者（\ttauthor）無し文献の場合，\verb|natbib|による文章中での引用がおかしくなるのでその際は\ttauthor 代わりに \tteditor を使用します（詳細は\hyperref[ssec:proceedings]{\ttproceedings}を参照）．
+        ただし，著者（\ttauthor）無し文献の場合，\verb|natbib|による文章中での引用がおかしくなるのでその際は \ttauthor 代わりに \tteditor を使用します（詳細は \ttproceedings を参照）．
         また，日本機械学会原稿テンプレートでは『伝熱ハンドブック』の編者として日本機械学会を指定し，その後ろに「編」と入れるように書かれていますが，現状これを \jsmefile で再現する際は \tteditor を使用せずに\verb|author = {日本機械学会編}|とするのが無難です．
         近い将来修正して \tteditor で対応できるようにしたいです．
     \item \tteprint \\
@@ -102,7 +102,7 @@
         特殊な出版形態をとる場合の説明を入力します．
         また，第~\ref{ssec:misc}節では学部の卒業論文を \ttmisc に分類する際に \tthowpublished に「xx大学xx学部xx学科卒業論文」と書くことにしています．
     \item \ttinstitution \\
-        技術報告書（\hyperref[ssec:techreport]{\tttechreport}）でのみ使用されるフィールドです．
+        技術報告書（\tttechreport）でのみ使用されるフィールドです．
         報告書が出された機関名を入力します．
     \item \ttjournal \\
         学術雑誌論文が出された誌名を入力します．
@@ -112,10 +112,10 @@
         \jsmefile では動作が完璧ではないのであまり使わないでほしいです．
     \item \ttlangid, \ttlanguage \\
         その文献が書かれている言語を指定するフィールドです．
-        \verb|japanese|と書かれていると日本語文献として処理されますが，指定されていなくても基本的には自動で日本語文献を判別してくれます\footnote{\ttauthor や\tttitle などのフィールドに日本語が含まれていると\texttt{is.kanji.str\$}という機能で日本語文献と判断します．}．
+        \verb|japanese|と書かれていると日本語文献として処理されますが，指定されていなくても基本的には自動で日本語文献を判別してくれます\footnote{\ttauthor や \tttitle などのフィールドに日本語が含まれていると\texttt{is.kanji.str\$}という機能で日本語文献と判断します．}．
         \verb|biblatex|では \ttlangid フィールドが使用されるので残しておいてもいいかもしれません．
         \JSMErepos もそのうち\verb|biblatex|対応バージョンを作成したいと考えています．
-        また，TeX Live 2020以前の\upBibTeX{}では\verb|is.kanji.str$|が適切に動作しないため，\ttlangid を使用してください\footnote{詳細は\href{https://github.com/ShiroTakeda/jecon-bst}{\texttt{jecon-bst (GitHub)}}の\texttt{jecon-example.pdf}を確認してください．}．
+        また，TeX Live 2020以前の \upBibTeX では\verb|is.kanji.str$|が適切に動作しないため，\ttlangid を使用してください\footnote{詳細は\href{https://github.com/ShiroTakeda/jecon-bst}{\texttt{jecon-bst (GitHub)}}の\texttt{jecon-example.pdf}を確認してください．}．
     \item \ttmonth \\
         出版された月を入力します．
         日本機械学会では年（\ttyear）だけ書けばいいので \ttmonth は不要．
@@ -135,11 +135,11 @@
         出版社の名前を入力します．
     \item \ttschool \\
         学校名を入力します．
-        \hyperref[ssec:mastersthesis]{\ttmastersthesis}と\hyperref[ssec:phdthesis]{\ttphdthesis}でのみ有効なフィールドです．
-        学部の卒業論文の場合は\hyperref[ssec:misc]{\ttmisc}に分類し，\ttschool フィールドの代わりに\tthowpublished を使用してください．
+        \ttmastersthesis と \ttphdthesis でのみ有効なフィールドです．
+        学部の卒業論文の場合は \ttmisc に分類し，\ttschool フィールドの代わりに \tthowpublished を使用してください．
     \item \ttseries \\
         書籍のシリーズを入力します．
-        \hyperref[ssec:book]{\ttbook}と\hyperref[ssec:inbook]{\ttinbook}でのみ有効なフィールドです．
+        \ttbook と \ttinbook でのみ有効なフィールドです．
         日本機械学会では不要かと思います．
     \item \tttitle \\
         文献のタイトルを入力します．
@@ -152,7 +152,7 @@
         \end{verbatim}
         のように\verb|{ }|で囲めば該当箇所はそのままの形で出力してくれます（\citealp{Matsukawa:PoF2022,Yoneda:arXiv2016}）．
     \item \tttype \\
-        \hyperref[ssec:techreport]{\tttechreport}でのみ有効なフィールドです．
+        \tttechreport でのみ有効なフィールドです．
         今後仕様を変えるかもしれませんが，\jsmefile では使わないでください．
     \item \tturl \\
         文献やwebページのURLを入力します．
@@ -218,9 +218,9 @@
 そのため，論文番号や講演番号は \ttnote に入れるようにしましょう．
 
 
-\subsection{\ttbook}
+\subsection{\texttt{@book}}
 \label{ssec:book}
-\begin{tcolorbox}[enhanced, title=\ttbook, drop fuzzy shadow]
+\begin{tcolorbox}[enhanced, title=\texttt{@book}, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \ttauthor / \tteditor, \tttitle, \ttpublisher, \ttyear
@@ -244,13 +244,13 @@
 \end{tcolorbox}
 
 出版社が刊行した書籍を引用する際は \ttbook を使います．
-似たエントリーとして\hyperref[ssec:inbook]{\ttinbook}がありますが，特定のページを参照したのではなく，書籍全体を参照した場合は \ttbook を使いましょう．
+似たエントリーとして \ttinbook がありますが，特定のページを参照したのではなく，書籍全体を参照した場合は \ttbook を使いましょう．
 \JSMErepos ではSpringer\footnote{Springer, \textless\url{https://www.springer.com/jp}\textgreater}や朝倉書店\footnote{朝倉書店, \textless\url{https://www.asakura.co.jp/}\textgreater}，丸善出版\footnote{丸善出版, \textless\url{https://www.maruzen-publishing.co.jp/}\textgreater}等の出版社から出た書籍を \ttbook に分類しています．
 \ttpublisher フィールドにはこれらの出版社名を入れましょう．
 
-\subsection{\ttbooklet}
+\subsection{\texttt{@booklet}}
 \label{ssec:booklet}
-\begin{tcolorbox}[enhanced, title=\ttbooklet, drop fuzzy shadow]
+\begin{tcolorbox}[enhanced, title=\texttt{@booklet}, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \tttitle
@@ -278,9 +278,9 @@
 \ttbooklet は使う機会が少ないため分類が難しいエントリーですが，出版社が明記されていないような（薄い）冊子媒体が該当します．
 \JSMErepos では例として東京理科大学理工学部機械工学科（現・創域理工学部機械航空宇宙工学科）が毎年出しているMEニュースレター\footnote{MEニュースレター, \textless\url{https://www.rs.tus.ac.jp/me/newsletter.html}\textgreater}という広報の冊子を引用しました．
 
-\subsection{\ttcomment}
+\subsection{\texttt{@comment}}
 \label{ssec:comment}
-\begin{tcolorbox}[enhanced, title=\ttcomment, drop fuzzy shadow]
+\begin{tcolorbox}[enhanced, title=\texttt{@comment}, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         無し
@@ -303,15 +303,15 @@
 通常の\verb|tex|ファイルや\verb|sty|ファイル内では\verb|%|を書くことでその行はコメントアウトされますが，\verb|bib|ファイル内では使えません．
 
 
-\subsection{\ttconference}
+\subsection{\texttt{@conference}}
 \label{ssec:conference}
-\hyperref[ssec:inproceedings]{\ttinproceedings}と同様なので省略．
+\ttinproceedings と同様なので省略．
 Scribeというシステムとの互換性のために残されているらしい（\citealp{奥村:技評2020}）．
 
 
-\subsection{\ttinbook}
+\subsection{\texttt{@inbook}}
 \label{ssec:inbook}
-\begin{tcolorbox}[enhanced, title=\ttinbook, drop fuzzy shadow]
+\begin{tcolorbox}[enhanced, title=\texttt{@inbook}, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \ttauthor / \tteditor, \tttitle, \ttchapter / \ttpages, \ttpublisher, \ttyear
@@ -335,13 +335,13 @@ Scribeというシステムとの互換性のために残されているらし�
     \end{itemize}
 \end{tcolorbox}
 
-\hyperref[ssec:book]{\ttbook}に似ていますが，\ttbook が書籍丸々一冊なのに対して \ttinbook は書籍中の一部から引用する場合に使用します．
+\ttbook に似ていますが，\ttbook が書籍丸々一冊なのに対して \ttinbook は書籍中の一部から引用する場合に使用します．
 そのため，\ttbook と異なり \ttpages フィールドが使用可能です．
 
 
-\subsection{\ttincollection}
+\subsection{\texttt{@incollection}}
 \label{ssec:incollection}
-\begin{tcolorbox}[enhanced, title=\ttincollection, drop fuzzy shadow]
+\begin{tcolorbox}[enhanced, title=\texttt{@incollection}, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \ttauthor, \tttitle, \ttbooktitle, \ttyear
@@ -368,15 +368,15 @@ Scribeというシステムとの互換性のために残されているらし�
 \end{tcolorbox}
 
 \ttincollection は分類が難しいエントリーの一つです．
-これは書籍の一部からの引用ですが，\hyperref[ssec:inbook]{\ttinbook}と異なる点は，引用箇所が独立して表題を持っているようなものを指します．
+これは書籍の一部からの引用ですが，\ttinbook と異なる点は，引用箇所が独立して表題を持っているようなものを指します．
 学会等があるテーマについて組んだ特集といったイメージです．
 上記の\citet{Lueptow:Springer2000}の例では，それ単独でStability and experimental velocity field in Taylor--Couette flow with axial and radial flowという題目（\tttitle）を持っていますが，これはPhysics of Rotating Fluidsという書籍（\ttbooktitle）の一部です．
 日本語文献では京都大学数理解析研究所の講究録\footnote{京都大学数理解析研究所（RIMS）講究録, \textless\url{https://www.kurims.kyoto-u.ac.jp/ja/kokyuroku.html}\textgreater}や文部科学省科学研究補助金における特定の新学術領域研究の研究成果報告書等を \ttincollection に分類しています．
-それは\hyperref[ssec:inproceedings]{\ttinproceedings}だろとか\hyperref[ssec:techreport]{\tttechreport}だろとか言われそうな気もします．
+それは \ttinproceedings だろとか \tttechreport だろとか言われそうな気もします．
 
-\subsection{\ttinproceedings}
+\subsection{\texttt{@inproceedings}}
 \label{ssec:inproceedings}
-\begin{tcolorbox}[enhanced, title=\ttinproceedings, drop fuzzy shadow]
+\begin{tcolorbox}[enhanced, title=\texttt{@inproceedings}, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \ttauthor, \tttitle, \ttbooktitle, \ttyear
@@ -400,17 +400,17 @@ Scribeというシステムとの互換性のために残されているらし�
     \end{itemize}
 \end{tcolorbox}
 
-\hyperref[ssec:conference]{\ttconference}と同様です．
+\ttconference と同様です．
 学会等の講演論文集の一部を引用するときに \ttinproceedings を使用します．
-\ttarticle や\hyperref[ssec:inbook]{\ttinbook}と並んで使用頻度の高いエントリーだと思います．
+\ttarticle や \ttinbook と並んで使用頻度の高いエントリーだと思います．
 \ttbooktitle フィールドには日本語なら\texttt{booktitle = \{\colorbox[gray]{0.8}{学会名}講演論文集\}}，英語なら\texttt{booktitle = \{Proceedings of \colorbox[gray]{0.8}{学会名}\}}と入力しましょう．
-\hyperref[ssec:proceedings]{\ttproceedings}は講演論文集全体を引用しているのに対して，\ttinproceedings は講演論文集の中の一講演を引用しています．
+\ttproceedings は講演論文集全体を引用しているのに対して，\ttinproceedings は講演論文集の中の一講演を引用しています．
 上の例では \ttnote に講演番号を入れています．
 
 
-\subsection{\ttmanual}
+\subsection{\texttt{@manual}}
 \label{ssec:manual}
-\begin{tcolorbox}[enhanced, title=\ttmanual, drop fuzzy shadow]
+\begin{tcolorbox}[enhanced, title=\texttt{@manual}, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \tttitle
@@ -438,12 +438,12 @@ Scribeというシステムとの互換性のために残されているらし�
 これはソートの際に \ttauthor フィールドが空欄だと参考文献一覧の変な場所に配置されてしまうからです．
 本来であれば \ttkey フィールドで解決したいところですが，\jsmefile では動作が不安定なので避けたいところです．
 実は\verb|natbib.sty|において著者無し文献の本文中での引用は課題が残されているようです\footnote{詳細は\texttt{natbib.sty}の公式ドキュメント\textless\url{https://ctan.org/pkg/natbib}\textgreater をご覧ください．}．
-\ttmanual での不具合回避方法としては一旦，マニュアルを発行している機関・企業を \ttauthor とすることで解決としますが，著者無し文献の不具合回避方法は第~\ref{ssec:proceedings}節\ttproceedings でも説明します．
+\ttmanual での不具合回避方法としては一旦，マニュアルを発行している機関・企業を \ttauthor とすることで解決としますが，著者無し文献の不具合回避方法は第~\ref{ssec:proceedings}節 \ttproceedings でも説明します．
 
 
-\subsection{\ttmastersthesis}
+\subsection{\texttt{@mastersthesis}}
 \label{ssec:mastersthesis}
-\begin{tcolorbox}[enhanced, title=\ttmastersthesis, drop fuzzy shadow]
+\begin{tcolorbox}[enhanced, title=\texttt{@mastersthesis}, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \ttauthor, \tttitle, \ttschool, \ttyear
@@ -473,9 +473,9 @@ Scribeというシステムとの互換性のために残されているらし�
 また，\ttyear は修了「年度」ではなく修了「年」を西暦で書いてください．
 例えば，日本の大学を2023年3月に修了した人は2022年度修了生ですが\verb|year = {2023}|です．
 
-\subsection{\ttmisc}
+\subsection{\texttt{@misc}}
 \label{ssec:misc}
-\begin{tcolorbox}[enhanced, title=\ttmisc, drop fuzzy shadow]
+\begin{tcolorbox}[enhanced, title=\texttt{@misc}, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         無し
@@ -530,9 +530,9 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 また，\ttmisc では \ttauthor フィールドが任意項目となっています．
 第~\ref{ssec:manual}節 \ttmanual でも説明したように，著者無し文献は不具合の元なので著者に相当しそうなものを \ttauthor に入れておいてください．
 
-\subsection{\ttonline}
+\subsection{\texttt{@online}}
 \label{ssec:online}
-\begin{tcolorbox}[enhanced, title=\ttonline, drop fuzzy shadow]
+\begin{tcolorbox}[enhanced, title=\texttt{@online}, drop fuzzy shadow]
     \begin{itemize}
         \item 使用可能項目 \\
         \ttauthor, \tttitle, \tthowpublished, \ttmonth, \ttyear, \tturl, \ttdoi, \ttaccess, \ttnote
@@ -572,9 +572,9 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 また，他の文献と異なり発行年の \ttyear を出力する必要はありませんが，\jsmefile の仕様上，\ttyear フィールドを使わないとエラーが発生してしまいます．
 そのため，上記サンプルコードのように \verb|year = {}| と値を空にすることで対処してください．
 
-\subsection{\ttphdthesis}
+\subsection{\texttt{@phdthesis}}
 \label{ssec:phdthesis}
-\begin{tcolorbox}[enhanced, title=\ttphdthesis, drop fuzzy shadow]
+\begin{tcolorbox}[enhanced, title=\texttt{@phdthesis}, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \ttauthor, \tttitle, \ttschool, \ttyear
@@ -600,11 +600,11 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 
 \ttphdthesis は博士論文が該当します．
 エントリー名に\verb|thesis|と入っていますが，英語文献の場合はdissertationと出力されます．
-基本的な使い方は\hyperref[ssec:mastersthesis]{\ttmastersthesis}と同じです．
+基本的な使い方は \ttmastersthesis と同じです．
 
-\subsection{\ttproceedings}
+\subsection{\texttt{@proceedings}}
 \label{ssec:proceedings}
-\begin{tcolorbox}[enhanced, title=\ttproceedings, drop fuzzy shadow]
+\begin{tcolorbox}[enhanced, title=\texttt{@proceedings}, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \tttitle, \ttyear
@@ -626,8 +626,8 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 \end{tcolorbox}
 
 学会の講演論文集全体を引用する際には \ttproceedings を使用します．
-\hyperref[ssec:conference]{\ttconference}や\hyperref[ssec:inproceedings]{\ttinproceedings}は講演論文集の中の一講演を引用しているのに対して，\ttproceedings は講演論文集全体を引用しています．
-\hyperref[ssec:manual]{\ttmanual}や\hyperref[ssec:misc]{\ttmisc}と同様，\ttauthor フィールドが必須項目ではありません．
+\ttconference や \ttinproceedings は講演論文集の中の一講演を引用しているのに対して，\ttproceedings は講演論文集全体を引用しています．
+\ttmanual や \ttmisc と同様，\ttauthor フィールドが必須項目ではありません．
 したがって，文献一覧のソートの際は \tttitle の読みを和文・英文問わず \ttyomi フィールドで指定してあげないと変な場所に飛ばされてしまいます．
 また，もし
 \begin{quote}
@@ -658,9 +658,9 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 文献一覧には \tteditor は出力されませんが，本文中での引用では\citet{THMT2023}や\citet{流力年会2023}のように\verb|editor (year)|で出力してくれます．
 
 
-\subsection{\tttechreport}
+\subsection{\texttt{@techreport}}
 \label{ssec:techreport}
-\begin{tcolorbox}[enhanced, title=\tttechreport, drop fuzzy shadow]
+\begin{tcolorbox}[enhanced, title=\texttt{@techreport}, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \ttauthor, \tttitle, \ttinstitution, \ttyear
@@ -691,9 +691,9 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 \tttechreport には \tttype という任意フィールドがありますが，諸事情でここに何か書いても何も表示しないようにしているので使わないでください．
 本当は\verb|type = {Technical Report}|などと書くとそのように表示されます．
 
-\subsection{\ttunpublished}
+\subsection{\texttt{@unpublished}}
 \label{ssec:unpublished}
-\begin{tcolorbox}[enhanced, title=\ttunpublished, drop fuzzy shadow]
+\begin{tcolorbox}[enhanced, title=\texttt{@unpublished}, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \ttauthor, \tttitle, \ttnote
@@ -720,7 +720,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 
 \ttunpublished は正式には出版されていない本などが該当します．
 ただ，\ttunpublished を使う機会はほぼ無いと思われますし，そもそも具体的に何が該当するのかもパッとイメージできるものではありません．
-また，大抵の人は分類がよくわからなかったら\hyperref[ssec:misc]{\ttmisc}に入れてしまう気がします．
+また，大抵の人は分類がよくわからなかったら \ttmisc に入れてしまう気がします．
 しかし，\jsmefile を作成するうえでパターンを網羅しておきたかったので（無理矢理）分類したものとしては大学のオープンコースウェア（OCW）の講義資料等です．
 講義資料であれば正式に出版された書籍ではありませんがweb上にあるのをよく見かけると思います．
 上記の例はMITのOCW\footnote{MIT Open Course Ware, \textless\url{https://ocw.mit.edu/}\textgreater}における講義資料です．
