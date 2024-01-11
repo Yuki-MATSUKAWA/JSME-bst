@@ -14,8 +14,8 @@ Serif体のフォントとしては{\usefont{T1}{ptm}{m}{n} Times}や{\usefont{T
 ここでは参考文献の書き方に焦点を当てて説明するのでその他の箇所の書式は日本機械学会の原稿テンプレートをよく読んで作成してください．
 
 \subsection{文献の並べ方・引用の仕方}
-この節では文献リストのフィールド（\BibTeX{}における\ttauthor や\tttitle）の並べ方について説明します．
-\jsmefile のユーザーは気にせず使用することができますが，改めて整理しておくので\jsmefile を使わないときにも役に立つと思います．
+この節では文献リストのフィールド（\BibTeX における \ttauthor や \tttitle）の並べ方について説明します．
+\jsmefile のユーザーは気にせず使用することができますが，改めて整理しておくので \jsmefile を使わないときにも役に立つと思います．
 原則，日本機械学会の規定に合わせていますが，原稿テンプレートからは判断が難しい事項は一部独自の解釈を加えているものがあります．
 
 文献を並べる順序の規則は以下の通りです．
@@ -40,20 +40,20 @@ Serif体のフォントとしては{\usefont{T1}{ptm}{m}{n} Times}や{\usefont{T
             著者（\ttauthor）$\to$タイトル（\tttitle）$\to$誌名（\ttjournal）・書名（\ttbooktitle）$\to$出版社（\ttpublisher）・大学名（\ttschool）・機関名（\ttinstitution）$\to$巻（\ttvolume）$\to$号（\ttnumber）$\to$発行年（\ttyear）$\to$ページ（\ttpages）$\to$論文番号・講演番号（\ttnote） \\
             とする．
             ただし，存在しないフィールドがある場合は抜かす．
-            また，webページ等の引用は極力避けるべきだが，引用する場合には必ず末尾にURLと参照日を明記する（第~\ref{ssec:online}節\ttonline を参照）．
+            また，webページ等の引用は極力避けるべきだが，引用する場合には必ず末尾にURLと参照日を明記する（第~\ref{ssec:online}節 \ttonline を参照）．
             \begin{quote}
                 Kawamura Laboratory, DNS database of wall turbulence and heat transfer: Text database of Poiseuille flow for $\mathit{Re}_\tau = 64$, available from \textless\url{https://www.rs.tus.ac.jp/~t2lab/db/index.html}\textgreater, (accessed on 10 October, 2023).
             \end{quote}
         \item 文献自体が日本語で書かれている場合は外国人が書いていても日本語文献とする．
         \item 文献自体が英語で書かれている場合は日本人が書いていても英語文献とする．
         \item フィールドとフィールドの間は日本語文献・英語文献問わず半角カンマと半角スペース（, ）で繋ぐ．全角カンマ（，）ではないので注意．
-        \item 他学会の文献テンプレートでは誌名を\textit{Italic}体にしたり巻数を\textbf{Boldface}体にしたりすることがあるが，日本機械学会では全て\textrm{Roman}体で統一する（WebページのURLを\LaTeX{}で出力するときに\texttt{Typewriter}体が用いられることが多いが，これも\textrm{Roman}体にする）．
+        \item 他学会の文献テンプレートでは誌名を\textit{Italic}体にしたり巻数を\textbf{Boldface}体にしたりすることがあるが，日本機械学会では全て\textrm{Roman}体で統一する（WebページのURLを \LaTeX で出力するときに\texttt{Typewriter}体が用いられることが多いが，これも\textrm{Roman}体にする）．
         \item 以上の内容が満たされていて，文献にアクセスするうえで十分な情報が書かれていれば月（\ttmonth）や章（\ttchapter）等は不要．
     \end{itemize}
 \end{tcolorbox}
 \renewcommand\UrlFont{\ttfamily}
 \noindent
-\ttauthor や\tttitle などのフィールドについての詳細は第~\ref{ssec:field}節を，各エントリー（\ttarticle や\ttbook など）ごとの詳細は第~\ref{ssec:article}節以降を参照してください．
+\ttauthor や \tttitle などのフィールドについての詳細は第~\ref{ssec:field}節を，各エントリー（\ttarticle や \ttbook など）ごとの詳細は第~\ref{ssec:article}節以降を参照してください．
 次に，文献リストを作成する際の著者名表記に関する注意事項です．
 \begin{tcolorbox}[enhanced, title=\textgt{文献リスト作成の注意事項（著者名）}, drop fuzzy shadow]
     \begin{itemize}

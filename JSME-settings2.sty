@@ -1,0 +1,110 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%
+%%%      【非公式】日本機械学会 BibTeX スタイルファイル
+%%%             jsme.bst 取扱説明書 共通設定
+%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% テキストエリア指定
+\setlength{\hoffset}{-5.4truemm}
+\setlength{\voffset}{-10.4truemm}
+\setlength{\oddsidemargin}{0truemm}
+\setlength{\evensidemargin}{0truemm}
+\setlength{\topmargin}{0truemm}
+\setlength{\footskip}{10truemm}
+\setlength{\textheight}{250truemm}
+\setlength{\textwidth}{170truemm}
+\setlength{\headsep}{5truept}
+\setlength{\headheight}{20truept}
+\setlength{\marginparsep}{0truemm}
+\setlength{\marginparwidth}{0truemm}
+
+%%% 図の挿入
+\usepackage{graphicx}
+%%% 数式等
+\usepackage{physics}
+\usepackage{amsmath,amssymb}
+%%% ロゴ関連
+\usepackage{bxtexlogo}
+%%% 枠
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+%%% otf
+\usepackage{otf}
+%%% 色の変更
+\usepackage{color}
+
+%%% ヘッダー・フッター
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\fancypagestyle{cover}
+{%
+	\fancyhf{}
+	\cfoot{\thepage/\pageref{LastPage}}
+	\renewcommand{\headrulewidth}{0.0pt}
+}
+\pagestyle{fancy}
+	\lhead{【非公式】日本機械学会 \BibTeX スタイルファイルの使い方}
+	\chead{}
+	\rhead{東京理科大学 松川裕樹}
+	\lfoot{}
+	\cfoot{\thepage/\pageref{LastPage}}
+	\rfoot{}
+
+%%% その他の定義
+\newcommand{\JSMErepos}{\texttt{JSME-bst}}
+\newcommand{\jsmefile}{\texttt{jsme-nolink.bst}}
+\renewcommand{\figurename}{Fig.~}       % 図番号
+\renewcommand{\tablename}{Table~}       % 表番号
+%%%%%% エントリー名
+\newcommand{\ttarticle}{\texttt{@article}}
+\newcommand{\ttbook}{\texttt{@book}}
+\newcommand{\ttbooklet}{\texttt{@booklet}}
+\newcommand{\ttcomment}{\texttt{@comment}}
+\newcommand{\ttconference}{\texttt{@conference}}
+\newcommand{\ttinbook}{\texttt{@inbook}}
+\newcommand{\ttincollection}{\texttt{@incollection}}
+\newcommand{\ttinproceedings}{\texttt{@inproceedings}}
+\newcommand{\ttmanual}{\texttt{@manual}}
+\newcommand{\ttmastersthesis}{\texttt{@mastersthesis}}
+\newcommand{\ttmisc}{\texttt{@misc}}
+\newcommand{\ttonline}{\texttt{@online}}
+\newcommand{\ttphdthesis}{\texttt{@phdthesis}}
+\newcommand{\ttproceedings}{\texttt{@proceedings}}
+\newcommand{\tttechreport}{\texttt{@techreport}}
+\newcommand{\ttunpublished}{\texttt{@unpublished}}
+%%%%%% フィールド名
+\newcommand{\ttaccess}{\texttt{access}}
+\newcommand{\ttaddress}{\texttt{address}}
+\newcommand{\ttarchivePrefix}{\texttt{archivePrefix}}
+\newcommand{\ttauthor}{\texttt{author}}
+\newcommand{\ttauthorf}{\texttt{author 1}}
+\newcommand{\ttauthors}{\texttt{author 2}}
+\newcommand{\ttauthort}{\texttt{author 3}}
+\newcommand{\ttbooktitle}{\texttt{booktitle}}
+\newcommand{\ttchapter}{\texttt{chapter}}
+\newcommand{\ttdoi}{\texttt{doi}}
+\newcommand{\ttedition}{\texttt{edition}}
+\newcommand{\tteditor}{\texttt{editor}}
+\newcommand{\tteprint}{\texttt{eprint}}
+\newcommand{\tthowpublished}{\texttt{howpublished}}
+\newcommand{\ttinstitution}{\texttt{institution}}
+\newcommand{\ttjournal}{\texttt{journal}}
+\newcommand{\ttkey}{\texttt{key}}
+\newcommand{\ttmonth}{\texttt{month}}
+\newcommand{\ttnote}{\texttt{note}}
+\newcommand{\ttnumber}{\texttt{number}}
+\newcommand{\ttorganization}{\texttt{organization}}
+\newcommand{\ttpages}{\texttt{pages}}
+\newcommand{\ttpublisher}{\texttt{publisher}}
+\newcommand{\ttschool}{\texttt{school}}
+\newcommand{\ttseries}{\texttt{series}}
+\newcommand{\tttitle}{\texttt{title}}
+\newcommand{\tttype}{\texttt{type}}
+\newcommand{\tturl}{\texttt{url}}
+\newcommand{\ttvolume}{\texttt{volume}}
+\newcommand{\ttyear}{\texttt{year}}
+\newcommand{\ttyomi}{\texttt{yomi}}
+\newcommand{\ttlanguage}{\texttt{language}}
+\newcommand{\ttlangid}{\texttt{langid}}
+
