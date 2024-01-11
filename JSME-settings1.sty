@@ -44,7 +44,7 @@
 	\renewcommand{\headrulewidth}{0.0pt}
 }
 \pagestyle{fancy}
-	\lhead{【非公式】日本機械学会\BibTeX{}スタイルファイルの使い方}
+	\lhead{【非公式】日本機械学会 \BibTeX スタイルファイルの使い方}
 	\chead{}
 	\rhead{東京理科大学 松川裕樹}
 	\lfoot{}
@@ -53,25 +53,26 @@
 
 %%% その他の定義
 \newcommand{\JSMErepos}{\texttt{JSME-bst}}
+\newcommand{\jsmefile}{\texttt{jsme.bst}}
 \renewcommand{\figurename}{Fig.~}       % 図番号
 \renewcommand{\tablename}{Table~}       % 表番号
 %%%%%% エントリー名
-\newcommand{\ttarticle}{\texttt{@article}}
-\newcommand{\ttbook}{\texttt{@book}}
-\newcommand{\ttbooklet}{\texttt{@booklet}}
-\newcommand{\ttcomment}{\texttt{@comment}}
-\newcommand{\ttconference}{\texttt{@conference}}
-\newcommand{\ttinbook}{\texttt{@inbook}}
-\newcommand{\ttincollection}{\texttt{@incollection}}
-\newcommand{\ttinproceedings}{\texttt{@inproceedings}}
-\newcommand{\ttmanual}{\texttt{@manual}}
-\newcommand{\ttmastersthesis}{\texttt{@mastersthesis}}
-\newcommand{\ttmisc}{\texttt{@misc}}
-\newcommand{\ttonline}{\texttt{@online}}
-\newcommand{\ttphdthesis}{\texttt{@phdthesis}}
-\newcommand{\ttproceedings}{\texttt{@proceedings}}
-\newcommand{\tttechreport}{\texttt{@techreport}}
-\newcommand{\ttunpublished}{\texttt{@unpublished}}
+\newcommand{\ttarticle}{\hyperref[ssec:article]{\texttt{@article}}}
+\newcommand{\ttbook}{\hyperref[ssec:book]{\texttt{@book}}}
+\newcommand{\ttbooklet}{\hyperref[ssec:booklet]{\texttt{@booklet}}}
+\newcommand{\ttcomment}{\hyperref[ssec:comment]{\texttt{@comment}}}
+\newcommand{\ttconference}{\hyperref[ssec:conference]{\texttt{@conference}}}
+\newcommand{\ttinbook}{\hyperref[ssec:inbook]{\texttt{@inbook}}}
+\newcommand{\ttincollection}{\hyperref[ssec:incollection]{\texttt{@incollection}}}
+\newcommand{\ttinproceedings}{\hyperref[ssec:inproceedings]{\texttt{@inproceedings}}}
+\newcommand{\ttmanual}{\hyperref[ssec:manual]{\texttt{@manual}}}
+\newcommand{\ttmastersthesis}{\hyperref[ssec:mastersthesis]{\texttt{@mastersthesis}}}
+\newcommand{\ttmisc}{\hyperref[ssec:misc]{\texttt{@misc}}}
+\newcommand{\ttonline}{\hyperref[ssec:online]{\texttt{@online}}}
+\newcommand{\ttphdthesis}{\hyperref[ssec:phdthesis]{\texttt{@phdthesis}}}
+\newcommand{\ttproceedings}{\hyperref[ssec:proceedings]{\texttt{@proceedings}}}
+\newcommand{\tttechreport}{\hyperref[ssec:techreport]{\texttt{@techreport}}}
+\newcommand{\ttunpublished}{\hyperref[ssec:unpublished]{\texttt{@unpublished}}}
 %%%%%% フィールド名
 \newcommand{\ttaccess}{\texttt{access}}
 \newcommand{\ttaddress}{\texttt{address}}

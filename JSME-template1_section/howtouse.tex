@@ -1,12 +1,12 @@
 \clearpage
 \section{\jsmefile の使い方}
 \label{sec:howtouse}
-それでは実際に\jsmefile を使ってみましょう．
+それでは実際に \jsmefile を使ってみましょう．
 必要なファイルは以下の通りです．
-括弧の中は\JSMErepos の場合の該当ファイルを指します．
+括弧の中は \JSMErepos の場合の該当ファイルを指します．
 \begin{itemize}
     \item 本文の\verb|tex|ファイル（\verb|JSME-template1.tex|）
-    \item \BibTeX{}の\verb|bst|スタイルファイル（\jsmefile）
+    \item \BibTeX の\verb|bst|スタイルファイル（\jsmefile）
     \item 読み込む文献リストの\verb|bib|ファイル（\verb|mybib_en.bib|, \verb|mybib_jp.bib|）
 \end{itemize}
 次に本文の\verb|tex|ファイルの設定ですが，おおまかに下記のようになります．
@@ -44,8 +44,8 @@
 ここでは\verb|hyperref|を入れることでハイパーリンクを有効にし，\verb|pxjahyper|を入れることでしおりの日本語表示を有効にしています．
 ここで使用するオプション等はユーザーに任せます．
 そして，本文中で\verb|\citet|や\verb|\citep|等のコマンドを有効化するために\verb|natbib|を入れます．
-次に，\verb|\begin{document}|以降の本文の末尾に\verb|\bibliographystyle{jsme}|と入れることで\jsmefile がここで使用する\BibTeX{}スタイルファイルとして読み込まれます．
-他の\BibTeX{}スタイルファイルを使用する際はここを変更してください．
+次に，\verb|\begin{document}|以降の本文の末尾に\verb|\bibliographystyle{jsme}|と入れることで \jsmefile がここで使用する \BibTeX スタイルファイルとして読み込まれます．
+他の \BibTeX スタイルファイルを使用する際はここを変更してください．
 次に，読み込む文献リストの\verb|bib|ファイルを\verb|\bibliography{}|で指定してください．
 ここでは\verb|mybib_en.bib|と\verb|mybib_jp.bib|が読み込まれています．
 実際に皆さんの環境で使用する際には本文の\verb|tex|ファイルと同じディレクトリに\verb|bib|ファイルを入れるのが普通ですが，小分けにした\verb|bib|ファイルが多くあるのであれば，\texttt{\textcolor{red}{bibliography/}}\verb|mybib_en.bib|みたいに階層を変えてもいいです．
@@ -70,10 +70,10 @@
 その他細かいことは\verb|JSME-template1.tex|の中身も読んでみてください．
 
 次に，コンパイルについてです．
-\verb|JSME-template1.tex|から\verb|JSME-template1.pdf|の生成は\upLaTeX{}$+$\upBibTeX{}を使用しているので，ユーザーの使用環境に応じて変更してください．
-ここでは\pLaTeX{}$+$\pBibTeX{}の場合と\upLaTeX{}$+$\upBibTeX{}の場合の説明をします．
+\verb|JSME-template1.tex|から\verb|JSME-template1.pdf|の生成は \upLaTeX$+$\upBibTeX を使用しているので，ユーザーの使用環境に応じて変更してください．
+ここでは \pLaTeX$+$\pBibTeX の場合と \upLaTeX$+$\upBibTeX の場合の説明をします．
 \pLaTeX{}$+$\pBibTeX{}を使用する場合は以下のようなコマンドになります．
-\begin{tcolorbox}[enhanced, title=\pLaTeX{}$+$\pBibTeX{}, drop fuzzy shadow]
+\begin{tcolorbox}[enhanced, title=\pLaTeX$+$\pBibTeX, drop fuzzy shadow]
 \begin{verbatim}
 $ platex JSME-template1.tex
 $ pbibtex JSME-template1
@@ -82,8 +82,8 @@ $ dvipdfmx JSME-template1
 \end{verbatim}
 \end{tcolorbox}
 \noindent
-\upLaTeX{}$+$\upBibTeX{}を使用する場合は以下のようなコマンドになります．
-\begin{tcolorbox}[enhanced, title=\upLaTeX{}$+$\upBibTeX{}, drop fuzzy shadow]
+\upLaTeX$+$\upBibTeX を使用する場合は以下のようなコマンドになります．
+\begin{tcolorbox}[enhanced, title=\upLaTeX$+$\upBibTeX, drop fuzzy shadow]
 \begin{verbatim}
 $ uplatex JSME-template1.tex
 $ upbibtex JSME-template1
