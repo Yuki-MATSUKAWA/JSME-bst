@@ -25,7 +25,7 @@
 また，エントリー名とフィールド名は大文字と小文字を区別しませんが，参照キーは区別するので気をつけてください．
 
 エントリーは雑誌論文や学位論文といった，その文献の該当する種別を表します．
-\jsmefile でサポートされているエントリーは\hyperref[ssec:article]{\ttarticle}, \hyperref[ssec:book]{\ttbook}, \hyperref[ssec:booklet]{\ttbooklet}, \hyperref[ssec:comment]{\ttcomment}, \hyperref[ssec:conference]{\ttconference}, \hyperref[ssec:inbook]{\ttinbook}, \hyperref[ssec:incollection]{\ttincollection}, \hyperref[ssec:inproceedings]{\ttinproceedings}, \hyperref[ssec:manual]{\ttmanual}, \hyperref[ssec:mastersthesis]{\ttmastersthesis}, \hyperref[ssec:misc]{\ttmisc}, \hyperref[ssec:online]{\ttonline}, \hyperref[ssec:phdthesis]{\ttphdthesis}, \hyperref[ssec:proceedings]{\ttproceedings}, \hyperref[ssec:techreport]{\tttechreport}, \hyperref[ssec:unpublished]{\ttunpublished}の16種類です．
+\jsmefile でサポートされているエントリーは \ttarticle, \hyperref[ssec:book]{\ttbook}, \hyperref[ssec:booklet]{\ttbooklet}, \hyperref[ssec:comment]{\ttcomment}, \hyperref[ssec:conference]{\ttconference}, \hyperref[ssec:inbook]{\ttinbook}, \hyperref[ssec:incollection]{\ttincollection}, \hyperref[ssec:inproceedings]{\ttinproceedings}, \hyperref[ssec:manual]{\ttmanual}, \hyperref[ssec:mastersthesis]{\ttmastersthesis}, \hyperref[ssec:misc]{\ttmisc}, \hyperref[ssec:online]{\ttonline}, \hyperref[ssec:phdthesis]{\ttphdthesis}, \hyperref[ssec:proceedings]{\ttproceedings}, \hyperref[ssec:techreport]{\tttechreport}, \hyperref[ssec:unpublished]{\ttunpublished}の16種類です．
 それぞれのエントリーで必須となるフィールドが異なり，文献一覧への出力の方法も異なるので面倒くさがらずに分類しましょう．
 ただ，全ての文献を正確に分類することは難しく，判断が人により異なることもあります．
 \JSMErepos における分類の仕方も見る人によっては違和感を覚えるものがあるかもしれません．
@@ -106,7 +106,7 @@
         報告書が出された機関名を入力します．
     \item \ttjournal \\
         学術雑誌論文が出された誌名を入力します．
-        \hyperref[ssec:article]{\ttarticle}でのみ有効なフィールドです．
+        \ttarticle でのみ有効なフィールドです．
     \item \ttkey \\
         著者名に相当するものが無い場合，ソートに利用します．
         \jsmefile では動作が完璧ではないのであまり使わないでほしいです．
@@ -173,9 +173,9 @@
 \end{itemize}
 
 
-\subsection{\ttarticle}
+\subsection{\texttt{@article}}
 \label{ssec:article}
-\begin{tcolorbox}[enhanced, title=\ttarticle, drop fuzzy shadow]
+\begin{tcolorbox}[enhanced, title=\texttt{@article}, drop fuzzy shadow]
     \begin{itemize}
         \item 必須項目 \\
         \ttauthor, \tttitle, \ttjournal, \ttyear
@@ -402,7 +402,7 @@ Scribeというシステムとの互換性のために残されているらし�
 
 \hyperref[ssec:conference]{\ttconference}と同様です．
 学会等の講演論文集の一部を引用するときに\ttinproceedings を使用します．
-\hyperref[ssec:article]{\ttarticle}や\hyperref[ssec:inbook]{\ttinbook}と並んで使用頻度の高いエントリーだと思います．
+\ttarticle や\hyperref[ssec:inbook]{\ttinbook}と並んで使用頻度の高いエントリーだと思います．
 \ttbooktitle フィールドには日本語なら\texttt{booktitle = \{\colorbox[gray]{0.8}{学会名}講演論文集\}}，英語なら\texttt{booktitle = \{Proceedings of \colorbox[gray]{0.8}{学会名}\}}と入力しましょう．
 \hyperref[ssec:proceedings]{\ttproceedings}は講演論文集全体を引用しているのに対して，\ttinproceedings は講演論文集の中の一講演を引用しています．
 上の例では\ttnote に講演番号を入れています．
