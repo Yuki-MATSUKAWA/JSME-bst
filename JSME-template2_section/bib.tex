@@ -90,10 +90,10 @@
         \citet{奥村:技評2020}のように\verb|title = {［改訂第8版］\LaTeXe{}美文書作成入門}|と\tttitle の中に書いてしまってもいいと思います．
     \item \tteditor \\
         編者名を入力します．
-        書き方は著者名（\ttauthor）と同じですが，\jsmefile では \tteditor に値を入れても基本的には文献一覧には出力されません．
-        ただし，著者（\ttauthor）無し文献の場合，\verb|natbib|による文章中での引用がおかしくなるのでその際は\ttauthor 代わりに \tteditor を使用します（詳細は \ttproceedings を参照）．
-        また，日本機械学会原稿テンプレートでは『伝熱ハンドブック』の編者として日本機械学会を指定し，その後ろに「編」と入れるように書かれていますが，現状これを \jsmefile で再現する際は \tteditor を使用せずに\verb|author = {日本機械学会編}|とするのが無難です．
-        近い将来修正して \tteditor で対応できるようにしたいです．
+        書き方は著者名（\ttauthor）と同じですが，\jsmefile では \ttauthor を使用している場合，\tteditor に値を入れても基本的には文献一覧には出力されません．
+        ただし，著者（\ttauthor）無し文献の場合，\verb|natbib|による文章中での引用がおかしくなるのでその際は \ttauthor 代わりに \tteditor を使用します（詳細は \ttproceedings を参照）．
+        例えば，日本機械学会原稿テンプレートでは『伝熱ハンドブック』の編者として日本機械学会を指定し，その後ろに「編」と入れるように書かれています．
+        このような場合に \tteditor フィールドを使用してください．
     \item \tteprint \\
         論文のeprintを入力します．
         arXivから \BibTeX 形式で書誌情報を出力するとデフォルトで入ってくるフィールドです．
@@ -246,6 +246,10 @@
 似たエントリーとして \ttinbook がありますが，特定のページを参照したのではなく，書籍全体を参照した場合は \ttbook を使いましょう．
 \JSMErepos ではSpringer\footnote{Springer, \textless\url{https://www.springer.com/jp}\textgreater}や朝倉書店\footnote{朝倉書店, \textless\url{https://www.asakura.co.jp/}\textgreater}，丸善出版\footnote{丸善出版, \textless\url{https://www.maruzen-publishing.co.jp/}\textgreater}等の出版社から出た書籍を \ttbook に分類しています．
 \ttpublisher フィールドにはこれらの出版社名を入れましょう．
+また，\ttbook では \ttauthor か \tteditor か選べるようになっています．
+特定の著者ではなく学会等の編者を記載する場合には \tteditor を使用してください．
+\ttauthor と \tteditor の両方を使用した場合は \ttauthor のみ文献一覧に表示されます．
+日本機械学会が編集している『JSMEテキストシリーズ』や『伝熱工学資料』などを引用する際は \tteditor を使いましょう．
 
 \subsection{\ttbooklet}
 \label{ssec:booklet}
@@ -336,6 +340,9 @@ Scribeというシステムとの互換性のために残されているらし�
 
 \ttbook に似ていますが，\ttbook が書籍丸々一冊なのに対して \ttinbook は書籍中の一部から引用する場合に使用します．
 そのため，\ttbook と異なり \ttpages フィールドが使用可能です．
+また \ttbook と同様，\ttauthor と \tteditor を選択することができます．
+\JSMErepos では例として日本機械学会の『伝熱工学資料』と朝倉書店の『乱流工学ハンドブック』を \tteditor で引用しています．
+\tteditor を使用した際の文章中での引用は\citet{JSME:丸善2013}や\citet{笠木:朝倉2009}のようになります．
 
 
 \subsection{\ttincollection}
@@ -437,7 +444,8 @@ Scribeというシステムとの互換性のために残されているらし�
 これはソートの際に \ttauthor フィールドが空欄だと参考文献一覧の変な場所に配置されてしまうからです．
 本来であれば \ttkey フィールドで解決したいところですが，\jsmefile では動作が不安定なので避けたいところです．
 実は\verb|natbib.sty|において著者無し文献の本文中での引用は課題が残されているようです\footnote{詳細は\verb|natbib.sty|の公式ドキュメント\textless\url{https://ctan.org/pkg/natbib}\textgreater をご覧ください．}．
-\ttmanual での不具合回避方法としては一旦，マニュアルを発行している機関・企業を \ttauthor とすることで解決としますが，著者無し文献の不具合回避方法は第~\ref{ssec:proceedings}節 \ttproceedings でも説明します．
+\ttmanual での不具合回避方法としては一旦，マニュアルを発行している機関・企業を \ttauthor とすることで解決とします．
+著者無し文献の不具合回避方法は第~\ref{ssec:proceedings}節 \ttproceedings でも説明しますが，第~\ref{sec:cite}節 \verb|\citetalias|，\verb|\citepalias| で紹介した方法を使えばユーザーの好きな形で出力することができます．
 
 
 \subsection{\ttmastersthesis}
@@ -656,6 +664,7 @@ arXiv上のExport BibTeX Citationと書いてあるところから文献情報�
 \end{table}
 そのため，\tteditor フィールドに「引用時に著者代わりに出力したい文字列」を書いておきましょう．
 文献一覧には \tteditor は出力されませんが，本文中での引用では\citet{THMT2023}や\citet{流力年会2023}のように\verb|editor (year)|で出力してくれます．
+これらの出力形式が気に入らない場合は，第~\ref{sec:cite}節で紹介した \verb|\citetalias| や \verb|\citepalias| を使って引用することで任意の出力形式を得られます．
 
 
 \subsection{\tttechreport}
