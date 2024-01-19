@@ -4,8 +4,8 @@
 
 日本機械学会オリジナルの原稿テンプレートに合わせた内容（`JSME-original`内）に関しては現在調整中です（`cls` ファイルの書き換えを検討中）．
 
-* `JSME-template1.tex`, `JSME-settings1.sty`, `JSME-template1.pdf`, `JSME-template1_section` -> ハイパーリンク有りの`jsme.bst`説明書
-* `JSME-template2.tex`, `JSME-settings2.sty`, `JSME-template2.pdf`, `JSME-template2_section` -> ハイパーリンク無しの`jsme-nolink.bst`説明書
+* `JSME-template1.tex`, `JSME-settings1.sty`, `JSME-template1.pdf`, `JSME-template1_section` -> ハイパーリンク有りの `jsme.bst` 説明書
+* `JSME-template2.tex`, `JSME-settings2.sty`, `JSME-template2.pdf`, `JSME-template2_section` -> ハイパーリンク無しの `jsme-nolink.bst` 説明書
 * `jsme.bst` -> ハイパーリンク有りの `bst` ファイル
 * `jsme-nolink.bst` -> ハイパーリンク無しの `bst` ファイル
 * `mybib_en.bib`, `mybib_jp.bib` -> 説明書用の文献リスト `bib` ファイル
@@ -16,7 +16,7 @@
     * `jsmebib.bib` -> 日本機械学会原稿テンプレートの文献リスト `bib` ファイル
 
 `jsme.bst` は[日本機械学会の原稿テンプレート](https://www.jsme.or.jp/publish/transact/for-authors.html)に基づいた参考文献の出力を実現するために作成した，非公式 BibTeX スタイルファイルテンプレートです．
-必要なファイル一式は GitHub の[JSME-bst](https://github.com/Yuki-MATSUKAWA/JSME-bst)から入手可能なので，用途に応じて自由に改変してください．
+必要なファイル一式は GitHub の [JSME-bst](https://github.com/Yuki-MATSUKAWA/JSME-bst) から入手可能なので，用途に応じて自由に改変してください．
 参考文献のリストはこの `pdf` ファイルの末尾で，出力している文献の `bib` ファイルは英語文献 `mybib_en.bib` と日本語文献 `mybib_jp.bib` の二つです．
 `JSME-bst` の作成者である松川が流体力学，特に乱流遷移の研究をしているため，引用している文献は乱流遷移の周辺のものが多くなっています（全てではありません）が，材料力学など他分野の方でも基本的な使い方は同じです．
 また，`JSME-template1.pdf` の第 3 節でも述べますが，著者数が 1 名，2 名，3 名以上のそれぞれで引用時の出力結果が異なります．そのため `mybib_en.bib`，`mybib_jp.bib` では可能な限り著者数が 1 名，2 名，3 名以上の計 3 パターンを用意しています．
