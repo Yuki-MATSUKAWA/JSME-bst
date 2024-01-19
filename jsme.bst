@@ -2,8 +2,8 @@
 %
 % Author: Yuki MATSUKAWA (松川裕樹)
 % First-written: 2023/09/02
-% Latest version: 2023/11/18
-% Version 2.3.0
+% Latest version: 2024/01/19
+% Version 3.0.0
 
 % This work is based on jecon-bst by Shiro Takeda (https://github.com/ShiroTakeda/jecon-bst)
 % and modified to output references according to the JSME manuscript template 
@@ -408,11 +408,11 @@ FUNCTION {bst.and.others.num}
 % 
 % 次の関数により N1 の値を設定する。
 FUNCTION {bst.max.author.num}
-{ #8 }    % とりあえず8人より多い場合に設定 (default).
+{ #20 }    % 20 人より多い場合に設定.
 
 % 次の関数により N2 の値を設定する。
 FUNCTION {bst.max.author.num.display}
-{ #3 }    % (default)
+{ #5 }    % 5 人の名前を表示．
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
