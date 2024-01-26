@@ -33,7 +33,7 @@
 
 ## 参考資料
 
-`jsme.bst` は武田史郎氏作の `jecon-bst`（経済学用スタイルファイル）を基に作成しています．
+`JSME-bst` は武田史郎氏作の `jecon-bst`（経済学用スタイルファイル）を基に作成しています．
 深く感謝申し上げます．
 
 1. [`jecon-bst`](https://github.com/ShiroTakeda/jecon-bst)
